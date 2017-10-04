@@ -1,0 +1,569 @@
+@prefix DUL:     <http://www.loa-cnr.it/ontologies/DUL.owl#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/spec/> .
+@prefix rami:    <https://w3id.org/i40/rami#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssn:     <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix vcard:   <http://www.w3.org/2006/vcard/ns#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix om:     <http://www.wurvoc.org/vocabularies/om-1.8/> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+
+
+rami:   
+     a owl:Ontology ;
+     skos:definition "A vocabulary which represents the Reference Architecture Model for Industry 4.0 (RAMI), including the concept of the Administration Shell I4.0 Component."@en ;
+     rdfs:isDefinedBy rami: ;
+     skos:prefLabel "rami"@en ;
+     dct:created "2015-11-30"^^xsd:date ;
+	 terms:creator <http://eis.iai.uni-bonn.de/Irlan>; 
+	 terms:creator <http://eis.iai.uni-bonn.de/NiklasPetersen>;
+     dct:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> ;
+     vann:preferredNamespacePrefix "rami" ;
+     vann:preferredNamespaceUri "https://w3id.org/i40/rami#" ;
+     void:vocabulary rdfs: , dc: , rdf: , xsd: , foaf: , skos: , dct: , <http://www.w3.org/XML/1998/namespace>;
+     owl:versionInfo "0.1" ;
+	.  
+
+rami:AdminShell 
+      a owl:Class ;
+      skos:prefLabel "Admin Shell"@en , 
+	                 "Verwaltungsschale"@de ;
+      skos:altLabel "Administration Shell"@en ;
+      skos:hiddenLabel "Administrative Shell"@en ;
+      skos:definition "Describe the Administration Shell for Products, Components, e.g. Machines"@en ;
+  	  dc:source "This definition comprises material from RAMI4.0."@en ;
+	.  
+
+rami:Object
+      a owl:Class ;
+	  skos:prefLabel "Object"@en , 
+	                 "Objekt"@de ;
+	  skos:altLabel "Entity"@en ,
+                    "Entität"@de ;
+      skos:definition "Clearly identifiable object which is managed due to its importance in the world of information"@en ,
+	                  "Eindeutig identifizierbarer Gegenstand, der aufgrund seiner Bedeutung in der Informationswelt verwaltet wird"@de ;
+	  skos:note "Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en ;
+	  owl:oneOf(rami:Type rami:Instance) ;
+    .	
+
+rami:Machine
+      a owl:Class ;
+	  rdfs:subClassOf rami:Object ;
+	  skos:prefLabel "Machine"@en ;
+      skos:definition "A machine is ordered, designed, commissioned, operated, serviced, converted and recycled."@en ;
+    .
+	
+rami:Order
+      a owl:Class ;
+	  skos:prefLabel "Order"@en ;
+      skos:definition "Each order for manufacturing runs through a life cycle and its specifics necessarily have an impact on the production facility during performance of the order"@en ;
+    .		
+	  
+rami:ApplicationData
+      a owl:Class ;
+	  skos:prefLabel "Application Data"@en , 
+	                 "Anwendungsdaten"@de ;
+      skos:definition "The object determines the format"@en , 
+	                  "Hier bestimmt der Gegenstand das Format"@de ;
+      rdfs:subClassOf rami:BasicData ;
+	.
+
+rami:TechnicalFunctionality
+     a owl:Class;
+	 skos:prefLabel "Technical Functionality"@en ,
+	                "Fachliche Funktionalität"@de ;
+     skos:definition "Technical Functionality of the Administration Shell"@en ;
+	 skos:note "Technical functionality takes place in the Functional Layer of the reference architecture model RAMI4.0"@en ;
+	. 
+	 
+rami:hasTechnicalFuncionality
+     a owl:ObjectProperty ;
+     skos:prefLabel "has Technical Funcionality"@en ;
+     skos:definition "The Administrative Shell has Technical Funcionalities"@en ;
+	 rdfs:domain rami:AdminShell;
+     rdfs:range rami:TechnicalFunctionality ;
+	. 
+	
+rami:BasicData
+      a owl:Class ;
+      skos:prefLabel "Data"@en , 
+	                 "Daten"@de ;
+	  skos:definition "Describe the different types of Data related to the I4.0 Entity/Object"@en ;
+	.
+
+rami:Standard
+      a owl:Class ;
+      skos:prefLabel "Standard"@en , 
+	                 "Standard"@de ;
+	  skos:definition "Standards that are used to describe the actual I4.0 Entity/Object"@en ;
+	.	
+	
+rami:version
+      a owl:DatatypeProperty ;
+      skos:prefLabel "Version"@en ;
+      skos:definition "Current version of the Standard"@en ;
+      rdfs:domain rami:Standard ;	  
+      rdfs:range xsd:string ;
+	.
+	
+rami:releaseDate
+      a owl:DatatypeProperty ;
+      skos:prefLabel "Release Date"@en ;
+      skos:definition "Release Date of the Standard"@en ;
+      rdfs:domain rami:Standard ;	  
+      rdfs:range xsd:date ;
+	.
+	
+rami:publishedURL
+      a owl:DatatypeProperty ;
+      skos:prefLabel "Published URL"@en ;
+      skos:definition "Published URL of the Standard"@en ;
+      rdfs:domain rami:Standard ;	  
+      rdfs:range xsd:AnyURI ;
+	.
+	
+rami:stdName
+      a owl:DatatypeProperty ;
+      skos:prefLabel "Std Name"@en ;
+      skos:definition "Name of the Standard"@en ;
+      rdfs:domain rami:Standard ;	  
+      rdfs:range xsd:string ;
+	.  
+	
+rami:isDescribedWith
+      a owl:DatatypeProperty ;
+      skos:prefLabel "Is Described With"@en ;
+      skos:definition "Points to the Standard used to describe a given object"@en ;
+      rdfs:domain rami:AdminShell ;	  
+      rdfs:range rami:Standard ;
+	.  
+	
+rami:eClassIRDI
+      a owl:DatatypeProperty ,
+	    owl:FunctionalProperty ;
+      skos:prefLabel "eClassIRDI"@en ;
+      skos:definition "Unique Identification of an object according to eCl@ss Standard"@en ;
+      rdfs:domain rami:eClass ;	  
+      rdfs:range xsd:string ;
+	.  	
+	
+rami:eClassClassification
+      a owl:DatatypeProperty ,
+	    owl:FunctionalProperty ;
+      skos:prefLabel "eClassIRDI"@en ;
+      skos:definition "Identification of an object according to the eCl@ss Standard hierarchy level"@en ;
+      rdfs:domain rami:eClass ;	  
+      rdfs:range xsd:integer ;
+	.  	
+ 
+rami:inventoryNumber
+      a owl:DatatypeProperty ,
+        owl:FunctionalProperty ;
+      skos:prefLabel "Inventory Number"@en ;
+      skos:definition "Inventory number of the Entity/Object according to the identification nomenclature"@en ;
+      rdfs:domain rami:BasicData ;	  
+      rdfs:range xsd:string ;
+	.  
+	  
+rami:identification
+      a owl:DatatypeProperty ,
+        owl:FunctionalProperty ;
+      skos:prefLabel "Identification"@en ;
+      skos:definition "Identification for the Entity/Object related data. It correspond to the ID concept of OMM"@en ;
+      rdfs:domain rami:BasicData ;	  
+      rdfs:range xsd:string ;
+	  rdfs:seeAlso <https://www.w3.org/2005/Incubator/omm/XGR-omm-20111026/>;
+	.
+	
+rami:typeDescription
+     a owl:DatatypeProperty;
+     skos:prefLabel "typeDescription"@en ;
+     skos:definition "Describes the Entity/Object related data. It correspond to the Description concept of OMM"@en ;
+     rdfs:domain rami:BasicData ;	  
+     rdfs:range xsd:string ;
+	 rdfs:seeAlso <https://www.w3.org/2005/Incubator/omm/XGR-omm-20111026/>;
+	.
+	
+rami:contributes
+     a owl:ObjectProperty;
+     skos:prefLabel "typeDescription"@en ;
+     skos:definition "Agent(Person or Software) that contributes to the Entity/Object related data. It correspond to the Contributor concept of OMM"@en ;
+     rdfs:domain rami:BasicData ;	  
+     rdfs:range prov:Agent ;
+	.
+	
+rami:createdBy
+     a owl:ObjectProperty;
+     skos:prefLabel "hasCreator"@en ;
+     skos:definition "Agent(Person or Software) that creates to the Entity/Object related data. It correspond to the Creator concept of OMM"@en ;
+     rdfs:domain rami:BasicData ;	  
+     rdfs:range prov:Agent ;
+	.
+	
+rami:creationDate
+     a owl:DatatypeProperty;
+     skos:prefLabel "hasCreator"@en ;
+     skos:definition "Date when an Agent(Person or Software) creates to the Entity/Object related data. It correspond to the Creator concept of OMM"@en ;
+     rdfs:domain rami:BasicData ;	  
+     rdfs:range xsd:dateTime ;
+	.
+	
+rami:contributionDate
+     a owl:DatatypeProperty;
+     skos:prefLabel "hasCreator"@en ;
+     skos:definition "Date when an Agent(Person or Software) contributes to the Entity/Object related data. It correspond to the Contributor concept of OMM"@en ;
+     rdfs:domain rami:BasicData ;	  
+     rdfs:range xsd:dateTime ;
+	.
+					 
+rami:ElectricalData
+      a owl:Class ;
+	  skos:prefLabel "Electrical Data"@en ;
+      skos:definition "Electrical Data for the Object"@en ;
+      rdfs:subClassOf rami:BasicData ;
+	.  
+	
+rami:EngineeringData
+      a owl:Class ;
+	  skos:prefLabel "Engineering Data"@en , 
+	                 "Engineering-Daten"@de ;
+      skos:definition "Documents such as drawings, manufacturer's specifications, standards, and other information relating to design, procurement, fabrication, test, and inspection of an item or structure."@en ;
+	  rdfs:isDefinedBy <http://www.businessdictionary.com/definition/engineering-data.html#ixzz45Ydk71Su> ;
+      rdfs:subClassOf rami:BasicData ;
+	.
+
+rami:Firmware
+      a owl:Class ;
+	  skos:prefLabel "Firmware"@en , 
+	                 "Firmware"@de ;
+      skos:definition "Used firmware, firmware modules"@en ,
+                      "Eingesetzte Firmware, Firmware-Module"@de ;
+      rdfs:subClassOf rami:ApplicationData ;
+	.  
+	
+rami:SafetyConfiguration
+      a owl:Class ;
+	  skos:prefLabel "SafetyConfiguration"@en ;
+      skos:definition "Safety Configuration of the Object/Entity. It contains certificate of compliance that states that the object has fullfils the safety requirements according to a given standard"@en ;
+      rdfs:subClassOf rami:ApplicationData ;
+	.  
+
+rami:MCAD
+      a owl:Class ;
+	  skos:prefLabel "MCAD"@en , 
+	                 "MCAD"@de ;
+      skos:definition "Data that contain the files used for Mechanical Computer Aid Design of a given object"@en ;
+      rdfs:subClassOf rami:EngineeringData ;
+	.  
+
+rami:hasRAMIHierarchyLevel
+     a owl:ObjectProperty ;
+     skos:prefLabel "has RAMI Hierarchy Level" ;
+	 skos:definition "Connects the concepts with the correspondent layer in the RAMI Hierarchy Levels"@en ;
+     rdfs:range rami:RAMIHierarchyLevel ;
+	.  
+	
+rami:RAMIHierarchyLevel a owl:Class ;
+      skos:prefLabel "RAMI Hierarchy Level"@en ;
+	  skos:definition "It describes the functional classification of various circumstances within Industrie 4.0. For classification within a factory, this axis of the reference architecture(layers) follows the IEC 62264 Standard."@en ;
+      rdfs:seeAlso <http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx> ;
+	  owl:oneOf (rami:ConnectedWorld rami:Enterprise rami:WorkCenter rami:Station rami:ControlDevice rami:FieldDevice rami:Product) ;
+	.  
+	
+rami:RAMILifeCycleLayer a owl:Class ;
+      skos:prefLabel "RAMI Layer"@en ;
+	  skos:definition "It describes the different Life Cycle and Value Stream layers for the RAMI model according to the IEC 62890 Standard."@en ;
+      rdfs:seeAlso <http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx> ;
+	  owl:oneOf (rami:Business rami:Functional rami:Information rami:Communication rami:Integration rami:Asset) ;
+	.  	
+	
+rami:hasRAMILifeCycleLayer
+     a owl:ObjectProperty ;
+     skos:prefLabel "has RAMI Life Cycle Layer" ;
+	 skos:definition "Connects the concepts with the correspondent layer in the RAMI Hierarchy Levels"@en ;
+     rdfs:range rami:RAMILayer ;
+	.  	
+	
+# RAMIHierarchyLevel ---------------------------------------			  
+rami:Product a rami:RAMIHierarchyLevel ;
+			  skos:prefLabel "Product"@en ;
+                          skos:definition "Product hierarchy level of RAMI 4.0"@en ;
+                          .	
+			  
+rami:FieldDevice a rami:RAMIHierarchyLevel ;
+			  skos:prefLabel "Field Device"@en ;	
+			  skos:definition "Field Device hierarchy level of RAMI 4.0"@en ;	
+                          .
+			  
+rami:ControlDevice a rami:RAMIHierarchyLevel ;
+			  skos:prefLabel "Control Device"@en ;	
+			  skos:definition "Control Device hierarchy level of RAMI 4.0"@en ;
+                          .
+			  
+rami:Station a rami:RAMIHierarchyLevel ;
+			  skos:prefLabel "Station"@en ;	
+			  skos:definition "Station hierarchy level of RAMI 4.0"@en ;
+                          .
+			  
+rami:WorkCenter a rami:RAMIHierarchyLevel ;
+			  skos:prefLabel "Work Center"@en ;	
+			  skos:definition "Work Center hierarchy level of RAMI 4.0"@en ;
+                          .
+			  
+rami:Enterprise a rami:RAMIHierarchyLevel ;
+			  skos:prefLabel "Enterprise"@en ; 
+			  skos:definition "Enterprise hierarchy level of RAMI 4.0"@en ;
+                          .
+
+rami:ConnectedWorld a rami:RAMIHierarchyLevel ;
+			  skos:prefLabel "Connected World"@en ;
+			  skos:definition "Connected World hierarchy level of RAMI 4.0. Group of Factories, and the collaboration with external engineering firms, component suppliers and customers"@en ;
+     .		  
+
+rami:standardName
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "Standard Name"@en ;
+	  skos:definition "Name of the Standard that specifies the Engineering Data"@en ;
+      rdfs:domain rami:EngineeringData ;
+      rdfs:range xsd:string ;
+	.  
+	
+rami:standardVersion
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "Standard Version"@en ;
+	  skos:definition "Version of the Standard that specifies the Engineering Data"@en ;
+      rdfs:domain rami:EngineeringData ;
+      rdfs:range xsd:string ;
+	.  
+	
+rami:standardURL
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "Standard URL"@en ;
+	  skos:definition "Points to the URL of the Standard that specifies the Engineering Data"@en ;
+      rdfs:domain rami:EngineeringData ;
+      rdfs:range xsd:anyURI ;
+	.  
+	  
+rami:brakingResistance
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "braking Resistance"@en ;
+      rdfs:domain rami:ElectricalData ;
+      rdfs:range om:hertz ;
+	.  
+
+rami:blockUrl
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "Block Url"@en ;
+      skos:definition "URL of the Firmware that belongs to the Object/Entity"@en ;
+      rdfs:domain rami:Firmware ;
+      rdfs:range xsd:anyURI ;
+	.
+
+rami:CADarchive
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "CAD Archive"@en ;
+      skos:definition "Link(URL) to the CAD Archive of the Object/Entity"@en ;
+      rdfs:domain rami:MCAD ;
+      rdfs:range xsd:anyURI ;
+	.
+
+rami:CADFormat
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "CAD Format"@en ;
+      skos:definition "Different types of format files for CAD Archive of the Object/Entity"@en ;
+      rdfs:domain rami:MCAD ;
+      rdfs:range xsd:string ;
+	.
+	
+rami:CADSystem
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "CAD Format"@en ;
+      skos:definition "Points to the different types of CAD systems of the Object/Entity"@en ;
+      rdfs:domain rami:MCAD ;
+      rdfs:range xsd:string ;
+	  skos:example "Neutral 2D, Neutral 3D, SolidWorks" ;
+	.
+
+rami:hasData
+      a owl:ObjectProperty ;
+      skos:definition "Connects the AdminShell with the different types of Data for the Object/Entity"@en ;
+      rdfs:domain rami:AdminShell ;
+      skos:prefLabel "has Data"@en ;
+      rdfs:range rami:BasicData ;
+	.
+
+rami:firmwareDate
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "firmware Date"@en ;
+      skos:definition "Firmware date that belongs to the Object/Entity"@en ;
+      rdfs:domain rami:Firmware ;
+      rdfs:range xsd:date ;
+	.
+
+rami:hasEnergyValue
+      a owl:DatatypeProperty ;
+      rdfs:domain rami:CumulativeEnergyConsumption ;
+      skos:prefLabel "hasEnergyValue"@en ;
+      rdfs:range xsd:float ;
+	.
+
+rami:hasSensorId
+      a owl:DatatypeProperty ,
+	    owl:FunctionalProperty ;
+      rdfs:domain ssn:Sensor ;
+      skos:prefLabel "hasSensorId"@en ;
+      skos:definition "Unique Identification of the Sensor"@en ;
+      rdfs:range xsd:string ;
+	.
+
+rami:SensorMeasurementData
+      a owl:Class ;
+	  rdfs:label "Sensor Data"@en ;
+      rdfs:comment "Data measured by a sensor"@en ;
+      rdfs:subClassOf rami:BasicData ;
+      owl:equivalentClass ssn:SensorOutput ;
+	.
+
+rami:version
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "has Version"@en ;
+      skos:definition "Version of the Firmware that belongs to the Object/Entity"@en ;
+      rdfs:domain rami:Firmware ;
+      rdfs:range xsd:string ;
+	.
+
+rami:logs
+      a owl:DatatypeProperty ;
+      rdfs:domain rami:TraceRecordings ;
+      skos:prefLabel "logs"@en ;
+      rdfs:range xsd:string ;
+	.
+
+rami:outputFrequency
+      a owl:DatatypeProperty ;
+      rdfs:domain rami:ElectricalData ;
+      skos:prefLabel "Output Frequency"@en ;
+      rdfs:range om:hertz ;
+	.
+	
+rami:inputVoltage
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "Input Voltage"@en ;
+      rdfs:domain rami:ElectricalData ;
+	  rdfs:range om:volt ;
+	  skos:example "230 V AC / 50-60 Hz" ;
+	.
+	
+rami:phasesNumber
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "Phases Number"@en ;
+      rdfs:domain rami:ElectricalData ;
+      rdfs:range xsd:string ;
+	  skos:example "Single phase, three phase" ;
+ 	.
+
+rami:wraps
+      a owl:ObjectProperty ;
+	  skos:prefLabel "wraps"@en ;
+      skos:definition "Connect the Object with the Admin Shell"@en ;
+      rdfs:domain rami:AdminShell ;
+      rdfs:range rami:Object ;
+	.
+
+rami:videoUrl
+      a owl:DatatypeProperty ;
+      rdfs:domain rami:VideoRecordings ;
+      skos:prefLabel "videoUrl"@en ;
+      rdfs:range xsd:anyURI ;
+    .	  
+	  
+# Properties for the Object 	  
+
+rami:objectId a owl:DatatypeProperty , 
+                owl:FunctionalProperty	;
+	  skos:prefLabel "has Object Id"@en ;
+      skos:definition "Unique ID for the Object/Entity"@en ;
+      rdfs:domain rami:Object ;
+      rdfs:range xsd:string ;
+	.  
+	
+rami:name a owl:DatatypeProperty ,
+            owl:FunctionalProperty ;
+      skos:prefLabel "has Name"@en ;
+      skos:definition "Name of the Object/Entity"@en ;
+      rdfs:domain rami:Object ;	  
+      rdfs:range xsd:string ;
+	.  
+	  
+rami:description a owl:DatatypeProperty ;
+      skos:prefLabel "has Description"@en ;
+      skos:definition "Description of the Object/Entity"@en ;
+      rdfs:domain rami:Object ;	  
+      rdfs:range xsd:string ;
+	. 
+	
+rami:livePicture a owl:ObjectProperty ;
+     rdfs:label "LivePicture"@en ,
+	            "Livebilder"@de ;
+     rdfs:comment "Points to an Image for the Object/Entity"@en;
+	 rdfs:domain rami:Object;
+	 rdfs:range foaf:Image;
+	. 
+	
+rami:isPartOf a owl:ObjectProperty ,
+                owl:TransitiveProperty ;
+     rdfs:label "isPartOf"@en ;
+     rdfs:comment "The Object can be part of of other Objects"@en;
+	 rdfs:domain rami:Object;
+	 rdfs:range rami:Object;
+	. 
+
+# rami:SafetyConfiguration Properties	
+rami:safetyName
+      a owl:DatatypeProperty ;
+      skos:prefLabel "Safety Name"@en ;
+      skos:definition "Name of the Safety Configuration of the Object/Entity"@en ;
+      rdfs:domain rami:SafetyConfiguration ;	  
+      rdfs:range xsd:string ;
+	. 
+	
+rami:certificateName a owl:DatatypeProperty ,
+					   owl:FunctionalProperty ;
+      skos:prefLabel "Certificate Name"@en ;
+      skos:definition "Certificate Safety Name of the Object/Entity"@en ;
+      rdfs:domain rami:SafetyConfiguration ;	  
+      rdfs:range xsd:string ;
+	. 
+	
+rami:certificateUrl a owl:DatatypeProperty ,
+					   owl:FunctionalProperty ;
+      skos:prefLabel "Certificate Url"@en ;
+      skos:definition "Certificate Safety Url of the Object/Entity"@en ;
+      rdfs:domain rami:SafetyConfiguration ;	  
+      rdfs:range xsd:anyURI ;
+	. 
+	
+# rami:VideoRecording Properties	
+rami:videoRecordingUrl a owl:DatatypeProperty ,
+					   owl:FunctionalProperty ;
+      skos:prefLabel "Video Recording Url"@en ;
+      rdfs:domain rami:VideoRecording ;	  
+      rdfs:range xsd:anyURI ;
+	. 
+	
+# rami:ApplicationData Properties	
+rami:manual a owl:DatatypeProperty ;
+      skos:prefLabel "Manual"@en ;
+      skos:definition "Points to the Manual document of a given Object/Entity"@en ;
+      rdfs:domain rami:ApplicationData ;	  
+      rdfs:range xsd:anyURI ;
+	. 
