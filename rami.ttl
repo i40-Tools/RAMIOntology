@@ -24,8 +24,8 @@ rami:
      rdfs:isDefinedBy rami: ;
      skos:prefLabel "rami"@en ;
      dct:created "2015-11-30"^^xsd:date ;
-	 terms:creator <http://eis.iai.uni-bonn.de/Irlan>; 
-	 terms:creator <http://eis.iai.uni-bonn.de/NiklasPetersen>;
+	 dct:creator <http://eis.iai.uni-bonn.de/Irlan>; 
+	 dct:creator <http://eis.iai.uni-bonn.de/NiklasPetersen>;
      dct:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> ;
      vann:preferredNamespacePrefix "rami" ;
      vann:preferredNamespaceUri "https://w3id.org/i40/rami#" ;
@@ -566,4 +566,4 @@ rami:manual a owl:DatatypeProperty ;
       skos:definition "Points to the Manual document of a given Object/Entity"@en ;
       rdfs:domain rami:ApplicationData ;	  
       rdfs:range xsd:anyURI ;
-	. 
+	.
