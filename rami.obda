@@ -1,0 +1,33 @@
+[PrefixDeclaration]
+:		https://w3id.org/i40/rami#
+dc:		http://purl.org/dc/elements/1.1/
+om:		http://www.wurvoc.org/vocabularies/om-1.8/
+DUL:		http://www.loa-cnr.it/ontologies/DUL.owl#
+geo:		http://www.w3.org/2003/01/geo/wgs84_pos#
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+ssn:		http://purl.oclc.org/NET/ssnx/ssn#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+foaf:		http://xmlns.com/foaf/spec/
+obda:		https://w3id.org/obda/vocabulary#
+prov:		http://www.w3.org/ns/prov#
+rami:		https://w3id.org/i40/rami#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+skos:		http://www.w3.org/2004/02/skos/core#
+vann:		http://purl.org/vocab/vann/
+void:		http://rdfs.org/ns/void#
+vcard:		http://www.w3.org/2006/vcard/ns#
+schema:		http://www.w3.org/2001/XMLSchema#
+dcterms:		http://purl.org/dc/terms/
+
+[MappingDeclaration] @collection [[
+mappingId	SensorMapping
+target		:sensor{meta_device_id} a :Machine . 
+source		select meta_device_id from dump_public_data_airprobe
+
+mappingId	Mapping2
+target		:{meta_device_id} a :Machine ; :hasSensorId {meta_device_id}^^xsd:string ; :recordedTime {meta_timestamp_recorded}^^xsd:dateTimeStamp ; :receivedTime {meta_timestamp_received}^^xsd:dateTimeStamp ; geo:lat {geo_lat}^^xsd:decimal , {geo_lon}^^xsd:decimal . 
+source		select `meta_device_id`, `meta_timestamp_recorded`,meta_timestamp_received, geo_lat, geo_lon  from `ubicon`.`dump_public_data_airprobe`
+]]
+
