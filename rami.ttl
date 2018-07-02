@@ -2,10 +2,12 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix om: <http://www.wurvoc.org/vocabularies/om-1.8/> .
 @prefix DUL: <http://www.loa-cnr.it/ontologies/DUL.owl#> .
+@prefix dul: <http://www.loa-cnr.it/ontologies/DUL.owl#> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix sto: <https://w3id.org/i40/sto#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/spec/> .
@@ -26,51 +28,92 @@
                               vann:preferredNamespaceUri "https://w3id.org/i40/rami#" ;
                               void:vocabulary rdf: ;
                               skos:definition "An Ontology to represents the Reference Architecture Model for Industry 4.0 (RAMI), including the concept of the Administration Shell I4.0 Component."@en ;
-                              void:vocabulary rdfs: ,
-                                              skos: ,
-                                              dc: ,
-                                              dcterms: ;
+                              void:vocabulary rdfs: ;
+                              owl:versionInfo "0.3" ;
+                              void:vocabulary skos: ,
+                                              dc: ;
                               skos:prefLabel "rami"@en ;
-                              dcterms:created "2015-11-30"^^schema:date ;
-                              owl:versionInfo "0.1" ;
                               void:vocabulary schema: ;
-                              dcterms:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> ;
                               vann:preferredNamespacePrefix "rami" ;
                               void:vocabulary xml: ;
-                              rdfs:isDefinedBy <https://w3id.org/i40/rami#> ;
-                              dcterms:creator <http://sda.cs.uni-bonn.de/Irlan/> .
+                              rdfs:isDefinedBy <https://w3id.org/i40/rami#> .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/elements/1.1/contributor
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/coverage
+dc:coverage rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/format
+dc:format rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/elements/1.1/identifier
 dc:identifier rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+dc:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+dc:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/relation
+dc:relation rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/source
 dc:source rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/elements/1.1/subject
+dc:subject rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/type
+dc:type rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/hasVersion
+dcterms:hasVersion rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/identifier
 dcterms:identifier rdf:type owl:AnnotationProperty ;
                    rdfs:subPropertyOf dc:identifier ;
-                   rdfs:range rdfs:Literal ;
-                   rdfs:domain rami:BasicData .
-
-
-###  http://purl.org/dc/terms/relation
-dcterms:relation rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/source
-dcterms:source rdf:type owl:AnnotationProperty ;
-               rdfs:comment "A related resource from which the described resource is derived."@en ;
-               rdfs:isDefinedBy dcterms: ;
-               rdfs:label "Source"@en ;
-               skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
-               rdfs:subPropertyOf dc:source ,
-                                  dcterms:relation .
+                   rdfs:range rdfs:Literal .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
@@ -97,6 +140,10 @@ skos:note rdf:type owl:AnnotationProperty .
 skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
+###  https://w3id.org/i40/rami#publishedURL
+rami:publishedURL rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Datatypes
 #################################################################
@@ -109,6 +156,24 @@ schema:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://www.loa-cnr.it/ontologies/DUL.owl#isPartOf
+dul:isPartOf rdf:type owl:ObjectProperty ,
+                      owl:TransitiveProperty ;
+             rdfs:domain rami:Asset ;
+             rdfs:range rami:Asset ;
+             rdfs:comment "A relation between any entities, in this case, the Asset can be part of other Asset(s)."^^schema:string ;
+             rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+             rdfs:label "is Part Of"@en .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
+                    rdfs:domain rami:BasicData ;
+                    rdfs:range prov:Agent ;
+                    skos:definition "Agent (Person or Software) that generates the Asset related data. It correspond to the Creator concept of OMM"@en ;
+                    skos:prefLabel "was Generated By"@en .
+
+
 ###  https://w3id.org/i40/rami#contributes
 rami:contributes rdf:type owl:ObjectProperty ;
                  rdfs:domain rami:BasicData ;
@@ -117,12 +182,18 @@ rami:contributes rdf:type owl:ObjectProperty ;
                  skos:prefLabel "has Type Description"@en .
 
 
-###  https://w3id.org/i40/rami#createdBy
-rami:createdBy rdf:type owl:ObjectProperty ;
-               rdfs:domain rami:BasicData ;
-               rdfs:range prov:Agent ;
-               skos:definition "Agent (Person or Software) that creates to the Entity/Object related data. It correspond to the Creator concept of OMM"@en ;
-               skos:prefLabel "has Creator"@en .
+###  https://w3id.org/i40/rami#describes
+rami:describes rdf:type owl:ObjectProperty ;
+               rdfs:domain rami:AdminShell ;
+               rdfs:range rami:Asset ;
+               skos:definition "Connect the Asset with the Administration Shell"@en ;
+               skos:prefLabel "describes"@en .
+
+
+###  https://w3id.org/i40/rami#describesAdminShell
+rami:describesAdminShell rdf:type owl:ObjectProperty ;
+                         rdfs:comment "Points to the Admin Shell Submodels that describe the Admin Shell of a given Asset"@en ;
+                         rdfs:label "describes Admin Shell"@en .
 
 
 ###  https://w3id.org/i40/rami#hasBrakingResistance
@@ -145,9 +216,9 @@ rami:hasInputVoltage rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/i40/rami#hasRAMIHierarchyLevel
 rami:hasRAMIHierarchyLevel rdf:type owl:ObjectProperty ;
-                           rdfs:range rami:RAMIHierarchyLevel ;
+                           rdfs:range rami:HierarchyLevelDimension ;
                            skos:definition "Connects the concepts with the correspondent layer in the RAMI Hierarchy Levels"@en ;
-                           skos:prefLabel "has RAMI Hierarchy Level" .
+                           skos:prefLabel "has RAMI Hierarchy Level"@en .
 
 
 ###  https://w3id.org/i40/rami#hasRAMILifeCycleLayer
@@ -168,16 +239,7 @@ rami:hasTechnicalFuncionality rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/i40/rami#isDescribedWith
 rami:isDescribedWith rdf:type owl:ObjectProperty ;
                      rdfs:domain rami:AdminShell ;
-                     rdfs:range rami:Standard .
-
-
-###  https://w3id.org/i40/rami#isPartOf
-rami:isPartOf rdf:type owl:ObjectProperty ,
-                       owl:TransitiveProperty ;
-              rdfs:domain rami:Asset ;
-              rdfs:range rami:Asset ;
-              rdfs:comment "The Object can be part of of other Objects"@en ;
-              rdfs:label "isPartOf"@en .
+                     rdfs:range sto:Standard .
 
 
 ###  https://w3id.org/i40/rami#outputFrequency
@@ -186,24 +248,35 @@ rami:outputFrequency rdf:type owl:ObjectProperty ;
 
 
 ###  https://w3id.org/i40/rami#publishedURL
-rami:publishedURL rdf:type owl:ObjectProperty ;
-                  rdfs:domain rami:Standard .
-
-
-###  https://w3id.org/i40/rami#wraps
-rami:wraps rdf:type owl:ObjectProperty ;
-           rdfs:domain rami:AdminShell ;
-           rdfs:range rami:Asset ;
-           skos:definition "Connect the Object with the Admin Shell"@en ;
-           skos:prefLabel "wraps"@en .
+rami:publishedURL rdf:type owl:ObjectProperty .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
+###  http://purl.org/dc/terms/alternative
+dcterms:alternative rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf dcterms:title ;
+                    rdfs:range rdfs:Literal ;
+                    dcterms:description "The distinction between titles and alternative titles is application-specific."@en ;
+                    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#alternative-003> ;
+                    rdfs:comment "An alternative name for the resource."@en ;
+                    rdfs:isDefinedBy dcterms: ;
+                    rdfs:label "Alternative Title"@en .
+
+
 ###  http://purl.org/dc/terms/identifier
 dcterms:identifier rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:DatatypeProperty ;
+              rdfs:range rdfs:Literal ;
+              dcterms:hasVersion <http://dublincore.org/usage/terms/history/#titleT-002> ;
+              rdfs:comment "A name given to the resource."@en ;
+              rdfs:isDefinedBy dcterms: ;
+              rdfs:label "Title"@en .
 
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
@@ -358,12 +431,13 @@ rami:name rdf:type owl:DatatypeProperty ,
 
 
 ###  https://w3id.org/i40/rami#objectId
-rami:objectId rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty ;
+rami:objectId rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf dcterms:identifier ;
+              rdf:type owl:FunctionalProperty ;
               rdfs:domain rami:Asset ;
               rdfs:range schema:string ;
-              skos:definition "Unique ID for the Object/Entity"@en ;
-              skos:prefLabel "has Object Id"@en .
+              skos:definition "Unique ID for the Asset"@en ;
+              skos:prefLabel "has Asset Id"@en .
 
 
 ###  https://w3id.org/i40/rami#outputFrequency
@@ -385,7 +459,7 @@ rami:publishedURL rdf:type owl:DatatypeProperty .
 ###  https://w3id.org/i40/rami#receivedTime
 rami:receivedTime rdf:type owl:DatatypeProperty ;
                   rdfs:domain rami:Machine ;
-                  rdfs:range schema:dateTimeStamp ;
+                  rdfs:range schema:dateTime ;
                   skos:definition "received Time of a Machine"@en ;
                   skos:prefLabel "received Time"@en .
 
@@ -393,14 +467,13 @@ rami:receivedTime rdf:type owl:DatatypeProperty ;
 ###  https://w3id.org/i40/rami#recordedTime
 rami:recordedTime rdf:type owl:DatatypeProperty ;
                   rdfs:domain rami:Machine ;
-                  rdfs:range schema:dateTimeStamp ;
+                  rdfs:range schema:dateTime ;
                   rdfs:comment "Recorded Time for a Machine"@en ;
                   skos:prefLabel "recorded Time"@en .
 
 
 ###  https://w3id.org/i40/rami#releaseDate
 rami:releaseDate rdf:type owl:DatatypeProperty ;
-                 rdfs:domain rami:Standard ;
                  rdfs:range schema:date ;
                  skos:definition "Release Date of the Standard"@en ;
                  skos:prefLabel "Release Date"@en .
@@ -425,8 +498,7 @@ rami:typeDescription rdf:type owl:DatatypeProperty ;
 
 ###  https://w3id.org/i40/rami#version
 rami:version rdf:type owl:DatatypeProperty ;
-             rdfs:domain rami:Firmware ,
-                         rami:Standard ;
+             rdfs:domain rami:Firmware ;
              rdfs:range schema:string ;
              skos:definition "Current version of the Standard"@en ,
                              "Version of the Firmware that belongs to the Object/Entity"@en ;
@@ -447,6 +519,14 @@ ssn:SensorOutput rdf:type owl:Class ;
                  owl:equivalentClass rami:SensorMeasurementData .
 
 
+###  http://purl.org/dc/terms/BibliographicResource
+dcterms:BibliographicResource rdf:type owl:Class ;
+                              dcterms:hasVersion <http://dublincore.org/usage/terms/history/#BibliographicResource-001> ;
+                              rdfs:comment "A book, article, or other documentary resource."@en ;
+                              rdfs:isDefinedBy dcterms: ;
+                              rdfs:label "Bibliographic Resource"@en .
+
+
 ###  http://www.w3.org/ns/prov#Agent
 prov:Agent rdf:type owl:Class .
 
@@ -464,8 +544,11 @@ rami:AdminShell rdf:type owl:Class ;
                                "Verwaltungsschale"@de .
 
 
-###  https://w3id.org/i40/rami#AdminShellSubModel
-rami:AdminShellSubModel rdf:type owl:Class .
+###  https://w3id.org/i40/rami#AdminShellSubmodel
+rami:AdminShellSubmodel rdf:type owl:Class ;
+                        rdfs:comment "Describes the Administration Shell concept to organize/classify standards into submodels"@en ;
+                        rdfs:isDefinedBy <https://www.plattform-i40.de/I40/Redaktion/EN/Downloads/Publikation/structure-of-the-administration-shell.pdf?__blob=publicationFile&v=7> ;
+                        rdfs:label "Admin Shell Sub Model"@en .
 
 
 ###  https://w3id.org/i40/rami#ApplicationData
@@ -488,7 +571,7 @@ rami:Asset rdf:type owl:Class ;
 
 ###  https://w3id.org/i40/rami#BasicData
 rami:BasicData rdf:type owl:Class ;
-               skos:definition "Describe the different types of Data related to the I4.0 Entity/Object"@en ;
+               skos:definition "Describe the different types of Data related to the I4.0 Entity/Asset"@en ;
                skos:prefLabel "Data"@en ,
                               "Daten"@de .
 
@@ -500,7 +583,7 @@ rami:CumulativeEnergyConsumption rdf:type owl:Class .
 ###  https://w3id.org/i40/rami#ElectricalData
 rami:ElectricalData rdf:type owl:Class ;
                     rdfs:subClassOf rami:BasicData ;
-                    skos:definition "Electrical Data for the Object"@en ;
+                    skos:definition "Electrical Data for the Asset"@en ;
                     skos:prefLabel "Electrical Data"@en .
 
 
@@ -522,10 +605,60 @@ rami:Firmware rdf:type owl:Class ;
                              "Firmware"@en .
 
 
+###  https://w3id.org/i40/rami#HierarchyLevelDimension
+rami:HierarchyLevelDimension rdf:type owl:Class ;
+                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                   owl:oneOf ( rami:ConnectedWorld
+                                                               rami:ControlDevice
+                                                               rami:Enterprise
+                                                               rami:FieldDevice
+                                                               rami:Product
+                                                               rami:Station
+                                                               rami:WorkCenter
+                                                             )
+                                                 ] ;
+                             rdfs:seeAlso <http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx> ;
+                             skos:definition "It describes the functional classification of various circumstances within Industrie 4.0. For classification within a factory, this axis of the reference architecture(layers) follows the IEC 62264 Standard."@en ;
+                             skos:prefLabel "RAMI Hierarchy Level Dimension"@en .
+
+
+###  https://w3id.org/i40/rami#ITLayerDimension
+rami:ITLayerDimension rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Class ;
+                                            owl:oneOf ( rami:Asset
+                                                        rami:Business
+                                                        rami:Communication
+                                                        rami:Functional
+                                                        rami:Information
+                                                        rami:Integration
+                                                      )
+                                          ] ;
+                      rdfs:label "RAMI IT Layer Dimension"@en .
+
+
+###  https://w3id.org/i40/rami#LifeCycleDimension
+rami:LifeCycleDimension rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Class ;
+                                              owl:oneOf ( rami:Asset
+                                                          rami:Business
+                                                          rami:Communication
+                                                          rami:Functional
+                                                          rami:Information
+                                                          rami:Integration
+                                                        )
+                                            ] ;
+                        rdfs:label "RAMI Life Cycle Dimension"@en ;
+                        rdfs:seeAlso <http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx> ,
+                                     "http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx" ;
+                        skos:definition "It describes the different Life Cycle and Value Stream layers for the RAMI model according to the IEC 62890 Standard."@en ;
+                        skos:prefLabel "RAMI Layer"@en ,
+                                       "RAMI Life Cycle Dimension"@en .
+
+
 ###  https://w3id.org/i40/rami#MCAD
 rami:MCAD rdf:type owl:Class ;
           rdfs:subClassOf rami:EngineeringData ;
-          skos:definition "Data that contain the files used for Mechanical Computer Aid Design of a given object"@en ;
+          skos:definition "Data that contain the files used for Mechanical Computer Aid Design of a given asset"@en ;
           skos:prefLabel "MCAD"@de ,
                          "MCAD"@en .
 
@@ -543,41 +676,8 @@ rami:Order rdf:type owl:Class ;
            skos:prefLabel "Order"@en .
 
 
-###  https://w3id.org/i40/rami#RAMIHierarchyLevel
-rami:RAMIHierarchyLevel rdf:type owl:Class ;
-                        owl:equivalentClass [ rdf:type owl:Class ;
-                                              owl:oneOf ( rami:ConnectedWorld
-                                                          rami:ControlDevice
-                                                          rami:Enterprise
-                                                          rami:FieldDevice
-                                                          rami:Product
-                                                          rami:Station
-                                                          rami:WorkCenter
-                                                        )
-                                            ] ;
-                        rdfs:seeAlso <http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx> ;
-                        skos:definition "It describes the functional classification of various circumstances within Industrie 4.0. For classification within a factory, this axis of the reference architecture(layers) follows the IEC 62264 Standard."@en ;
-                        skos:prefLabel "RAMI Hierarchy Level"@en .
-
-
 ###  https://w3id.org/i40/rami#RAMILayer
 rami:RAMILayer rdf:type owl:Class .
-
-
-###  https://w3id.org/i40/rami#RAMILifeCycleLayer
-rami:RAMILifeCycleLayer rdf:type owl:Class ;
-                        owl:equivalentClass [ rdf:type owl:Class ;
-                                              owl:oneOf ( rami:Asset
-                                                          rami:Business
-                                                          rami:Communication
-                                                          rami:Functional
-                                                          rami:Information
-                                                          rami:Integration
-                                                        )
-                                            ] ;
-                        rdfs:seeAlso <http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx> ;
-                        skos:definition "It describes the different Life Cycle and Value Stream layers for the RAMI model according to the IEC 62890 Standard."@en ;
-                        skos:prefLabel "RAMI Layer"@en .
 
 
 ###  https://w3id.org/i40/rami#SafetyConfiguration
@@ -594,13 +694,6 @@ rami:SensorMeasurementData rdf:type owl:Class ;
                            rdfs:label "Sensor Data"@en .
 
 
-###  https://w3id.org/i40/rami#Standard
-rami:Standard rdf:type owl:Class ;
-              skos:definition "Standards that are used to describe the actual I4.0 Entity/Object"@en ;
-              skos:prefLabel "Standard"@de ,
-                             "Standard"@en .
-
-
 ###  https://w3id.org/i40/rami#TechnicalFunctionality
 rami:TechnicalFunctionality rdf:type owl:Class ;
                             skos:definition "Technical Functionality of the Administration Shell"@en ;
@@ -609,9 +702,21 @@ rami:TechnicalFunctionality rdf:type owl:Class ;
                                            "Technical Functionality"@en .
 
 
+###  https://w3id.org/i40/sto#Standard
+sto:Standard rdf:type owl:Class ;
+             rdfs:isDefinedBy <https://w3id.org/i40/sto/#Standard> ;
+             skos:definition "Standards that are used to describe the actual I4.0 Asset. Defined in the STO ontology"@en ;
+             skos:prefLabel "Standard"@en .
+
+
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://purl.org/dc/terms/
+dcterms: rdf:type owl:NamedIndividual ;
+         dcterms:title "DCMI Metadata Terms - other"@en .
+
 
 ###  https://w3id.org/i40/rami#Asset
 rami:Asset rdf:type owl:NamedIndividual .
@@ -627,28 +732,28 @@ rami:Communication rdf:type owl:NamedIndividual .
 
 ###  https://w3id.org/i40/rami#ConnectedWorld
 rami:ConnectedWorld rdf:type owl:NamedIndividual ,
-                             rami:RAMIHierarchyLevel ;
+                             rami:HierarchyLevelDimension ;
                     skos:definition "Connected World hierarchy level of RAMI 4.0. Group of Factories, and the collaboration with external engineering firms, component suppliers and customers"@en ;
                     skos:prefLabel "Connected World"@en .
 
 
 ###  https://w3id.org/i40/rami#ControlDevice
 rami:ControlDevice rdf:type owl:NamedIndividual ,
-                            rami:RAMIHierarchyLevel ;
+                            rami:HierarchyLevelDimension ;
                    skos:definition "Control Device hierarchy level of RAMI 4.0"@en ;
                    skos:prefLabel "Control Device"@en .
 
 
 ###  https://w3id.org/i40/rami#Enterprise
 rami:Enterprise rdf:type owl:NamedIndividual ,
-                         rami:RAMIHierarchyLevel ;
+                         rami:HierarchyLevelDimension ;
                 skos:definition "Enterprise hierarchy level of RAMI 4.0"@en ;
                 skos:prefLabel "Enterprise"@en .
 
 
 ###  https://w3id.org/i40/rami#FieldDevice
 rami:FieldDevice rdf:type owl:NamedIndividual ,
-                          rami:RAMIHierarchyLevel ;
+                          rami:HierarchyLevelDimension ;
                  skos:definition "Field Device hierarchy level of RAMI 4.0"@en ;
                  skos:prefLabel "Field Device"@en .
 
@@ -662,7 +767,8 @@ rami:Information rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/i40/rami#Instance
-rami:Instance rdf:type owl:NamedIndividual .
+rami:Instance rdf:type owl:NamedIndividual ,
+                       rami:LifeCycleDimension .
 
 
 ###  https://w3id.org/i40/rami#Integration
@@ -671,25 +777,27 @@ rami:Integration rdf:type owl:NamedIndividual .
 
 ###  https://w3id.org/i40/rami#Product
 rami:Product rdf:type owl:NamedIndividual ,
-                      rami:RAMIHierarchyLevel ;
+                      rami:HierarchyLevelDimension ;
              skos:definition "Product hierarchy level of RAMI 4.0"@en ;
              skos:prefLabel "Product"@en .
 
 
 ###  https://w3id.org/i40/rami#Station
 rami:Station rdf:type owl:NamedIndividual ,
-                      rami:RAMIHierarchyLevel ;
+                      rami:HierarchyLevelDimension ;
              skos:definition "Station hierarchy level of RAMI 4.0"@en ;
              skos:prefLabel "Station"@en .
 
 
 ###  https://w3id.org/i40/rami#Type
-rami:Type rdf:type owl:NamedIndividual .
+rami:Type rdf:type owl:NamedIndividual ,
+                   rami:LifeCycleDimension ;
+          rdfs:label "Type"@en .
 
 
 ###  https://w3id.org/i40/rami#WorkCenter
 rami:WorkCenter rdf:type owl:NamedIndividual ,
-                         rami:RAMIHierarchyLevel ;
+                         rami:HierarchyLevelDimension ;
                 skos:definition "Work Center hierarchy level of RAMI 4.0"@en ;
                 skos:prefLabel "Work Center"@en .
 
@@ -698,10 +806,114 @@ rami:WorkCenter rdf:type owl:NamedIndividual ,
 #    Annotations
 #################################################################
 
-dcterms:identifier rdfs:isDefinedBy dcterms: ;
+dcterms:DCMIType rdfs:seeAlso <http://purl.org/dc/dcmitype/> ;
+                 rdfs:label "DCMI Type Vocabulary"@en ;
+                 dcterms:hasVersion <http://dublincore.org/usage/terms/history/#DCMIType-005> ;
+                 rdfs:isDefinedBy dcterms: ;
+                 rdfs:comment "The set of classes specified by the DCMI Type Vocabulary, used to categorize the nature or genre of the resource."@en .
+
+
+dcterms:DDC rdfs:label "DDC"@en ;
+            dcterms:hasVersion <http://dublincore.org/usage/terms/history/#DDC-003> ;
+            rdfs:seeAlso <http://www.oclc.org/dewey/> ;
+            rdfs:isDefinedBy dcterms: ;
+            rdfs:comment "The set of conceptual resources specified by the Dewey Decimal Classification."@en .
+
+
+dcterms:IMT rdfs:seeAlso <http://www.iana.org/assignments/media-types/> ;
+            dcterms:hasVersion <http://dublincore.org/usage/terms/history/#IMT-004> ;
+            rdfs:label "IMT"@en ;
+            rdfs:comment "The set of media types specified by the Internet Assigned Numbers Authority."@en ;
+            rdfs:isDefinedBy dcterms: .
+
+
+dcterms:LCC rdfs:isDefinedBy dcterms: ;
+            rdfs:comment "The set of conceptual resources specified by the Library of Congress Classification."@en ;
+            rdfs:label "LCC"@en ;
+            rdfs:seeAlso <http://lcweb.loc.gov/catdir/cpso/lcco/lcco.html> ;
+            dcterms:hasVersion <http://dublincore.org/usage/terms/history/#LCC-003> .
+
+
+dcterms:LCSH rdfs:isDefinedBy dcterms: ;
+             dcterms:hasVersion <http://dublincore.org/usage/terms/history/#LCSH-003> ;
+             rdfs:comment "The set of labeled concepts specified by the Library of Congress Subject Headings."@en ;
+             rdfs:label "LCSH"@en .
+
+
+dcterms:MESH dcterms:hasVersion <http://dublincore.org/usage/terms/history/#MESH-003> ;
+             rdfs:comment "The set of labeled concepts specified by the Medical Subject Headings."@en ;
+             rdfs:isDefinedBy dcterms: ;
+             rdfs:label "MeSH"@en ;
+             rdfs:seeAlso <http://www.nlm.nih.gov/mesh/meshhome.html> .
+
+
+dcterms:NLM rdfs:seeAlso <http://wwwcf.nlm.nih.gov/class/> ;
+            rdfs:isDefinedBy dcterms: ;
+            dcterms:hasVersion <http://dublincore.org/usage/terms/history/#NLM-002> ;
+            rdfs:comment "The set of conceptual resources specified by the National Library of Medicine Classification."@en ;
+            rdfs:label "NLM"@en .
+
+
+dcterms:TGN rdfs:label "TGN"@en ;
+            rdfs:seeAlso <http://www.getty.edu/research/tools/vocabulary/tgn/index.html> ;
+            rdfs:comment "The set of places specified by the Getty Thesaurus of Geographic Names."@en ;
+            rdfs:isDefinedBy dcterms: ;
+            dcterms:hasVersion <http://dublincore.org/usage/terms/history/#TGN-003> .
+
+
+dcterms:UDC rdfs:isDefinedBy dcterms: ;
+            rdfs:label "UDC"@en ;
+            dcterms:hasVersion <http://dublincore.org/usage/terms/history/#UDC-003> ;
+            rdfs:comment "The set of conceptual resources specified by the Universal Decimal Classification."@en ;
+            rdfs:seeAlso <http://www.udcc.org/> .
+
+
+dcterms:accrualMethod dcterms:hasVersion <http://dublincore.org/usage/terms/history/#accrualMethod-003> ;
+                      rdfs:label "Accrual Method"@en ;
+                      rdfs:comment "The method by which items are added to a collection."@en ;
+                      rdfs:isDefinedBy dcterms: .
+
+
+dcterms:accrualPeriodicity rdfs:label "Accrual Periodicity"@en ;
+                           dcterms:hasVersion <http://dublincore.org/usage/terms/history/#accrualPeriodicity-003> ;
+                           rdfs:comment "The frequency with which items are added to a collection."@en ;
+                           rdfs:isDefinedBy dcterms: .
+
+
+dcterms:accrualPolicy rdfs:isDefinedBy dcterms: ;
+                      dcterms:hasVersion <http://dublincore.org/usage/terms/history/#accrualPolicy-003> ;
+                      rdfs:comment "The policy governing the addition of items to a collection."@en ;
+                      rdfs:label "Accrual Policy"@en .
+
+
+dcterms:identifier dcterms:hasVersion <http://dublincore.org/usage/terms/history/#identifierT-001> ;
+                   rdfs:isDefinedBy dcterms: ,
+                                    dc: ;
+                   dcterms:description "Recommended best practice is to identify the resource by means of a string conforming to a formal identification system. "@en ;
+                   skos:note "A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document \"DCMI Metadata Terms\" (http://dublincore.org/documents/dcmi-terms/) for an explanation."@en ;
                    skos:definition "Identification for the Entity/Object related data. It correspond to the ID concept of OMM"@en ;
                    rdfs:comment "An unambiguous reference to the resource within a given context."@en ;
                    rdfs:label "Identifier"@en .
+
+
+dcterms:instructionalMethod dcterms:description "Instructional Method will typically include ways of presenting instructional materials or conducting instructional activities, patterns of learner-to-learner and learner-to-instructor interactions, and mechanisms by which group and individual levels of learning are measured.  Instructional methods include all aspects of the instruction and learning processes from planning and implementation through evaluation and feedback."@en ;
+                            rdfs:label "Instructional Method"@en ;
+                            rdfs:comment "A process, used to engender knowledge, attitudes and skills, that the described resource is designed to support."@en ;
+                            dcterms:hasVersion <http://dublincore.org/usage/terms/history/#instructionalMethod-002> ;
+                            rdfs:isDefinedBy dcterms: .
+
+
+dcterms:provenance rdfs:comment "A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation."@en ;
+                   rdfs:isDefinedBy dcterms: ;
+                   dcterms:description "The statement may include a description of any changes successive custodians made to the resource."@en ;
+                   dcterms:hasVersion <http://dublincore.org/usage/terms/history/#provenance-002> ;
+                   rdfs:label "Provenance"@en .
+
+
+dcterms:rightsHolder rdfs:isDefinedBy dcterms: ;
+                     dcterms:hasVersion <http://dublincore.org/usage/terms/history/#rightsHolder-002> ;
+                     rdfs:comment "A person or organization owning or managing rights over the resource."@en ;
+                     rdfs:label "Rights Holder"@en .
 
 
 rami:Asset skos:altLabel "Object"@en ;
@@ -709,8 +921,8 @@ rami:Asset skos:altLabel "Object"@en ;
            skos:altLabel "Entity"@en ;
            skos:prefLabel "Asset"@en ;
            skos:definition "Eindeutig identifizierbarer Gegenstand, der aufgrund seiner Bedeutung in der Informationswelt verwaltet wird"@de ;
-           skos:note "Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en ;
-           skos:altLabel "Entität"@de .
+           skos:altLabel "Entität"@de ;
+           skos:note "Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en .
 
 
 rami:hasBrakingResistance skos:prefLabel "has Braking Resistance"@en .
