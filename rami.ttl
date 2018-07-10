@@ -1,6 +1,7 @@
 @prefix : <https://w3id.org/i40/rami#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix om: <http://www.wurvoc.org/vocabularies/om-1.8/> .
+@prefix DUL: <http://www.loa-cnr.it/ontologies/DUL.owl#> .
 @prefix dul: <http://www.loa-cnr.it/ontologies/DUL.owl#> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -19,7 +20,7 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://w3id.org/i40/rami> .
+@base <https://w3id.org/i40/rami#> .
 
 <https://w3id.org/i40/rami#> rdf:type owl:Ontology ;
                               void:vocabulary foaf: ;
@@ -194,10 +195,6 @@ om:hasUnit rdf:type owl:ObjectProperty ;
            rdfs:label "has unit"@en .
 
 
-###  https://w3id.org/i40/rami#BrakingResistance
-rami:BrakingResistance rdf:type owl:ObjectProperty .
-
-
 ###  https://w3id.org/i40/rami#containsAS
 rami:containsAS rdf:type owl:ObjectProperty ;
                 rdfs:domain rami:I4.0Component ;
@@ -218,8 +215,8 @@ rami:contributes rdf:type owl:ObjectProperty ;
 rami:describes rdf:type owl:ObjectProperty ;
                rdfs:domain rami:AdminShell ;
                rdfs:range rami:Asset ;
-               skos:definition "Connect the Asset with the Administration Shell"@en ;
-               skos:prefLabel "describes"@en .
+               rdfs:comment "Connect the Asset with the Administration Shell"@en ;
+               rdfs:label "describes"@en .
 
 
 ###  https://w3id.org/i40/rami#energyEfficiencyValue
@@ -228,10 +225,6 @@ rami:energyEfficiencyValue rdf:type owl:ObjectProperty ;
                            rdfs:range om:Measure ;
                            rdfs:comment "Points to the value of the Energy Efficiency comsuption."@en ;
                            rdfs:label "energy Efficiency Value"@en .
-
-
-###  https://w3id.org/i40/rami#hasBrakingResistance
-rami:hasBrakingResistance rdf:type owl:ObjectProperty .
 
 
 ###  https://w3id.org/i40/rami#hasComponentManager
@@ -256,10 +249,6 @@ rami:hasDatatype rdf:type owl:ObjectProperty ;
                  rdfs:label "has Datatype"@en .
 
 
-###  https://w3id.org/i40/rami#hasInputVoltage
-rami:hasInputVoltage rdf:type owl:ObjectProperty .
-
-
 ###  https://w3id.org/i40/rami#hasManifest
 rami:hasManifest rdf:type owl:ObjectProperty ;
                  rdfs:domain rami:AdminShell ;
@@ -282,6 +271,7 @@ rami:hasRAMILifeCycleLayer rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/i40/rami#hasReference
 rami:hasReference rdf:type owl:ObjectProperty ;
+                  rdfs:domain rami:Submodel ;
                   rdfs:label "has Reference"@en .
 
 
@@ -340,14 +330,6 @@ rami:isDescribedWith rdf:type owl:ObjectProperty ;
                      rdfs:range sto:Standard .
 
 
-###  https://w3id.org/i40/rami#maxOutputFrequency
-rami:maxOutputFrequency rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/i40/rami#outputFrequency
-rami:outputFrequency rdf:type owl:ObjectProperty .
-
-
 ###  https://w3id.org/i40/rami#usesStandard
 rami:usesStandard rdf:type owl:ObjectProperty ;
                   rdfs:range sto:Standard ;
@@ -359,28 +341,8 @@ rami:usesStandard rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://purl.org/dc/terms/alternative
-dcterms:alternative rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf dcterms:title ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description "The distinction between titles and alternative titles is application-specific."@en ;
-                    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#alternative-003> ;
-                    rdfs:comment "An alternative name for the resource."@en ;
-                    rdfs:isDefinedBy dcterms: ;
-                    rdfs:label "Alternative Title"@en .
-
-
 ###  http://purl.org/dc/terms/identifier
 dcterms:identifier rdf:type owl:DatatypeProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:DatatypeProperty ;
-              rdfs:range rdfs:Literal ;
-              dcterms:hasVersion <http://dublincore.org/usage/terms/history/#titleT-002> ;
-              rdfs:comment "A name given to the resource."@en ;
-              rdfs:isDefinedBy dcterms: ;
-              rdfs:label "Title"@en .
 
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
@@ -441,10 +403,6 @@ rami:hasAssetId rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Unique identification for the Asset."@en ;
                 rdfs:label "has Asset Id"@en .
-
-
-###  https://w3id.org/i40/rami#hasBrakingResistance
-rami:hasBrakingResistance rdf:type owl:DatatypeProperty .
 
 
 ###  https://w3id.org/i40/rami#hasEnergyValue
@@ -518,15 +476,6 @@ rami:subModelID rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Unique Identification for a Submodel"@en ;
                 rdfs:label "sub Model Id"@en .
-
-
-###  https://w3id.org/i40/rami#version
-rami:version rdf:type owl:DatatypeProperty ;
-             rdfs:range xsd:string ;
-             skos:definition "Current version of the Standard"@en ,
-                             "Version of the Firmware that belongs to the Object/Entity"@en ;
-             skos:prefLabel "Version"@en ,
-                            "has Version"@en .
 
 
 #################################################################
@@ -721,14 +670,6 @@ rami:Structure rdf:type owl:Class ;
 rami:Submodel rdf:type owl:Class ;
               rdfs:comment "Describe the different types of Data related to the I4.0 Asset"@en ;
               rdfs:label "Submodel"@en .
-
-
-###  https://w3id.org/i40/rami#TechnicalFunctionality
-rami:TechnicalFunctionality rdf:type owl:Class ;
-                            skos:definition "Technical Functionality of the Administration Shell"@en ;
-                            skos:note "Technical functionality takes place in the Functional Layer of the reference architecture model RAMI4.0"@en ;
-                            skos:prefLabel "Fachliche Funktionalität"@de ,
-                                           "Technical Functionality"@en .
 
 
 ###  https://w3id.org/i40/rami#TransportInterface
@@ -1035,8 +976,6 @@ rami:Station rdf:type owl:NamedIndividual ,
 
 ###  https://w3id.org/i40/rami#TechnicalData1
 rami:TechnicalData1 rdf:type owl:NamedIndividual ;
-                    rami:BrakingResistance rami:BrakingResistanceMs ;
-                    rami:maxOutputFrequency rami:maxOutputFrequencyMs ;
                     rdfs:label "Technical Data 1"@en ;
                     rami:display "Seven-segment display"@en .
 
@@ -1079,9 +1018,6 @@ rami:Asset skos:altLabel "Object"@en ;
            skos:definition "Eindeutig identifizierbarer Gegenstand, der aufgrund seiner Bedeutung in der Informationswelt verwaltet wird"@de ;
            skos:note "Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en ;
            skos:altLabel "Entität"@de .
-
-
-rami:hasBrakingResistance skos:prefLabel "has Braking Resistance"@en .
 
 
 rami:isDescribedWith skos:definition "Points to the Standard used to describe a given object"@en ;
