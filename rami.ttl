@@ -199,14 +199,6 @@ om:hasUnit rdf:type owl:ObjectProperty ;
 rami:BrakingResistance rdf:type owl:ObjectProperty .
 
 
-###  https://w3id.org/i40/rami#comprises
-rami:comprises rdf:type owl:ObjectProperty ;
-               rdfs:domain rami:AdminShell ;
-               rdfs:range rami:Submodel ;
-               rdfs:comment "The Administration Shell comprises Submodels"@en ;
-               rdfs:label "comprises"@en .
-
-
 ###  https://w3id.org/i40/rami#containsAS
 rami:containsAS rdf:type owl:ObjectProperty ;
                 rdfs:domain rami:I4.0Component ;
@@ -308,20 +300,6 @@ rami:hasSubmodel rdf:type owl:ObjectProperty ;
                  rdfs:range rami:Submodel ;
                  rdfs:comment "Points to the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en ;
                  rdfs:label "has Submodel"@en .
-
-
-###  https://w3id.org/i40/rami#hasTechnicalData
-rami:hasTechnicalData rdf:type owl:ObjectProperty ;
-                      rdfs:domain rami:AdminShell ;
-                      rdfs:label "has Technical Data"@en .
-
-
-###  https://w3id.org/i40/rami#hasTechnicalFunctionality
-rami:hasTechnicalFunctionality rdf:type owl:ObjectProperty ;
-                               rdfs:domain rami:AdminShell ;
-                               rdfs:range rami:TechnicalFunctionality ;
-                               skos:definition "The Administrative Shell has Technical Funcionalities"@en ;
-                               skos:prefLabel "has Technical Funcionality"@en .
 
 
 ###  https://w3id.org/i40/rami#hasValue
@@ -446,6 +424,16 @@ rami:description rdf:type owl:DatatypeProperty ;
                  skos:prefLabel "has Description"@en .
 
 
+###  https://w3id.org/i40/rami#hasAdminShellId
+rami:hasAdminShellId rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf dcterms:identifier ;
+                     rdf:type owl:FunctionalProperty ;
+                     rdfs:domain rami:AdminShell ;
+                     rdfs:range xsd:string ;
+                     skos:definition "Unique Identification of the Administration Shell"@en ;
+                     skos:prefLabel "has AdminShell Id"@en .
+
+
 ###  https://w3id.org/i40/rami#hasAssetId
 rami:hasAssetId rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf dcterms:identifier ;
@@ -460,10 +448,6 @@ rami:hasAssetId rdf:type owl:DatatypeProperty ;
 rami:hasBrakingResistance rdf:type owl:DatatypeProperty .
 
 
-###  https://w3id.org/i40/rami#hasDate
-rami:hasDate rdf:type owl:DatatypeProperty .
-
-
 ###  https://w3id.org/i40/rami#hasEnergyValue
 rami:hasEnergyValue rdf:type owl:DatatypeProperty ;
                     rdfs:domain rami:CumulativeEnergyConsumption ;
@@ -471,28 +455,20 @@ rami:hasEnergyValue rdf:type owl:DatatypeProperty ;
                     skos:prefLabel "has Energy Value"@en .
 
 
-###  https://w3id.org/i40/rami#hasInputVoltage
-rami:hasInputVoltage rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/i40/rami#hasPhase
-rami:hasPhase rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/i40/rami#hasSensorId
-rami:hasSensorId rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf dcterms:identifier ;
-                 rdf:type owl:FunctionalProperty ;
-                 rdfs:domain ssn:Sensor ;
-                 rdfs:range xsd:string ;
-                 skos:definition "Unique Identification of the Administration Shell"@en ;
-                 skos:prefLabel "has AdminShell Id"@en .
+###  https://w3id.org/i40/rami#hasI40ComponentId
+rami:hasI40ComponentId rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf dcterms:identifier ;
+                       rdf:type owl:FunctionalProperty ;
+                       rdfs:domain rami:I4.0Component ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Unique Identification of the Industry 4.0 component."@en ;
+                       rdfs:label "has I40 Component Id"@en .
 
 
 ###  https://w3id.org/i40/rami#inventoryNumber
 rami:inventoryNumber rdf:type owl:DatatypeProperty ,
                               owl:FunctionalProperty ;
-                     rdfs:domain rami:Submodel ;
+                     rdfs:domain rami:Asset ;
                      rdfs:range xsd:string ;
                      skos:definition "Inventory number of the Entity/Object according to the identification nomenclature"@en ;
                      skos:prefLabel "Inventory Number"@en .
@@ -506,17 +482,6 @@ rami:isDescribedWith rdf:type owl:DatatypeProperty .
 rami:logs rdf:type owl:DatatypeProperty ;
           rdfs:range xsd:string ;
           skos:prefLabel "logs"@en .
-
-
-###  https://w3id.org/i40/rami#outputFrequency
-rami:outputFrequency rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/i40/rami#phasesNumber
-rami:phasesNumber rdf:type owl:DatatypeProperty ;
-                  rdfs:range xsd:string ;
-                  skos:example "Single phase, three phase" ;
-                  skos:prefLabel "Phases Number"@en .
 
 
 ###  https://w3id.org/i40/rami#publishedURL
@@ -554,15 +519,6 @@ rami:subModelID rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Unique Identification for a Submodel"@en ;
                 rdfs:label "sub Model Id"@en .
-
-
-###  https://w3id.org/i40/rami#typeDescription
-rami:typeDescription rdf:type owl:DatatypeProperty ;
-                     rdfs:domain rami:Submodel ;
-                     rdfs:range xsd:string ;
-                     rdfs:seeAlso <https://www.w3.org/2005/Incubator/omm/XGR-omm-20111026/> ;
-                     skos:definition "Describes the Entity/Object related data. It correspond to the Description concept of OMM"@en ;
-                     skos:prefLabel "type Description"@en .
 
 
 ###  https://w3id.org/i40/rami#version
@@ -834,14 +790,16 @@ om:ohm rdf:type owl:NamedIndividual .
 ###  https://w3id.org/i40/rami#AdminShell1
 rami:AdminShell1 rdf:type owl:NamedIndividual ,
                           rami:AdminShell ;
-                 rami:comprises rami:EnergyEfficiency1 ;
+                 rami:hasSubmodel rami:EnergyEfficiency1 ;
+                 rami:hasAdminShellId "AAS111"^^xsd:string ;
                  rdfs:label "Admin Shell 1"@en .
 
 
 ###  https://w3id.org/i40/rami#AdminShell2
 rami:AdminShell2 rdf:type owl:NamedIndividual ,
                           rami:AdminShell ;
-                 rami:comprises rami:EnergyEfficiency2 ;
+                 rami:hasSubmodel rami:EnergyEfficiency2 ;
+                 rami:hasAdminShellId "AAS112"^^xsd:string ;
                  rdfs:label "Admin Shell 2"@en .
 
 
@@ -849,7 +807,6 @@ rami:AdminShell2 rdf:type owl:NamedIndividual ,
 rami:AdminShellMotor rdf:type owl:NamedIndividual ,
                               rami:AdminShell ;
                      rami:describes rami:AssetMotorControl ;
-                     rami:hasTechnicalFunctionality rami:Platform1 ;
                      rdfs:label "Admin Shell Motor"@en .
 
 
@@ -860,21 +817,21 @@ rami:Asset rdf:type owl:NamedIndividual .
 ###  https://w3id.org/i40/rami#Asset1
 rami:Asset1 rdf:type owl:NamedIndividual ,
                      rami:Asset ;
+            rami:hasAssetId "AS711"^^xsd:string ;
             rdfs:label "Asset 1"@en .
 
 
 ###  https://w3id.org/i40/rami#Asset2
 rami:Asset2 rdf:type owl:NamedIndividual ,
                      rami:Asset ;
+            rami:hasAssetId "AS712"^^xsd:string ;
             rdfs:label "Asset 2"@en .
 
 
 ###  https://w3id.org/i40/rami#AssetMotorControl
 rami:AssetMotorControl rdf:type owl:NamedIndividual ,
                                 rami:Asset ;
-                       rami:hasTechnicalData rami:TechnicalData1 ;
                        rami:hasAssetId "1501325"^^xsd:string ;
-                       rami:hasPhase "Single-phase"@en ;
                        rdfs:label "Motor control"@en .
 
 
@@ -984,6 +941,7 @@ rami:Functional rdf:type owl:NamedIndividual .
 rami:I4.0Component1 rdf:type owl:NamedIndividual ,
                              rami:I4.0Component ;
                     rami:containsAS rami:AdminShell2 ;
+                    rami:hasI40ComponentId "I40C112"^^xsd:string ;
                     rdfs:label "I4.0 Component 2"@en .
 
 
@@ -991,6 +949,7 @@ rami:I4.0Component1 rdf:type owl:NamedIndividual ,
 rami:I4.0Component2 rdf:type owl:NamedIndividual ,
                              rami:I4.0Component ;
                     rami:containsAS rami:AdminShell1 ;
+                    rami:hasI40ComponentId "I40C111"^^xsd:string ;
                     rdfs:label "I4.0 Component 1"@en .
 
 
@@ -1110,8 +1069,8 @@ rami:maxOutputFrequencyMs rdf:type owl:NamedIndividual ,
 om:hasNumericalValue rdfs:label "has numerical value"@en .
 
 
-foaf:image rdfs:label "image"@en ;
-           rdfs:comment "Image of the Asset"@en .
+foaf:image rdfs:comment "Image of the Asset reused from the FOAF ontology."@en ;
+           rdfs:label "image"@en .
 
 
 rami:Asset skos:altLabel "Object"@en ;
@@ -1126,15 +1085,8 @@ rami:Asset skos:altLabel "Object"@en ;
 rami:hasBrakingResistance skos:prefLabel "has Braking Resistance"@en .
 
 
-rami:hasInputVoltage skos:prefLabel "has Input Voltage"@en ;
-                     skos:example "230 V AC / 50-60 Hz" .
-
-
 rami:isDescribedWith skos:definition "Points to the Standard used to describe a given object"@en ;
                      skos:prefLabel "Is Described With"@en .
-
-
-rami:outputFrequency skos:prefLabel "Output Frequency"@en .
 
 
 #################################################################
