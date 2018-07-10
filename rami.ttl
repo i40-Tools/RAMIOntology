@@ -20,7 +20,7 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://w3id.org/i40/rami#> .
+@base <https://w3id.org/i40/rami> .
 
 <https://w3id.org/i40/rami#> rdf:type owl:Ontology ;
                               void:vocabulary foaf: ;
