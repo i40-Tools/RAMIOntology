@@ -14,9 +14,9 @@
 #	SHACL syntax checking: http://shacl.org/playground/
 #	SHACL Advanced Features: https://w3c.github.io/data-shapes/shacl-af/
 
-<#ViewShape>
+<#HasKindShape>
     a sh:NodeShape ;
-    sh:targetClass rami:View ;
+    sh:targetClass rami:HasKind ;
     sh:property [
       sh:path rdf:type ;
       sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
@@ -24,30 +24,21 @@
     ] ;
 	sh:constraint [
 		sh:nodeKind sh:IRI ;
-		sh:message "Each asset object must be an URI."@en ;
+		sh:message "Each rami:HasKind object must be a URI."@en ;
 	] ;
     sh:property [
-      sh:path rami:idShort ;
-	  sh:valueDatatype xsd:string ;
-      sh:minCount 0 ; # optional?
+      sh:path rami:hasKind ;
+      sh:minCount 0 ;
       sh:maxCount 1 ;
-      sh:severity sh:Violation ;
-      sh:message "Each view must have at least one short ID with datatype xsd:string."@en ;
-    ] ;
-    sh:property [
-      sh:path rami:semanticId ;
 	  sh:someOf [ 
 		sh:constraint [
-			sh:nodeKind sh:IRI ;
+			sh:nodeKind sh:Type ;
 		] ;
 		sh:constraint [
-			sh:nodeKind rami:IRDI ;
-		] ;
-		sh:constraint [
-			sh:nodeKind rami:Internal ;
+			sh:nodeKind rami:Instance ;
 		] ;
 	  ] ;
-      sh:minCount 0 ; # optional?
       sh:severity sh:Violation ;
-      sh:message "Each view must have at least one semanticId attribute."@en ;
+      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
     ] .
+	

@@ -24,8 +24,8 @@
 
 <https://w3id.org/i40/rami#> rdf:type owl:Ontology ;
                               void:vocabulary foaf: ;
-                              vann:preferredNamespaceUri "https://w3id.org/i40/rami#" ;
                               rdfs:comment "Update implementing the specifiations coming from 'Details of the Asset Administration Shell - Part 1: The exchange of information between partners in the value chain of Industrie 4.0 (Version 1.0)'" ;
+                              vann:preferredNamespaceUri "https://w3id.org/i40/rami#" ;
                               void:vocabulary rdf: ;
                               owl:versionInfo 0.4 ;
                               skos:definition "An Ontology to represents the Reference Architecture Model for Industry 4.0 (RAMI), including the concept of the Administration Shell I4.0 Component."@en ;
@@ -162,7 +162,9 @@ rami:assetId rdf:type owl:AnnotationProperty ;
 
 ###  https://w3id.org/i40/rami#description
 rami:description rdf:type owl:AnnotationProperty ;
-                 rdfs:subPropertyOf rdfs:comment .
+                 rdfs:subPropertyOf rdfs:comment ;
+                 rdfs:range xsd:string ;
+                 rdfs:domain rami:Asset .
 
 
 ###  https://w3id.org/i40/rami#display
@@ -260,6 +262,15 @@ rami:asset rdf:type owl:ObjectProperty ;
            rdfs:label "asset"@en .
 
 
+###  https://w3id.org/i40/rami#assetIdentificationModel
+rami:assetIdentificationModel rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf rami:hasSubmodel ;
+                              rdfs:comment """A reference to a Submodel that defines the handling of
+additional domain specific (proprietary) Identifiers for
+the asset like e.g. serial number etc."""@en ;
+                              rdfs:label "has Asset Identification Model"@en .
+
+
 ###  https://w3id.org/i40/rami#conceptDescription
 rami:conceptDescription rdf:type owl:ObjectProperty ;
                         rdfs:range rami:ConceptDescription ;
@@ -321,12 +332,13 @@ rami:hasData rdf:type owl:ObjectProperty ;
              rdfs:domain rami:AdminShell ;
              rdfs:range rami:Submodel ;
              skos:definition "Connects the AdminShell with the different types of Data for the Object/Entity"@en ;
+             skos:note "compare with hasDataSpecification" ;
              skos:prefLabel "has Data"@en .
 
 
 ###  https://w3id.org/i40/rami#hasDataSpecification
 rami:hasDataSpecification rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf rami:hasDatatype ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
                           rdfs:comment "Global reference to the data specification template used by the element."@en ;
                           rdfs:label "has Data Specification"@en .
 
@@ -440,6 +452,14 @@ rami:security rdf:type owl:ObjectProperty ;
               skos:prefLabel "has security"@en .
 
 
+###  https://w3id.org/i40/rami#submodelElement
+rami:submodelElement rdf:type owl:ObjectProperty ;
+                     rdfs:range rami:SubmodelElement ;
+                     rdfs:comment """A submodel consists of zero or more
+submodel elements."""@en ;
+                     rdfs:label "has Submodel Element"@en .
+
+
 ###  https://w3id.org/i40/rami#usesStandard
 rami:usesStandard rdf:type owl:ObjectProperty ;
                   rdfs:range sto:Standard ;
@@ -493,9 +513,7 @@ rami:creationDate rdf:type owl:DatatypeProperty ;
 
 
 ###  https://w3id.org/i40/rami#description
-rami:description rdf:type owl:DatatypeProperty ;
-                 rdfs:domain rami:Asset ;
-                 rdfs:range xsd:string .
+rami:description rdf:type owl:DatatypeProperty .
 
 
 ###  https://w3id.org/i40/rami#hasAdminShellId
@@ -504,6 +522,7 @@ rami:hasAdminShellId rdf:type owl:DatatypeProperty ;
                      rdf:type owl:FunctionalProperty ;
                      rdfs:domain rami:AdminShell ;
                      rdfs:range xsd:string ;
+                     owl:deprecated "true"^^xsd:boolean ;
                      skos:definition "Unique Identification of the Administration Shell"@en ;
                      skos:prefLabel "has AdminShell Id"@en .
 
@@ -515,7 +534,8 @@ rami:hasAssetId rdf:type owl:DatatypeProperty ;
                 rdfs:domain rami:Asset ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Unique identification for the Asset."@en ;
-                rdfs:label "has Asset Id"@en .
+                rdfs:label "has Asset Id"@en ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/i40/rami#hasEnergyValue
@@ -532,7 +552,15 @@ rami:hasI40ComponentId rdf:type owl:DatatypeProperty ;
                        rdfs:domain rami:I4.0Component ;
                        rdfs:range xsd:string ;
                        rdfs:comment "Unique Identification of the Industry 4.0 component."@en ;
-                       rdfs:label "has I40 Component Id"@en .
+                       rdfs:label "has I40 Component Id"@en ;
+                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://w3id.org/i40/rami#id
+rami:id rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf dcterms:identifier ;
+        rdfs:comment "A globally unique identifier which is NOT a URI."@en ;
+        rdfs:label "identification"@en .
 
 
 ###  https://w3id.org/i40/rami#idShort
@@ -603,7 +631,8 @@ rami:subModelID rdf:type owl:DatatypeProperty ;
                 rdfs:domain rami:Submodel ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Unique Identification for a Submodel"@en ;
-                rdfs:label "sub Model Id"@en .
+                rdfs:label "sub Model Id"@en ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 #################################################################
@@ -680,6 +709,13 @@ rami:ConceptDescription rdf:type owl:Class ;
 
 ###  https://w3id.org/i40/rami#CumulativeEnergyConsumption
 rami:CumulativeEnergyConsumption rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/rami#DataSpecification
+rami:DataSpecification rdf:type owl:Class ;
+                       rdfs:comment "Element that can have data specification templates. A template defines the additional attributes an element may or shall have."@en ;
+                       rdfs:label "DataSpecification"@en ;
+                       skos:note "abstract"@en .
 
 
 ###  https://w3id.org/i40/rami#Dimension
@@ -762,6 +798,14 @@ rami:ITLayerDimension rdf:type owl:Class ;
                       rdfs:label "RAMI IT Layer Dimension"@en .
 
 
+###  https://w3id.org/i40/rami#Identifiable
+rami:Identifiable rdf:type owl:Class ;
+                  rdfs:comment "An element that has a globally unique identifier."@en ;
+                  rdfs:label "Identifiable"@en ;
+                  owl:deprecated "true"@en ;
+                  skos:note "abstract"@en .
+
+
 ###  https://w3id.org/i40/rami#LifeCycleDimension
 rami:LifeCycleDimension rdf:type owl:Class ;
                         owl:equivalentClass [ rdf:type owl:Class ;
@@ -831,12 +875,18 @@ rami:Structure rdf:type owl:Class ;
 
 ###  https://w3id.org/i40/rami#Submodel
 rami:Submodel rdf:type owl:Class ;
-              rdfs:comment "Describe the different types of Data related to the I4.0 Asset"@en ;
+              rdfs:comment """A Submodel defines a specific aspect of the asset represented by the AAS.
+A submodel is used to structure the virtual representation and technical functionality of an Administration Shell into distinguishable parts. Each submodel refers to a well-defined domain or subject matter.
+Submodels can become standardized and thus become submodels types. Submodels can have different life-cycles."""@en ,
+                           "Describe the different types of Data related to the I4.0 Asset"@en ;
               rdfs:label "Submodel"@en .
 
 
 ###  https://w3id.org/i40/rami#SubmodelElement
-rami:SubmodelElement rdf:type owl:Class .
+rami:SubmodelElement rdf:type owl:Class ;
+                     rdfs:comment "A submodel element is an element suitable for the description and differentiation of assets."@en ;
+                     rdfs:label "Submodel Element"@en ;
+                     skos:note "abstract"@en .
 
 
 ###  https://w3id.org/i40/rami#TransportInterface
@@ -1222,10 +1272,10 @@ foaf:image rdfs:comment "Image of the Asset reused from the FOAF ontology."@en ;
 
 
 rami:Asset skos:altLabel "Object"@en ;
-           skos:definition "Clearly identifiable asset for the Administration Shell"@en ;
            rdfs:comment """An Asset describes meta data of an asset that is represented by an AAS.
 The asset may either represent an asset type or an asset instance.
 The asset has a globally unique identifier plus – if needed – additional domain specific (proprietary) identifiers."""@en ;
+           skos:definition "Clearly identifiable asset for the Administration Shell"@en ;
            skos:altLabel "Entity"@en ;
            skos:prefLabel "Asset"@en ;
            skos:definition "Eindeutig identifizierbarer Gegenstand, der aufgrund seiner Bedeutung in der Informationswelt verwaltet wird"@de ;
@@ -1233,7 +1283,8 @@ The asset has a globally unique identifier plus – if needed – additional dom
            skos:altLabel "Entität"@de .
 
 
-rami:assetId rdfs:label "id"@en ;
+rami:assetId owl:deprecated "true"^^xsd:boolean ;
+             rdfs:label "id"@en ;
              rdfs:comment "The unique identifier of an asset. Note the difference between the 'asset ID' idenitfier and the URIs for the resources."@en .
 
 
@@ -1241,10 +1292,12 @@ rami:description skos:prefLabel "has Description"@en ;
                  rdfs:comment "Description or comments on the element. The description can be provided in several languages."@en .
 
 
-rami:idShort rdfs:label "idShort"@en .
+rami:idShort rdfs:label "idShort"@en ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
-rami:isCaseOf rdfs:comment "links to the concept definition in an external repository the concept description is a copy from or that it corresponds to."@en ;
+rami:isCaseOf owl:deprecated "true"^^xsd:boolean ;
+              rdfs:comment "links to the concept definition in an external repository the concept description is a copy from or that it corresponds to."@en ;
               rdfs:label "isCaseOf"@en .
 
 

@@ -34,9 +34,55 @@
       sh:message "A short id attribute must be set for each asset."@en ;
     ] ;
     sh:property [
+      sh:path rami:assetIdentificationModel ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+	  sh:class rami:Submodel ;
+      sh:severity sh:Violation ;
+      sh:message "An Asset can have at maximum one Submodel as an Asset Identification Model."@en ;
+    ] ;
+	# Asset inherits from Identifiable
+    sh:property [
+      sh:path rami:administration ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+	  sh:class rami:AdministrativeInformation ;
+      sh:severity sh:Violation ;
+      sh:message ""@en ;
+    ] ;
+    sh:property [
+      sh:path rami:id ;
+      sh:minCount 0 ;
+      sh:message "An identifiable entity can have a rami:id."@en ; 
+    ] ;
+	# Asset inherits from DataSpecification
+    sh:property [
+      sh:path rami:hasDataSpecification ;
+      sh:minCount 0 ;
+	  sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
+      sh:severity sh:Violation ;
+      sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
+    ] ;
+    sh:property [
       sh:path rami:hasSubmodel ;
       sh:class rami:Submodel ;
       sh:minCount 0 ;
-      #sh:message ""@en ; 
+      sh:message "A DataSpecification entity can have a rami:hasSubmodel relation to a rami:Submodel."@en ; 
+    ]  ;
+	# Asset inherits from HasKind
+    sh:property [
+      sh:path rami:hasKind ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+	  sh:someOf [ 
+		sh:constraint [
+			sh:nodeKind sh:Type ;
+		] ;
+		sh:constraint [
+			sh:nodeKind rami:Instance ;
+		] ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
     ] .
 	

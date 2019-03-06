@@ -14,20 +14,21 @@
 #	SHACL syntax checking: http://shacl.org/playground/
 #	SHACL Advanced Features: https://w3c.github.io/data-shapes/shacl-af/
 
-<#SubmodelElementShape>
+<#AdministrativeInformationShape>
     a sh:NodeShape ;
-    sh:targetClass rami:Submodel ;
+    sh:targetClass rami:AdministrativeInformation ;
     sh:property [
       sh:path rdf:type ;
       sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
 	  #sh:message ""@en ;
     ] ;
     sh:property [
-      sh:path rami:idShort ;
+      sh:path dcterms:hasVersion ;
 	  sh:valueDatatype xsd:string ;
-      sh:minCount 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
       sh:severity sh:Violation ;
-      sh:message "Each submodel element must have at least one short ID with datatype xsd:string."@en ;
+      sh:message "Each submodel element must have at max one version attribute with datatype xsd:string."@en ;
     ] ;
     sh:property [
       sh:path rami:semanticId ;
