@@ -853,6 +853,12 @@ rami:Platform rdf:type owl:Class .
 rami:Reference rdf:type owl:Class .
 
 
+###  https://w3id.org/i40/rami#RelationshipElement
+rami:RelationshipElement rdf:type owl:Class ;
+                         rdfs:comment "A relationship element is used to define a relationship between two referable elements."@en ;
+                         rdfs:label "Relationship Element"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#Security
 rami:Security rdf:type owl:Class .
 
