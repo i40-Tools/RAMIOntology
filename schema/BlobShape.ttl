@@ -1,0 +1,45 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+<#BlobShape>
+
+
+a sh:NodeShape ;
+    sh:targetClass rami:Blob ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rami:value ;
+        sh:class rami:value ;
+        sh:minCount 0 ;
+        sh:severity sh:Violation ;
+        sh:message "Each Blob needs a value-attribute, which is a BLOB data element"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:mimeType ;
+        sh:class rami:mimeType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Each Blob must refer to the mime-type, that is the content of the BLOB"@en
+    ] ;
+
+    # Blob inherits from DataElement (> SubmodelElelement):
+    sh:property [
+        sh:path rami:dataElement ;
+        sh:minCount 1 ;
+	    sh:constraint [
+		sh:nodeKind sh:URI ;
+	  ] ;
+        sh:severity sh:Violation ;
+        sh:message "rami:dataElement must be point to a proper URI."@en ;
+    ] ;

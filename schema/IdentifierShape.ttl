@@ -1,0 +1,35 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl.ttl> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+<#IdentiferShape>
+
+
+a sh:NodeShape ;
+    sh:targetClass rami:Identifier ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rami:idType ;
+        sh:class rami:idType ;
+        # sh:type ; specify the type
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "property value idType necessary"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:id ;
+        sh:class rami:id ;
+        #sh:nodeKind rami:Id ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ]
