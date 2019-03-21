@@ -22,10 +22,10 @@
       sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
 	  #sh:message ""@en ;
     ] ;
-	sh:constraint [
-		sh:nodeKind sh:IRI ;
-		sh:message "Each Identifiable object must be a URI."@en ;
-	] ;
+    sh:constraint [
+      sh:nodeKind sh:IRI ;
+      sh:message "Each Identifiable object must be a URI."@en ;
+    ] ;
     sh:property [
       sh:path rami:administration ;
       sh:minCount 0 ;

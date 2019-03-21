@@ -42,7 +42,7 @@
     sh:property [
       sh:path rami:hasDataSpecification ;
       sh:minCount 0 ;
-	  sh:nodeKind sh:URI ; # IRI also possible
+	  sh:nodeKind sh:URI ;
       sh:severity sh:Violation ;
       sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
     ] ;

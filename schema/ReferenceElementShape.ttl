@@ -62,7 +62,7 @@
     sh:property [
       sh:path rami:administration ;
       sh:minCount 0 ;
-      sh:maxCount 1 ;
+      sh:maxCount 1 ; 
 	    sh:class rami:AdministrativeInformation ;
       sh:severity sh:Violation ;
       sh:message ""@en ;

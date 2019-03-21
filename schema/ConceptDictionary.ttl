@@ -13,12 +13,8 @@
       sh:path rdf:type ;
       sh:minCount 1 ;
     ] ;
-
-
+    
     # inherits from Referable
-    ############################
-    # NOT MANDATORY (s. p. 37) #
-    ############################
     sh:property [
         sh:path rami:idShort ; 
         #sh:class xsd:string ;
@@ -51,10 +47,9 @@
 
     sh:property [
         sh:path rami:parent ;
-        sh:class rami:Referable ;
+        sh:class rami:Referable ; #reference to an abstract class ?? (polymorphism?)
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
         sh:message "..."@en ;
     ] .
-    ###########################

@@ -449,11 +449,22 @@ rami:isDescribedWith rdf:type owl:ObjectProperty ;
                      rdfs:range sto:Standard .
 
 
+###  https://w3id.org/i40/rami#ordered
+rami:ordered rdf:type owl:ObjectProperty ;
+             rdfs:comment "If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered."@en .
+
+
 ###  https://w3id.org/i40/rami#parent
 rami:parent rdf:type owl:ObjectProperty ;
             rdfs:comment """Reference to the next referable parent element of the element. Constraint AASd-004: Add parent in case of non-identifiable elements.
 Note: This element is used to ease navigation in the model and thus it enables more performant"""@en ;
             rdfs:label "parent"@en .
+
+
+###  https://w3id.org/i40/rami#qualifierValue
+rami:qualifierValue rdf:type owl:ObjectProperty ;
+                    rdfs:comment """The qualifier value is the value of the qualifier.
+Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."""@en .
 
 
 ###  https://w3id.org/i40/rami#security
@@ -859,6 +870,18 @@ rami:Order rdf:type owl:Class ;
 
 ###  https://w3id.org/i40/rami#Platform
 rami:Platform rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/rami#PropertyValueType
+rami:PropertyValueType rdf:type owl:Class ;
+                       dc:description """The qualifier value is the value of the qualifier.
+Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."""@en .
+
+
+###  https://w3id.org/i40/rami#Qualifier
+rami:Qualifier rdf:type owl:Class ;
+               dc:description "A qualifier is a type-value pair that makes additional statements w.r.t. the value of the element."@en ;
+               rdfs:label "Qualifier"@en .
 
 
 ###  https://w3id.org/i40/rami#Reference
