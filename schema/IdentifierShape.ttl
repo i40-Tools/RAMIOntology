@@ -32,4 +32,4 @@ a sh:NodeShape ;
         #sh:nodeKind rami:Id ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-    ]
+    ] .
