@@ -7,15 +7,26 @@
 @prefix rami: <https://w3id.org/i40/rami#> .
 
 
-<#DataElementShape>
-    a sh:NodeShape ;
-    sh:targetClass rami:DataElement ;
+<#ReferenceElementShaoe>
+    a sh:PropertyShape  ;
+    sh:path rami:property ; 
+    sh:datatype xsd:string ; 
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
+
     sh:property [
-      sh:path rdf:type ;
-      sh:minCount 1 ;
+        sh:path rami:value ;
+        sh:class rami:Reference ;
+        sh:minCount 0 ; # optional
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "rami:value as property in form of rami:Reference necessary"@en ;
     ] ;
 
+    # ReferenceElement inherits from DataElement
+
     #################################
+    # inherits from DataElement:    #
     # inherits from SubmodelElement #
     # copied all lines below        #
     #################################

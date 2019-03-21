@@ -14,7 +14,7 @@
 #	SHACL syntax checking: http://shacl.org/playground/
 #	SHACL Advanced Features: https://w3c.github.io/data-shapes/shacl-af/
 
-<#DataSpecificationShape>
+<#DataSpecificationShape> 
     a sh:NodeShape ;
     sh:targetClass rami:DataSpecification ;
     sh:property [
