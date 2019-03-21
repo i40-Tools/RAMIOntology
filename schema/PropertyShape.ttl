@@ -7,13 +7,13 @@
 @prefix rami: <https://w3id.org/i40/rami#> .
 
 
-<#PropertyShape>
-    a sh:NodeShape ;
-    sh:targetClass rami:Property ;
-    sh:property [
-      sh:path rdf:type ;
-      sh:minCount 1 ;
-    ] ;
+<#RamiPropertyShape>
+    a sh:PropertyShape  ;
+    sh:path rami:property ; 
+    sh:datatype xsd:string ; 
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
+
     #################################
     # not mandatory:
     sh:property [
@@ -21,7 +21,7 @@
         sh:class rami:PropertyValueType ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "value of the PropertyInstance"@en ;
+        sh:message "value of the PropertyInstance"@en 
     ] ;
 
     sh:property [
@@ -29,8 +29,8 @@
         sh:class rami:Reference ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "refers to the global unique identifier"@en ;
-    ]
+        sh:message "refers to the global unique identifier"@en 
+    ] ;
 
     #################################
 
@@ -59,7 +59,7 @@
       sh:path rami:administration ;
       sh:minCount 0 ;
       sh:maxCount 1 ;
-	  sh:class rami:AdministrativeInformation ;
+      sh:class rami:AdministrativeInformation ;
       sh:severity sh:Violation ;
       sh:message ""@en ;
     ] ;
@@ -86,9 +86,8 @@
         sh:nodeKind sh:URI ; # or IRDI ???
         sh:minCount 1 ; # mandatory
         sh:maxCount 1 ;
-        sh:severity sh:Violation [
-            sh:message "Every submodel element needs a semantic definition (semanticId in HasSemantics)"@en ;
-        ] ;
+        sh:severity sh:Violation ;
+        sh:message "Every submodel element needs exactly one semantic definition (semanticId in HasSemantics)"@en ;
     ] ;
 
     # HasKind:
