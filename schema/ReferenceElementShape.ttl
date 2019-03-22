@@ -53,19 +53,19 @@
       sh:path rami:qualifier ;
       sh:minCount 0 ;
 	    sh:constraint [
-		  sh:nodeKind sh:URI ; # Contraints are not part of the ontology
+		  sh:nodeKind sh:URI ; # Contraints are not part of the ontology => Do I have to implement constraints?
 	  ] ;
       sh:severity sh:Violation ;
       sh:message "rami:qualifier must be point to a proper URI."@en ;
     ] ;
 	# SubmodelElement inherits from Referable
     sh:property [
-      sh:path rami:administration ;
-      sh:minCount 0 ;
-      sh:maxCount 1 ; 
+        sh:path rami:administration ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ; 
 	    sh:class rami:AdministrativeInformation ;
-      sh:severity sh:Violation ;
-      sh:message ""@en ;
+        sh:severity sh:Violation ;
+        sh:message ""@en ;
     ] ;
 	# Submodel inherits from DataSpecification
     sh:property [

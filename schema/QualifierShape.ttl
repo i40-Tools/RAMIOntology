@@ -19,7 +19,7 @@
         sh:minCount 1 ;
         sh:maxCount 1 ; # MANDATORY!
         sh:severity sh:Violation ;
-        sh:message "Exactly one QualifierType instance is mandatory"@en^^^xsd:string ;
+        sh:message "Exactly one QualifierType instance is mandatory"@en ;
     ] ;
 
     sh:property [
@@ -28,15 +28,15 @@
         sh:minCount 0 ;
         sh:maxCount 1 ;
         #TODO: CHECK THE CONSTRAINT (s. p. 43)
-        [ rami:qualifierValueId sh:count 1 (
-            sh:and (
-                [ rami:qualifierValue sh:count 1 (
-                    sh:hasValue rami:qualifierValueId ; ) 
-                ]
-            )
-        ) ];
+        # [ rami:qualifierValueId sh:count 1 (
+        #    sh:and (
+        #        [ rami:qualifierValue sh:count 1 (
+        #            sh:hasValue rami:qualifierValueId ; )
+        #        ]
+        #    )
+        #) ]; # INVALID SYNTAX
         sh:severity sh:Violation ;
-        sh:message "value and valueID need to be identical if both are present"@en^^^xsd:string ;
+        sh:message "value and valueID need to be identical if both are present"@en ;
     ] ;
 
     sh:property [

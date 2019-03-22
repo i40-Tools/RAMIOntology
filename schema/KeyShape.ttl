@@ -33,14 +33,14 @@ a sh:NodeShape ;
     ] ; 
 
     sh:property [
-        sh:path sh:value ;
+        sh:path rami:value ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:valueDatatype xsd:string ;
     ] ;
 
     sh:property [
-        sh:path sh:idType ;
+        sh:path rami:idType ;
         sh:class rami:KeyType ;
         sh:minCount 1 ;
         sh:maxCount 1 ;

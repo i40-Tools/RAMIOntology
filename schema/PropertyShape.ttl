@@ -14,8 +14,6 @@
     sh:minCount 0 ;
     sh:maxCount 1 ;
 
-    #################################
-    # not mandatory:
     sh:property [
         sh:path rami:value ;
         sh:class rami:PropertyValueType ;
@@ -83,8 +81,8 @@
     # HasSemantics:
     sh:property [
         sh:path rami:semanticId ;
-        sh:nodeKind sh:URI ; # or IRDI ???
-        sh:minCount 1 ; # mandatory
+        sh:nodeKind sh:URI ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
         sh:message "Every submodel element needs exactly one semantic definition (semanticId in HasSemantics)"@en ;

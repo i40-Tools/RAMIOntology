@@ -462,9 +462,7 @@ Note: This element is used to ease navigation in the model and thus it enables m
 
 
 ###  https://w3id.org/i40/rami#qualifierType
-rami:qualifierType rdf:type owl:ObjectProperty ;
-                   rdfs:comment "The qualifierType describes the type of the qualifier that is applied to the element."@en ;
-                   rdfs:label "QualifierType"@en .
+rami:qualifierType rdf:type owl:ObjectProperty .
 
 
 ###  https://w3id.org/i40/rami#qualifierValue
@@ -494,6 +492,12 @@ rami:usesStandard rdf:type owl:ObjectProperty ;
                   rdfs:range sto:Standard ;
                   rdfs:comment "Points to the standards describing the functions attached to the asset via the administration shell"@en ;
                   rdfs:label "uses Standard"@en .
+
+
+###  https://w3id.org/i40/rami#value
+rami:value rdf:type owl:ObjectProperty ;
+           rdfs:comment "The key value, for example an IRDI if the idType=IRDI."@en ;
+           rdfs:label "keyValue"@en .
 
 
 #################################################################
