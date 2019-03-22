@@ -8,10 +8,12 @@
 
 
 <#QualifierShape>
-    a sh:QualifierShape  ;
-    sh:path rami:Qualifier ; 
-    sh:datatype xsd:string ; 
-    sh:minCount 1 ;
+    a sh:NodeShape ;
+    sh:targetClass rami:Qualifier ;
+    sh:property [
+      sh:path a ;
+      sh:minCount 1 ;
+    ] ;
 
     sh:property [
         sh:path rami:qualifierType ;

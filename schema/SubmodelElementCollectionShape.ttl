@@ -7,10 +7,17 @@
 @prefix rami: <https://w3id.org/i40/rami#> .
 
 
-<#SubmodelElementCollection>
-    a sh:SubmodelElementCollection  ;
-    sh:path rami:SubmodelElementCollection ; 
-    sh:minCount 1 ;
+<#SubmodelElementCollectionShape>
+    # a sh:SubmodelElementCollection  ;
+    # sh:path rami:SubmodelElementCollection ; 
+    # sh:minCount 1 ;
+    a sh:NodeShape ;
+    sh:targetClass rami:SubmodelElementCollection ;
+    
+    sh:property [
+      sh:path a ;
+      sh:minCount 1 ; # redundant
+    ] ;
 
     sh:property [
         sh:path rami:value ;
@@ -43,16 +50,16 @@
     sh:property [
       sh:path rami:hasDataSpecification ;
       sh:minCount 0 ;
-	  sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
+	  sh:nodeKind sh:IRDI ;
       sh:severity sh:Violation ;
-      sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
+      sh:message "rami:hasDataSpecification must point to a proper IRDI."@en ;
     ] ;
 
     #inherits from Referable
     sh:property [
         sh:path rami:idShort ; 
-        sh:class xsd:string ; #TODO: check!
-        #sh:valueDatatype xsd:string ;
+        #sh:class xsd:string ; #TODO: check!
+        sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
@@ -61,8 +68,8 @@
 
     sh:property [
         sh:path rami:category ;
-        sh:class xsd:string ;
-        #sh:valueDatatype xsd:string ;
+        #sh:class xsd:string ;
+        sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
@@ -71,8 +78,7 @@
 
     sh:property [
         sh:path rami:description ;
-        sh:class xsd:langString ;
-        #sh:valueDatatype xsd:langString ;
+        sh:valueDatatype xsd:langString ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;

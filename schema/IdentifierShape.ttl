@@ -8,11 +8,10 @@
 
 <#IdentiferShape>
 
-
-a sh:NodeShape ;
+    a sh:NodeShape ;
     sh:targetClass rami:Identifier ;
     sh:property [
-      sh:path rdf:type ;
+      sh:path a ;
       sh:minCount 1 ;
     ] ;
 

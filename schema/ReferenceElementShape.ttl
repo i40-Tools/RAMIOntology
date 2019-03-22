@@ -7,12 +7,19 @@
 @prefix rami: <https://w3id.org/i40/rami#> .
 
 
-<#ReferenceElementShaoe>
-    a sh:PropertyShape  ;
-    sh:path rami:property ; 
-    sh:datatype xsd:string ; 
-    sh:minCount 0 ;
-    sh:maxCount 1 ;
+<#ReferenceElementShape>
+    # a sh:PropertyShape  ;
+    # sh:path rami:property ; 
+    # sh:datatype xsd:string ; 
+    # sh:minCount 0 ;
+    # sh:maxCount 1 ;
+    a sh:NodeShape ;
+    sh:targetClass rami:ReferenceElement ;
+    sh:property [
+      sh:path a ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+    ] ;
 
     sh:property [
         sh:path rami:value ;
@@ -25,9 +32,9 @@
 
     # ReferenceElement inherits from DataElement
 
-    #################################
-    # inherits from DataElement:    #
-    # inherits from SubmodelElement #
+    ########################################################
+    # inherits from DataElement:                           #
+    # inherits from SubmodelElement                        #
     # copied all lines below from PropertyShape.ttl        #
     ########################################################
 

@@ -7,11 +7,11 @@
 @prefix rami: <https://w3id.org/i40/rami#> .
 
 <#RelationshipElementShape>
-    rdf:type sh:NodeShape ;
+    a sh:NodeShape ;
     sh:targetClass rami:RelationshipElement ;
     sh:property [
-      sh:path rdf:type ;
-      sh:minCount 1 ;
+      sh:path a ;
+      sh:minCount 1 ; # redundant
     ] ;
 
     sh:property [

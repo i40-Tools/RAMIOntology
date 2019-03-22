@@ -7,12 +7,10 @@
 @prefix rami: <https://w3id.org/i40/rami#> .
 
 <#KeyShape>
-
-
-a sh:NodeShape ;
+    a sh:NodeShape ;
     sh:targetClass rami:Key ;
     sh:property [
-      sh:path rdf:type ;
+      sh:path a ;
       sh:minCount 1 ;
     ] ;
 
