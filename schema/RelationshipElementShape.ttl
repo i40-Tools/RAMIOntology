@@ -1,0 +1,116 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+<#RelationshipElementShape>
+    rdf:type sh:NodeShape ;
+    sh:targetClass rami:RelationshipElement ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rami:first ;
+        sh:class rami:Referable ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "rami:first is taking the role of the subject."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:second ;
+        sh:class rami:Referable ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "rami:second in rami:RelationshipElement is taking the role of the object."@en ;
+    ] ;
+
+    #################################
+    # inherits from SubmodelElement #
+    #################################
+
+    sh:property [
+      sh:path rami:idShort ;
+	  sh:valueDatatype xsd:string ;
+      sh:minCount 1 ;
+      sh:severity sh:Violation ;
+      sh:message "Each submodel element must have at least one short ID with datatype xsd:string."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:semanticId ;
+	  sh:nodeKind sh:IRI ;
+      sh:minCount 1 ;
+      sh:severity sh:Violation ;
+      sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
+    ] ;
+
+    #########################################################
+	# SubmodelElement inherits from HasSemantics   (TODO)   #
+    ######################################################### 
+	
+    #############################################
+	# SubmodelElement inherits from Qualifiable #
+    #############################################
+    sh:property [
+      sh:path rami:qualifier ;
+      sh:minCount 0 ;
+	  sh:constraint [
+		sh:nodeKind sh:IRI ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:qualifier must be point to a proper IRI."@en ;
+    ] ;
+    #############################################
+	# SubmodelElement inherits from Referable   #
+    #############################################
+    sh:property [
+      sh:path rami:administration ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:message "..."@en ;
+    ] ;
+    #####################################
+    # inherits from DataSpecification   #
+    #####################################
+    sh:property [
+      sh:path rami:hasDataSpecification ;
+      sh:minCount 0 ;
+	  sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
+      sh:severity sh:Violation ;
+      sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:hasSubmodel ;
+      sh:class rami:Submodel ;
+      sh:minCount 0 ;
+      sh:message "A DataSpecification entity can have a rami:hasSubmodel relation to a rami:Submodel."@en ; 
+    ] ;
+    #####################################
+	# Submodel inherits from HasKind    #
+    #####################################
+    # copied!   #
+    #############
+    sh:property [
+      sh:path rami:hasKind ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+	  sh:someOf [ 
+		sh:constraint [
+			sh:nodeKind sh:Type ;
+		] ;
+		sh:constraint [
+			sh:nodeKind rami:Instance ;
+		] ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
+    ] .
