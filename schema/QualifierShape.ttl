@@ -1,0 +1,60 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+
+<#QualifierShape>
+    a sh:QualifierShape  ;
+    sh:path rami:Qualifier ; 
+    sh:datatype xsd:string ; 
+    sh:minCount 1 ;
+
+    sh:property [
+        sh:path rami:qualifierType ;
+        sh:class rami:QualifierType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ; # MANDATORY!
+        sh:severity sh:Violation ;
+        sh:message "Exactly one QualifierType instance is mandatory"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:qualifierValue ;
+        sh:class rami:PropertyValueType ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        #################################
+        ##if-based-constraints???########
+        # 
+        # TODO: CONSTRAINT (s. p. 43)
+        # [ rami:qualifierValueId sh:count 1 (
+        #    sh:and (
+        #        [ rami:qualifierValue sh:count 1 (
+        #            sh:hasValue rami:qualifierValueId ; ) ;
+        #        ] ;
+        #    ) ;
+        #) ; ]; # INVALID SYNTAX
+        sh:severity sh:Violation ;
+        sh:message "value and valueID need to be identical if both are present"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:qualifierValueId ;
+        sh:class rami:Reference ; # Reference is abstract and not defined
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "qualifierValueId is optional and of type Reference (abstract)" ;
+    ] .
+
+    # inherits from Constraint (not defined in the pdf     ?????????)
+    # TODO: Implement!
+
+    #########################################################
+    # inherits from HasSemantics                            #
+    # hasSemantics requirements are fulfilled by RDF itself #
+    #########################################################

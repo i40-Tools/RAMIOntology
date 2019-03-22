@@ -1,0 +1,24 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+
+<#ReferenceShape>
+    a sh:NodeShape ;
+    sh:targetClass rami:Reference ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ; 
+    ] ;
+
+    sh:property [
+        sh:path rami:key ;
+        sh:class rami:Key ;
+        sh:minCount 0 ;
+        sh:severity sh:violation ;
+        sh:message "a valid key property is necessary"@en ;
+    ] ;
