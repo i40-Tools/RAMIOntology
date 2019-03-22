@@ -22,10 +22,10 @@
       sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
 	  #sh:message ""@en ;
     ] ;
-	sh:constraint [
-		sh:nodeKind rami:IRDI ;
-		sh:message "Each asset object must be an IRDI."@en ;
-	] ;
+    sh:constraint [
+      sh:nodeKind rami:IRDI ;
+      sh:message "Each asset object must be an IRDI."@en ;
+    ] ;
 
     sh:property [
       sh:path rami:isCaseOf ;

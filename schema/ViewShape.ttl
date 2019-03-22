@@ -50,4 +50,12 @@
       sh:minCount 0 ; # optional?
       sh:severity sh:Violation ;
       sh:message "Each view must have at least one semanticId attribute."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:containedElement ;
+      sh:class rami:Refereable ;
+      sh:minCount 0 ;
+      sh:severity sh:Violation ;
+      sh:message "rami:containedElement(s) are referable elements that are contained in the view."@en ;
     ] .

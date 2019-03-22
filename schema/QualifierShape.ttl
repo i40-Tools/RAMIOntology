@@ -51,10 +51,10 @@
         sh:message "qualifierValueId is optional and of type Reference (abstract)" ;
     ] .
 
-    # inherits from Constraint (not defined in the pdf     ?????????)
-    # TODO: Implement!
+    #inherits from Constraint (not defined in the pdf     ?????????)
+    #TODO: Implement!
 
-    # ########################################################
+    #########################################################
     # inherits from HasSemantics                            #
     # hasSemantics requirements are fulfilled by RDF itself #
-    # ########################################################
+    #########################################################

@@ -15,6 +15,11 @@
       sh:minCount 1 ;
     ] ;
 
+    # sh:constraint [
+	# 	sh:nodeKind rami:IRDI ;
+	# 	sh:message "Each asset object must be an IRDI."@en ;
+	# ] ;
+
     sh:property [
         sh:path rami:mimeType ;
         sh:class rami:mimeType ;

@@ -6,24 +6,22 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
 
-
-<#ReferenceShape>
+<#OperationVariableShape>
     a sh:NodeShape ;
-    sh:targetClass rami:Reference ;
+    sh:targetClass rami:OperationVariable ;
     sh:property [
       sh:path rdf:type ;
-      sh:minCount 1 ; 
+      sh:minCount 1 ; # redundant
     ] ;
-    
-    sh:constraint [
-		sh:nodeKind rami:URI ;
-		sh:message "Each reference must be an URI."@en ;
-	] ;
 
     sh:property [
-        sh:path rami:key ;
-        sh:class rami:Key ;
-        sh:minCount 0 ;
-        sh:severity sh:violation ;
-        sh:message "a valid key property is necessary"@en ;
+      sh:path rami:value ;
+      sh:class rami:SubmodelElement ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ; # MANDATORY!
+      sh:constraint [
+			  sh:nodeKind sh:Type ;
+		  ] ;
+      sh:severity sh:Violation ;
+      sh:message "there should be exactly one value of type rami:SubmodelElement and this shall be of kind=Type."@en ;
     ] ;

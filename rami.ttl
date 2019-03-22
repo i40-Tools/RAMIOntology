@@ -290,6 +290,12 @@ rami:conceptDescription rdf:type owl:ObjectProperty ;
                         skos:altLabel "conceptDictionary"@en .
 
 
+###  https://w3id.org/i40/rami#containedElement
+rami:containedElement rdf:type owl:ObjectProperty ;
+                      rdfs:comment "Referable elements that are contained in the view."@en ;
+                      rdfs:label "containedElement"@en .
+
+
 ###  https://w3id.org/i40/rami#containsAS
 rami:containsAS rdf:type owl:ObjectProperty ;
                 rdfs:domain rami:I4.0Component ;
@@ -931,6 +937,12 @@ Constraint AASd-006: if both, the value and the valueId are present then the val
 rami:Qualifier rdf:type owl:Class ;
                dc:description "A qualifier is a type-value pair that makes additional statements w.r.t. the value of the element."@en ;
                rdfs:label "Qualifier"@en .
+
+
+###  https://w3id.org/i40/rami#Referable
+rami:Referable rdf:type owl:Class ;
+               rdfs:comment "An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en ;
+               rdfs:label "Referable"@en .
 
 
 ###  https://w3id.org/i40/rami#Reference
