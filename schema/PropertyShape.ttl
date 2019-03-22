@@ -9,8 +9,8 @@
 
 <#RamiPropertyShape>
     a sh:PropertyShape  ;
-    sh:path rami:property ; 
-    sh:datatype xsd:string ; 
+    sh:path rami:property ;
+    sh:datatype xsd:string ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
 

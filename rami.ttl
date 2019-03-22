@@ -913,8 +913,7 @@ rami:Manifest rdf:type owl:Class ;
 ###  https://w3id.org/i40/rami#OperationVariable
 rami:OperationVariable rdf:type owl:Class ;
                        dc:description "An operation variable is a submodel element that is used as input or output variable of an operation."@en ;
-                       rdfs:label "OperationVariable"@en ;
-                       owl:deprecated "false"@en .
+                       rdfs:label "Operation variable"@en .
 
 
 ###  https://w3id.org/i40/rami#Order

@@ -16,7 +16,7 @@
     a sh:NodeShape ;
     sh:targetClass rami:ReferenceElement ;
     sh:property [
-      sh:path a ;
+      sh:path rdf:type ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;

@@ -18,7 +18,7 @@
     a sh:NodeShape ;
     sh:targetClass rami:ConceptDescription ;
     sh:property [
-      sh:path a ;
+      sh:path rdf:type ;
       sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
 	  #sh:message ""@en ;
     ] ;

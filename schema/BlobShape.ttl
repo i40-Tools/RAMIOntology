@@ -11,7 +11,7 @@
 a sh:NodeShape ;
     sh:targetClass rami:Blob ;
     sh:property [
-      sh:path a ;
+      sh:path rdf:type ;
       sh:minCount 1 ;
     ] ;
 

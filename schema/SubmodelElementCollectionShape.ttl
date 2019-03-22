@@ -15,7 +15,7 @@
     sh:targetClass rami:SubmodelElementCollection ;
     
     sh:property [
-      sh:path a ;
+      sh:path rdf:type ;
       sh:minCount 1 ; # redundant
     ] ;
 

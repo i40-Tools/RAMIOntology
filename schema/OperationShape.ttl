@@ -10,7 +10,7 @@
     a sh:NodeShape ;
     sh:targetClass rami:Operation ;
     sh:property [
-      sh:path a ;
+      sh:path rdf:type ;
       sh:minCount 1 ;
     ] ;
     

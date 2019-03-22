@@ -79,7 +79,7 @@
 	sh:constraint [
 		sh:nodeKind sh:URI ;
 		sh:message "Each AAS object must be a URI."@en ;
-	] 
+	] ;
 	# AAS inherits from Identifiable
     sh:property [
       sh:path rami:administration ;

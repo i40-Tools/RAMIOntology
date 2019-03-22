@@ -10,7 +10,7 @@
     a sh:NodeShape ;
     sh:targetClass rami:OperationVariable ;
     sh:property [
-      sh:path a ;
+      sh:path rdf:type ;
       sh:minCount 1 ; # redundant
     ] ;
 
@@ -19,9 +19,83 @@
       sh:class rami:SubmodelElement ;
       sh:minCount 1 ;
       sh:maxCount 1 ; # MANDATORY!
-      sh:constraint [
-			  sh:nodeKind sh:Type ;
-		  ] ;
+      sh:node [
+        a sh:NodeShape ;
+        sh:path rami:kind ;
+        sh:hasValue rami:Type
+      ] ;
       sh:severity sh:Violation ;
       sh:message "there should be exactly one value of type rami:SubmodelElement and this shall be of kind=Type."@en ;
     ] ;
+
+    #################################
+    # inherits from SubmodelElement #
+    #################################
+
+    sh:property [
+      sh:path rami:idShort ;
+	  sh:valueDatatype xsd:string ;
+      sh:minCount 1 ;
+      sh:severity sh:Violation ;
+      sh:message "Each submodel element must have at least one short ID with datatype xsd:string."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:semanticId ;
+	  sh:nodeKind sh:IRI ;
+      sh:minCount 1 ;
+      sh:severity sh:Violation ;
+      sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
+    ] ;
+
+	# SubmodelElement inherits from Qualifiable
+    sh:property [
+      sh:path rami:qualifier ;
+      sh:minCount 0 ;
+	  sh:constraint [
+		sh:nodeKind sh:IRI ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:qualifier must be point to a proper IRI."@en ;
+    ] ;
+
+	# SubmodelElement inherits from Referable
+    sh:property [
+      sh:path rami:administration ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:message "..."@en ;
+    ] ;
+
+    # inherits from DataSpecification
+    sh:property [
+      sh:path rami:hasDataSpecification ;
+      sh:minCount 0 ;
+	  sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
+      sh:severity sh:Violation ;
+      sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:hasSubmodel ;
+      sh:class rami:Submodel ;
+      sh:minCount 0 ;
+      sh:message "A DataSpecification entity can have a rami:hasSubmodel relation to a rami:Submodel."@en ; 
+    ] ;
+
+	# Submodel inherits from HasKind
+    sh:property [
+      sh:path rami:hasKind ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+	  sh:someOf [ 
+		sh:constraint [
+			sh:nodeKind sh:Type ;
+		] ;
+		sh:constraint [
+			sh:nodeKind rami:Instance ;
+		] ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
+    ] .
