@@ -439,6 +439,11 @@ rami:hasView rdf:type owl:ObjectProperty ;
              skos:prefLabel "view"@en .
 
 
+###  https://w3id.org/i40/rami#in
+rami:in rdf:type owl:ObjectProperty ;
+        rdfs:comment "the rami:in attribute of rami:operation is the input parameter"@en .
+
+
 ###  https://w3id.org/i40/rami#inAccordanceWith
 rami:inAccordanceWith rdf:type owl:ObjectProperty ;
                       rdfs:domain rami:Submodel ;
@@ -468,6 +473,12 @@ rami:isDescribedWith rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/i40/rami#ordered
 rami:ordered rdf:type owl:ObjectProperty ;
              rdfs:comment "If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered."@en .
+
+
+###  https://w3id.org/i40/rami#out
+rami:out rdf:type owl:ObjectProperty ;
+         rdfs:comment "out is the output paramter of the Operation"@en ;
+         rdfs:label "out"@en .
 
 
 ###  https://w3id.org/i40/rami#parent
@@ -893,6 +904,13 @@ rami:Manifest rdf:type owl:Class ;
               rdfs:label "Manifest"@en .
 
 
+###  https://w3id.org/i40/rami#OperationVariable
+rami:OperationVariable rdf:type owl:Class ;
+                       dc:description "An operation variable is a submodel element that is used as input or output variable of an operation."@en ;
+                       rdfs:label "OperationVariable"@en ;
+                       owl:deprecated "false"@en .
+
+
 ###  https://w3id.org/i40/rami#Order
 rami:Order rdf:type owl:Class ;
            skos:definition "Each order for manufacturing runs through a life cycle and its specifics necessarily have an impact on the production facility during performance of the order"@en ;
@@ -923,6 +941,12 @@ rami:Reference rdf:type owl:Class .
 rami:ReferenceElement rdf:type owl:Class ;
                       dc:description "A reference element is a data element that defines a reference to another element within the same or another AAS or a reference to an external object or entity."@en ;
                       rdfs:label "Reference Element"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#RelationshipElement
+rami:RelationshipElement rdf:type owl:Class ;
+                         dc:description "A relationship element is used to define a relationship between two referable elements."@en ;
+                         rdfs:label "RelationshipElement"@en .
 
 
 ###  https://w3id.org/i40/rami#Security

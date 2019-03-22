@@ -27,17 +27,17 @@
         sh:class rami:PropertyValueType ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        #################################
-        ##if-based-constraints???########
-        # 
-        # TODO: CONSTRAINT (s. p. 43)
+        ################################
+        #if-based-constraints???########
+        
+        # # TODO: CONSTRAINT (s. p. 43)
         # [ rami:qualifierValueId sh:count 1 (
         #    sh:and (
-        #        [ rami:qualifierValue sh:count 1 (
-        #            sh:hasValue rami:qualifierValueId ; ) ;
-        #        ] ;
-        #    ) ;
-        #) ; ]; # INVALID SYNTAX
+        #    [ rami:qualifierValue sh:count 1 (
+        #         sh:hasValue rami:qualifierValueId ; ) ;
+        #      ] ;
+        #   ) ;
+        # ) ; ]; # INVALID SYNTAX
         sh:severity sh:Violation ;
         sh:message "value and valueID need to be identical if both are present"@en ;
     ] ;
@@ -54,7 +54,7 @@
     # inherits from Constraint (not defined in the pdf     ?????????)
     # TODO: Implement!
 
-    #########################################################
+    # ########################################################
     # inherits from HasSemantics                            #
     # hasSemantics requirements are fulfilled by RDF itself #
-    #########################################################
+    # ########################################################

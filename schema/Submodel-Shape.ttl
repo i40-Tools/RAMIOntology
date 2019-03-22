@@ -22,7 +22,7 @@
       sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
 	  #sh:message ""@en ;
     ] ;
-	sh:someOf [ 
+	sh:someOf [ ### someOf in shacl undefined ?!
 		sh:constraint [
 			sh:nodeKind sh:URI ;
 		] ;

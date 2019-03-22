@@ -30,11 +30,11 @@
         sh:message "refers to the global unique identifier"@en 
     ] ;
 
-    #################################
-
+    ##################################
     # inherits from DataElement (and DataElement inherits from SubmodelElement 
     # (SubmodelElements inherits from:
     # HasDataSpecification; Referable; Qualifiable; HasSemantics; HasKind))
+    ##################################
 
     # DataSpecification:
     sh:property [

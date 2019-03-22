@@ -23,3 +23,77 @@
         sh:severity sh:Violation ;
         sh:message "Each File must refer to the mime-type, that is the content of the file"@en
     ] ;
+    ##################################
+    # inherits from DataElement (and DataElement inherits from SubmodelElement 
+    # (SubmodelElements inherits from:
+    # HasDataSpecification; Referable; Qualifiable; HasSemantics; HasKind))
+    ##################################
+
+    # DataSpecification:
+    sh:property [
+      sh:path rami:hasDataSpecification ;
+      sh:minCount 0 ;
+	  sh:nodeKind sh:URI ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:hasSubmodel ;
+      sh:class rami:Submodel ;
+      sh:minCount 0 ;
+      sh:message "A DataSpecification entity can have a rami:hasSubmodel relation to a rami:Submodel."@en ; 
+    ] ;
+
+    # Referable:
+    sh:property [
+      sh:path rami:administration ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      sh:class rami:AdministrativeInformation ;
+      sh:severity sh:Violation ;
+      sh:message ""@en ;
+    ] ;
+
+    # Qualifiable:
+    sh:constraint [
+		sh:nodeKind sh:IRI ;
+		sh:message "Each rami object must be a URI."@en ;
+	] ;
+
+    sh:property [
+      sh:path rami:qualifier ;
+      sh:minCount 0 ;
+	  sh:constraint [
+		sh:nodeKind sh:URI ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:qualifier must be point to a proper URI."@en ;
+    ] ;
+
+    # HasSemantics:
+    sh:property [
+        sh:path rami:semanticId ;
+        sh:nodeKind sh:URI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every submodel element needs exactly one semantic definition (semanticId in HasSemantics)"@en ;
+    ] ;
+
+    # HasKind:
+    sh:property [
+      sh:path rami:hasKind ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+	  sh:someOf [ 
+		sh:constraint [
+			sh:nodeKind sh:Type ;
+		] ;
+		sh:constraint [
+			sh:nodeKind rami:Instance ;
+		] ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
+    ] .
