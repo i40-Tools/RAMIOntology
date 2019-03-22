@@ -27,14 +27,17 @@
         sh:class rami:PropertyValueType ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        #TODO: CHECK THE CONSTRAINT (s. p. 43)
+        #################################
+        ##if-based-constraints???########
+        # 
+        # TODO: CONSTRAINT (s. p. 43)
         # [ rami:qualifierValueId sh:count 1 (
         #    sh:and (
         #        [ rami:qualifierValue sh:count 1 (
-        #            sh:hasValue rami:qualifierValueId ; )
-        #        ]
-        #    )
-        #) ]; # INVALID SYNTAX
+        #            sh:hasValue rami:qualifierValueId ; ) ;
+        #        ] ;
+        #    ) ;
+        #) ; ]; # INVALID SYNTAX
         sh:severity sh:Violation ;
         sh:message "value and valueID need to be identical if both are present"@en ;
     ] ;

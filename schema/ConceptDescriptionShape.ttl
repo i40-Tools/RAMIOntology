@@ -26,6 +26,15 @@
 		sh:nodeKind rami:IRDI ;
 		sh:message "Each asset object must be an IRDI."@en ;
 	] ;
+
+    sh:property [
+      sh:path rami:isCaseOf ;
+      sh:class rami:Reference ;
+      sh:minCount 0 ;
+      sh:severity sh:Violation ;
+      sh:message "rami:isCaseOf is a global refernce to an external definition that this concept is compatible to or was derived from."@en ;
+    ] ;
+
     sh:property [
       sh:path rami:idShort ;
 	  sh:valueDatatype xsd:string ;

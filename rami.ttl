@@ -285,7 +285,6 @@ the asset like e.g. serial number etc."""@en ;
 
 ###  https://w3id.org/i40/rami#conceptDescription
 rami:conceptDescription rdf:type owl:ObjectProperty ;
-                        rdfs:range rami:ConceptDescription ;
                         rdfs:comment "An AAS max have one or more concept dictionaries assigned to it. The concept dictionaries typically contain only descriptions for elements that are also used within the AAS (via HasSemantics)."@en ;
                         rdfs:label "has Concept Description"@en ;
                         skos:altLabel "conceptDictionary"@en .
@@ -305,6 +304,12 @@ rami:contributes rdf:type owl:ObjectProperty ;
                  rdfs:range prov:Agent ;
                  skos:definition "Agent(Person or Software) that contributes to the Entity/Object related data. It correspond to the Contributor concept of OMM"@en ;
                  skos:prefLabel "has Type Description"@en .
+
+
+###  https://w3id.org/i40/rami#dependsOn
+rami:dependsOn rdf:type owl:ObjectProperty ;
+               rdfs:comment "A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en ;
+               rdfs:label "dependsOn"@en .
 
 
 ###  https://w3id.org/i40/rami#derivedFrom
@@ -337,6 +342,13 @@ rami:hasComponentManager rdf:type owl:ObjectProperty ;
                          rdfs:domain rami:AdminShell ;
                          rdfs:range rami:ComponentManager ;
                          rdfs:label "has Component Manager"@en .
+
+
+###  https://w3id.org/i40/rami#hasConceptDescription
+rami:hasConceptDescription rdf:type owl:ObjectProperty ;
+                           rdfs:comment """The semantics of a property or other elements that may have a semantic description is defined by a concept description.
+The description of the concept should follow a standardized schema (realized as data specification template)."""@en ;
+                           rdfs:label "has ConceptDescription"@en .
 
 
 ###  https://w3id.org/i40/rami#hasData
@@ -433,6 +445,10 @@ rami:inAccordanceWith rdf:type owl:ObjectProperty ;
                       rdfs:range sto:Standard ;
                       rdfs:comment "The Submodel is in accordance with a given standard specified in the STO ontology"@en ;
                       rdfs:label "in Accordance With"@en .
+
+
+###  https://w3id.org/i40/rami#isCaseOf
+rami:isCaseOf rdf:type owl:ObjectProperty .
 
 
 ###  https://w3id.org/i40/rami#isConnectedTo
@@ -736,8 +752,7 @@ rami:ComponentManager rdf:type owl:Class ;
 
 ###  https://w3id.org/i40/rami#ConceptDescription
 rami:ConceptDescription rdf:type owl:Class ;
-                        rdfs:comment "The AAS itself can also define its own dictionary that contains semantic definitions of its submodel elements. These semantic definitions are called concept descriptions (ConceptDescription). It is optional whether an AAS defines its own concept dictionary (ConceptDictionary) or not."@en ;
-                        rdfs:label "Concept Description"@en .
+                        dc:description "\"The AAS itself can also define its own dictionary that contains semantic definitions of its submodel elements. These semantic definitions are called concept descriptions (ConceptDescription). It is optional whether an AAS defines its own concept dictionary (ConceptDictionary) or not.\""@en .
 
 
 ###  https://w3id.org/i40/rami#CumulativeEnergyConsumption
@@ -776,6 +791,12 @@ Valid values are: Requirement (for requests that are to be confirmed or rejected
                         rdfs:isDefinedBy "https://www.zvei.org/fileadmin/user_upload/Presse_und_Medien/Publikationen/2017/April/Asset_Administration_Shell/ZVEI_WP_Verwaltungschale_Englisch_Download_03.04.17.pdf" ;
                         rdfs:label "Ausprägungsaussage"@de ,
                                    "Expression Semantic"@en .
+
+
+###  https://w3id.org/i40/rami#Formula
+rami:Formula rdf:type owl:Class ;
+             dc:description "A formula is used to describe constraints by a logical expression."@en ;
+             rdfs:label "Formula"@en .
 
 
 ###  https://w3id.org/i40/rami#HasDataSpecification
@@ -1347,8 +1368,8 @@ rami:idShort rdfs:label "idShort"@en ;
              owl:deprecated "true"^^xsd:boolean .
 
 
-rami:isCaseOf owl:deprecated "true"^^xsd:boolean ;
-              rdfs:comment "links to the concept definition in an external repository the concept description is a copy from or that it corresponds to."@en ;
+rami:isCaseOf owl:deprecated "false"^^xsd:boolean ;
+              rdfs:comment "Global reference to an external definition the concept is compatible to or was derived from."@en ;
               rdfs:label "isCaseOf"@en .
 
 

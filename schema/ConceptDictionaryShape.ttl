@@ -14,10 +14,18 @@
       sh:minCount 1 ;
     ] ;
     
+    sh:property [
+        sh:path rami:hasConceptDescription ;
+        sh:class rami:ConceptDescription ;
+        sh:minCount 0 ;
+        sh:severity sh:violation ;
+        sh:message "rami:hasConceptDescription of type rami:ConceptDescription defines a concept."@en ;
+    ]
+
+    ##############################################
     # inherits from Referable
     sh:property [
         sh:path rami:idShort ; 
-        #sh:class xsd:string ;
         sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -27,7 +35,6 @@
 
     sh:property [
         sh:path rami:category ;
-        #sh:class xsd:string ;
         sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -37,7 +44,6 @@
 
     sh:property [
         sh:path rami:description ;
-        # sh:class xsd:langString ;
         sh:valueDatatype xsd:langString ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -53,3 +59,4 @@
         sh:severity sh:violation ;
         sh:message "..."@en ;
     ] .
+    ##############################################
