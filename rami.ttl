@@ -461,6 +461,12 @@ Note: This element is used to ease navigation in the model and thus it enables m
             rdfs:label "parent"@en .
 
 
+###  https://w3id.org/i40/rami#qualifierType
+rami:qualifierType rdf:type owl:ObjectProperty ;
+                   rdfs:comment "The qualifierType describes the type of the qualifier that is applied to the element."@en ;
+                   rdfs:label "QualifierType"@en .
+
+
 ###  https://w3id.org/i40/rami#qualifierValue
 rami:qualifierValue rdf:type owl:ObjectProperty ;
                     rdfs:comment """The qualifier value is the value of the qualifier.

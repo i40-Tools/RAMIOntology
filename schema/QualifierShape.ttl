@@ -23,13 +23,20 @@
     ] ;
 
     sh:property [
-        #TODO: IMPELEMENT THE CONTRAINTS (s. p. 43)
         sh:path rami:qualifierValue ;
         sh:class rami:PropertyValueType ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
+        #TODO: CHECK THE CONSTRAINT (s. p. 43)
+        [ rami:qualifierValueId sh:count 1 (
+            sh:and (
+                [ rami:qualifierValue sh:count 1 (
+                    sh:hasValue rami:qualifierValueId ; ) 
+                ]
+            )
+        ) ];
         sh:severaty sh:Violation ;
-        sh:message "qualifierValue of type PropertyValueType is optional"@en^^^xsd:string ;
+        sh:message "value and valueID need to be identical if both are present"@en^^^xsd:string ;
     ] ;
 
     sh:property [
@@ -41,7 +48,7 @@
         sh:message "qualifierValueId is optional and of type Reference (abstract)" ;
     ] ;
 
-    # inherits from Constraint
+    # inherits from Constraint (not defined in the pdf     ?????????)
     # TODO: Implement!
     .
 
