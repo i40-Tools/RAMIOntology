@@ -41,7 +41,7 @@ a sh:NodeShape ;
 
     sh:property [
         sh:path sh:idType ;
+        sh:class rami:KeyType ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:valueDatatype xsd:KeyType ;
     ] .

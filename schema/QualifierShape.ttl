@@ -18,7 +18,7 @@
         sh:class rami:QualifierType ;
         sh:minCount 1 ;
         sh:maxCount 1 ; # MANDATORY!
-        sh:severaty sh:Violation ;
+        sh:severity sh:Violation ;
         sh:message "Exactly one QualifierType instance is mandatory"@en^^^xsd:string ;
     ] ;
 
@@ -35,7 +35,7 @@
                 ]
             )
         ) ];
-        sh:severaty sh:Violation ;
+        sh:severity sh:Violation ;
         sh:message "value and valueID need to be identical if both are present"@en^^^xsd:string ;
     ] ;
 
@@ -44,13 +44,12 @@
         sh:class rami:Reference ; # Reference is abstract and not defined
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:severaty sh:Violation ;
+        sh:severity sh:Violation ;
         sh:message "qualifierValueId is optional and of type Reference (abstract)" ;
-    ] ;
+    ] .
 
     # inherits from Constraint (not defined in the pdf     ?????????)
     # TODO: Implement!
-    .
 
     #########################################################
     # inherits from HasSemantics                            #
