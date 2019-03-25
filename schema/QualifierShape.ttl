@@ -29,8 +29,9 @@
         sh:class rami:PropertyValueType ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        ################################
-        #if-based-constraints???########
+        sh:description "if value and valueID are both present, they must be identical."@en ;
+        ###############################
+        # if-based-constraints???########
         
         # # TODO: CONSTRAINT (s. p. 43)
         # [ rami:qualifierValueId sh:count 1 (

@@ -268,6 +268,13 @@ need to be part of the identification."""@en ;
                     rdfs:label "has administration"@en .
 
 
+###  https://w3id.org/i40/rami#allowDuplicates
+rami:allowDuplicates rdf:type owl:ObjectProperty ;
+                     rdfs:comment """If allowDuplicates=true then it is allowed that the collection contains the same element several times.
+Default = false"""@en ;
+                     rdfs:label "allowDuplicates"@en .
+
+
 ###  https://w3id.org/i40/rami#asset
 rami:asset rdf:type owl:ObjectProperty ;
            rdfs:comment "The asset the AAS is representing."@en ;
@@ -310,6 +317,13 @@ rami:contributes rdf:type owl:ObjectProperty ;
                  rdfs:range prov:Agent ;
                  skos:definition "Agent(Person or Software) that contributes to the Entity/Object related data. It correspond to the Contributor concept of OMM"@en ;
                  skos:prefLabel "has Type Description"@en .
+
+
+###  https://w3id.org/i40/rami#dataElement
+rami:dataElement rdf:type owl:ObjectProperty ;
+                 rdfs:comment """A data element is a submodel element that is not further composed out of other submodel elements.
+A data element is a submodel element that has a value. The type of value differs for different subtypes of data elements."""@en ;
+                 rdfs:label "dataElement"@en .
 
 
 ###  https://w3id.org/i40/rami#dependsOn
@@ -380,6 +394,12 @@ rami:hasDatatype rdf:type owl:ObjectProperty ;
                  rdfs:label "has Datatype"@en .
 
 
+###  https://w3id.org/i40/rami#hasKey
+rami:hasKey rdf:type owl:ObjectProperty ;
+            rdfs:comment "Unique reference in its name space."@en ;
+            rdfs:label "has Key"@en .
+
+
 ###  https://w3id.org/i40/rami#hasKind
 rami:hasKind rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
@@ -445,6 +465,14 @@ rami:hasView rdf:type owl:ObjectProperty ;
              skos:prefLabel "view"@en .
 
 
+###  https://w3id.org/i40/rami#idType
+rami:idType rdf:type owl:ObjectProperty ;
+            rdfs:comment """Type of the key value.
+In case of idType = idShort local shall be true.
+In case type=GlobalReference idType shall not be IdShort."""@en ;
+            rdfs:label "has idType"@en .
+
+
 ###  https://w3id.org/i40/rami#in
 rami:in rdf:type owl:ObjectProperty ;
         rdfs:comment "the rami:in attribute of rami:operation is the input parameter"@en .
@@ -474,6 +502,25 @@ rami:isConnectedTo rdf:type owl:ObjectProperty ;
 rami:isDescribedWith rdf:type owl:ObjectProperty ;
                      rdfs:domain rami:AdminShell ;
                      rdfs:range sto:Standard .
+
+
+###  https://w3id.org/i40/rami#local
+rami:local rdf:type owl:ObjectProperty ;
+           rdfs:comment "Denotes if the key references a model element of the same AAS (=true) or not (=false). In case of local = false the key may reference a model element of another AAS or an entity outside any AAS that has a global unique id."@en ;
+           rdfs:label "has local"@en .
+
+
+###  https://w3id.org/i40/rami#mimeType
+rami:mimeType rdf:type owl:ObjectProperty ;
+              rdfs:comment """Mime type of the content of the BLOB.
+The mime type states which file extension the file has.
+Valid values are e.g. “application/json”, “application/xls”, ”image/jpg”
+The allowed values are defined as in RFC2046.
+
+or
+
+Mime type of the content of the File."""@en ;
+              rdfs:label "mimeType"@en .
 
 
 ###  https://w3id.org/i40/rami#ordered
@@ -762,6 +809,12 @@ RAMI4.0 model, as well, covering also order details and workflows, again with ty
                rdfs:label "Asset Kind"@en .
 
 
+###  https://w3id.org/i40/rami#Blob
+rami:Blob rdf:type owl:Class ;
+          rdfs:comment "A BLOB is a data element that represents a file that is contained with its source code in the value attribute."@en ;
+          rdfs:label "BlobDataElement"@en .
+
+
 ###  https://w3id.org/i40/rami#ComponentManager
 rami:ComponentManager rdf:type owl:Class ;
                       rdfs:label "Component Manager"@en .
@@ -774,6 +827,13 @@ rami:ConceptDescription rdf:type owl:Class ;
 
 ###  https://w3id.org/i40/rami#CumulativeEnergyConsumption
 rami:CumulativeEnergyConsumption rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/rami#DataElement
+rami:DataElement rdf:type owl:Class ;
+                 rdfs:comment """A data element is a submodel element that is not further composed out of other submodel elements.
+A data element is a submodel element that has a value. The type of value differs for different subtypes of data elements."""@en ;
+                 rdfs:label "DataElement"@en .
 
 
 ###  https://w3id.org/i40/rami#DataSpecification
@@ -808,6 +868,12 @@ Valid values are: Requirement (for requests that are to be confirmed or rejected
                         rdfs:isDefinedBy "https://www.zvei.org/fileadmin/user_upload/Presse_und_Medien/Publikationen/2017/April/Asset_Administration_Shell/ZVEI_WP_Verwaltungschale_Englisch_Download_03.04.17.pdf" ;
                         rdfs:label "Ausprägungsaussage"@de ,
                                    "Expression Semantic"@en .
+
+
+###  https://w3id.org/i40/rami#File
+rami:File rdf:type owl:Class ;
+          rdfs:comment "A File is a data element that represents a file via its path description."@en ;
+          rdfs:label "FileDataElement"@en .
 
 
 ###  https://w3id.org/i40/rami#Formula
@@ -877,6 +943,12 @@ rami:Identifiable rdf:type owl:Class ;
                   skos:note "abstract"@en .
 
 
+###  https://w3id.org/i40/rami#Key
+rami:Key rdf:type owl:Class ;
+         rdfs:comment "A key is a reference to an element by its id."@en ;
+         rdfs:label "Key"@en .
+
+
 ###  https://w3id.org/i40/rami#LifeCycleDimension
 rami:LifeCycleDimension rdf:type owl:Class ;
                         owl:equivalentClass [ rdf:type owl:Class ;
@@ -910,6 +982,12 @@ rami:Manifest rdf:type owl:Class ;
               rdfs:label "Manifest"@en .
 
 
+###  https://w3id.org/i40/rami#Operation
+rami:Operation rdf:type owl:Class ;
+               rdfs:comment "An operation is a submodel element with input and output variables."@en ;
+               rdfs:label "Operation"@en .
+
+
 ###  https://w3id.org/i40/rami#OperationVariable
 rami:OperationVariable rdf:type owl:Class ;
                        dc:description "An operation variable is a submodel element that is used as input or output variable of an operation."@en ;
@@ -924,6 +1002,12 @@ rami:Order rdf:type owl:Class ;
 
 ###  https://w3id.org/i40/rami#Platform
 rami:Platform rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/rami#Property
+rami:Property rdf:type owl:Class ;
+              rdfs:comment "A property is a data element that has a single value."@en ;
+              rdfs:label "Property"@en .
 
 
 ###  https://w3id.org/i40/rami#PropertyValueType
@@ -994,6 +1078,12 @@ rami:SubmodelElement rdf:type owl:Class ;
                      rdfs:comment "A submodel element is an element suitable for the description and differentiation of assets."@en ;
                      rdfs:label "Submodel Element"@en ;
                      skos:note "abstract"@en .
+
+
+###  https://w3id.org/i40/rami#SubmodelElementCollection
+rami:SubmodelElementCollection rdf:type owl:Class ;
+                               rdfs:comment "A submodel element collection is a set or list of submodel elements."@en ;
+                               rdfs:label "SubmodelElementCollection"@en .
 
 
 ###  https://w3id.org/i40/rami#TransportInterface
