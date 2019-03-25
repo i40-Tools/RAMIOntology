@@ -226,6 +226,18 @@ rami:IRDI rdf:type rdfs:Datatype ;
 To this end, users sit down together and feed their ideas into the consortia or standardisation bodies. Properties in ISO, IEC help to safeguard key commercial interests. Repositories like eCl@ss and others make it possible to standardise a relatively large number of Identifiers in an appropriately short time."""@en .
 
 
+###  https://w3id.org/i40/rami#blob
+rami:blob rdf:type rdfs:Datatype ;
+          rdfs:comment "A BLOB is a data element that represents a file that is contained with its source code in the value attribute."@en ;
+          rdfs:label "rami:blob"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#file
+rami:file rdf:type rdfs:Datatype ;
+          rdfs:comment "A File is a data element that represents a file via its path description."@en ;
+          rdfs:label "rami:file"^^xsd:string .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -268,13 +280,6 @@ need to be part of the identification."""@en ;
                     rdfs:label "has administration"@en .
 
 
-###  https://w3id.org/i40/rami#allowDuplicates
-rami:allowDuplicates rdf:type owl:ObjectProperty ;
-                     rdfs:comment """If allowDuplicates=true then it is allowed that the collection contains the same element several times.
-Default = false"""@en ;
-                     rdfs:label "allowDuplicates"@en .
-
-
 ###  https://w3id.org/i40/rami#asset
 rami:asset rdf:type owl:ObjectProperty ;
            rdfs:comment "The asset the AAS is representing."@en ;
@@ -287,20 +292,20 @@ rami:assetIdentificationModel rdf:type owl:ObjectProperty ;
                               rdfs:comment """A reference to a Submodel that defines the handling of
 additional domain specific (proprietary) Identifiers for
 the asset like e.g. serial number etc."""@en ;
-                              rdfs:label "has Asset Identification Model"@en .
+                              rdfs:label "has Asset Identification Model"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#conceptDescription
 rami:conceptDescription rdf:type owl:ObjectProperty ;
                         rdfs:comment "An AAS max have one or more concept dictionaries assigned to it. The concept dictionaries typically contain only descriptions for elements that are also used within the AAS (via HasSemantics)."@en ;
-                        rdfs:label "has Concept Description"@en ;
+                        rdfs:label "has Concept Description"^^xsd:string ;
                         skos:altLabel "conceptDictionary"@en .
 
 
 ###  https://w3id.org/i40/rami#containedElement
 rami:containedElement rdf:type owl:ObjectProperty ;
                       rdfs:comment "Referable elements that are contained in the view."@en ;
-                      rdfs:label "containedElement"@en .
+                      rdfs:label "containedElement"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#containsAS
@@ -357,6 +362,12 @@ rami:energyEfficiencyValue rdf:type owl:ObjectProperty ;
                            rdfs:label "energy Efficiency Value"@en .
 
 
+###  https://w3id.org/i40/rami#first
+rami:first rdf:type owl:ObjectProperty ;
+           rdfs:comment "First element in the relationship taking the role of the subject."@en ;
+           rdfs:label "first"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#hasComponentManager
 rami:hasComponentManager rdf:type owl:ObjectProperty ;
                          rdfs:domain rami:AdminShell ;
@@ -394,10 +405,18 @@ rami:hasDatatype rdf:type owl:ObjectProperty ;
                  rdfs:label "has Datatype"@en .
 
 
+###  https://w3id.org/i40/rami#hasIdType
+rami:hasIdType rdf:type owl:ObjectProperty ;
+               rdfs:comment """Type of the key value.
+In case of idType = idShort local shall be true.
+In case type=GlobalReference idType shall not be IdShort."""@en ;
+               rdfs:label "has idType"@en .
+
+
 ###  https://w3id.org/i40/rami#hasKey
 rami:hasKey rdf:type owl:ObjectProperty ;
             rdfs:comment "Unique reference in its name space."@en ;
-            rdfs:label "has Key"@en .
+            rdfs:label "has Key"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#hasKind
@@ -446,10 +465,7 @@ rami:hasSubmodel rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/i40/rami#hasValue
 rami:hasValue rdf:type owl:ObjectProperty ;
               rdfs:domain rami:Submodel ;
-              rdfs:range rami:Value ;
-              rdfs:comment """Points to the current value that can be specified through an instanced submodel (for 
-instance in station 2) or through the asset."""@en ;
-              rdfs:label "has Value"@en .
+              rdfs:range rami:Value .
 
 
 ###  https://w3id.org/i40/rami#hasView
@@ -465,12 +481,10 @@ rami:hasView rdf:type owl:ObjectProperty ;
              skos:prefLabel "view"@en .
 
 
-###  https://w3id.org/i40/rami#idType
-rami:idType rdf:type owl:ObjectProperty ;
-            rdfs:comment """Type of the key value.
-In case of idType = idShort local shall be true.
-In case type=GlobalReference idType shall not be IdShort."""@en ;
-            rdfs:label "has idType"@en .
+###  https://w3id.org/i40/rami#hasvalue
+rami:hasvalue rdf:type owl:ObjectProperty ;
+              rdfs:comment "Submodel element contained in the collection."@en ;
+              rdfs:label "has SubmodelElement value"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#in
@@ -504,12 +518,6 @@ rami:isDescribedWith rdf:type owl:ObjectProperty ;
                      rdfs:range sto:Standard .
 
 
-###  https://w3id.org/i40/rami#local
-rami:local rdf:type owl:ObjectProperty ;
-           rdfs:comment "Denotes if the key references a model element of the same AAS (=true) or not (=false). In case of local = false the key may reference a model element of another AAS or an entity outside any AAS that has a global unique id."@en ;
-           rdfs:label "has local"@en .
-
-
 ###  https://w3id.org/i40/rami#mimeType
 rami:mimeType rdf:type owl:ObjectProperty ;
               rdfs:comment """Mime type of the content of the BLOB.
@@ -520,12 +528,8 @@ The allowed values are defined as in RFC2046.
 or
 
 Mime type of the content of the File."""@en ;
-              rdfs:label "mimeType"@en .
-
-
-###  https://w3id.org/i40/rami#ordered
-rami:ordered rdf:type owl:ObjectProperty ;
-             rdfs:comment "If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered."@en .
+              rdfs:label "mimeType"^^xsd:string ;
+              rdfs:seeAlso "http://uri4uri.net/vocab.html/#MimetypeDatatype"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#out
@@ -549,6 +553,12 @@ rami:qualifierType rdf:type owl:ObjectProperty .
 rami:qualifierValue rdf:type owl:ObjectProperty ;
                     rdfs:comment """The qualifier value is the value of the qualifier.
 Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."""@en .
+
+
+###  https://w3id.org/i40/rami#second
+rami:second rdf:type owl:ObjectProperty ;
+            rdfs:comment "Second element in the relationship taking the role of the object."@en ;
+            rdfs:label "second"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#security
@@ -577,7 +587,7 @@ rami:usesStandard rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/i40/rami#value
 rami:value rdf:type owl:ObjectProperty ;
            rdfs:comment "The key value, for example an IRDI if the idType=IRDI."@en ;
-           rdfs:label "keyValue"@en .
+           rdfs:label "keyValue"^^xsd:string .
 
 
 #################################################################
@@ -610,6 +620,13 @@ om:hasNumericalValue rdf:type owl:DatatypeProperty .
 
 ###  http://xmlns.com/foaf/spec/image
 foaf:image rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/i40/rami#allowDuplicates
+rami:allowDuplicates rdf:type owl:DatatypeProperty ;
+                     rdfs:comment """If allowDuplicates=true then it is allowed that the collection contains the same element several times.
+Default = false"""@en ;
+                     skos:altLabel "allow duplicates"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#assetId
@@ -669,6 +686,17 @@ rami:hasI40ComponentId rdf:type owl:DatatypeProperty ;
                        owl:deprecated "true"^^xsd:boolean .
 
 
+###  https://w3id.org/i40/rami#hasLocal
+rami:hasLocal rdf:type owl:DatatypeProperty ;
+              rdfs:comment "Denotes if the key references a model element of the same AAS (=true) or not (=false). In case of local = false the key may reference a model element of another AAS or an entity outside any AAS that has a global unique id."@en ;
+              rdfs:label "has local"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#hasValue
+rami:hasValue rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty .
+
+
 ###  https://w3id.org/i40/rami#id
 rami:id rdf:type owl:DatatypeProperty ;
         rdfs:subPropertyOf dcterms:identifier ;
@@ -705,6 +733,13 @@ rami:logs rdf:type owl:DatatypeProperty ;
           skos:prefLabel "logs"@en .
 
 
+###  https://w3id.org/i40/rami#ordered
+rami:ordered rdf:type owl:DatatypeProperty ;
+             rdfs:comment """If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered.
+Default = false"""@en ;
+             rdfs:label "ordered"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#publishedURL
 rami:publishedURL rdf:type owl:DatatypeProperty .
 
@@ -714,7 +749,7 @@ rami:receivedAtTime rdf:type owl:DatatypeProperty ;
                     rdfs:domain rami:AdminShell ;
                     rdfs:range xsd:dateTime ;
                     skos:definition "received Time of an Asset"@en ;
-                    skos:prefLabel "received At Time"@en .
+                    skos:prefLabel "received At Time"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#recordedTime
@@ -722,14 +757,14 @@ rami:recordedTime rdf:type owl:DatatypeProperty ;
                   rdfs:domain rami:Machine ;
                   rdfs:range xsd:dateTime ;
                   rdfs:comment "Recorded Time for a Machine"@en ;
-                  skos:prefLabel "recorded Time"@en .
+                  skos:prefLabel "recorded Time"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#releaseDate
 rami:releaseDate rdf:type owl:DatatypeProperty ;
                  rdfs:range xsd:date ;
                  skos:definition "Release Date of the Standard"@en ;
-                 skos:prefLabel "Release Date"@en .
+                 skos:prefLabel "Release Date"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#semanticId
@@ -744,7 +779,7 @@ rami:subModelID rdf:type owl:DatatypeProperty ;
                 rdfs:domain rami:Submodel ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Unique Identification for a Submodel"@en ;
-                rdfs:label "sub Model Id"@en ;
+                rdfs:label "sub Model Id"^^xsd:string ;
                 owl:deprecated "true"^^xsd:boolean .
 
 
@@ -784,7 +819,7 @@ rami:AdminShell rdf:type owl:Class ;
                 skos:altLabel "Administration Shell"@en ,
                               "Asset Administration Shell"@en ;
                 skos:definition "Describes the Administration Shell for Assets, Products, Components, e.g. Machines"@en ;
-                skos:prefLabel "Verwaltungsschale"@de .
+                skos:prefLabel "Verwaltungsschale"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#AdministrativeInformation
@@ -794,7 +829,7 @@ rami:AdministrativeInformation rdf:type owl:Class ;
  Information about who created or who made the last change to the element
  Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be defined
 In the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added."""@en ;
-                               rdfs:label "Administrative Information"@en .
+                               rdfs:label "Administrative Information"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#Asset
@@ -812,7 +847,8 @@ RAMI4.0 model, as well, covering also order details and workflows, again with ty
 ###  https://w3id.org/i40/rami#Blob
 rami:Blob rdf:type owl:Class ;
           rdfs:comment "A BLOB is a data element that represents a file that is contained with its source code in the value attribute."@en ;
-          rdfs:label "BlobDataElement"@en .
+          rdfs:label "BlobDataElement"@en ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/i40/rami#ComponentManager
@@ -831,9 +867,10 @@ rami:CumulativeEnergyConsumption rdf:type owl:Class .
 
 ###  https://w3id.org/i40/rami#DataElement
 rami:DataElement rdf:type owl:Class ;
-                 rdfs:comment """A data element is a submodel element that is not further composed out of other submodel elements.
+                 rdfs:comment """<<Abstract>>
+A data element is a submodel element that is not further composed out of other submodel elements.
 A data element is a submodel element that has a value. The type of value differs for different subtypes of data elements."""@en ;
-                 rdfs:label "DataElement"@en .
+                 rdfs:label "DataElement"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#DataSpecification
@@ -873,7 +910,8 @@ Valid values are: Requirement (for requests that are to be confirmed or rejected
 ###  https://w3id.org/i40/rami#File
 rami:File rdf:type owl:Class ;
           rdfs:comment "A File is a data element that represents a file via its path description."@en ;
-          rdfs:label "FileDataElement"@en .
+          rdfs:label "FileDataElement"@en ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/i40/rami#Formula
@@ -946,7 +984,7 @@ rami:Identifiable rdf:type owl:Class ;
 ###  https://w3id.org/i40/rami#Key
 rami:Key rdf:type owl:Class ;
          rdfs:comment "A key is a reference to an element by its id."@en ;
-         rdfs:label "Key"@en .
+         rdfs:label "Key"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#LifeCycleDimension
@@ -991,7 +1029,7 @@ rami:Operation rdf:type owl:Class ;
 ###  https://w3id.org/i40/rami#OperationVariable
 rami:OperationVariable rdf:type owl:Class ;
                        dc:description "An operation variable is a submodel element that is used as input or output variable of an operation."@en ;
-                       rdfs:label "Operation variable"@en .
+                       rdfs:label "Operation variable"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#Order
@@ -1076,7 +1114,7 @@ Submodels can become standardized and thus become submodels types. Submodels can
 ###  https://w3id.org/i40/rami#SubmodelElement
 rami:SubmodelElement rdf:type owl:Class ;
                      rdfs:comment "A submodel element is an element suitable for the description and differentiation of assets."@en ;
-                     rdfs:label "Submodel Element"@en ;
+                     rdfs:label "Submodel Element"^^xsd:string ;
                      skos:note "abstract"@en .
 
 
@@ -1487,6 +1525,11 @@ rami:assetId owl:deprecated "true"^^xsd:boolean ;
 
 rami:description rdfs:comment "Description or comments on the element. The description can be provided in several languages."@en ;
                  skos:prefLabel "has Description"@en .
+
+
+rami:hasValue rdfs:comment """Points to the current value that can be specified through an instanced submodel (for 
+instance in station 2) or through the asset."""@en ;
+              rdfs:label "has Value"^^xsd:string .
 
 
 rami:idShort rdfs:label "idShort"@en ;
