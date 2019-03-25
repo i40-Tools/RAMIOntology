@@ -33,7 +33,7 @@
       sh:minCount 1 ;
       sh:severity sh:Violation ;
       sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
-    ] 
+    ] ;
 	# SubmodelElement inherits from HasSemantics
 	# hasSemantics requirements are fulfilled by RDF itself 
 	

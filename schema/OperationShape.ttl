@@ -39,12 +39,14 @@
 	  sh:valueDatatype xsd:string ;
       sh:minCount 1 ;
       sh:severity sh:Violation ;
-      sh:message "Each submodel element must have at least one short ID with datatype xsd:string."@en ;
+      sh:message "Each SubmodelElement must have at least one short ID with datatype xsd:string."@en ;
     ] ;
 
     sh:property [
       sh:path rami:semanticId ;
-	  sh:nodeKind sh:IRI ;
+      sh:class rami:Reference ;
+      ######### is the following line necessary ?
+	    #sh:nodeKind sh:IRI ;
       sh:minCount 1 ;
       sh:severity sh:Violation ;
       sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
@@ -54,9 +56,9 @@
     sh:property [
       sh:path rami:qualifier ;
       sh:minCount 0 ;
-	  sh:constraint [
-		sh:nodeKind sh:IRI ;
-	  ] ;
+      sh:constraint [
+        sh:nodeKind sh:IRI ;
+      ] ;
       sh:severity sh:Violation ;
       sh:message "rami:qualifier must be point to a proper IRI."@en ;
     ] ;

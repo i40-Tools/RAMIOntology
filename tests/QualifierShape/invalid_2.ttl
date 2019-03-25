@@ -1,0 +1,27 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix ex: <http://example.org/ns#> .
+
+ex:exampleQualifier
+   rdf:type rami:Qualifier ;
+   rami:qualifierType [a rami:QualifierType] ;
+   rami:qualifierValue [a rami:PropertyValueType] ;
+   rami:qualifierValueId [rdf:type rami:Reference] ;
+   rami:qualifierValueId [rdf:type rami:Reference] ;
+.
+
+########### VALIDATION REPORT #############
+# [
+# 	a sh:ValidationResult ;
+# 	sh:resultSeverity sh:Violation ;
+# 	sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+# 	sh:sourceShape _:n3221 ;
+# 	sh:focusNode <http://example.org/ns#exampleQualifier> ;
+# 	sh:resultPath rami:qualifierValueId ;
+# 	sh:resultMessage "qualifierValueId is optional and of type Reference (abstract)" ;
+# ] .

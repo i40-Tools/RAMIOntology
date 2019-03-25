@@ -26,4 +26,4 @@
         sh:minCount 0 ;
         sh:severity sh:violation ;
         sh:message "a valid key property is necessary"@en ;
-    ] ;
+    ] .

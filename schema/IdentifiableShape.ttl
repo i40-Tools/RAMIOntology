@@ -14,6 +14,10 @@
 #	SHACL syntax checking: http://shacl.org/playground/
 #	SHACL Advanced Features: https://w3c.github.io/data-shapes/shacl-af/
 
+###############################
+# Identifiable is abstract ?! #
+###############################
+
 <#IdentifiableShape>
     a sh:NodeShape ;
     sh:targetClass rami:Identifiable ;
