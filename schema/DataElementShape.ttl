@@ -54,7 +54,7 @@
       sh:maxCount 1 ;
 	    sh:class rami:AdministrativeInformation ;
       sh:severity sh:Violation ;
-      sh:message ""@en ;
+      sh:message "rami:administration has to be of type rami:AdministrativeInformation."@en ;
     ] ;
 	# Submodel inherits from DataSpecification
     sh:property [

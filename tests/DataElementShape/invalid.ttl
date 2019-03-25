@@ -1,0 +1,70 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix ex: <http://example.org/ns#> .
+
+ex:exampleDataElement
+   rdf:type rami:DataElement ;
+   rami:idShort [rdf:type xsd:string] ;
+   rami:semanticId [rdf:type rami:semanticId]
+.
+
+ex:secondExampleDataElement
+   rdf:type rami:DataElement ;
+   rami:idShort [rdf:type xsd:string] ;
+   rami:semanticId [rdf:type rami:Reference] ;
+   rami:administration [rdf:type rami:AdministrativeInformation] ;
+   rami:hasKind [rdf:type sh:Type] ;
+   rami:hasSubmodel [rdf:type rami:Submodel] ;
+   rami:qualifier [rdf:type sh:Instance] ;
+.
+
+ex:thirdExampleDataElement
+    rdf:type rami:DataElement ;
+    rami:idShort [rdf:type xsd:string] ;
+    rami:administration [rdf:type rami:AdministrativeInformation] ;
+    rami:administration [rdf:type rami:AdministrativeInformation] .
+
+########### VALIDATION REPORT #############
+# [
+# 	a sh:ValidationResult ;
+# 	sh:resultSeverity sh:Violation ;
+# 	sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+# 	sh:sourceShape _:n3860 ;
+# 	sh:focusNode <http://example.org/ns#exampleDataElement> ;
+# 	sh:value _:n4725 ;
+# 	sh:resultPath rami:semanticId ;
+# 	sh:resultMessage "Each SubmodelElement must have at least one semanticId attribute."@en ;
+# ] .
+# [
+# 	a sh:ValidationResult ;
+# 	sh:resultSeverity sh:Violation ;
+# 	sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+# 	sh:sourceShape _:n3860 ;
+# 	sh:focusNode <http://example.org/ns#secondExampleDataElement> ;
+# 	sh:value _:n4727 ;
+# 	sh:resultPath rami:semanticId ;
+# 	sh:resultMessage "Each SubmodelElement must have at least one semanticId attribute."@en ;
+# ] .
+# [
+# 	a sh:ValidationResult ;
+# 	sh:resultSeverity sh:Violation ;
+# 	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+# 	sh:sourceShape _:n3860 ;
+# 	sh:focusNode <http://example.org/ns#thirdExampleDataElement> ;
+# 	sh:resultPath rami:semanticId ;
+# 	sh:resultMessage "Each SubmodelElement must have at least one semanticId attribute."@en ;
+# ] .
+# [
+# 	a sh:ValidationResult ;
+# 	sh:resultSeverity sh:Violation ;
+# 	sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+# 	sh:sourceShape _:n3863 ;
+# 	sh:focusNode <http://example.org/ns#thirdExampleDataElement> ;
+# 	sh:resultPath rami:administration ;
+# 	sh:resultMessage "rami:administration has to be of type rami:AdministrativeInformation."@en ;
+# ] .

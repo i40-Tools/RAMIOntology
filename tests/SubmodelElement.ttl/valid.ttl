@@ -10,7 +10,16 @@
 ex:exampleSubmodelElement
    rdf:type rami:SubmodelElement ;
    rami:idShort "placeholderIdShort"^^xsd:string ;
-   ####IMPLEMENT semanticID ?
+   #rami:semanticId [sh:nodeKind sh:IRI] ;
 .
 
-### without semanticId:
+## without semanticId:
+# [
+# 	a sh:ValidationResult ;
+# 	sh:resultSeverity sh:Violation ;
+# 	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+# 	sh:sourceShape _:n1903 ;
+# 	sh:focusNode <http://example.org/ns#exampleSubmodelElement> ;
+# 	sh:resultPath rami:semanticId ;
+# 	sh:resultMessage "Each SubmodelElement must have at least one semanticId attribute."@en ;
+# ] .

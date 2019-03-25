@@ -29,13 +29,13 @@
       sh:severity sh:Violation ;
       sh:message "Each submodel element must have at least one short ID with datatype xsd:string."@en ;
     ] ;
-    sh:property [
-      sh:path rami:semanticId ;
-	  sh:nodeKind sh:IRI ;
-      sh:minCount 1 ;
-      sh:severity sh:Violation ;
-      sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
-    ] ;
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  # sh:nodeKind sh:IRI ;
+    #   sh:maxCount 1 ;
+    #   sh:severity sh:Violation ;
+    #   sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
+    # ] ;
 	# SubmodelElement inherits from HasSemantics
 	# hasSemantics requirements are fulfilled by RDF itself 
 	

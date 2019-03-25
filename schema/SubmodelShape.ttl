@@ -71,7 +71,7 @@
       sh:class rami:Submodel ;
       sh:minCount 0 ;
       sh:message "A DataSpecification entity can have a rami:hasSubmodel relation to a rami:Submodel."@en ; 
-    ]  ;
+    ] ;
 	# Submodel inherits from HasKind
     sh:property [
       sh:path rami:hasKind ;

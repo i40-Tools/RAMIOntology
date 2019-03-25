@@ -134,5 +134,5 @@
 		] ;
 	  ] ;
       sh:severity sh:Violation ;
-      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
-    ]  .
+      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type."@en ;
+    ] .
