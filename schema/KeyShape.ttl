@@ -16,7 +16,7 @@
 
     sh:property [
         sh:path rami:type ;
-        sh:class rami:KeyElements ;
+        sh:class rami:KeyElements ; #enum not specified ?!
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;

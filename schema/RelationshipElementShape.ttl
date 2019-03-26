@@ -44,17 +44,16 @@
       sh:message "Each submodel element must have at least one short ID with datatype xsd:string."@en ;
     ] ;
 
-    sh:property [
-      sh:path rami:semanticId ;
-	  sh:nodeKind sh:IRI ;
-      sh:minCount 1 ;
-      sh:severity sh:Violation ;
-      sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
-    ] ;
-
-    #########################################################
-	  # SubmodelElement inherits from HasSemantics   (TODO)   #
-    ######################################################### 
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  # sh:nodeKind sh:IRI ;
+    #   sh:minCount 1 ;
+    #   sh:severity sh:Violation ;
+    #   sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
+    # ] ;
+    ##############################################
+    # rami:semanticID is specified by RDF itself #
+    ##############################################
 	
     #############################################
     # SubmodelElement inherits from Qualifiable #
@@ -72,11 +71,43 @@
 	  # SubmodelElement inherits from Referable   #
     #############################################
     sh:property [
-      sh:path rami:administration ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      sh:message "..."@en ;
+        sh:path rami:idShort ; 
+        #sh:class xsd:string ; #TODO: check!
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ; 
     ] ;
+
+    sh:property [
+        sh:path rami:category ;
+        #sh:class xsd:string ;
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:description ;
+        sh:valueDatatype xsd:langString ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:parent ;
+        sh:class rami:Referable ; #reference to an abstract class ?? (polymorphism?) #TODO: CHECK THIS
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
     #####################################
     # inherits from DataSpecification   #
     #####################################

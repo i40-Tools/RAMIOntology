@@ -37,15 +37,18 @@
 
     sh:property [
       sh:path rami:idShort ;
-	  sh:valueDatatype xsd:string ;
+	    sh:valueDatatype xsd:string ;
       sh:minCount 0 ; # optional?
       sh:severity sh:Violation ;
       sh:message "Each concept description must have at least one short ID with datatype xsd:string."@en ;
     ] ;
-    sh:property [
-      sh:path rami:semanticId ;
-	  sh:nodeKind sh:IRI ;
-      sh:minCount 0 ; # optional?
-      sh:severity sh:Violation ;
-      sh:message "Each submodel must have at least one semanticId attribute."@en ;
-    ] .
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  #   sh:nodeKind sh:IRI ;
+    #   sh:minCount 0 ; # optional?
+    #   sh:severity sh:Violation ;
+    #   sh:message "Each submodel must have at least one semanticId attribute."@en ;
+    # ] .
+    ########################################
+    # the semanticID is part of RDF itself #
+    ########################################

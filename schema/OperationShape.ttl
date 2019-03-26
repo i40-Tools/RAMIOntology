@@ -42,16 +42,18 @@
       sh:message "Each SubmodelElement must have at least one short ID with datatype xsd:string."@en ;
     ] ;
 
-    sh:property [
-      sh:path rami:semanticId ;
-      sh:class rami:Reference ;
-      ######### is the following line necessary ?
-	    #sh:nodeKind sh:IRI ;
-      sh:minCount 1 ;
-      sh:severity sh:Violation ;
-      sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
-    ] ;
-
+    # sh:property [
+    #   sh:path rami:semanticId ;
+    #   sh:class rami:Reference ;
+    #   ######### is the following line necessary ?
+	  #   #sh:nodeKind sh:IRI ;
+    #   sh:minCount 1 ;
+    #   sh:severity sh:Violation ;
+    #   sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
+    # ] ;
+    #############################################################################
+    # rami:semanticID is not necessary, because it is specified by RDF itself  #
+    #############################################################################
 	# SubmodelElement inherits from Qualifiable
     sh:property [
       sh:path rami:qualifier ;
