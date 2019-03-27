@@ -52,6 +52,7 @@
     ] ;
     sh:property [
       sh:path rami:id ;
+      sh:class rami:Identifier ;
       sh:minCount 0 ;
       sh:message "An identifiable entity can have a rami:id."@en ; 
     ] ;
@@ -81,12 +82,12 @@
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
-        sh:message "The description property needs to be of type xsd:string."@en ;
+        sh:message "The description property needs to be of type xsd:langString."@en ;
     ] ;
 
     sh:property [
         sh:path rami:parent ;
-        sh:class rami:Referable ; #reference to an abstract class ?? (polymorphism?) #TODO: CHECK THIS
+        sh:class rami:Referable ; # see "AAS in detail", p. 124
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
@@ -97,6 +98,7 @@
     sh:property [
       sh:path rami:hasDataSpecification ;
       sh:minCount 0 ;
+      sh:class rami:Reference ; # see "AAS in detail", p. 124
 	  sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
       sh:severity sh:Violation ;
       sh:message "rami:hasDataSpecification must point to a proper URI."@en ;

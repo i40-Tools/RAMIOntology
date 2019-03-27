@@ -27,7 +27,7 @@
         sh:path rami:targetObjectAttributes ;
         sh:class rami:ObjectAttrinbutes ;
         sh:minCount 0 ;
-        sh:maxCount 1 ; #MANDATORY!
+        sh:maxCount 1 ; #optional!
         sh:severity sh:Violation ;
         sh:message "The targetObjectAttribute property is optional but the referenced object needs to be instance of ObjectAttributes"@en ;
     ] ;
