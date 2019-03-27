@@ -65,7 +65,7 @@
     sh:property [
       sh:path rami:hasView ;
       sh:class rami:View ;
-      sh:minCount 0 ;
+      sh:minCount 0 ; #Perhaps sh:minCount has to be 1 (see "AAS in detail", p. 65 Figure 33)
       #sh:message ""@en ;
     ] ;
     sh:property [

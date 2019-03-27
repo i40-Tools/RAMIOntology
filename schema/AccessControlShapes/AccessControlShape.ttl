@@ -1,0 +1,77 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+<#AccessControlShape>
+    a sh:NodeShape ;
+    sh:targetClass rami:AccessControl ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ; # redundst
+    ] ;
+
+    sh:property [
+        sh:path rami:hasAccessPermissionRule ;
+        sh:class rami:AccessPermissionRule ;
+        sh:minCount 0 ;
+        sh:severity sh:Violation ;
+        sh:message "rami:hasAccessPermissionRule has to be of type AccessPermissionRule."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:selectableSubjectAttributes ;
+        sh:class rami:Submodel ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ; # optional
+        sh:severity sh:Violation ;
+        sh:message "rami:selectableSubjectAttributes needs to be instance of rami:Submodel"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:defaultSubjectAttributes* ;
+        sh:class rami:Submodel ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ; # optional
+        sh:severity sh:Violation ;
+        sh:message "rami:defaultSubjectAttribute needs to be instance of rami:Submodel"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:selectablePermissions ;
+        sh:class rami:Submodel ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ; # optional
+        sh:severity sh:Violation ;
+        sh:message "rami:selectablePermissions needs to be instance of rami:Submodel"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:defaultPermissions ;
+        sh:class rami:Submodel ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ; # optional
+        sh:severity sh:Violation ;
+        sh:message "rami:defaultPermissions needs to be instance of rami:Submodel"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:selectableEnvironmentAttributes ;
+        sh:class rami:Submodel ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ; # optional
+        sh:severity sh:Violation ;
+        sh:message "rami:selectableEnvironmentAttributes needs to be instance of rami:Submodel"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:defaultEnvironmentAttributes ;
+        sh:class rami:Submodel ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ; # optional
+        sh:severity sh:Violation ;
+        sh:message "rami:defaultEnvironmentAttributes needs to be instance of rami:Submodel"@en ;
+    ] .
