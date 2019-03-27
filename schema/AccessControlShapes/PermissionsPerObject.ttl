@@ -1,0 +1,41 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+<#PermissionsPerObjectShape>
+    a sh:NodeShape ;
+    sh:targetClass rami:PermissionsPerObject ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rami:object ;
+        sh:class rami:Referable ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ; # MANDATORY!
+        sh:severity sh:Violation ;
+        sh:message "Exaclty one Referable object is required."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:targetObjectAttributes ;
+        sh:class rami:ObjectAttrinbutes ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ; #MANDATORY!
+        sh:severity sh:Violation ;
+        sh:message "The targetObjectAttribute property is optional but the referenced object needs to be instance of ObjectAttributes"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:hasPermission ;
+        sh:class rami:Permission ;
+        sh:minCount 0 ;
+        sh:severity sh:Violation ;
+        sh:message "The permission property is not mandatory but assigned values must be Permissions."@en ;
+    ] .
