@@ -20,7 +20,8 @@
         sh:minCount 1 ;
         sh:maxCount 1 ; # MANDATORY !
         #TODO: Impelment constraints AASd-010 and AASd-11
-        sh:severity sh:Violation ;
+        
+		sh:severity sh:Violation ;
         sh:message "Exactly one Property needs to assign torami:hasPermission property."@en ;
     ] ;
 
