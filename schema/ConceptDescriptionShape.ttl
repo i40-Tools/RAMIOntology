@@ -42,6 +42,16 @@
       sh:severity sh:Violation ;
       sh:message "Each concept description must have at least one short ID with datatype xsd:string."@en ;
     ] ;
+
+    sh:property [
+      sh:path rami:preferredName ;
+      sh:valueDatatype xsd:langString ;
+      sh:minCount 0 ;
+      sh:description "This is the preferred Name of the concept in any language."@en ;
+      sh:severity sh:Violation ;
+      sh:message "The rami:preferredName should be of type xsd:string."@en ;
+    ] ; ### not specified in table, but listed in more than three UMLs (for example: "AAS in detail", p. 65 Figure 33)
+
     # sh:property [
     #   sh:path rami:semanticId ;
 	  #   sh:nodeKind sh:IRI ;
@@ -52,3 +62,4 @@
     ########################################
     # the semanticID is part of RDF itself #
     ########################################
+    .

@@ -81,7 +81,7 @@
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
-        sh:message "..."@en ;
+        sh:message "The description property needs to be of type xsd:string."@en ;
     ] ;
 
     sh:property [

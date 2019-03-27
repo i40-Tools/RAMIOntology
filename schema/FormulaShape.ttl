@@ -19,7 +19,7 @@
         sh:class rami:Reference ;
         sh:minCount 0 ;
         sh:severity sh:Violation ;
-        #sh:message ""@en ;
+        sh:message "rami:dependsOn needs to be instance of class rami:Reference."@en ;
     ] ;
     #########################################################
     # inherits from Constraint (not defined in the pdf?!?!  #

@@ -34,12 +34,15 @@
       sh:severity sh:Violation ;
       sh:message "Each view must have at least one short ID with datatype xsd:string."@en ;
     ] ;
-    sh:property [
-      sh:path rami:semanticId ;
-	  sh:someOf [ 
-		sh:constraint [
-			sh:nodeKind sh:IRI ;
-		] ;
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  # sh:someOf [ 
+		# sh:constraint [
+		# 	sh:nodeKind sh:IRI ;
+		# ] ;
+    ########################################
+    # the semanticID is part of RDF itself #
+    ########################################
 		sh:constraint [
 			sh:nodeKind rami:IRDI ;
 		] ;

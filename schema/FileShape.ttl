@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
+@prefix u4u: <https://uri4uri.net/vocab#> .
 
 <#FileShape>
 
@@ -22,7 +23,8 @@
 
     sh:property [
         sh:path rami:mimeType ;
-        sh:class rami:mimeType ;
+        sh:class u4u:MimetypeDatatype ;
+        #TODO: implement RegEx "[a-z]+/[a-z]+"
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;

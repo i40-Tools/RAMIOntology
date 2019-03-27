@@ -58,6 +58,7 @@ a sh:NodeShape ;
     # DataSpecification:
     sh:property [
       sh:path rami:hasDataSpecification ;
+      sh:class rami:Reference ;
       sh:minCount 0 ;
 	  sh:nodeKind sh:URI ;
       sh:severity sh:Violation ;
@@ -86,10 +87,10 @@ a sh:NodeShape ;
         sh:path rami:idShort ; 
         #sh:class xsd:string ; #TODO: check!
         sh:valueDatatype xsd:string ;
-        sh:minCount 0 ;
+        sh:minCount 0 ; # WHY NOT MANDATORY (sh:minCount 1) ?
         sh:maxCount 1 ;
         sh:severity sh:violation ;
-        sh:message "..."@en ; 
+        sh:message "The idShort-property from Referable needs to be xsd:string."@en ; 
     ] ;
 
     sh:property [
@@ -99,7 +100,7 @@ a sh:NodeShape ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
-        sh:message "..."@en ;
+        sh:message "rami:category is a property that is inherited from Referable and needs to be of type xsd:string."@en ;
     ] ;
 
     sh:property [
@@ -123,7 +124,7 @@ a sh:NodeShape ;
 
     # Qualifiable:
     sh:constraint [
-		sh:nodeKind sh:IRI ;
+		sh:nodeKind sh:URI ;
 		sh:message "Each rami object must be a URI."@en ;
 	] ;
 
@@ -138,14 +139,15 @@ a sh:NodeShape ;
     ] ;
 
     # HasSemantics:
-    sh:property [
-        sh:path rami:semanticId ;
-        sh:nodeKind sh:URI ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:severity sh:Violation ;
-        sh:message "Every submodel element needs exactly one semantic definition (semanticId in HasSemantics)"@en ;
-    ] ;
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  # sh:someOf [ 
+		# sh:constraint [
+		# 	sh:nodeKind sh:IRI ;
+		# ] ;
+    ########################################
+    # the semanticID is part of RDF itself #
+    ########################################
 
     # HasKind:
     sh:property [

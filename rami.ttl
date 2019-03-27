@@ -545,6 +545,12 @@ Note: This element is used to ease navigation in the model and thus it enables m
             rdfs:label "parent"@en .
 
 
+###  https://w3id.org/i40/rami#preferredName
+rami:preferredName rdf:type owl:ObjectProperty ;
+                   rdfs:comment "This is the preferredName of a ConceptDescription object"@en ;
+                   rdfs:label "preferredName"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#qualifierType
 rami:qualifierType rdf:type owl:ObjectProperty .
 
@@ -1514,8 +1520,8 @@ The asset has a globally unique identifier plus – if needed – additional dom
            skos:altLabel "Entity"@en ;
            skos:prefLabel "Asset"@en ;
            skos:definition "Eindeutig identifizierbarer Gegenstand, der aufgrund seiner Bedeutung in der Informationswelt verwaltet wird"@de ;
-           skos:note "Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en ;
-           skos:altLabel "Entität"@de .
+           skos:altLabel "Entität"@de ;
+           skos:note "Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en .
 
 
 rami:assetId owl:deprecated "true"^^xsd:boolean ;
@@ -1523,8 +1529,8 @@ rami:assetId owl:deprecated "true"^^xsd:boolean ;
              rdfs:comment "The unique identifier of an asset. Note the difference between the 'asset ID' idenitfier and the URIs for the resources."@en .
 
 
-rami:description rdfs:comment "Description or comments on the element. The description can be provided in several languages."@en ;
-                 skos:prefLabel "has Description"@en .
+rami:description skos:prefLabel "has Description"@en ;
+                 rdfs:comment "Description or comments on the element. The description can be provided in several languages."@en .
 
 
 rami:hasValue rdfs:comment """Points to the current value that can be specified through an instanced submodel (for 

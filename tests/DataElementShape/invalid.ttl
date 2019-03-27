@@ -10,13 +10,13 @@
 ex:exampleDataElement
    rdf:type rami:DataElement ;
    rami:idShort [rdf:type xsd:string] ;
-   rami:semanticId [rdf:type rami:semanticId]
+   #rami:semanticId [rdf:type rami:semanticId]
 .
 
 ex:secondExampleDataElement
    rdf:type rami:DataElement ;
    rami:idShort [rdf:type xsd:string] ;
-   rami:semanticId [rdf:type rami:Reference] ;
+   #rami:semanticId [rdf:type rami:Reference] ;
    rami:administration [rdf:type rami:AdministrativeInformation] ;
    rami:hasKind [rdf:type sh:Type] ;
    rami:hasSubmodel [rdf:type rami:Submodel] ;
