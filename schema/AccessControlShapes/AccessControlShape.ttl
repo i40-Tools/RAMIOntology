@@ -25,8 +25,8 @@
     sh:property [
         sh:path rami:selectableSubjectAttributes ;
         sh:class rami:Submodel ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ; # optional
+        sh:minCount 1 ; # see Figure 66 (page 125) in "AAS in detail"
+        sh:maxCount 1 ; # <s>optional</s>
         sh:severity sh:Violation ;
         sh:message "rami:selectableSubjectAttributes needs to be instance of rami:Submodel"@en ;
     ] ;
@@ -34,8 +34,8 @@
     sh:property [
         sh:path rami:defaultSubjectAttributes* ;
         sh:class rami:Submodel ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ; # optional
+        sh:minCount 1 ; # see Figure 66 (page 125) in "AAS in detail"
+        sh:maxCount 1 ; # <s>optional</s>
         sh:severity sh:Violation ;
         sh:message "rami:defaultSubjectAttribute needs to be instance of rami:Submodel"@en ;
     ] ;
@@ -43,8 +43,8 @@
     sh:property [
         sh:path rami:selectablePermissions ;
         sh:class rami:Submodel ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ; # optional
+        sh:minCount 1 ; # see Figure 66 (page 125) in "AAS in detail"
+        sh:maxCount 1 ; # <s>optional</s>
         sh:severity sh:Violation ;
         sh:message "rami:selectablePermissions needs to be instance of rami:Submodel"@en ;
     ] ;
@@ -52,8 +52,8 @@
     sh:property [
         sh:path rami:defaultPermissions ;
         sh:class rami:Submodel ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ; # optional
+        sh:minCount 1 ; # see Figure 66 (page 125) in "AAS in detail"
+        sh:maxCount 1 ; # <s>optional</s>
         sh:severity sh:Violation ;
         sh:message "rami:defaultPermissions needs to be instance of rami:Submodel"@en ;
     ] ;
@@ -70,8 +70,8 @@
     sh:property [
         sh:path rami:defaultEnvironmentAttributes ;
         sh:class rami:Submodel ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ; # optional
+        sh:minCount 1 ; # see Figure 66 (page 125) in "AAS in detail"
+        sh:maxCount 1 ; # <s>optional</s>
         sh:severity sh:Violation ;
         sh:message "rami:defaultEnvironmentAttributes needs to be instance of rami:Submodel"@en ;
     ] .

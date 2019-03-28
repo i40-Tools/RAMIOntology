@@ -28,4 +28,59 @@
         sh:minCount 1 ;
         sh:severity sh:Violation ;
         sh:message "AccessPermissionRule requires at least one instance of PermissionsPerObject."@en ;
+    ] ;
+
+    # inherits from Referable:
+    sh:property [
+        sh:path rami:idShort ; 
+        #sh:class xsd:string ; #TODO: check!
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ; 
+    ] ;
+
+    sh:property [
+        sh:path rami:category ;
+        #sh:class xsd:string ;
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:description ;
+        sh:valueDatatype xsd:langString ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:parent ;
+        sh:class rami:Referable ; #reference to an abstract class ?? (polymorphism?) #TODO: CHECK THIS
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    # inherits from Qualifiable:
+    sh:constraint [
+		sh:nodeKind sh:URI ;
+		sh:message "Each rami object must be a URI."@en ;
+	] ;
+
+    sh:property [
+      sh:path rami:qualifier ;
+      sh:minCount 0 ;
+	  sh:constraint [
+		sh:nodeKind sh:URI ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:qualifier must be point to a proper URI."@en ;
     ] .
