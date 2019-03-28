@@ -30,17 +30,7 @@
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:description "if value and valueID are both present, they must be identical."@en ;
-        ###############################
-        # if-based-constraints???########
-        
-        # # TODO: CONSTRAINT (s. p. 43)
-        # [ rami:qualifierValueId sh:count 1 (
-        #    sh:and (
-        #    [ rami:qualifierValue sh:count 1 (
-        #         sh:hasValue rami:qualifierValueId ; ) ;
-        #      ] ;
-        #   ) ;
-        # ) ; ]; # INVALID SYNTAX
+        # missing contstraint: AAS-d006
         sh:severity sh:Violation ;
         sh:message "value and valueID need to be identical if both are present"@en ;
     ] ;
@@ -55,7 +45,6 @@
     ] .
 
     #inherits from Constraint (not defined in the pdf     ?????????)
-    #TODO: Implement!
 
     #########################################################
     # inherits from HasSemantics                            #

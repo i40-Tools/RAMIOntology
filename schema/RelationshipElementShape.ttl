@@ -72,7 +72,6 @@
     #############################################
     sh:property [
         sh:path rami:idShort ; 
-        #sh:class xsd:string ; #TODO: check!
         sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -82,7 +81,6 @@
 
     sh:property [
         sh:path rami:category ;
-        #sh:class xsd:string ;
         sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -101,7 +99,7 @@
 
     sh:property [
         sh:path rami:parent ;
-        sh:class rami:Referable ; #reference to an abstract class ?? (polymorphism?) #TODO: CHECK THIS
+        sh:class rami:Referable ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;

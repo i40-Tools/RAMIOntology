@@ -21,7 +21,7 @@
 
     sh:property [
         sh:path rami:value ;
-        sh:class rami:SubmodelElement ; #TODO: check if already available (Protégé)
+        sh:class rami:SubmodelElement ;
         sh:minCount 0 ;
         sh:severity sh:Violation ;
         sh:message "rami:value needs to be instance of rami:SubModelElement"@en^^xsd:string ;
@@ -68,7 +68,6 @@
     #inherits from Referable
     sh:property [
         sh:path rami:idShort ; 
-        #sh:class xsd:string ; #TODO: check!
         sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -78,7 +77,6 @@
 
     sh:property [
         sh:path rami:category ;
-        #sh:class xsd:string ;
         sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -97,7 +95,7 @@
 
     sh:property [
         sh:path rami:parent ;
-        sh:class rami:Referable ; #reference to an abstract class ?? (polymorphism?) #TODO: CHECK THIS
+        sh:class rami:Referable ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
