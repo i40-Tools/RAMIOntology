@@ -5,95 +5,308 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
-@prefix iais: <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus#> .
-@prefix keys: <https://iais.fraunhofer.de/en/aas/examples/keys#> .
+@prefix iais: <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/> .
+@prefix keys: <https://iais.fraunhofer.de/en/aas/examples/keys/> .
 @prefix aas: <https://iais.fraunhofer.de/en/#> .
+@prefix obj: <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/> .
+@prefix : <http://example.org/> .
 
-# connecting AAS with all submodelElements:
-# _:se1 ––––> _:aas
-
-_:sm1 rami:key [
-                rami:type sh:GlobalReference ; #  TODO: select case from enum correct
-                rami:local "true"^^xsd:string ;
-                rami:idType sh:URI ;
-                rami:value keys:010 ;
-            ] .
-
-_:aas 
+iais:aas 
+    rdf:type rami:AdminShell ;
     rami:idShort "RaspberryPiModelThreeBPlusAAS"^^xsd:string ;
-    rami:id iais:aas; # https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/aas
+    #rami:id iais:aas; # https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/aas
+    rami:asset <https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus> ;
+	#######TODO: Modify shape to fit
+	# [
+    #     rami:hasDataSpecification [
+    #         rami:key [
+    #             rami:type sh:GlobalReference ; # how to select case from enum ?
+    #             rami:local "true"^^xsd:string ;
+    #             rami:idType sh:URI ;
+    #             rami:value "https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus" ;
+    #         ]
+    #     ]
+    # ] ;
+    rami:hasSubmodel key:001 ;
+    rami:hasSubmodel key:010 ;
+    rami:hasSubmodel key:011 ;
+    ##########################
+    # TODO: Modify shapes and check rami:hasDataSpecification relation to key ...
+
     rami:asset [
-        rami:hasDataSpecification [
-            rami:key [
-                rami:type sh:GlobalReference ; # how to select case from enum ?
-                rami:local "true"^^xsd:string ;
-                rami:idType sh:URI ;
-                rami:value "https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus" ;
-            ]
-        ]
-    ] ;
-    rami:hasSubmodel [
-        rami:hasDataSpecification [
-            rami:key [
-                rami:type sh:GlobalReference ; #  TODO: select case from enum correct
-                rami:local "true"^^xsd:string ;
-                rami:idType sh:URI ;
-                rami:value keys:001 ;
-            ]
-        ]
-    ] ;
-    rami:hasSubmodel [
-        rami:hasDataSpecification _:sm1
-    ] ;
-    rami:hasSubmodel [
-        rami:hasDataSpecification [
-            rami:key [
-                rami:type sh:GlobalReference ; #  TODO: select case from enum correct
-                rami:local "true"^^xsd:string ;
-                rami:idType sh:URI ;
-                rami:value keys:011 ;
-            ]
-        ]
-    ] ;
-    rami:asset [
+        rami:label "device"@en ;
         rami:idShort "RaspberryPiModelThreeBPlus"^^xsd:string ;
         rami:description "single board computer for education, microservices and all other imaginable purposes"^^xsd:langString ;
-        rami:id [
-            # IdentifierShape:
-            rami:idType sh:URI ; 
-            rami:id "https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus" ;
-        ] ;
+        rami:id "https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus" ;
+        # rami:id [
+        #     # sense of define tdType ?
+        #     rami:idType sh:URI ;
+        #     rami:id "https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus" ;
+        # ] ;
         rami:assetIdentificationModel _:sm1 ;
+        ###TODO:MODIFY shape and property
+        rami:hasSubmodel [
+            ### the following part should be a collection of SubmodelElements
+            ### perhaps its easier to use SubmodelElementCollections (see shape)
+            ####### TODO:MODIFY ASSET-Shape and add submodelElementCollection as property !
+            rami:hasSubmodelElement obj:clockingSpeed ;
+            rami:hasSubmodelElement obj:architecture ;
+            rami:hasSubmodelElement obj:socket ;
+            rami:hasSubmodelElement obj:cpu ;
+            rami:hasSubmodelElement obj:ram ;
+            rami:hasSubmodelElement obj:wifi ;
+            rami:hasSubmodelElement obj:ethernet ;
+            rami:hasSubmodelElement obj:audio-output ;
+            rami:hasSubmodelElement obj:usb-ports ;
+            rami:hasSubmodelElement obj:gpio ;
+            rami:hasSubmodelElement obj:power-in ;
+            rami:hasSubmodelElement obj:os ;
+            rami:hasSubmodelElement obj:weight ;
+            rami:hasSubmodelElement obj:heigth ;
+            rami:hasSubmodelElement obj:length ;
+            rami:hasSubmodelElement obj:width ;
+            rami:hasSubmodelElement obj:maxOutputSpeedUSBPorts ;
+        ] ;
+
+        rami:hasSubmodel [
+            rami:idShort "AssetIdentification" ;
+            rami:id obj:AssetIdentification ;
+            ### collection of all SubmodelElements
+            ### perhaps its easier to use SubmodelElementCollections (see shape)
+            rami:hasSubmodelElement obj:manufacturer ;
+            rami:hasSubmodelElement obj:brand ;
+            rami:hasSubmodelElement obj:productDescription ;
+        ]
     ] ;
+    # no collection for conceptDescriptions
+    rami:hasConceptDescription obj:document ;
+    rami:hasConceptDescription obj:documentID ;
+    rami:hasConceptDescription obj:documentDomain ;
+    rami:hasConceptDescription obj:documentPartID ;
+    rami:hasConceptDescription obj:documentClassification ;
+    rami:hasConceptDescription obj:documentVersion ;
+    rami:hasConceptDescription obj:documentType ;
+    rami:hasConceptDescription obj:referencedObject ;
+    rami:hasConceptDescription obj:documentIDDoaminID ;
+    rami:hasConceptDescription obj:documentIDType ;
+    rami:hasConceptDescription obj:documentpartIDDescription ;
+    rami:hasConceptDescription obj:documentDomainParty ;
+    rami:hasConceptDescription obj:documentDomainID ;
+    rami:hasConceptDescription obj:documentClassID ;
+    rami:hasConceptDescription obj:documentClassName ;
+    rami:hasConceptDescription obj:documentClassificationSystem ;
+    rami:hasConceptDescription obj:documentversionID ;
+    rami:hasConceptDescription obj:language ;
+    rami:hasConceptDescription obj:documentVersionParty ;
+    rami:hasConceptDescription obj:documentversionDescription ;
+    rami:hasConceptDescription obj:documentversionLifeCycleStatus ;
+    rami:hasConceptDescription obj:documentRelationship ;
+    rami:hasConceptDescription obj:storedDocumentRepresentaion ;
+    rami:hasConceptDescription obj:documentversioNdoaminID ;
+    rami:hasConceptDescription obj:languageCode ;
+    rami:hasConceptDescription obj:lifeCycleStatusParty ;
+    rami:hasConceptDescription obj:status ;
+    rami:hasConceptDescription obj:date ;
+    rami:hasConceptDescription obj:lifeCycleStatusPurpose ;
+    rami:hasConceptDescription obj:basedOnProcedure ;
+    rami:hasConceptDescription obj:lifeCycleStatusComment ;
+    rami:hasConceptDescription obj:description ;
+    rami:hasConceptDescription obj:title ;
+    rami:hasConceptDescription obj:summary ;
+    rami:hasConceptDescription obj:keywords ;
+    rami:hasConceptDescription obj:party ;
+    rami:hasConceptDescription obj:organizationID ;
+    rami:hasConceptDescription obj:organizationName ;
+    rami:hasConceptDescription obj:organizationOfficialName ;
+    rami:hasConceptDescription obj:digitalFile ;
+    rami:hasConceptDescription obj:fileID ;
+    rami:hasConceptDescription obj:fileName ;
+    rami:hasConceptDescription obj:fileFormat ;
+    rami:hasConceptDescription obj:documentRelationshipDocumentId ;
+    rami:hasConceptDescription obj:documentRelationshipDocumentVersionId ;
+    rami:hasConceptDescription obj:documentRelationshipDocumentPartId ;
+    rami:hasConceptDescription obj:documentRelationshipType ;
+    rami:hasConceptDescription obj:documentRelationshipDescription ;
+    rami:hasConceptDescription obj:domainId ;
+    rami:hasConceptDescription obj:author ;
+    rami:hasConceptDescription obj:manufacturer ;
+    rami:hasConceptDescription obj:weight ;
+    rami:hasConceptDescription obj:width ;
+    rami:hasConceptDescription obj:heigth ;
+    rami:hasConceptDescription obj:length ;
+    rami:hasConceptDescription obj:maxOutputSpeedUSBPorts ;
+    rami:hasConceptDescription obj:os ;
+    rami:hasConceptDescription obj:usb ;
+    rami:hasConceptDescription obj:clockingSpeed ;
+    rami:hasConceptDescription obj:architecture ;
+    rami:hasConceptDescription obj:socket ;
+    rami:hasConceptDescription obj:cpu ;
+    rami:hasConceptDescription obj:ram ;
+    rami:hasConceptDescription obj:wifi ;
+    rami:hasConceptDescription obj:ethernet ;
+    rami:hasConceptDescription obj:audioOutput ;
+    rami:hasConceptDescription obj:usb-ports ;
+    rami:hasConceptDescription obj:gpio ;
+    rami:hasCondeptDescription obj:power-in ;
     .
 
-_:sec
-    rami:ordered "true"^^xsd:boolean ;
-    rami:allowDuplicates "false"^^xsd:boolean ;
-    rami:value _:se1 ;
-    rami:value _:se2 ;
-    .
+#########################################################################################################
+# SubmodelElements:                   TODO:MODIFY SHAPES                                                #
+#########################################################################################################
+# _:se1
+#     a rami:SubmodelElement ;
+# 	rdfs:label "usb-ports" ;
+#     rami:idShort "usb-ports"^^xsd:string ;
+# 	:usb-ports <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb-ports> .
 
-_:se1
-    rami:idShort "usb-ports"^^xsd:string ;
-    rami:hasKind sh:Instance ;
-    rami:value "4*USB2"^^xsd:string ;
-    # rami:hasKey is not part of the PropertyShape
-    rami:hasKey [
-        rami:type "ConceptDescription"^^xsd:string ;
-        rami:local "true"^^xsd:boolean ;
-        rami:idType sh:URI ;
-        rami:value "https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb-ports"^^xsd:string ;
-    ] .
 
-_:se2
-    rami:idShort "audio-output" ;
+###################################
+# FIXME:semanticID is missing !   #
+###################################
+
+
+obj:clockingSpeed
+    a rami:SubmodelElement ;
+    rdfs:label "clockingSpeed (frequence)"^^xsd:langString ;
+    rdfs:description "The clocking speed of the processor."@en ;
+    rami:hasKind sh:Instance ; # FIXME:correct way to select case from enum ?
+    rami:idShort "clockingSpeed"^^xsd:string ;
+    rami:value "1.4GHz" .
+obj:architecture
+    a rami:SubmodelElement ;
+    rdfs:label "architecture"^^xsd:langString ;
+    rdfs:description "The architecture of the processor."@en ;
     rami:hasKind sh:Instance ;
-    rami:value "built-in-speaker"^^xsd:string ;
-    # where is this from ?? hasSemantics ? TODO:CHECK THE ORIGIN AND POSSIBLE PATH !
-    rami:hasKey [
-        rami:type "ConceptDescription"^^xsd:string ;
-        rami:local "true"^^xsd:boolean ;
-        rami:idType sh:URI ;
-        rami:value "https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output" ;
-    ] .
+    rami:idShort "architecture"^^xsd:string ;
+    rami:value "64-bit" .
+obj:socket
+    a rami:SubmodelElement ;
+    rdfs:label "socket"^^xsd:langString ;
+    rdfs:description "The socket of the processor"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "soc"^^xsd:string ;
+    rami:value "Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC" .
+obj:cpu
+    a rami:SubmodelElement ;
+    rdfs:label "CPU"^^xsd:langString ;
+    rdfs:description "central processing unit"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "processor"^^xsd:string ;
+    rami:value "ARM Cortex-A53 CPU" .
+obj:ram
+    a rami:SubmodelElement ;
+    rdfs:label "RAM"^^xsd:langString ;
+    rdfs:description "Random Access Memory"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "memory"^^xsd:string ;
+    rami:value "1GB LPDDR2 SDRAM" .
+obj:wifi
+    a rami:SubmodelElement ;
+    rdfs:label "WiFi and Bluetooth"^^xsd:langString ;
+    rdfs:description "wireless Connectivity"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "wifi"^^xsd:string ;
+    rami:value "Dual-band 802.11ac wireless LAN (2.4GHz and 5GHz ) and Bluetooth 4.2" .
+obj:ethernet
+    a rami:SubmodelElement ;
+    rdfs:label "ethernet-connectivity"^^xsd:langString ;
+    rdfs:description "wired network connectivity"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "ethernet"^^xsd:string ;
+    rami:value "Gigabit Ethernet over USB 2.0 (max 300 Mbps). Power-over-Ethernet support (with separate PoE HAT). Improved PXE network and USB mass-storage booting." .
+obj:audio-output
+    a rami:SubmodelElement ;
+    rdfs:label "audio"^^xsd:langString ;
+    rdfs:description "audio output source"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "audioOutput"^^xsd:string ;
+    rami:value "built-in-speaker 1W" .
+obj:usb-ports
+    a rami:SubmodelElement ;
+    rdfs:label "usb ports"^^xsd:langString ;
+    rdfs:description "Universal serial bus ports count and specification."@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "usb"^^xsd:string ;
+    rami:value "4*USB2" .
+obj:gpio
+    a rami:SubmodelElement ;
+    rdfs:label "gpio"^^xsd:langString ;
+    rdfs:description "GPIO-Pins"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "gpio"^^xsd:string ;
+    rami:value "40-pin" .
+obj:power-in
+    a rami:SubmodelElement ;
+    rdfs:label "power-in"^^xsd:langString ;
+    rdfs:description "Voltage/Ampere of the power-in. Supports by PoE."@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "powerIn"^^xsd:string ;
+    rami:value "5V/2.5A" .
+obj:os
+    a rami:SubmodelElement ;
+    rdfs:label "OS"^^xsd:langString ;
+    rdfs:description "Operating System"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "os"^^xsd:string ;
+    rami:value "RaspberianOS (Linux distribution)" .
+obj:weight
+    a rami:SubmodelElement ;
+    rdfs:label "weight"^^xsd:langString ;
+    rdfs:description "weigth in gram"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "weigth"^^xsd:string ;
+    rami:value "31g" .
+obj:heigth
+    a rami:SubmodelElement ;
+    rdfs:label "heigth"^^xsd:langString ;
+    rdfs:description "heigth for suitable cases in mm"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "H"^^xsd:string ;
+    rami:value "17 mm" .
+obj:length
+    a rami:SubmodelElement ;
+    rdfs:label "length"^^xsd:langString ;
+    rdfs:description "length for suitable cases in mm"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "length"^^xsd:string ;
+    rami:value "85 mm" .
+obj:witdh
+    a rami:SubmodelElement ;
+    rdfs:label "width"^^xsd:langString ;
+    rdfs:description "width for suitable cases in mm"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "width"^^xsd:string ;
+    rami:value "56 mm" .
+obj:maxOutputSpeedUSBPorts
+    a rami:SubmodelElement ;
+    rdfs:label "maxOutputUSB"^^xsd:langString ;
+    rdfs:description "Max. output power of the USB ports."@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "mopp"^^xsd:string ;
+    rami:value "5W" .
+
+#########################################################################################################
+# the following part is the AssetIdentification-part from the XML                                       #
+#########################################################################################################
+
+obj:manufacturer
+    a rami:SubmodelElement ;
+    rdfs:label "manufacturer"^^xsd:string ;
+    rdfs:description "The manufacturer of all Raspberry Pis."@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort ""^^xsd:string ;
+    rami:value "Raspberry Pi Foundation" .
+obj:brand
+    a rami:SubmodelElement ;
+    rdfs:label "brand"^^xsd:string ;
+    rdfs:description "The brand of the object."@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "brand" ;
+    rami:value "Raspberry Pi" .
+obj:productDescription
+    a rami:SubmodelElement ;
+    rdfs:label "productDescription"^^xsd:string ;
+    rdfs:description "This is the product descriotion of the Raspberry Pi model 3b+"@en ;
+    rami:hasKind sh:Instance ;
+    rami:idShort "description" ;
+    rami:value "The Raspberry Pi is a series of small single-board computers developed in the United Kingdom by the Raspberry Pi Foundation to promote teaching of basic computer science in schools and in developing countries. The original model became far more popular than anticipated,[8] selling outside its target market for uses such as robotics. It does not include peripherals (such as keyboards and mice) and cases. However, some accessories have been included in several official and unofficial bundles." .
