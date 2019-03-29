@@ -1,0 +1,99 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix iais: <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus#> .
+@prefix keys: <https://iais.fraunhofer.de/en/aas/examples/keys#> .
+@prefix aas: <https://iais.fraunhofer.de/en/#> .
+
+# connecting AAS with all submodelElements:
+# _:se1 ––––> _:aas
+
+_:sm1 rami:key [
+                rami:type sh:GlobalReference ; #  TODO: select case from enum correct
+                rami:local "true"^^xsd:string ;
+                rami:idType sh:URI ;
+                rami:value keys:010 ;
+            ] .
+
+_:aas 
+    rami:idShort "RaspberryPiModelThreeBPlusAAS"^^xsd:string ;
+    rami:id iais:aas; # https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/aas
+    rami:asset [
+        rami:hasDataSpecification [
+            rami:key [
+                rami:type sh:GlobalReference ; # how to select case from enum ?
+                rami:local "true"^^xsd:string ;
+                rami:idType sh:URI ;
+                rami:value "https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus" ;
+            ]
+        ]
+    ] ;
+    rami:hasSubmodel [
+        rami:hasDataSpecification [
+            rami:key [
+                rami:type sh:GlobalReference ; #  TODO: select case from enum correct
+                rami:local "true"^^xsd:string ;
+                rami:idType sh:URI ;
+                rami:value keys:001 ;
+            ]
+        ]
+    ] ;
+    rami:hasSubmodel [
+        rami:hasDataSpecification _:sm1
+    ] ;
+    rami:hasSubmodel [
+        rami:hasDataSpecification [
+            rami:key [
+                rami:type sh:GlobalReference ; #  TODO: select case from enum correct
+                rami:local "true"^^xsd:string ;
+                rami:idType sh:URI ;
+                rami:value keys:011 ;
+            ]
+        ]
+    ] ;
+    rami:asset [
+        rami:idShort "RaspberryPiModelThreeBPlus"^^xsd:string ;
+        rami:description "single board computer for education, microservices and all other imaginable purposes"^^xsd:langString ;
+        rami:id [
+            # IdentifierShape:
+            rami:idType sh:URI ; 
+            rami:id "https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus" ;
+        ] ;
+        rami:assetIdentificationModel _:sm1 ;
+    ] ;
+    .
+
+_:sec
+    rami:ordered "true"^^xsd:boolean ;
+    rami:allowDuplicates "false"^^xsd:boolean ;
+    rami:value _:se1 ;
+    rami:value _:se2 ;
+    .
+
+_:se1
+    rami:idShort "usb-ports"^^xsd:string ;
+    rami:hasKind sh:Instance ;
+    rami:value "4*USB2"^^xsd:string ;
+    # rami:hasKey is not part of the PropertyShape
+    rami:hasKey [
+        rami:type "ConceptDescription"^^xsd:string ;
+        rami:local "true"^^xsd:boolean ;
+        rami:idType sh:URI ;
+        rami:value "https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb-ports"^^xsd:string ;
+    ] .
+
+_:se2
+    rami:idShort "audio-output" ;
+    rami:hasKind sh:Instance ;
+    rami:value "built-in-speaker"^^xsd:string ;
+    # where is this from ?? hasSemantics ? TODO:CHECK THE ORIGIN AND POSSIBLE PATH !
+    rami:hasKey [
+        rami:type "ConceptDescription"^^xsd:string ;
+        rami:local "true"^^xsd:boolean ;
+        rami:idType sh:URI ;
+        rami:value "https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output" ;
+    ] .

@@ -40,12 +40,15 @@
       <aas:kind>Instance</aas:kind>
       <aas:assetIdentificationModelRef>
         <aas:keys>
-          <aas:key type="Submodel" local="true" idType="URI">www.iais.fraunhofer.de/en/aas/examples/keys/010</aas:key>
+          <aas:key type="Submodel" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/keys/010</aas:key>
         </aas:keys>
       </aas:assetIdentificationModelRef>
     </aas:asset>
   </aas:assets>
   <aas:submodels>
+    <aas:submodel>
+    <!-- RDF -->
+    </aas:submodel>
     <aas:submodel>
       <aas:idShort>Documentation</aas:idShort>
       <aas:identification idType="URI">https://www.iais.fraunhofer.de/en/aas/examples/keys/011</aas:identification>
@@ -55,7 +58,6 @@
       <aas:kind>Instance</aas:kind>
       <aas:qualifier />
       <aas:submodelElements>
-      <!-- SubmodelElements START -->
         <aas:submodelElement>
           <aas:submodelElementCollection>
             <aas:idShort>3608870A47_ProjectPlanning</aas:idShort> <!--TODO:modify idShort -->
@@ -642,7 +644,7 @@
             <aas:valueType />
             <aas:value>built-in-speaker</aas:value>
           </aas:property>
-        </aas:submodelElement>
+        </aas:submodelElement> <!-- DRAFT -->
 
         <aas:submodelElement>
           <aas:property>
@@ -657,7 +659,13 @@
             <aas:valueType />
             <aas:value>4*USB2</aas:value>
           </aas:property>
-        </aas:submodelElement>
+        </aas:submodelElement>  <!-- DRAFT -->
+
+        <!---
+        
+        _:abc rami:hasIdShort "usb-ports"^^xsd:string
+
+        -->
 
         <aas:submodelElement>
           <aas:property>

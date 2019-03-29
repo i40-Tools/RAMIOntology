@@ -31,6 +31,15 @@
 		#] ;
 		sh:message "Each AAS object must be either a URI, an IRDI, or both. In case of an RDF serialization, only URIs are allowed."@en ;
 	] ;
+  
+  sh:property [
+    sh:path rami:hasSubmodelElement ; # TODO: Add to RAMI.ttl
+    sh:class rami:SubmodelElement ;
+    sh:minCount 0 ;
+    sh:severity sh:Violation ;
+    sh:message "content of Submodel is stored in rami:SubmodelElement" ;
+  ] ;
+
 	# Submodel inherits from HasSemantics
 	# hasSemantics requirements are fulfilled by RDF itself 
 	
@@ -62,7 +71,8 @@
     sh:property [
       sh:path rami:hasDataSpecification ;
       sh:minCount 0 ;
-	  sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
+      sh:class rami:Reference ;
+	    sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
       sh:severity sh:Violation ;
       sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
     ] ;

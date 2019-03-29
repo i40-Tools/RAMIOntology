@@ -26,7 +26,7 @@
     ] ;
 
     sh:property [
-        sh:path rami:id ;
+        sh:path rami:id ; # FIXME:id is also the path for Identifier in AssetShape
         sh:class rami:id ; #deprecated ?!
         #sh:nodeKind rami:Id ;
         sh:minCount 1 ;

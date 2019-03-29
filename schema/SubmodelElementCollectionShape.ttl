@@ -24,7 +24,7 @@
         sh:class rami:SubmodelElement ;
         sh:minCount 0 ;
         sh:severity sh:Violation ;
-        sh:message "rami:value needs to be instance of rami:SubModelElement"@en^^xsd:string ;
+        sh:message "rami:value needs to be instance of rami:SubModelElement"@en ;
     ] ;
 
     sh:property [
@@ -33,7 +33,7 @@
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
-        sh:message "the attribute ordered is optional and is of type boolean"@en^^xsd:string ;
+        sh:message "the attribute ordered is optional and is of type boolean"@en ;
     ] ;
 
     sh:property [

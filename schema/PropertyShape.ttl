@@ -95,7 +95,7 @@
     sh:constraint [
 		sh:nodeKind sh:IRI ;
 		sh:message "Each rami object must be a URI."@en ;
-	] ;
+	  ] ;
 
     sh:property [
       sh:path rami:qualifier ;
