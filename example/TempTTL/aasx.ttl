@@ -5,9 +5,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
-@prefix iais: <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus#> .
-@prefix keys: <https://iais.fraunhofer.de/en/aas/examples/keys#> .
+@prefix iais: <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/> .
+@prefix keys: <https://iais.fraunhofer.de/en/aas/examples/keys/> .
 @prefix aas: <https://iais.fraunhofer.de/en/#> .
+@prefix : <http://example.org/> .
 
 # connecting AAS with all submodelElements:
 # _:se1 ––––> _:aas
@@ -19,10 +20,12 @@ _:sm1 rami:key [
                 rami:value keys:010 ;
             ] .
 
-_:aas 
+iais:aas a rami:AdminShell ;
     rami:idShort "RaspberryPiModelThreeBPlusAAS"^^xsd:string ;
-    rami:id iais:aas; # https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/aas
-    rami:asset [
+    #rami:id iais:aas; # https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/aas
+    rami:asset <https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus> ;
+	
+	[
         rami:hasDataSpecification [
             rami:key [
                 rami:type sh:GlobalReference ; # how to select case from enum ?
@@ -74,17 +77,18 @@ _:sec
     rami:value _:se2 ;
     .
 
-_:se1
+:sebastian a ex:Human ;
+	rdfs:label "Sebastian Bader" .
+
+_:se1 a rami:Sub...
+	rdfs:label "usb-ports" ;
     rami:idShort "usb-ports"^^xsd:string ;
+	:usb-ports <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb-ports> .
+	
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb-ports>
     rami:hasKind sh:Instance ;
-    rami:value "4*USB2"^^xsd:string ;
+    rdfs:label "4*USB2"^^xsd:string .
     # rami:hasKey is not part of the PropertyShape
-    rami:hasKey [
-        rami:type "ConceptDescription"^^xsd:string ;
-        rami:local "true"^^xsd:boolean ;
-        rami:idType sh:URI ;
-        rami:value "https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb-ports"^^xsd:string ;
-    ] .
 
 _:se2
     rami:idShort "audio-output" ;
