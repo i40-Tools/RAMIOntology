@@ -360,6 +360,25 @@
             <aas:value>2</aas:value>
           </aas:property>
         </aas:submodelElement>
+                <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>power-in</aas:idShort>
+            <aas:category>CONSTANT</aas:category>
+            <aas:description>
+              <aas:langString lang="DE">Power-In</aas:langString>
+              <aas:langString lang="EN">Power-In</aas:langString>
+            </aas:description>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>5/2.5 DC</aas:value>
+          </aas:property>
+        </aas:submodelElement>
         <!---
         <aas:submodelElement>
           <aas:property>
@@ -400,7 +419,7 @@
             <aas:valueType />
             <aas:value>Gigabit Ethernet over USB 2.0 (max 300 Mbps). Power-over-Ethernet support (with separate PoE HAT). Improved PXE network and USB mass-storage booting.</aas:value>
           </aas:property>
-        </aas:submodelElement>
+        </aas:submodelElement> -->
         <aas:submodelElement>
           <aas:property>
             <aas:idShort>audio-output</aas:idShort>
@@ -419,7 +438,26 @@
             <aas:valueType />
             <aas:value>built-in-speaker</aas:value>
           </aas:property>
-        </aas:submodelElement>
+        </aas:submodelElement> 
+                <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>os</aas:idShort>
+            <aas:category>CONSTANT</aas:category>
+            <aas:description>
+              <aas:langString lang="DE">BS</aas:langString>
+              <aas:langString lang="EN">OS</aas:langString>
+            </aas:description>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>Raspberian OS (UNIX based)</aas:value>
+          </aas:property>
+        </aas:submodelElement> 
         <aas:submodelElement>
           <aas:property>
             <aas:idShort>usb-ports</aas:idShort>
@@ -457,8 +495,69 @@
             <aas:valueType />
             <aas:value>40</aas:value>
           </aas:property>
-        </aas:submodelElement> -->
-        <!-- useless -->
+        </aas:submodelElement>
+
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>weight</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>31</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>height</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>17</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>length</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>85</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>width</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>56</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+
+
         <aas:submodelElement>
           <aas:property>
             <aas:idShort>wifi-connection</aas:idShort>
@@ -480,33 +579,21 @@
         </aas:submodelElement>
         <aas:submodelElement>
           <aas:property>
-            <aas:idShort>ToolMount</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">www.boschrexroth.com/cd/toolmount</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>1/4" quick-change chuck (EN), 1/4“-Schnellwechselfutter (DE)</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>Weight</aas:idShort>
+            <aas:idShort>ethernet</aas:idShort>
+            <aas:category>CONSTANT</aas:category>
             <aas:description>
-              <aas:langString lang="EN">Weight without battery</aas:langString>
+              <aas:langString lang="DE">kabelgebundene Netzwerkanbindung</aas:langString>
+              <aas:langString lang="EN">wired network-.connectivity</aas:langString>
             </aas:description>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAH829#002</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>1.34</aas:value>
+            <aas:value>Gigabit Ethernet over USB 2.0 (max 300 Mbps). Power-over-Ethernet support (with separate PoE HAT). Improved PXE network and USB mass-storage booting.</aas:value>
           </aas:property>
         </aas:submodelElement>
       </aas:submodelElements>
@@ -1942,36 +2029,6 @@
       </aas:embeddedDataSpecification>
     </aas:conceptDescription>
     <aas:conceptDescription>
-      <aas:idShort>Weight</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-AAB713#005</aas:identification>
-      <aas:embeddedDataSpecification>
-        <aas:hasDataSpecification>
-          <aas:keys>
-            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
-          </aas:keys>
-        </aas:hasDataSpecification>
-        <aas:dataSpecificationContent>
-          <aas:dataSpecificationIEC61360>
-            <IEC61360:preferredName>
-              <aas:langString lang="EN">Weight</aas:langString>
-              <aas:langString lang="DE">Gewicht</aas:langString>
-            </IEC61360:preferredName>
-            <IEC61360:shortName>Weight</IEC61360:shortName>
-            <IEC61360:unit>kg</IEC61360:unit>
-            <IEC61360:unitId>
-              <IEC61360:keys />
-            </IEC61360:unitId>
-            <IEC61360:sourceOfDefinition />
-            <IEC61360:dataType>REAL_MEASURE</IEC61360:dataType>
-            <IEC61360:definition>
-              <aas:langString lang="DE"> Masse des Wägegutes ohne Verpackung und ohne Transportgerät</aas:langString>
-              <aas:langString lang="EN">Mass of weight without packaging and transport unit</aas:langString>
-            </IEC61360:definition>
-          </aas:dataSpecificationIEC61360>
-        </aas:dataSpecificationContent>
-      </aas:embeddedDataSpecification>
-    </aas:conceptDescription>
-    <aas:conceptDescription>
       <aas:idShort>MaxTorque</aas:idShort>
       <aas:identification idType="IRDI">0173-1#02-BAE098#003</aas:identification>
       <aas:embeddedDataSpecification>
@@ -2024,7 +2081,7 @@
         </aas:dataSpecificationContent>
       </aas:embeddedDataSpecification>
     </aas:conceptDescription>
-    <aas:conceptDescription>
+    <!-- <aas:conceptDescription>
       <aas:idShort>width</aas:idShort>
       <aas:identification idType="IRDI">0173-1#02-BAF016#005</aas:identification>
       <aas:embeddedDataSpecification>
@@ -2051,7 +2108,7 @@
           </aas:dataSpecificationIEC61360>
         </aas:dataSpecificationContent>
       </aas:embeddedDataSpecification>
-    </aas:conceptDescription>
+    </aas:conceptDescription> -->
     <aas:conceptDescription>
       <aas:idShort>WeightMachine</aas:idShort>
       <aas:identification idType="IRDI">0173-1#02-AAH829#002</aas:identification>
@@ -2168,6 +2225,240 @@
         </aas:dataSpecificationContent>
       </aas:embeddedDataSpecification>
     </aas:conceptDescription>
+
+    <aas:conceptDescription>
+      <aas:idShort>ethernet</aas:idShort>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet</aas:identification>
+      <aas:embeddedDataSpecification>
+        <aas:hasDataSpecification>
+          <aas:keys>
+            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
+          </aas:keys>
+        </aas:hasDataSpecification>
+        <aas:dataSpecificationContent>
+          <aas:dataSpecificationIEC61360>
+            <IEC61360:preferredName>
+              <aas:langString lang="EN">wired network-connectivity</aas:langString>
+              <aas:langString lang="DE">kabelgebundene Netzwerkanbindung</aas:langString>
+            </IEC61360:preferredName>
+            <IEC61360:shortName />
+            <IEC61360:unit></IEC61360:unit>
+            <IEC61360:unitId>
+              <IEC61360:keys>
+                <IEC61360:key type="GlobalReference" local="false" idType="IRDI">0173-1#05-AAA899#002</IEC61360:key>
+              </IEC61360:keys>
+            </IEC61360:unitId>
+            <IEC61360:sourceOfDefinition />
+            <IEC61360:dataType>STRING</IEC61360:dataType>
+            <IEC61360:definition>
+              <aas:langString lang="EN">LAN</aas:langString>
+              <aas:langString lang="DE">LAN</aas:langString>
+            </IEC61360:definition>
+          </aas:dataSpecificationIEC61360>
+        </aas:dataSpecificationContent>
+      </aas:embeddedDataSpecification>
+    </aas:conceptDescription>
+
+    <aas:conceptDescription>
+      <aas:idShort>length</aas:idShort>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length</aas:identification>
+      <aas:embeddedDataSpecification>
+        <aas:hasDataSpecification>
+          <aas:keys>
+            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
+          </aas:keys>
+        </aas:hasDataSpecification>
+        <aas:dataSpecificationContent>
+          <aas:dataSpecificationIEC61360>
+            <IEC61360:preferredName>
+              <aas:langString lang="EN">length of the raspberry</aas:langString>
+              <aas:langString lang="DE">Seitenlänge des Rapsbery Pis</aas:langString>
+            </IEC61360:preferredName>
+            <IEC61360:shortName />
+            <IEC61360:unit>mm</IEC61360:unit>
+            <IEC61360:unitId>
+              <IEC61360:keys>
+                <IEC61360:key type="GlobalReference" local="false" idType="IRDI">0173-1#05-AAA179#002</IEC61360:key>
+              </IEC61360:keys>
+            </IEC61360:unitId>
+            <IEC61360:sourceOfDefinition />
+            <IEC61360:dataType>FLOAT</IEC61360:dataType>
+            <IEC61360:definition>
+              <aas:langString lang="EN">l [mm]</aas:langString>
+              <aas:langString lang="DE">l [mm]</aas:langString>
+            </IEC61360:definition>
+          </aas:dataSpecificationIEC61360>
+        </aas:dataSpecificationContent>
+      </aas:embeddedDataSpecification>
+    </aas:conceptDescription>
+
+        <aas:conceptDescription>
+      <aas:idShort>width</aas:idShort>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width</aas:identification>
+      <aas:embeddedDataSpecification>
+        <aas:hasDataSpecification>
+          <aas:keys>
+            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
+          </aas:keys>
+        </aas:hasDataSpecification>
+        <aas:dataSpecificationContent>
+          <aas:dataSpecificationIEC61360>
+            <IEC61360:preferredName>
+              <aas:langString lang="EN">width of the raspberry</aas:langString>
+              <aas:langString lang="DE">Seitenbreite des Rapsbery Pis</aas:langString>
+            </IEC61360:preferredName>
+            <IEC61360:shortName />
+            <IEC61360:unit>mm</IEC61360:unit>
+            <IEC61360:unitId>
+              <IEC61360:keys>
+                <IEC61360:key type="GlobalReference" local="false" idType="IRDI">0173-1#05-AAA189#002</IEC61360:key>
+              </IEC61360:keys>
+            </IEC61360:unitId>
+            <IEC61360:sourceOfDefinition />
+            <IEC61360:dataType>FLOAT</IEC61360:dataType>
+            <IEC61360:definition>
+              <aas:langString lang="EN">w [mm]</aas:langString>
+              <aas:langString lang="DE">b [mm]</aas:langString>
+            </IEC61360:definition>
+          </aas:dataSpecificationIEC61360>
+        </aas:dataSpecificationContent>
+      </aas:embeddedDataSpecification>
+    </aas:conceptDescription>
+
+        <aas:conceptDescription>
+      <aas:idShort>height</aas:idShort>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth</aas:identification>
+      <aas:embeddedDataSpecification>
+        <aas:hasDataSpecification>
+          <aas:keys>
+            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
+          </aas:keys>
+        </aas:hasDataSpecification>
+        <aas:dataSpecificationContent>
+          <aas:dataSpecificationIEC61360>
+            <IEC61360:preferredName>
+              <aas:langString lang="EN">heigth of the raspberry</aas:langString>
+              <aas:langString lang="DE">Höhe des Rapsbery Pis</aas:langString>
+            </IEC61360:preferredName>
+            <IEC61360:shortName />
+            <IEC61360:unit>mm</IEC61360:unit>
+            <IEC61360:unitId>
+              <IEC61360:keys>
+                <IEC61360:key type="GlobalReference" local="false" idType="IRDI">0173-1#05-AAA179#002</IEC61360:key>
+              </IEC61360:keys>
+            </IEC61360:unitId>
+            <IEC61360:sourceOfDefinition />
+            <IEC61360:dataType>FLOAT</IEC61360:dataType>
+            <IEC61360:definition>
+              <aas:langString lang="EN">h [mm]</aas:langString>
+              <aas:langString lang="DE">h [mm]</aas:langString>
+            </IEC61360:definition>
+          </aas:dataSpecificationIEC61360>
+        </aas:dataSpecificationContent>
+      </aas:embeddedDataSpecification>
+    </aas:conceptDescription>
+
+        <aas:conceptDescription>
+      <aas:idShort>weigth</aas:idShort>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight</aas:identification>
+      <aas:embeddedDataSpecification>
+        <aas:hasDataSpecification>
+          <aas:keys>
+            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
+          </aas:keys>
+        </aas:hasDataSpecification>
+        <aas:dataSpecificationContent>
+          <aas:dataSpecificationIEC61360>
+            <IEC61360:preferredName>
+              <aas:langString lang="EN">weigth of the raspberry</aas:langString>
+              <aas:langString lang="DE">Gewicht des Rapsbery Pis</aas:langString>
+            </IEC61360:preferredName>
+            <IEC61360:shortName />
+            <IEC61360:unit>mm</IEC61360:unit>
+            <IEC61360:unitId>
+              <IEC61360:keys>
+                <IEC61360:key type="GlobalReference" local="false" idType="IRDI">0173-1#05-AAA179#002</IEC61360:key>
+              </IEC61360:keys>
+            </IEC61360:unitId>
+            <IEC61360:sourceOfDefinition />
+            <IEC61360:dataType>FLOAT</IEC61360:dataType>
+            <IEC61360:definition>
+              <aas:langString lang="EN">w [g]</aas:langString>
+              <aas:langString lang="DE">g [g]</aas:langString>
+            </IEC61360:definition>
+          </aas:dataSpecificationIEC61360>
+        </aas:dataSpecificationContent>
+      </aas:embeddedDataSpecification>
+    </aas:conceptDescription>
+
+
+    <aas:conceptDescription>
+      <aas:idShort>power-in</aas:idShort>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in</aas:identification>
+      <aas:embeddedDataSpecification>
+        <aas:hasDataSpecification>
+          <aas:keys>
+            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
+          </aas:keys>
+        </aas:hasDataSpecification>
+        <aas:dataSpecificationContent>
+          <aas:dataSpecificationIEC61360>
+            <IEC61360:preferredName>
+              <aas:langString lang="EN">input voltage and power</aas:langString>
+              <aas:langString lang="DE">Eingangsspannung + Eingangsstromstärke</aas:langString>
+            </IEC61360:preferredName>
+            <IEC61360:shortName />
+            <IEC61360:unit>V/A</IEC61360:unit>
+            <IEC61360:unitId>
+              <IEC61360:keys>
+                <IEC61360:key type="GlobalReference" local="false" idType="IRDI">0173-1#05-AAA690#002</IEC61360:key>
+              </IEC61360:keys>
+            </IEC61360:unitId>
+            <IEC61360:sourceOfDefinition />
+            <IEC61360:dataType>STRING</IEC61360:dataType>
+            <IEC61360:definition>
+              <aas:langString lang="EN">input voltage * input power = W</aas:langString>
+              <aas:langString lang="DE">Spannung * Stromstaerke = Leistung</aas:langString>
+            </IEC61360:definition>
+          </aas:dataSpecificationIEC61360>
+        </aas:dataSpecificationContent>
+      </aas:embeddedDataSpecification>
+    </aas:conceptDescription>
+
+        <aas:conceptDescription>
+      <aas:idShort>os</aas:idShort>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os</aas:identification>
+      <aas:embeddedDataSpecification>
+        <aas:hasDataSpecification>
+          <aas:keys>
+            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
+          </aas:keys>
+        </aas:hasDataSpecification>
+        <aas:dataSpecificationContent>
+          <aas:dataSpecificationIEC61360>
+            <IEC61360:preferredName>
+              <aas:langString lang="EN">Operating system</aas:langString>
+              <aas:langString lang="DE">Betriebssystem</aas:langString>
+            </IEC61360:preferredName>
+            <IEC61360:shortName>OS</IEC61360:shortName> <!---TODO: CHECK -->
+            <IEC61360:unit />
+            <IEC61360:unitId>
+              <IEC61360:keys>
+                <IEC61360:key type="GlobalReference" local="false" idType="IRDI">0173-1#05-AAA677#002</IEC61360:key>
+              </IEC61360:keys>
+            </IEC61360:unitId>
+            <IEC61360:sourceOfDefinition />
+            <IEC61360:dataType>STRING</IEC61360:dataType>
+            <IEC61360:definition>
+              <aas:langString lang="EN">the low-level software that supports a computer's basic functions, such as scheduling tasks and controlling peripherals. </aas:langString>
+              <aas:langString lang="DE">Ein Betriebssystem, auch OS (von englisch operating system) genannt, ist eine Zusammenstellung von Computerprogrammen, die die Systemressourcen eines Computers wie Arbeitsspeicher, Festplatten, Ein- und Ausgabegeräte verwaltet und diese Anwendungsprogrammen zur Verfügung stellt.</aas:langString>
+            </IEC61360:definition>
+          </aas:dataSpecificationIEC61360>
+        </aas:dataSpecificationContent>
+      </aas:embeddedDataSpecification>
+    </aas:conceptDescription>
+
+
     <aas:conceptDescription>
       <aas:idShort>clockingSpeed</aas:idShort>
       <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed</aas:identification>
@@ -2328,77 +2619,9 @@
         </aas:dataSpecificationContent>
       </aas:embeddedDataSpecification>
     </aas:conceptDescription>
-<!--     
-      <aas:conceptDescription>
-      <aas:idShort>wifi</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi</aas:identification>
-      <aas:embeddedDataSpecification>
-        <aas:hasDataSpecification>
-          <aas:keys>
-            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
-          </aas:keys>
-        </aas:hasDataSpecification>
-        <aas:dataSpecificationContent>
-          <aas:dataSpecificationIEC61360>
-            <IEC61360:preferredName>
-              <aas:langString lang="EN">wireless connectivity</aas:langString>
-              <aas:langString lang="DE">kabellose connectivity</aas:langString>
-            </IEC61360:preferredName>
-            <IEC61360:shortName>Wi-Fi</IEC61360:shortName>
-            <IEC61360:unit></IEC61360:unit>
-            <IEC61360:unitId>
-              <IEC61360:keys>
-                <IEC61360:key type="GlobalReference" local="false" idType="IRDI">0173-1#05-AAA288#002</IEC61360:key>
-              </IEC61360:keys>
-            </IEC61360:unitId>
-            <IEC61360:sourceOfDefinition />
-            <IEC61360:dataType>STRING</IEC61360:dataType>
-            <IEC61360:definition>
-              <aas:langString lang="EN">Wi-Fi is necessary for wireless network connectivity and bluetooth</aas:langString>
-              <aas:langString lang="DE">Wi-Fi is notwendig für Bluetooth und kabelloses Netzwerk</aas:langString>
-            </IEC61360:definition>
-          </aas:dataSpecificationIEC61360>
-        </aas:dataSpecificationContent>
-      </aas:embeddedDataSpecification>
-    </aas:conceptDescription>
-    </aas:conceptDescription>
-    
     <aas:conceptDescription>
-      <aas:idShort>ethernet</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet</aas:identification>
-      <aas:embeddedDataSpecification>
-        <aas:hasDataSpecification>
-          <aas:keys>
-            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
-          </aas:keys>
-        </aas:hasDataSpecification>
-        <aas:dataSpecificationContent>
-          <aas:dataSpecificationIEC61360>
-            <IEC61360:preferredName>
-              <aas:langString lang="EN">wired connectivity</aas:langString>
-              <aas:langString lang="DE">kabelgebundene Konnecktivität</aas:langString>
-            </IEC61360:preferredName>
-            <IEC61360:shortName>NETWORK</IEC61360:shortName>
-            <IEC61360:unit></IEC61360:unit>
-            <IEC61360:unitId>
-              <IEC61360:keys>
-                <IEC61360:key type="GlobalReference" local="false" idType="IRDI">0173-1#05-AAB901#002</IEC61360:key>
-              </IEC61360:keys>
-            </IEC61360:unitId>
-            <IEC61360:sourceOfDefinition />
-            <IEC61360:dataType>STRING</IEC61360:dataType>
-            <IEC61360:definition>
-              <aas:langString lang="EN">Local area Network</aas:langString>
-              <aas:langString lang="DE">LAN</aas:langString>
-            </IEC61360:definition>
-          </aas:dataSpecificationIEC61360>
-        </aas:dataSpecificationContent>
-      </aas:embeddedDataSpecification>
-    </aas:conceptDescription>
-    </aas:conceptDescription>
-        <aas:conceptDescription>
-      <aas:idShort>audio-out</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-out</aas:identification>
+      <aas:idShort>audio-output</aas:idShort>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -2488,30 +2711,6 @@
               <aas:langString lang="EN">GPIO pins are for ...</aas:langString>
               <aas:langString lang="DE">GPIO Pinne dienen der Anbindung von ...</aas:langString>
             </IEC61360:definition>
-          </aas:dataSpecificationIEC61360>
-        </aas:dataSpecificationContent>
-      </aas:embeddedDataSpecification>
-    </aas:conceptDescription> -->
-    <aas:conceptDescription>
-      <aas:idShort>ToolMount</aas:idShort>
-      <aas:identification idType="URI">www.boschrexroth.com/cd/toolmount</aas:identification>
-      <aas:embeddedDataSpecification>
-        <aas:hasDataSpecification>
-          <aas:keys>
-            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
-          </aas:keys>
-        </aas:hasDataSpecification>
-        <aas:dataSpecificationContent>
-          <aas:dataSpecificationIEC61360>
-            <IEC61360:preferredName>
-              <aas:langString lang="DE">Werkzeugaufnahme</aas:langString>
-              <aas:langString lang="EN">Tool Mount</aas:langString>
-            </IEC61360:preferredName>
-            <IEC61360:shortName>ToolMount</IEC61360:shortName>
-            <IEC61360:unit />
-            <IEC61360:sourceOfDefinition />
-            <IEC61360:dataType>STRING_TRANSLATABLE</IEC61360:dataType>
-            <IEC61360:definition />
           </aas:dataSpecificationIEC61360>
         </aas:dataSpecificationContent>
       </aas:embeddedDataSpecification>
