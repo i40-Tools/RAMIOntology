@@ -2,27 +2,27 @@
 <aas:aasenv xmlns:IEC61360="http://www.admin-shell.io/IEC61360/1/0" xmlns:aas="http://www.admin-shell.io/aas/1/0">
   <aas:assetAdministrationShells>
     <aas:assetAdministrationShell>
-      <aas:idShort>RaspberryPiModelThreeBPlusAAS</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/aas</aas:identification>
+      <aas:idShort>RaspberryPiModel3B+</aas:idShort>
+      <aas:identification idType="URI">iais.fraunhofer.de/en/aas/examples/raspberry_pi_3b_plus </aas:identification>
       <aas:assetRef>
         <aas:keys>
-          <aas:key type="Asset" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus</aas:key>
+          <aas:key type="Asset" local="true" idType="URI">https://iais:fraunhofer.de/en/aas/devices/rspbry/755003377</aas:key>
         </aas:keys>
       </aas:assetRef>
       <aas:submodelRefs>
         <aas:submodelRef>
           <aas:keys>
-            <aas:key type="Submodel" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/keys/001</aas:key>
+            <aas:key type="Submodel" local="true" idType="URI">iais.fraunhofer.de/en/aas/rspbry/instance/1/1/technical_data</aas:key>
           </aas:keys>
         </aas:submodelRef>
         <aas:submodelRef>
           <aas:keys>
-            <aas:key type="Submodel" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/keys/010</aas:key>
+            <aas:key type="Submodel" local="true" idType="URI">iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification</aas:key>
           </aas:keys>
         </aas:submodelRef>
         <aas:submodelRef>
           <aas:keys>
-            <aas:key type="Submodel" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/keys/011</aas:key>
+            <aas:key type="Submodel" local="true" idType="URI">iais.fraunhofer.de/en/aas/rspbry/instance/1/1/documentation</aas:key>
           </aas:keys>
         </aas:submodelRef>
       </aas:submodelRefs>
@@ -31,27 +31,24 @@
   </aas:assetAdministrationShells>
   <aas:assets>
     <aas:asset>
-      <aas:idShort>RaspberryPiModelThreeBPlus</aas:idShort>
+      <aas:idShort>RaspberryPiModel3B+</aas:idShort>
       <aas:category />
       <aas:description>
         <aas:langString lang="EN">single board computer for education, microservices and all other imaginable purposes</aas:langString>
       </aas:description>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/devices/raspberrypimodelthreebplus</aas:identification>
+      <aas:identification idType="URI">https://iais:fraunhofer.de/en/aas/devices/rspbry/755003377</aas:identification>
       <aas:kind>Instance</aas:kind>
       <aas:assetIdentificationModelRef>
         <aas:keys>
-          <aas:key type="Submodel" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/keys/010</aas:key>
+          <aas:key type="Submodel" local="true" idType="URI">iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification</aas:key>
         </aas:keys>
       </aas:assetIdentificationModelRef>
     </aas:asset>
   </aas:assets>
   <aas:submodels>
     <aas:submodel>
-    <!-- RDF -->
-    </aas:submodel>
-    <aas:submodel>
       <aas:idShort>Documentation</aas:idShort>
-      <aas:identification idType="URI">https://www.iais.fraunhofer.de/en/aas/examples/keys/011</aas:identification>
+      <aas:identification idType="URI">iais.fraunhofer.de/en/aas/rspbry/instance/1/1/documentation</aas:identification>
       <aas:semanticId>
         <aas:keys />
       </aas:semanticId>
@@ -60,11 +57,11 @@
       <aas:submodelElements>
         <aas:submodelElement>
           <aas:submodelElementCollection>
-            <aas:idShort>3608870A47_ProjectPlanning</aas:idShort> <!--TODO:modify idShort -->
+            <aas:idShort>3608870A47_ProjectPlanning</aas:idShort>
             <aas:category>PARAMETER</aas:category>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
@@ -76,13 +73,14 @@
                   <aas:category>CONSTANT</aas:category>
                   <aas:semanticId>
                     <aas:keys>
-                      <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document/DocumentId</aas:key>
+                      <!-- TODO: modify URI -->
+                      <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document/DocumentId</aas:key>
                     </aas:keys>
                   </aas:semanticId>
                   <aas:kind>Instance</aas:kind>
                   <aas:qualifier />
                   <aas:valueType />
-                  <aas:value>3 608 870 A47</aas:value> <!--TODO:modify value -->
+                  <aas:value>3 608 870 A47</aas:value>
                 </aas:property>
               </aas:submodelElement>
               <aas:submodelElement>
@@ -90,7 +88,8 @@
                   <aas:idShort>DocumentClassId</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentClassification/ClassId</aas:key>
+                      <!-- TODO: modify URI -->
+                      <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentClassification/ClassId</aas:key>
                     </aas:keys>
                   </aas:semanticId>
                   <aas:kind>Instance</aas:kind>
@@ -104,7 +103,8 @@
                   <aas:idShort>DocumentClassName</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentClassification/ClassName</aas:key>
+                      <!-- TODO: modify URI -->
+                      <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentClassification/ClassName</aas:key>
                     </aas:keys>
                   </aas:semanticId>
                   <aas:kind>Instance</aas:kind>
@@ -118,7 +118,8 @@
                   <aas:idShort>DocumentClassificationSystem</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentClassification/ClassificationSystem</aas:key>
+                      <!-- TODO: modify URI -->
+                      <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentClassification/ClassificationSystem</aas:key>
                     </aas:keys>
                   </aas:semanticId>
                   <aas:kind>Instance</aas:kind>
@@ -132,13 +133,13 @@
                   <aas:idShort>OrganizationName</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Organization/OrganizationName</aas:key>
+                      <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Organization/OrganizationName</aas:key>
                     </aas:keys>
                   </aas:semanticId>
                   <aas:kind>Instance</aas:kind>
                   <aas:qualifier />
                   <aas:valueType />
-                  <aas:value>IAIS</aas:value>
+                  <aas:value>Raspberry Foundation</aas:value>
                 </aas:property>
               </aas:submodelElement>
               <aas:submodelElement>
@@ -146,109 +147,21 @@
                   <aas:idShort>OrganizationOfficialName</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Organization/OrganizationOfficialName</aas:key>
+                      <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Organization/OrganizationOfficialName</aas:key>
                     </aas:keys>
                   </aas:semanticId>
                   <aas:kind>Instance</aas:kind>
                   <aas:qualifier />
                   <aas:valueType />
-                  <aas:value>Fraunhofer IAIS (EIS)</aas:value>
+                  <aas:value>Raspberry Pi Foundation</aas:value>
                 </aas:property>
-              </aas:submodelElement>
-              <aas:submodelElement>
-                <aas:submodelElementCollection>
-                  <aas:idShort>DE</aas:idShort>
-                  <aas:semanticId>
-                    <aas:keys>
-                      <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion</aas:key>
-                    </aas:keys>
-                  </aas:semanticId>
-                  <aas:kind>Instance</aas:kind>
-                  <aas:qualifier />
-                  <aas:value>
-                    <aas:submodelElement>
-                      <aas:property>
-                        <aas:idShort>Language</aas:idShort>
-                        <aas:semanticId>
-                          <aas:keys>
-                            <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/Language</aas:key>
-                          </aas:keys>
-                        </aas:semanticId>
-                        <aas:kind>Instance</aas:kind>
-                        <aas:qualifier />
-                        <aas:valueType />
-                        <aas:value>en-DE</aas:value>
-                      </aas:property>
-                    </aas:submodelElement>
-                    <aas:submodelElement>
-                      <aas:property>
-                        <aas:idShort>Title</aas:idShort>
-                        <aas:semanticId>
-                          <aas:keys>
-                            <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Description/Title</aas:key>
-                          </aas:keys>
-                        </aas:semanticId>
-                        <aas:kind>Instance</aas:kind>
-                        <aas:qualifier />
-                        <aas:valueType />
-                        <aas:value>RaspberryPiModelThreeBPlus</aas:value>
-                      </aas:property>
-                    </aas:submodelElement>
-                    <aas:submodelElement>
-                      <aas:property>
-                        <aas:idShort>Date</aas:idShort>
-                        <aas:semanticId>
-                          <aas:keys>
-                            <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/LifeCycleStatus/SetDate</aas:key>
-                          </aas:keys>
-                        </aas:semanticId>
-                        <aas:kind>Instance</aas:kind>
-                        <aas:qualifier />
-                        <aas:valueType />
-                        <aas:value>2019-04-01</aas:value>
-                      </aas:property>
-                    </aas:submodelElement>
-                    <aas:submodelElement>
-                      <aas:property>
-                        <aas:idShort>DocumentVersionId</aas:idShort>
-                        <aas:semanticId>
-                          <aas:keys>
-                            <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/DocumentVersionId</aas:key>
-                          </aas:keys>
-                        </aas:semanticId>
-                        <aas:kind>Instance</aas:kind>
-                        <aas:qualifier />
-                        <aas:valueType />
-                        <aas:value>EN | 2019-04-AD</aas:value>
-                      </aas:property>
-                    </aas:submodelElement>
-                    <!-- TODO:EDIT/MODIFY -->
-                    <!-- <aas:submodelElement>
-                      <aas:file>
-                        <aas:idShort>DigitalFile_PDF</aas:idShort>
-                        <aas:category>PARAMETER</aas:category>
-                        <aas:semanticId>
-                          <aas:keys>
-                            <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/StoredDocumentRepresentation/DigitalFile</aas:key>
-                          </aas:keys>
-                        </aas:semanticId>
-                        <aas:kind>Instance</aas:kind>
-                        <aas:qualifier />
-                        <aas:mimeType>application/pdf</aas:mimeType>
-                        <aas:value>/aasx/documents/3608870A47_AD_DE_NEXO-V1200.pdf</aas:value>
-                      </aas:file>
-                    </aas:submodelElement> -->
-                  </aas:value>
-                  <aas:ordered>false</aas:ordered>
-                  <aas:allowDuplicates>false</aas:allowDuplicates>
-                </aas:submodelElementCollection>
               </aas:submodelElement>
               <aas:submodelElement>
                 <aas:submodelElementCollection>
                   <aas:idShort>EN</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion</aas:key>
+                      <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion</aas:key>
                     </aas:keys>
                   </aas:semanticId>
                   <aas:kind>Instance</aas:kind>
@@ -259,27 +172,27 @@
                         <aas:idShort>Language</aas:idShort>
                         <aas:semanticId>
                           <aas:keys>
-                            <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/Language</aas:key>
+                            <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion/Language</aas:key>
                           </aas:keys>
                         </aas:semanticId>
                         <aas:kind>Instance</aas:kind>
                         <aas:qualifier />
                         <aas:valueType />
-                        <aas:value>en-US</aas:value>
+                        <aas:value>en-EN</aas:value>
                       </aas:property>
                     </aas:submodelElement>
                     <aas:submodelElement>
                       <aas:property>
-                        <aas:idShort>Title</aas:idShort>
+                        <aas:idShort>title</aas:idShort>
                         <aas:semanticId>
                           <aas:keys>
-                            <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Description/Title</aas:key>
+                            <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Description/Title</aas:key>
                           </aas:keys>
                         </aas:semanticId>
                         <aas:kind>Instance</aas:kind>
                         <aas:qualifier />
                         <aas:valueType />
-                        <aas:value>Raspberry Pi 3b+ (EN)</aas:value>
+                        <aas:value>Product sheet for the Raspberry Pi 3b+ (EN)</aas:value>
                       </aas:property>
                     </aas:submodelElement>
                     <aas:submodelElement>
@@ -287,13 +200,13 @@
                         <aas:idShort>Date</aas:idShort>
                         <aas:semanticId>
                           <aas:keys>
-                            <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/LifeCycleStatus/SetDate</aas:key>
+                            <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/LifeCycleStatus/SetDate</aas:key>
                           </aas:keys>
                         </aas:semanticId>
                         <aas:kind>Instance</aas:kind>
                         <aas:qualifier />
                         <aas:valueType />
-                        <aas:value>2017-10-20</aas:value>
+                        <aas:value>2016-09-25</aas:value>
                       </aas:property>
                     </aas:submodelElement>
                     <aas:submodelElement>
@@ -301,31 +214,30 @@
                         <aas:idShort>DocumentVersionId</aas:idShort>
                         <aas:semanticId>
                           <aas:keys>
-                            <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/DocumentVersionId</aas:key>
+                            <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion/DocumentVersionId</aas:key>
                           </aas:keys>
                         </aas:semanticId>
                         <aas:kind>Instance</aas:kind>
                         <aas:qualifier />
                         <aas:valueType />
-                        <aas:value>EN(US) | 2017-05 AE</aas:value>
+                        <aas:value>EN | 2016-09-25</aas:value>
                       </aas:property>
                     </aas:submodelElement>
-                    <!-- TODO:Modify -->
-                    <!-- <aas:submodelElement>
+                    <aas:submodelElement>
                       <aas:file>
                         <aas:idShort>DigitalFile_PDF</aas:idShort>
                         <aas:category>PARAMETER</aas:category>
                         <aas:semanticId>
                           <aas:keys>
-                            <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/StoredDocumentRepresentation/DigitalFile</aas:key>
+                            <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/StoredDocumentRepresentation/DigitalFile</aas:key>
                           </aas:keys>
                         </aas:semanticId>
                         <aas:kind>Instance</aas:kind>
                         <aas:qualifier />
                         <aas:mimeType>application/pdf</aas:mimeType>
-                        <aas:value>/aasx/documents/3608870A47_AE_EN.pdf</aas:value>
+                        <aas:value>/aasx/documents/product_sheet.pdf</aas:value>
                       </aas:file>
-                    </aas:submodelElement> -->
+                    </aas:submodelElement>
                   </aas:value>
                   <aas:ordered>false</aas:ordered>
                   <aas:allowDuplicates>false</aas:allowDuplicates>
@@ -337,19 +249,16 @@
           </aas:submodelElementCollection>
         </aas:submodelElement>
       </aas:submodelElements>
-
-      <!-- FACTS -->
     </aas:submodel>
     <aas:submodel>
       <aas:idShort>TechnicalData</aas:idShort>
       <aas:description>
-        <aas:langString lang="DE"> Prozessor</aas:langString>
-        <aas:langString lang="EN"> Processor</aas:langString>
+        <aas:langString lang="DE"> Schrauber (elektrisch)</aas:langString>
+        <aas:langString lang="EN"> Screwdriver (electr.)</aas:langString>
       </aas:description>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/keys/011</aas:identification>
+      <aas:identification idType="URI">iais.fraunhofer.de/en/aas/rspbry/instance/1/1/technical_data</aas:identification>
       <aas:semanticId>
         <aas:keys>
-          <!-- TODO:Check this and modify -->
           <aas:key type="GlobalReference" local="false" idType=""> 0173-1#01-AAA444#008</aas:key>
         </aas:keys>
       </aas:semanticId>
@@ -358,327 +267,261 @@
       <aas:submodelElements>
         <aas:submodelElement>
           <aas:property>
-            <aas:idShort>clockingSpeed</aas:idShort>
+            <aas:idShort>WorkArea</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">www.boschrexroth.com/cd/workarea</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>1.4GHz</aas:value>
+            <aas:value>1.8 ... 12</aas:value>
           </aas:property>
         </aas:submodelElement>
-
         <aas:submodelElement>
           <aas:property>
-            <aas:idShort>architecture</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/architecture</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>64 bit</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>socket</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>cpu</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/cpu</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>ARM Cortex-A53 CPU</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>ram</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>1GB LPDDR2 SDRAM</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>wifi</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>Dual-band 802.11ac wireless LAN (2.4GHz and 5GHz ) and Bluetooth 4.2</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>ethernet</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>Gigabit Ethernet over USB 2.0 (max 300 Mbps). Power-over-Ethernet support (with separate PoE HAT). Improved PXE network and USB mass-storage booting.</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>audio-output</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>built-in-speaker</aas:value>
-          </aas:property>
-        </aas:submodelElement> <!-- DRAFT -->
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>usb-ports</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb-ports</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>4*USB2</aas:value>
-          </aas:property>
-        </aas:submodelElement>  <!-- DRAFT -->
-
-        <!---
-        
-        _:abc rami:hasIdShort "usb-ports"^^xsd:string
-
-        -->
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>gpio</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>40-pin</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>power-in</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>5V/2.5A DC</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>os</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>RaspberianOS (Linux distribution)</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>weight</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>31g</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>height</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>17 mm</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>length</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>85 mm</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>width</aas:idShort>
-            <aas:semanticId>
-              <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width</aas:key>
-              </aas:keys>
-            </aas:semanticId>
-            <aas:kind>Instance</aas:kind>
-            <aas:qualifier />
-            <aas:valueType />
-            <aas:value>56 mm</aas:value>
-          </aas:property>
-        </aas:submodelElement>
-
-        <aas:submodelElement>
-          <aas:property>
-            <aas:idShort>maxOutputSpeedUSBPorts</aas:idShort>
+            <aas:idShort>MaxOutputSpeed</aas:idShort>
             <aas:category>CONSTANT</aas:category>
             <aas:description>
-              <aas:langString lang="DE">Max. Ausgangsleistung der USB-Ports</aas:langString>
-              <aas:langString lang="EN">Max. output power of the USB ports</aas:langString>
+              <aas:langString lang="DE">Max. Abtriebsdrehzahl [min-1]</aas:langString>
+              <aas:langString lang="EN">Max. torque of output drive [min-1]</aas:langString>
             </aas:description>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/maxoutputspeedusbports</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">www.boschrexroth.com/cd/maxoutputspeed</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>5Watt</aas:value>
+            <aas:value>880</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>ToolMount</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="URI">www.boschrexroth.com/cd/toolmount</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>1/4" quick-change chuck (EN), 1/4“-Schnellwechselfutter (DE)</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>Weight</aas:idShort>
+            <aas:description>
+              <aas:langString lang="EN">Weight without battery</aas:langString>
+            </aas:description>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAH829#002</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>1.34</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>InstallationLength</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO023#002</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>237</aas:value>
           </aas:property>
         </aas:submodelElement>
       </aas:submodelElements>
     </aas:submodel>
-
     <aas:submodel>
-      <aas:idShort>AssetIdentification</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/assetidentification</aas:identification>
+      <aas:idShort>TighteningControl</aas:idShort>
+      <aas:identification idType="URI">www.bosch-connectivity.com/demo/sm/instance/1/1/1C752A9708DBDD63</aas:identification>
       <aas:semanticId>
         <aas:keys />
       </aas:semanticId>
       <aas:kind>Instance</aas:kind>
       <aas:qualifier />
       <aas:submodelElements>
-
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>TighteningPrograms</aas:idShort>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value />
+          </aas:property>
+        </aas:submodelElement>
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>LastIdCode</aas:idShort>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value />
+          </aas:property>
+        </aas:submodelElement>
+      </aas:submodelElements>
+    </aas:submodel>
+    <aas:submodel>
+      <aas:idShort>AssetIdentification</aas:idShort>
+      <aas:identification idType="URI">iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification</aas:identification>
+      <aas:semanticId>
+        <aas:keys />
+      </aas:semanticId>
+      <aas:kind>Instance</aas:kind>
+      <aas:qualifier />
+      <aas:submodelElements>
         <aas:submodelElement>
           <aas:property>
             <aas:idShort>Manufacturer</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescriptio n" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO677#002</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>Raspberry Pi Foundation</aas:value>
+            <aas:value>Bosch Rexroth AG</aas:value>
           </aas:property>
         </aas:submodelElement>
-
         <aas:submodelElement>
           <aas:property>
             <aas:idShort>Brand</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/brand</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO742#002 </aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>Raspberry Pi</aas:value>
+            <aas:value>Nexo</aas:value>
           </aas:property>
         </aas:submodelElement>
-
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>ProductRoot</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI"> 0173-1#02-AAU732#001</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>Tightening technology (EN), Schraubtechnik (DE)</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>ProductFamily</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAU731#001</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>Cordless nutrunner (EN) Funk-Akkuschrauber (DE)</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>ProductType</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI"> 0173-1#02-BAA002#004</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>NXP pistolgrip nutrunner (EN)  Mittelgriffschrauber NXP (DE)</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>ArticleNumber</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO676#004</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>NXP012QD-36V</aas:value>
+          </aas:property>
+        </aas:submodelElement>
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>OrderNumber</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO736#004</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>0608842005</aas:value>
+          </aas:property>
+        </aas:submodelElement>
         <aas:submodelElement>
           <aas:property>
             <aas:idShort>ProductDescription</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAU734#001</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>The Raspberry Pi is a series of small single-board computers developed in the United Kingdom by the Raspberry Pi Foundation to promote teaching of basic computer science in schools and in developing countries. The original model became far more popular than anticipated,[8] selling outside its target market for uses such as robotics. It does not include peripherals (such as keyboards and mice) and cases. However, some accessories have been included in several official and unofficial bundles.</aas:value>
+            <aas:value>The Most Intelligent Hand-Held Nutrunner in the World (EN), Der intelligenteste Handschrauber der Welt (EN) </aas:value>
           </aas:property>
         </aas:submodelElement>
-
+        <aas:submodelElement>
+          <aas:file>
+            <aas:idShort>LinkAddress</aas:idShort>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAE670#003</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:mimeType>application/json</aas:mimeType>
+            <aas:value>https://www.boschrexroth.com/ics/cat/?cat=Tightening-System-Catalog&amp;m=XC&amp;u=si&amp;o=Desktop&amp;p=p883590&amp;pi=4CF79FBA-D000-0357-54A59ACAC2C7C9FD_ICS_82</aas:value>
+          </aas:file>
+        </aas:submodelElement>
+        <aas:submodelElement>
+          <aas:property>
+            <aas:idShort>SerialNumber</aas:idShort>
+            <aas:category>VARIABLE</aas:category>
+            <aas:semanticId>
+              <aas:keys>
+                <aas:key type="ConceptDescription" local="true" idType="URI">http://opcfoundation.org/UA/DI/1.1/DeviceType/Serialnumber</aas:key>
+              </aas:keys>
+            </aas:semanticId>
+            <aas:kind>Instance</aas:kind>
+            <aas:qualifier />
+            <aas:valueType />
+            <aas:value>755003377</aas:value>
+          </aas:property>
+        </aas:submodelElement>
       </aas:submodelElements>
     </aas:submodel>
   </aas:submodels>
@@ -686,7 +529,7 @@
     <aas:conceptDescription>
       <aas:idShort>Document</aas:idShort>
       <aas:description />
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -702,13 +545,16 @@
               <IEC61360:langString lang="DE">[ISO 15519-1:2010]</IEC61360:langString>
             </IEC61360:sourceOfDefinition>
             <IEC61360:dataType />
+            <IEC61360:definition>
+              <aas:langString lang="DE">Feste und geordnete Menge von für die Verwendung durch Personen bestimmte Informationen, die verwaltet und als Einheit zwischen Benutzern und System ausgetauscht werden kann.</aas:langString>
+            </IEC61360:definition>
           </aas:dataSpecificationIEC61360>
         </aas:dataSpecificationContent>
       </aas:embeddedDataSpecification>
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document/DocumentId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document/DocumentId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -733,7 +579,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentIdDomain</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document/DocumentIdDomain</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document/DocumentIdDomain</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -758,7 +604,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentPartId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document/DocumentPartId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document/DocumentPartId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -781,7 +627,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentClassification</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document/DocumentClassification</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document/DocumentClassification</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -804,7 +650,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentVersion</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -829,7 +675,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentType</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document/DocumentType</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document/DocumentType</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -852,7 +698,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>ReferencedObject</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document/ReferencedObject</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document/ReferencedObject</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -875,7 +721,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentIdDomainId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document/DocumentId/DomainId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document/DocumentId/DomainId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -898,7 +744,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentIdType</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Document/DocumentId/IdType</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document/DocumentId/IdType</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -921,7 +767,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentPartIdDescription</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentPartId/Description</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentPartId/Description</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -944,7 +790,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentIdDomainParty</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentIdDomain/Party</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentIdDomain/Party</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -967,7 +813,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentDomainId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentIdDomain/DocumentDomainId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentIdDomain/DocumentDomainId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -990,7 +836,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentClassId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentClassification/ClassId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentClassification/ClassId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1013,7 +859,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentClassName</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentClassification/ClassName</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentClassification/ClassName</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1036,7 +882,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentClassificationSystem</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentClassification/ClassificationSystem</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentClassification/ClassificationSystem</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1061,7 +907,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentVersionId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/DocumentVersionId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion/DocumentVersionId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1086,7 +932,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>Language</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/Language</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion/Language</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1111,7 +957,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentVersionParty</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/Party</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion/Party</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1134,7 +980,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentVersionDescription</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/Description</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion/Description</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1157,7 +1003,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentVersionLifeCycleStatus</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/LifeCycleStatus</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion/LifeCycleStatus</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1180,7 +1026,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentRelationship</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/DocumentRelationship</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion/DocumentRelationship</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1204,7 +1050,7 @@
     <aas:conceptDescription>
       <aas:idShort>StoredDocumentRepresentation</aas:idShort>
       <aas:category />
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersion/StoredDocumentRepresentation</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersion/StoredDocumentRepresentation</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1227,7 +1073,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentVersionId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersionId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersionId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1250,7 +1096,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentVersionDomainId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentVersionId/DomainId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentVersionId/DomainId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1273,7 +1119,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>LanguageCode</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/LanguageCode</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/LanguageCode</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1296,7 +1142,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>LifeCycleStatusParty</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/LifeCycleStatus/Party</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/LifeCycleStatus/Party</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1318,13 +1164,13 @@
       </aas:embeddedDataSpecification>
       <aas:isCaseOf>
         <aas:keys>
-          <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Party</aas:key>
+          <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Party</aas:key>
         </aas:keys>
       </aas:isCaseOf>
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>Status</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/LifeCycleStatus/StatusValue</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/LifeCycleStatus/StatusValue</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1347,7 +1193,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>Date</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/LifeCycleStatus/SetDate</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/LifeCycleStatus/SetDate</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1370,7 +1216,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>LifeCycleStatusPurpose</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/LifeCycleStatus/Purpose</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/LifeCycleStatus/Purpose</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1393,7 +1239,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>BasedOnProcedure</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/LifeCycleStatus/BasedOnProcedure</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/LifeCycleStatus/BasedOnProcedure</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1416,7 +1262,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>LifeCycleStatusComments</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/LifeCycleStatus/Comments</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/LifeCycleStatus/Comments</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1439,7 +1285,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>Description</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Description</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Description</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1462,7 +1308,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>Title</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Description/Title</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Description/Title</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1487,7 +1333,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>Summary</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Description/Summary</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Description/Summary</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1511,7 +1357,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>Keywords</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Description/Keywords</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Description/Keywords</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1534,7 +1380,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>Party</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Party</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Party</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1557,7 +1403,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>OrganizationId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Organization/OrganizationId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Organization/OrganizationId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1580,7 +1426,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>OrganizationName</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Organization/OrganizationName</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Organization/OrganizationName</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1606,7 +1452,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>OrganizationOfficialName</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Organization/OrganizationOfficialName</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Organization/OrganizationOfficialName</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1631,13 +1477,13 @@
       </aas:embeddedDataSpecification>
       <aas:isCaseOf>
         <aas:keys>
-          <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/conceptdescription</aas:key>
+          <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO677#002</aas:key>
         </aas:keys>
       </aas:isCaseOf>
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DigitalFile</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/StoredDocumentRepresentation/DigitalFile</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/StoredDocumentRepresentation/DigitalFile</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1660,7 +1506,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>FileId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DigitalFile/FileId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DigitalFile/FileId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1683,7 +1529,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>FileName</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DigitalFile/FileName</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DigitalFile/FileName</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1706,7 +1552,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>FileFormat</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DigitalFile/FileFormat</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DigitalFile/FileFormat</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1729,7 +1575,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentRelationshipDocumentId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentRelationship/DocumentId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentRelationship/DocumentId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1752,7 +1598,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentRelationshipDocumentVersionId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentRelationship/DocumentVersionId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentRelationship/DocumentVersionId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1775,7 +1621,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentRelationshipDocumentPartId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentRelationship/DocumentPartId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentRelationship/DocumentPartId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1798,7 +1644,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentRelationshipType</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentRelationship/Type</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentRelationship/Type</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1821,7 +1667,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DocumentRelationshipDescription</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DocumentRelationship/Description</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DocumentRelationship/Description</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1844,7 +1690,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>DomainId</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/DomainId</aas:identification>
+      <aas:identification idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/DomainId</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -1859,7 +1705,7 @@
             <IEC61360:shortName>DomainId</IEC61360:shortName>
             <IEC61360:unit />
             <IEC61360:sourceOfDefinition>
-              <IEC61360:langString lang="DE">[DIN EN 62507-1; VDE 0040-2-1:2011, 3.3, modifiziert – Anmerkung nicht übernommen]</IEC61360:langString> <!--TODO:MODIFY-->
+              <IEC61360:langString lang="DE">[DIN EN 62507-1; VDE 0040-2-1:2011, 3.3, modifiziert – Anmerkung nicht übernommen]</IEC61360:langString>
             </IEC61360:sourceOfDefinition>
             <IEC61360:dataType>STRING</IEC61360:dataType>
             <IEC61360:definition>
@@ -2272,7 +2118,7 @@
       </aas:embeddedDataSpecification>
       <aas:isCaseOf>
         <aas:keys>
-          <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/cd/Organization/OrganizationOfficialName</aas:key>
+          <aas:key type="ConceptDescription" local="true" idType="URI">www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Organization/OrganizationOfficialName</aas:key>
         </aas:keys>
       </aas:isCaseOf>
     </aas:conceptDescription>
