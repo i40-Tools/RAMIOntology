@@ -1,0 +1,23 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix iaisex: <https://iais.fraunhofer.de/en/aas/examples/> .
+@prefix iaissub: <https://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/> .
+@prefix aas: <http://www.admin-shell.io/aas/1/0/> .
+@prefix : <http://example.org/> .
+
+iaisex:raspberry_pi_3b_plus
+    a rami:AdminShell ;
+    rami:asset <https://iais.fraunhofer.de/en/aas/devices/rspbry/755003377> ;
+    rami:hasSubmodel _:technicalData ;
+    rami:hasSubmodel _:assetIdentification ;
+    rami:hasSubmodel _:documentation .
+
+<https://iais.fraunhofer.de/en/aas/devices/rspbry/755003377>
+    a rami:Asset ;
+    rami:
+    .

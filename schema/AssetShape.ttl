@@ -37,7 +37,7 @@
       sh:path rami:assetIdentificationModel ;
       sh:minCount 0 ;
       sh:maxCount 1 ;
-	  sh:class rami:Submodel ;
+	    sh:class rami:Submodel ;
       sh:severity sh:Violation ;
       sh:message "An Asset can have at maximum one Submodel as an Asset Identification Model."@en ;
     ] ;

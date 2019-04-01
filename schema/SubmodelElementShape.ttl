@@ -106,7 +106,8 @@
     sh:property [
       sh:path rami:hasDataSpecification ;
       sh:minCount 0 ;
-	  sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
+	    sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
+      sh:class rami:Reference ;
       sh:severity sh:Violation ;
       sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
     ] ;
