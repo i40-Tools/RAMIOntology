@@ -57,7 +57,7 @@
       <aas:submodelElements>
         <aas:submodelElement>
           <aas:submodelElementCollection>
-            <aas:idShort>3608870A47_ProjectPlanning</aas:idShort>
+            <aas:idShort>ProductSheet</aas:idShort>
             <aas:category>PARAMETER</aas:category>
             <aas:semanticId>
               <aas:keys>
@@ -110,7 +110,7 @@
                   <aas:kind>Instance</aas:kind>
                   <aas:qualifier />
                   <aas:valueType />
-                  <aas:value>Project planning (EN) Projektierungsanleitung (DE)</aas:value>
+                  <aas:value>Product sheet (EN)</aas:value>
                 </aas:property>
               </aas:submodelElement>
               <aas:submodelElement>
@@ -502,7 +502,7 @@
             <aas:idShort>weight</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
@@ -639,13 +639,13 @@
             <aas:idShort>Manufacturer</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO677#002</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>Bosch Rexroth AG</aas:value>
+            <aas:value>Raspberry Pi Foundation</aas:value>
           </aas:property>
         </aas:submodelElement>
         <aas:submodelElement>
@@ -659,7 +659,7 @@
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>Nexo</aas:value>
+            <aas:value>Raspberry Pi</aas:value>
           </aas:property>
         </aas:submodelElement>
         <aas:submodelElement>
@@ -667,13 +667,13 @@
             <aas:idShort>ProductRoot</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="IRDI"> 0173-1#02-AAU732#001</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>Tightening technology (EN), Schraubtechnik (DE)</aas:value>
+            <aas:value>sinlge-board-micro-computer (EN)</aas:value>
           </aas:property>
         </aas:submodelElement>
         <aas:submodelElement>
@@ -681,13 +681,13 @@
             <aas:idShort>ProductFamily</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAU731#001</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>Cordless nutrunner (EN) Funk-Akkuschrauber (DE)</aas:value>
+            <aas:value>micro-computer (single-board) (EN) Mikrocomputer/Einplatinencomputer (DE)</aas:value>
           </aas:property>
         </aas:submodelElement>
         <aas:submodelElement>
@@ -695,13 +695,13 @@
             <aas:idShort>ProductType</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="IRDI"> 0173-1#02-BAA002#004</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>NXP pistolgrip nutrunner (EN)  Mittelgriffschrauber NXP (DE)</aas:value>
+            <aas:value>computer (EN)  Computer (DE)</aas:value>
           </aas:property>
         </aas:submodelElement>
         <aas:submodelElement>
@@ -709,13 +709,13 @@
             <aas:idShort>ArticleNumber</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO676#004</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>NXP012QD-36V</aas:value>
+            <aas:value>RSBRYPIMDL3BP-1234567898765432123456789</aas:value>
           </aas:property>
         </aas:submodelElement>
         <aas:submodelElement>
@@ -737,13 +737,13 @@
             <aas:idShort>ProductDescription</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAU734#001</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>The Most Intelligent Hand-Held Nutrunner in the World (EN), Der intelligenteste Handschrauber der Welt (EN) </aas:value>
+            <aas:value>The most popular sigle-board-microcomputer and latest model from Raspberry (2019/04)>.</aas:value>
           </aas:property>
         </aas:submodelElement>
         <aas:submodelElement>
@@ -757,7 +757,7 @@
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:mimeType>application/json</aas:mimeType>
-            <aas:value>https://www.boschrexroth.com/ics/cat/?cat=Tightening-System-Catalog&amp;m=XC&amp;u=si&amp;o=Desktop&amp;p=p883590&amp;pi=4CF79FBA-D000-0357-54A59ACAC2C7C9FD_ICS_82</aas:value>
+            <aas:value>null</aas:value>
           </aas:file>
         </aas:submodelElement>
         <aas:submodelElement>
@@ -766,13 +766,13 @@
             <aas:category>VARIABLE</aas:category>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">http://opcfoundation.org/UA/DI/1.1/DeviceType/Serialnumber</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>755003377</aas:value>
+            <aas:value>12345678987654321234567898765432123456789</aas:value>
           </aas:property>
         </aas:submodelElement>
       </aas:submodelElements>
@@ -2000,7 +2000,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>Manufacturer</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/dt/Role/Manufacturer</aas:identification>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -2023,171 +2023,6 @@
             <IEC61360:definition>
               <aas:langString lang="DE">Hersteller</aas:langString>
               <aas:langString lang="EN">Manufacturer</aas:langString>
-            </IEC61360:definition>
-          </aas:dataSpecificationIEC61360>
-        </aas:dataSpecificationContent>
-      </aas:embeddedDataSpecification>
-    </aas:conceptDescription>
-    <aas:conceptDescription>
-      <aas:idShort>MaxTorque</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-BAE098#003</aas:identification>
-      <aas:embeddedDataSpecification>
-        <aas:hasDataSpecification>
-          <aas:keys>
-            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
-          </aas:keys>
-        </aas:hasDataSpecification>
-        <aas:dataSpecificationContent>
-          <aas:dataSpecificationIEC61360>
-            <IEC61360:preferredName>
-              <aas:langString lang="EN">Max. torque</aas:langString>
-            </IEC61360:preferredName>
-            <IEC61360:shortName>MaxTorque</IEC61360:shortName>
-            <IEC61360:unit>Nm</IEC61360:unit>
-            <IEC61360:unitId>
-              <IEC61360:keys />
-            </IEC61360:unitId>
-            <IEC61360:sourceOfDefinition />
-            <IEC61360:dataType>REAL_MEASURE</IEC61360:dataType>
-            <IEC61360:definition>
-              <aas:langString lang="EN">Greatest permissible mechanical torque which the motor can pass on at the drive shaft</aas:langString>
-            </IEC61360:definition>
-          </aas:dataSpecificationIEC61360>
-        </aas:dataSpecificationContent>
-      </aas:embeddedDataSpecification>
-    </aas:conceptDescription>
-    <aas:conceptDescription>
-      <aas:idShort>MinTorque</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-BAE098#003min</aas:identification>
-      <aas:embeddedDataSpecification>
-        <aas:hasDataSpecification>
-          <aas:keys>
-            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
-          </aas:keys>
-        </aas:hasDataSpecification>
-        <aas:dataSpecificationContent>
-          <aas:dataSpecificationIEC61360>
-            <IEC61360:preferredName>
-              <aas:langString lang="EN">Min. torque</aas:langString>
-            </IEC61360:preferredName>
-            <IEC61360:shortName>MinTorque</IEC61360:shortName>
-            <IEC61360:unit>Nm</IEC61360:unit>
-            <IEC61360:sourceOfDefinition />
-            <IEC61360:dataType>REAL_MEASURE</IEC61360:dataType>
-            <IEC61360:definition>
-              <aas:langString lang="EN">Smallest mechanical torque which the motor can pass on at the drive shaft</aas:langString>
-            </IEC61360:definition>
-          </aas:dataSpecificationIEC61360>
-        </aas:dataSpecificationContent>
-      </aas:embeddedDataSpecification>
-    </aas:conceptDescription>
-    <!-- <aas:conceptDescription>
-      <aas:idShort>width</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-BAF016#005</aas:identification>
-      <aas:embeddedDataSpecification>
-        <aas:hasDataSpecification>
-          <aas:keys>
-            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
-          </aas:keys>
-        </aas:hasDataSpecification>
-        <aas:dataSpecificationContent>
-          <aas:dataSpecificationIEC61360>
-            <IEC61360:preferredName>
-              <aas:langString lang="EN">width</aas:langString>
-            </IEC61360:preferredName>
-            <IEC61360:shortName>width</IEC61360:shortName>
-            <IEC61360:unit>mm</IEC61360:unit>
-            <IEC61360:unitId>
-              <IEC61360:keys />
-            </IEC61360:unitId>
-            <IEC61360:sourceOfDefinition />
-            <IEC61360:dataType>REAL_MEASURE</IEC61360:dataType>
-            <IEC61360:definition>
-              <aas:langString lang="EN">for objects with orientation in preferred position during use the dimension perpendicular to height/ length/depth</aas:langString>
-            </IEC61360:definition>
-          </aas:dataSpecificationIEC61360>
-        </aas:dataSpecificationContent>
-      </aas:embeddedDataSpecification>
-    </aas:conceptDescription> -->
-    <aas:conceptDescription>
-      <aas:idShort>WeightMachine</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-AAH829#002</aas:identification>
-      <aas:embeddedDataSpecification>
-        <aas:hasDataSpecification>
-          <aas:keys>
-            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
-          </aas:keys>
-        </aas:hasDataSpecification>
-        <aas:dataSpecificationContent>
-          <aas:dataSpecificationIEC61360>
-            <IEC61360:preferredName>
-              <aas:langString lang="EN">weight of the machine</aas:langString>
-            </IEC61360:preferredName>
-            <IEC61360:shortName>WeightMachine</IEC61360:shortName>
-            <IEC61360:unit>kg</IEC61360:unit>
-            <IEC61360:unitId>
-              <IEC61360:keys>
-                <IEC61360:key type="GlobalReference" local="false" idType="IRDI"> 0173-1#05-AAA731#002</IEC61360:key>
-              </IEC61360:keys>
-            </IEC61360:unitId>
-            <IEC61360:sourceOfDefinition>
-              <IEC61360:langString lang="" />
-            </IEC61360:sourceOfDefinition>
-            <IEC61360:dataType>REAL_MEASURE</IEC61360:dataType>
-            <IEC61360:definition>
-              <aas:langString lang="EN">weight of the machine</aas:langString>
-            </IEC61360:definition>
-          </aas:dataSpecificationIEC61360>
-        </aas:dataSpecificationContent>
-      </aas:embeddedDataSpecification>
-    </aas:conceptDescription>
-    <aas:conceptDescription>
-      <aas:idShort>SizeToolInsertion</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-AAI027#005</aas:identification>
-      <aas:embeddedDataSpecification>
-        <aas:hasDataSpecification>
-          <aas:keys>
-            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
-          </aas:keys>
-        </aas:hasDataSpecification>
-        <aas:dataSpecificationContent>
-          <aas:dataSpecificationIEC61360>
-            <IEC61360:preferredName>
-              <aas:langString lang="EN">size of tool insertion</aas:langString>
-            </IEC61360:preferredName>
-            <IEC61360:shortName>SizeToolInsertion</IEC61360:shortName>
-            <IEC61360:unit />
-            <IEC61360:sourceOfDefinition />
-            <IEC61360:dataType>STRING</IEC61360:dataType>
-            <IEC61360:definition>
-              <aas:langString lang="EN">specification of the size of the junction for power transmission between a tool and the machine in millimeter</aas:langString>
-            </IEC61360:definition>
-          </aas:dataSpecificationIEC61360>
-        </aas:dataSpecificationContent>
-      </aas:embeddedDataSpecification>
-    </aas:conceptDescription>
-    <aas:conceptDescription>
-      <aas:idShort>MAN_PROD_NUM</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-AAO676#004</aas:identification>
-      <aas:embeddedDataSpecification>
-        <aas:hasDataSpecification>
-          <aas:keys>
-            <aas:key type="GlobalReference" local="false" idType="URI">www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360</aas:key>
-          </aas:keys>
-        </aas:hasDataSpecification>
-        <aas:dataSpecificationContent>
-          <aas:dataSpecificationIEC61360>
-            <IEC61360:preferredName>
-              <aas:langString lang="EN">product article number of manufacturer</aas:langString>
-              <aas:langString lang="DE">Herstellerartikelnummer</aas:langString>
-            </IEC61360:preferredName>
-            <IEC61360:shortName>MAN_PROD_NUM</IEC61360:shortName>
-            <IEC61360:unit />
-            <IEC61360:sourceOfDefinition />
-            <IEC61360:dataType>STRING</IEC61360:dataType>
-            <IEC61360:definition>
-              <aas:langString lang="EN">unique product identifier of the manufacturer</aas:langString>
-              <aas:langString lang="DE">eindeutiger Bestellschlüssel des Herstellers</aas:langString>
             </IEC61360:definition>
           </aas:dataSpecificationIEC61360>
         </aas:dataSpecificationContent>
@@ -2225,7 +2060,6 @@
         </aas:dataSpecificationContent>
       </aas:embeddedDataSpecification>
     </aas:conceptDescription>
-
     <aas:conceptDescription>
       <aas:idShort>ethernet</aas:idShort>
       <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet</aas:identification>
@@ -2360,7 +2194,7 @@
 
         <aas:conceptDescription>
       <aas:idShort>weigth</aas:idShort>
-      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight</aas:identification>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weigth</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -2717,7 +2551,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>Manufacturer</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-AAO677#002</aas:identification>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -2803,7 +2637,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>ProductType</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-BAA002#004</aas:identification>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -2831,7 +2665,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>ProductFamily</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-AAU731#001</aas:identification>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -2858,7 +2692,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>ProductRoot</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-AAU732#001</aas:identification>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -2885,7 +2719,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>ArticleNumber</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-AAO736#004</aas:identification>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -2909,7 +2743,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>ProductDescription</aas:idShort>
-      <aas:identification idType="IRDI">0173-1#02-AAU734#001</aas:identification>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -2936,7 +2770,7 @@
     </aas:conceptDescription>
     <aas:conceptDescription>
       <aas:idShort>SerialNumber</aas:idShort>
-      <aas:identification idType="URI">http://opcfoundation.org/UA/DI/1.1/DeviceType/Serialnumber</aas:identification>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
