@@ -267,16 +267,16 @@
       <aas:submodelElements>
         <aas:submodelElement>
           <aas:property>
-            <aas:idShort>WorkArea</aas:idShort>
+            <aas:idShort>clockingSpeed</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="URI">www.boschrexroth.com/cd/workarea</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed</aas:key>
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>1.8 ... 12</aas:value>
+            <aas:value>1.4</aas:value>
           </aas:property>
         </aas:submodelElement>
         <aas:submodelElement>
@@ -2003,8 +2003,8 @@
       </aas:embeddedDataSpecification>
     </aas:conceptDescription>
     <aas:conceptDescription>
-      <aas:idShort>WorkArea</aas:idShort>
-      <aas:identification idType="URI">www.boschrexroth.com/cd/workarea</aas:identification>
+      <aas:idShort>clockingSpeed</aas:idShort>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed</aas:identification>
       <aas:embeddedDataSpecification>
         <aas:hasDataSpecification>
           <aas:keys>
@@ -2014,21 +2014,21 @@
         <aas:dataSpecificationContent>
           <aas:dataSpecificationIEC61360>
             <IEC61360:preferredName>
-              <aas:langString lang="EN">Work area</aas:langString>
-              <aas:langString lang="DE">Arbeitsbereich</aas:langString>
+              <aas:langString lang="EN">clocking speed</aas:langString>
+              <aas:langString lang="DE">Taktfrequenz</aas:langString>
             </IEC61360:preferredName>
-            <IEC61360:shortName>WorkArea</IEC61360:shortName>
-            <IEC61360:unit>Nm</IEC61360:unit>
+            <IEC61360:shortName>clockingSpeed</IEC61360:shortName>
+            <IEC61360:unit>GHz</IEC61360:unit>
             <IEC61360:unitId>
               <IEC61360:keys>
                 <IEC61360:key type="GlobalReference" local="false" idType="IRDI">0173-1#05-AAA571#002</IEC61360:key>
               </IEC61360:keys>
             </IEC61360:unitId>
             <IEC61360:sourceOfDefinition />
-            <IEC61360:dataType>STRING</IEC61360:dataType>
+            <IEC61360:dataType>FLOAT</IEC61360:dataType>
             <IEC61360:definition>
-              <aas:langString lang="EN">Work area</aas:langString>
-              <aas:langString lang="DE">Arbeitsbereich</aas:langString>
+              <aas:langString lang="EN">clocking speed of the processor (single-core)</aas:langString>
+              <aas:langString lang="DE">Taktfreuqenz des Prozessors (single-core)</aas:langString>
             </IEC61360:definition>
           </aas:dataSpecificationIEC61360>
         </aas:dataSpecificationContent>
