@@ -713,3 +713,141 @@ _:technicalData
         ] ;
     ] ;
     .
+
+_:assetIdentification
+    a rami:Submodel ;
+    rami:idShort "AssetIdentification"^^xsd:string ;
+    sh:nodeKind rami:Instance ;
+    rami:hasSubmodel [
+        rami:hasSubmodelElementCollection [
+            rami:hasSubmodelElement [
+                a rami:SubmodelElement ; # TODO: see above
+                rami:hasProperty [ #TODO: see above
+                    a rami:Property ;
+                    rami:idShort "Manufacturer" ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "Raspberry Pi Foundation" ;
+                ] ;
+            ] ;
+            rami:hasSubmodelElement [
+                a rami:SubmodelElement ; # TODO: see above
+                rami:hasProperty [ #TODO: see above
+                    a rami:Property ;
+                    rami:idShort "Brand" ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasIdType sh:IRDI ;
+                        rami:hasKey <0173-1#02-AAO742#002> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "Raspberry Pi" ;
+                ] ;
+            ] ;
+            rami:hasSubmodelElement [
+                a rami:SubmodelElement ; # TODO: see above
+                rami:hasProperty [ #TODO: see above
+                    a rami:Property ;
+                    rami:idShort "ProductRoot" ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "sinlge-board-micro-computer (EN)" ;
+                ] ;
+            ] ;
+            rami:hasSubmodelElement [
+                a rami:SubmodelElement ; # TODO: see above
+                rami:hasProperty [ #TODO: see above
+                    a rami:Property ;
+                    rami:idShort "ProductFamily" ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "micro-computer (single-board) (EN) Mikrocomputer/Einplatinencomputer (DE)" ;
+                ] ;
+            ] ;
+            rami:hasSubmodelElement [
+                a rami:SubmodelElement ; # TODO: see above
+                rami:hasProperty [ #TODO: see above
+                    a rami:Property ;
+                    rami:idShort "ProductType" ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "computer (EN)  Computer (DE)" ;
+                ] ;
+            ] ;
+            rami:hasSubmodelElement [
+                a rami:SubmodelElement ; # TODO: see above
+                rami:hasProperty [ #TODO: see above
+                    a rami:Property ;
+                    rami:idShort "ArticleNumber" ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "RSBRYPIMDL3BP-1234567898765432123456789" ;
+                ] ;
+            ] ;
+            rami:hasSubmodelElement [
+                a rami:SubmodelElement ; # TODO: see above
+                rami:hasProperty [ #TODO: see above
+                    a rami:Property ;
+                    rami:idShort "OrderNumber" ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasIdType sh:IRDI ;
+                        rami:hasKey <0173-1#02-AAO736#004> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "0608842005" ;
+                ] ;
+            ] ;
+            rami:hasSubmodelElement [
+                a rami:SubmodelElement ; # TODO: see above
+                rami:hasProperty [ #TODO: see above
+                    a rami:Property ;
+                    rami:idShort "ProductDescription" ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "The most popular sigle-board-microcomputer and latest model from Raspberry (2019/04)" ;
+                ] ;
+            ] ;
+            rami:hasSubmodelElement [
+                a rami:SubmodelElement ; # TODO: see above
+                rami:hasProperty [ #TODO: see above
+                    a rami:Property ;
+                    rami:idShort "SerialNumber" ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "12345678987654321234567898765432123456789" ;
+                ] ;
+            ] ;
+        ] ;
+    ] ;
+    .
