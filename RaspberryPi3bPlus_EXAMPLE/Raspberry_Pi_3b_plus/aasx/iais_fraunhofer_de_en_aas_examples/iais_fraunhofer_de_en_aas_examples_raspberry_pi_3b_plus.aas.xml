@@ -6,7 +6,7 @@
       <aas:identification idType="URI">iais.fraunhofer.de/en/aas/examples/raspberry_pi_3b_plus </aas:identification>
       <aas:assetRef>
         <aas:keys>
-          <aas:key type="Asset" local="true" idType="URI">https://iais:fraunhofer.de/en/aas/devices/rspbry/755003377</aas:key>
+          <aas:key type="Asset" local="true" idType="URI">https://iais.fraunhofer.de/en/aas/devices/rspbry/755003377</aas:key>
         </aas:keys>
       </aas:assetRef>
       <aas:submodelRefs>
@@ -36,7 +36,7 @@
       <aas:description>
         <aas:langString lang="EN">single board computer for education, microservices and all other imaginable purposes</aas:langString>
       </aas:description>
-      <aas:identification idType="URI">https://iais:fraunhofer.de/en/aas/devices/rspbry/755003377</aas:identification>
+      <aas:identification idType="URI">https://iais.fraunhofer.de/en/aas/devices/rspbry/755003377</aas:identification>
       <aas:kind>Instance</aas:kind>
       <aas:assetIdentificationModelRef>
         <aas:keys>
@@ -73,7 +73,6 @@
                   <aas:category>CONSTANT</aas:category>
                   <aas:semanticId>
                     <aas:keys>
-                      <!-- TODO: modify URI -->
                       <aas:key type="ConceptDescription" local="true" idType="URI">iais.fraunhofer.de/en/aas/page1/Document/DocumentId</aas:key>
                     </aas:keys>
                   </aas:semanticId>
@@ -88,7 +87,6 @@
                   <aas:idShort>DocumentClassId</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <!-- TODO: modify URI -->
                       <aas:key type="ConceptDescription" local="true" idType="URI">iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId</aas:key>
                     </aas:keys>
                   </aas:semanticId>
@@ -103,7 +101,6 @@
                   <aas:idShort>DocumentClassName</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <!-- TODO: modify URI -->
                       <aas:key type="ConceptDescription" local="true" idType="URI">iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName</aas:key>
                     </aas:keys>
                   </aas:semanticId>
@@ -117,8 +114,6 @@
                 <aas:property>
                   <aas:idShort>DocumentClassificationSystem</aas:idShort>
                   <aas:semanticId>
-                    <aas:keys>
-                      <!-- TODO: modify URI -->
                       <aas:key type="ConceptDescription" local="true" idType="URI">iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem</aas:key>
                     </aas:keys>
                   </aas:semanticId>
@@ -206,7 +201,7 @@
                         <aas:kind>Instance</aas:kind>
                         <aas:qualifier />
                         <aas:valueType />
-                        <aas:value>2016-09-25</aas:value>
+                        <aas:value>2018-09-25</aas:value>
                       </aas:property>
                     </aas:submodelElement>
                     <aas:submodelElement>
@@ -220,7 +215,7 @@
                         <aas:kind>Instance</aas:kind>
                         <aas:qualifier />
                         <aas:valueType />
-                        <aas:value>EN | 2016-09-25</aas:value>
+                        <aas:value>EN | 2018-09-25</aas:value>
                       </aas:property>
                     </aas:submodelElement>
                     <aas:submodelElement>
@@ -254,7 +249,6 @@
             <aas:category>PARAMETER</aas:category>
             <aas:semanticId>
               <aas:keys>
-                <!--TODO: modify! -->
                 <aas:key type="ConceptDescription" local="true" idType="URI">iais.fraunhofer.de/en/aas/page1/Document</aas:key>
               </aas:keys>
             </aas:semanticId>
@@ -267,7 +261,6 @@
                   <aas:category>CONSTANT</aas:category>
                   <aas:semanticId>
                     <aas:keys>
-                      <!-- TODO: modify URI -->
                       <aas:key type="ConceptDescription" local="true" idType="URI">iais.fraunhofer.de/en/aas/page1/Document/DocumentId</aas:key>
                     </aas:keys>
                   </aas:semanticId>
@@ -282,7 +275,6 @@
                   <aas:idShort>DocumentClassId</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <!-- TODO: modify URI -->
                       <aas:key type="ConceptDescription" local="true" idType="URI">iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId</aas:key>
                     </aas:keys>
                   </aas:semanticId>
@@ -297,7 +289,6 @@
                   <aas:idShort>DocumentClassName</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <!-- TODO: modify URI -->
                       <aas:key type="ConceptDescription" local="true" idType="URI">iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName</aas:key>
                     </aas:keys>
                   </aas:semanticId>
@@ -312,7 +303,6 @@
                   <aas:idShort>DocumentClassificationSystem</aas:idShort>
                   <aas:semanticId>
                     <aas:keys>
-                      <!-- TODO: modify URI -->
                       <aas:key type="ConceptDescription" local="true" idType="URI">iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem</aas:key>
                     </aas:keys>
                   </aas:semanticId>
@@ -453,12 +443,12 @@
       <aas:identification idType="URI">iais.fraunhofer.de/en/aas/rspbry/instance/1/1/technical_data</aas:identification>
       <aas:semanticId>
         <aas:keys>
-          <aas:key type="GlobalReference" local="false" idType=""> 0173-1#01-AAA444#008</aas:key>
+          <aas:key type="GlobalReference" local="false" idType="IRDI">0173-1#01-AAA444#008</aas:key>
         </aas:keys>
       </aas:semanticId>
       <aas:kind>Instance</aas:kind>
       <aas:qualifier />
-      <aas:submodelElements>
+      <aas:submodelElements> <!-- TODO: Is this the equivalent for rami:SubmodelElementCollection ? -->
         <aas:submodelElement>
           <aas:property>
             <aas:idShort>clockingSpeed</aas:idShort>
@@ -484,7 +474,7 @@
             <aas:category>CONSTANT</aas:category>
             <aas:description>
               <aas:langString lang="DE">Prozessorarchitektur [BIT]</aas:langString>
-              <aas:langString lang="EN">architecture of the processor [BIT]</aas:langString>
+              <aas:langString lang="EN">Prozessorarchitektur [BIT]</aas:langString>
             </aas:description>
             <aas:semanticId>
               <aas:keys>
@@ -579,7 +569,7 @@
             <aas:category>CONSTANT</aas:category>
             <aas:description>
               <aas:langString lang="DE">Audioausgang</aas:langString>
-              <aas:langString lang="EN">aduio-output</aas:langString>
+              <aas:langString lang="EN">audio-output</aas:langString>
             </aas:description>
             <aas:semanticId>
               <aas:keys>
