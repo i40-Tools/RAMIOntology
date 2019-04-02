@@ -34,7 +34,7 @@ iaisex:raspberry_pi_3b_plus
 
 _:documentation
     a rami:Submodel ;
-    rami:idShort "Documentation" ;
+    rami:idShort "Documentation"^^xsd:string ;
     rami:id <iais.fraunhofer.de/en/aas/rspbry/instance/1/1/documentation> ; # TODO: check this attribute. Necessary!
     sh:nodeKind rami:Instance ;
     rami:hasSubmodel [
@@ -430,5 +430,286 @@ _:documentation
                 ] ;
             ] ;
         ] ;
-    ]
+    ] ;
+    .
+
+_:technicalData
+    a rami:Submodel ;
+    rami:idShort "TechnicalData"^^xsd:string ;
+    rdf:semanticID [
+        rami:id <0173-1#01-AAA444#008> ;
+        rami:idType sh:IRDI ;
+        rami:hasLocal "false"^^xsd:boolean ;
+    ] ;
+    sh:nodeKind rami:Instance ;
+    rami:hasSubmodelElement [ # TODO: check if this is conform to SHAPE. If not: Add necessary properties
+        a rami:SubmodelElement ;
+        rami:hasSubmodelElementCollection [
+            a rami:SubmodelElementCollection ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "clockingSpeed" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "Max. taktfrequenz des Prozessors [GHz]"@de ;
+                    rami:description "Max. clocking speed of the processor [GHz]"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "1.4" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "architecture" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "Prozessorarchitektur [BIT]"@de ;
+                    rami:description "Prozessorarchitektur [BIT]"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/processorarchitecture> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "64" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "socket" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "Prozessorsockel"@de ;
+                    rami:description "processor socket"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "cpu" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "Zentrale Prozessoreinheit"@de ;
+                    rami:description "central processing unit"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/cpu> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "ARM Cortex-A53 CPU" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "ram" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "Arbeitsspeicher [GB]"@de ;
+                    rami:description "Random Access Memory [GB]"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "2" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "power-in" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "Power-In"@de ;
+                    rami:description "Power-In"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "5/2.5 DC" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "audio-output" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "Audioausgang"@de ;
+                    rami:description "audio-output"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "built-in-speaker" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "os" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "Betriebssystem"@de ;
+                    rami:description "oparating system"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "Raspberian OS (UNIX based)" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "usb-ports" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "Universeller serieller BUS"@de ;
+                    rami:description "universal serial BUS"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "4*USB2" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "gpio" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "GPIO"@de ;
+                    rami:description "gpio"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "40" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "weight" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "31" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "heigth" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "17" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "length" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "85" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "width" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "56" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "wifi-connection" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "kabellose Verbindungsmöglichkeiten"@de ;
+                    rami:description "wireless connectivity"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi-connection> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "Dual-band 802.11ac wireless LAN (2.4GHz and 5GHz ) and Bluetooth 4.2" ;
+                ] ;
+            ] ;
+            rami:value [
+                a rami:SubmodelElement ;
+                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+                    a rami:Property ;
+                    rami:idShort "ethernet" ;
+                    rami:category "CONSTANT"^^xsd:string ;
+                    rami:description "kabelgebundene Netzwerkanbindung"@de ;
+                    rami:description "wired network-connectivity"@en ;
+                    rdf:semanticID [
+                        a rdf:semanticID ;
+                        # see comments above and add hasLocal + hasIDType if necessary
+                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernetn> ;
+                    ] ;
+                    sh:nodeKind rami:Instance ;
+                    rami:value "Gigabit Ethernet over USB 2.0 (max 300 Mbps). Power-over-Ethernet support (with separate PoE HAT). Improved PXE network and USB mass-storage booting." ;
+                ] ;
+            ] ;
+        ] ;
+    ] ;
     .
