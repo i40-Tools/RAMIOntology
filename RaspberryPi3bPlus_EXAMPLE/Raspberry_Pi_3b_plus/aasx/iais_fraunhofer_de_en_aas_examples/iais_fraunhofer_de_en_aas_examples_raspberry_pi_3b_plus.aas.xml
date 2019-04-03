@@ -726,7 +726,7 @@
             <aas:category>CONSTANT</aas:category>
             <aas:description>
               <aas:langString lang="DE">kabelgebundene Netzwerkanbindung</aas:langString>
-              <aas:langString lang="EN">wired network-.connectivity</aas:langString>
+              <aas:langString lang="EN">wired network-connectivity</aas:langString>
             </aas:description>
             <aas:semanticId>
               <aas:keys>
@@ -769,7 +769,7 @@
             <aas:idShort>Brand</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO742#002 </aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO742#002 </aas:key> <!-- TODO: check why IRDI instead of URI -->
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
@@ -839,7 +839,7 @@
             <aas:idShort>OrderNumber</aas:idShort>
             <aas:semanticId>
               <aas:keys>
-                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO736#004</aas:key>
+                <aas:key type="ConceptDescription" local="true" idType="IRDI">0173-1#02-AAO736#004</aas:key> <!-- TODO: check why IRDI instead of URI -->
               </aas:keys>
             </aas:semanticId>
             <aas:kind>Instance</aas:kind>
@@ -859,7 +859,7 @@
             <aas:kind>Instance</aas:kind>
             <aas:qualifier />
             <aas:valueType />
-            <aas:value>The most popular sigle-board-microcomputer and latest model from Raspberry (2019/04)>.</aas:value>
+            <aas:value>The most popular sigle-board-microcomputer and latest model from Raspberry (2019/04).</aas:value>
           </aas:property>
         </aas:submodelElement>
         <aas:submodelElement>
