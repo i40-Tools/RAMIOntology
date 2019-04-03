@@ -21,16 +21,19 @@ iaisex:raspberry_pi_3b_plus
 <https://iais.fraunhofer.de/en/aas/devices/rspbry/755003377>
     a rami:Asset ;
     rami:idShort "RaspberryPiModel3B"^^xsd:string ;
-    rami:description "single board computer for education, microservices and all other imaginable purposes"@en ;
+    rdfs:comment "single board computer for education, microservices and all other imaginable purposes"@en ;
     rami:id [
+        a rami:id ;
         rami:idType sh:URI ;
-        rami:id <https://iais.fraunhofer.de/en/aas/devices/rspbry/755003377> ;
+        rami:id <https://iais.fraunhofer.de/en/aas/devices/rspbry/755003377> ; # TODO: references itself with own key ??????
     ] ;
     sh:nodeKind rami:Instance ;
     rami:hasSubmodel [
-        rami:type rami:Submodel ;
+        a rami:Submodel ;
         rami:hasSubmodelElement _:assetIdentification ;
     ] .
+
+
 
 _:documentation
     a rami:Submodel ;
@@ -58,12 +61,12 @@ _:documentation
                     rami:hasProperty [ #TODO: check if hasProperty is part of the ontology and check if this is necessary
                         a rami:Property ;
                         rami:idShort "DocumentId" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            rami:hasLocal "true"^^xsd:boolean ;
-                            rami:hasIdType sh:URI ; # TODO: check if the two attributes above are necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/Document/DocumentId> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     rami:hasLocal "true"^^xsd:boolean ;
+                        #     rami:hasIdType sh:URI ; # TODO: check if the two attributes above are necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/Document/DocumentId> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "3 608 870 A47" ;
                     ] ;
@@ -73,11 +76,11 @@ _:documentation
                     rami:hasProperty [ #TODO: see above
                         a rami:Property ;
                         rami:idShort "DocumentClassId" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            # see comments above and add hasLocal + hasIDType if necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     # see comments above and add hasLocal + hasIDType if necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "03-02" ;
                     ] ;
@@ -87,11 +90,11 @@ _:documentation
                     rami:hasProperty [ #TODO: see above
                         a rami:Property ;
                         rami:idShort "DocumentClassName" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            # see comments above and add hasLocal + hasIDType if necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     # see comments above and add hasLocal + hasIDType if necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "Product sheet (EN)" ;
                     ] ;
@@ -101,11 +104,11 @@ _:documentation
                     rami:hasProperty [ #TODO: see above
                         a rami:Property ;
                         rami:idShort "DocumentClassificationSystem" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            # see comments above and add hasLocal + hasIDType if necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     # see comments above and add hasLocal + hasIDType if necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "VDI2770:2018" ;
                     ] ;
@@ -115,11 +118,11 @@ _:documentation
                     rami:hasProperty [ #TODO: see above
                         a rami:Property ;
                         rami:idShort "OrganizationName" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            # see comments above and add hasLocal + hasIDType if necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/Organization/OrganizationName> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     # see comments above and add hasLocal + hasIDType if necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/Organization/OrganizationName> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "Raspberry Foundation" ;
                     ] ;
@@ -159,11 +162,11 @@ _:documentation
                                     rami:hasProperty [ #TODO: see above
                                         a rami:Property ;
                                         rami:idShort "Language" ;
-                                        rdf:semanticID [
-                                            a rdf:semanticID ;
-                                            # see comments above and add hasLocal + hasIDType if necessary
-                                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentVersion/Language> ;
-                                        ] ;
+                                        # rdf:semanticID [
+                                        #     a rdf:semanticID ;
+                                        #     # see comments above and add hasLocal + hasIDType if necessary
+                                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentVersion/Language> ;
+                                        # ] ;
                                         sh:nodeKind rami:Instance ;
                                         rami:value "en-EN" ;
                                     ] ;
@@ -173,11 +176,11 @@ _:documentation
                                     rami:hasProperty [ #TODO: see above
                                         a rami:Property ;
                                         rami:idShort "title" ;
-                                        rdf:semanticID [
-                                            a rdf:semanticID ;
-                                            # see comments above and add hasLocal + hasIDType if necessary
-                                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/Description/Title> ;
-                                        ] ;
+                                        # rdf:semanticID [
+                                        #     a rdf:semanticID ;
+                                        #     # see comments above and add hasLocal + hasIDType if necessary
+                                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/Description/Title> ;
+                                        # ] ;
                                         sh:nodeKind rami:Instance ;
                                         rami:value "Product sheet for the Raspberry Pi 3b+ (EN)" ;
                                     ] ;
@@ -187,11 +190,11 @@ _:documentation
                                     rami:hasProperty [ #TODO: see above
                                         a rami:Property ;
                                         rami:idShort "Date" ;
-                                        rdf:semanticID [
-                                            a rdf:semanticID ;
-                                            # see comments above and add hasLocal + hasIDType if necessary
-                                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/SetDate> ;
-                                        ] ;
+                                        # rdf:semanticID [
+                                        #     a rdf:semanticID ;
+                                        #     # see comments above and add hasLocal + hasIDType if necessary
+                                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/SetDate> ;
+                                        # ] ;
                                         sh:nodeKind rami:Instance ;
                                         rami:value "2018-09-25" ;
                                     ] ;
@@ -201,11 +204,11 @@ _:documentation
                                     rami:hasProperty [ #TODO: see above
                                         a rami:Property ;
                                         rami:idShort "DocumentVersionId" ;
-                                        rdf:semanticID [
-                                            a rdf:semanticID ;
-                                            # see comments above and add hasLocal + hasIDType if necessary
-                                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentVersionId> ;
-                                        ] ;
+                                        # rdf:semanticID [
+                                        #     a rdf:semanticID ;
+                                        #     # see comments above and add hasLocal + hasIDType if necessary
+                                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentVersionId> ;
+                                        # ] ;
                                         sh:nodeKind rami:Instance ;
                                         rami:value "EN | 2018-09-25" ;
                                     ] ;
@@ -215,11 +218,11 @@ _:documentation
                                     rami:hasProperty [ #TODO: see above
                                         a rami:Property ;
                                         rami:idShort "DigitalFile_PDF" ;
-                                        rdf:semanticID [
-                                            a rdf:semanticID ;
-                                            # see comments above and add hasLocal + hasIDType if necessary
-                                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/DigitalFile> ;
-                                        ] ;
+                                        # rdf:semanticID [
+                                        #     a rdf:semanticID ;
+                                        #     # see comments above and add hasLocal + hasIDType if necessary
+                                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/DigitalFile> ;
+                                        # ] ;
                                         sh:nodeKind rami:Instance ;
                                         rami:value "/aasx/documents/product_sheet.pdf" ;
                                         #########################################################
@@ -237,14 +240,14 @@ _:documentation
         rami:hasSubmodelElementCollection [ #TODO: ADD THIS IS THE ONTOLOGY ! CHECK also the usage of SubmodelElementCollection instead of multiple SubmodelElements that are not surrounded by a SubmodelElemnetCollction
             rami:idShort "Review and Guide"^^xsd:string ;
             sh:nodeKind rami:Instance ;
-            rami:hasConceptDescription [
-                rdf:semanticID [
-                    a rdf:semanticID ;
-                    rami:hasLocal "true"^^xsd:boolean ;
-                    rami:hasIdType sh:URI ;
-                    rami:hasKey <iais.fraunhofer.de/en/aas/page1/Document> ;
-                ] ;
-            ] ;
+            # rami:hasConceptDescription [
+            #     rdf:semanticID [
+            #         a rdf:semanticID ;
+            #         rami:hasLocal "true"^^xsd:boolean ;
+            #         rami:hasIdType sh:URI ;
+            #         rami:hasKey <iais.fraunhofer.de/en/aas/page1/Document> ;
+            #     ] ;
+            # ] ;
             rami:ordered "false"^^xsd:boolean ;
             rami:allowDuplicates "false"^^xsd:boolean ;
             rami:value [
@@ -254,12 +257,12 @@ _:documentation
                     rami:hasProperty [ #TODO: check if hasProperty is part of the ontology and check if this is necessary
                         a rami:Property ;
                         rami:idShort "DocumentId" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            rami:hasLocal "true"^^xsd:boolean ;
-                            rami:hasIdType sh:URI ; # TODO: check if the two attributes above are necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/Document/DocumentId> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     rami:hasLocal "true"^^xsd:boolean ;
+                        #     rami:hasIdType sh:URI ; # TODO: check if the two attributes above are necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/Document/DocumentId> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "3 6wqi wq w7" ;
                     ] ;
@@ -269,11 +272,11 @@ _:documentation
                     rami:hasProperty [ #TODO: see above
                         a rami:Property ;
                         rami:idShort "DocumentClassId" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            # see comments above and add hasLocal + hasIDType if necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     # see comments above and add hasLocal + hasIDType if necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "33-04" ;
                     ] ;
@@ -283,11 +286,11 @@ _:documentation
                     rami:hasProperty [ #TODO: see above
                         a rami:Property ;
                         rami:idShort "DocumentClassName" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            # see comments above and add hasLocal + hasIDType if necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     # see comments above and add hasLocal + hasIDType if necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "Review and full Guide to get started (EN)" ;
                     ] ;
@@ -297,11 +300,11 @@ _:documentation
                     rami:hasProperty [ #TODO: see above
                         a rami:Property ;
                         rami:idShort "DocumentClassificationSystem" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            # see comments above and add hasLocal + hasIDType if necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     # see comments above and add hasLocal + hasIDType if necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "VDI2770:2018" ;
                     ] ;
@@ -311,11 +314,11 @@ _:documentation
                     rami:hasProperty [ #TODO: see above
                         a rami:Property ;
                         rami:idShort "OrganizationName" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            # see comments above and add hasLocal + hasIDType if necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/Organization/OrganizationName> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     # see comments above and add hasLocal + hasIDType if necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/Organization/OrganizationName> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "Raspberry Maganzine" ;
                     ] ;
@@ -325,11 +328,11 @@ _:documentation
                     rami:hasProperty [ #TODO: see above
                         a rami:Property ;
                         rami:idShort "OrganizationOfficialName" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            # see comments above and add hasLocal + hasIDType if necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/Organization/OrganizationOfficialName> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     # see comments above and add hasLocal + hasIDType if necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/Organization/OrganizationOfficialName> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value "Raspberry Pi Foundation" ;
                     ] ;
@@ -339,11 +342,11 @@ _:documentation
                     rami:hasProperty [ #TODO: see above
                         a rami:Property ;
                         rami:idShort "EN" ;
-                        rdf:semanticID [
-                            a rdf:semanticID ;
-                            # see comments above and add hasLocal + hasIDType if necessary
-                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentVersion> ;
-                        ] ;
+                        # rdf:semanticID [
+                        #     a rdf:semanticID ;
+                        #     # see comments above and add hasLocal + hasIDType if necessary
+                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentVersion> ;
+                        # ] ;
                         sh:nodeKind rami:Instance ;
                         rami:value [
                             rami:submodelElementCollection [ # TODO: check th usage of SubmodelElemntCollection
@@ -355,11 +358,11 @@ _:documentation
                                     rami:hasProperty [ #TODO: see above
                                         a rami:Property ;
                                         rami:idShort "Language" ;
-                                        rdf:semanticID [
-                                            a rdf:semanticID ;
-                                            # see comments above and add hasLocal + hasIDType if necessary
-                                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentVersion/Language> ;
-                                        ] ;
+                                        # rdf:semanticID [
+                                        #     a rdf:semanticID ;
+                                        #     # see comments above and add hasLocal + hasIDType if necessary
+                                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentVersion/Language> ;
+                                        # ] ;
                                         sh:nodeKind rami:Instance ;
                                         rami:value "en-EN" ;
                                     ] ;
@@ -369,11 +372,11 @@ _:documentation
                                     rami:hasProperty [ #TODO: see above
                                         a rami:Property ;
                                         rami:idShort "title" ;
-                                        rdf:semanticID [
-                                            a rdf:semanticID ;
-                                            # see comments above and add hasLocal + hasIDType if necessary
-                                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/Description/Title> ;
-                                        ] ;
+                                        # rdf:semanticID [
+                                        #     a rdf:semanticID ;
+                                        #     # see comments above and add hasLocal + hasIDType if necessary
+                                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/Description/Title> ;
+                                        # ] ;
                                         sh:nodeKind rami:Instance ;
                                         rami:value "Official magazine of the Raspberry Pi Organization (April 2018) (EN)" ;
                                     ] ;
@@ -383,11 +386,11 @@ _:documentation
                                     rami:hasProperty [ #TODO: see above
                                         a rami:Property ;
                                         rami:idShort "Date" ;
-                                        rdf:semanticID [
-                                            a rdf:semanticID ;
-                                            # see comments above and add hasLocal + hasIDType if necessary
-                                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/SetDate> ;
-                                        ] ;
+                                        # rdf:semanticID [
+                                        #     a rdf:semanticID ;
+                                        #     # see comments above and add hasLocal + hasIDType if necessary
+                                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/SetDate> ;
+                                        # ] ;
                                         sh:nodeKind rami:Instance ;
                                         rami:value "2018-04-01" ;
                                     ] ;
@@ -397,11 +400,11 @@ _:documentation
                                     rami:hasProperty [ #TODO: see above
                                         a rami:Property ;
                                         rami:idShort "DocumentVersionId" ;
-                                        rdf:semanticID [
-                                            a rdf:semanticID ;
-                                            # see comments above and add hasLocal + hasIDType if necessary
-                                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentVersionId> ;
-                                        ] ;
+                                        # rdf:semanticID [
+                                        #     a rdf:semanticID ;
+                                        #     # see comments above and add hasLocal + hasIDType if necessary
+                                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentVersionId> ;
+                                        # ] ;
                                         sh:nodeKind rami:Instance ;
                                         rami:value "EN | 2018-04-01" ;
                                     ] ;
@@ -411,11 +414,11 @@ _:documentation
                                     rami:hasProperty [ #TODO: see above
                                         a rami:Property ;
                                         rami:idShort "DigitalFile_PDF" ;
-                                        rdf:semanticID [
-                                            a rdf:semanticID ;
-                                            # see comments above and add hasLocal + hasIDType if necessary
-                                            rami:hasKey <iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/DigitalFile> ;
-                                        ] ;
+                                        # rdf:semanticID [
+                                        #     a rdf:semanticID ;
+                                        #     # see comments above and add hasLocal + hasIDType if necessary
+                                        #     rami:hasKey <iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/DigitalFile> ;
+                                        # ] ;
                                         sh:nodeKind rami:Instance ;
                                         rami:value "/aasx/documents/review_and_guide.pdf" ;
                                         #########################################################
@@ -442,274 +445,293 @@ _:technicalData
         rami:hasLocal "false"^^xsd:boolean ;
     ] ;
     sh:nodeKind rami:Instance ;
-    rami:hasSubmodelElement [ # TODO: check if this is conform to SHAPE. If not: Add necessary properties
+    rami:hasSubmodelElement [
         a rami:SubmodelElement ;
-        rami:hasSubmodelElementCollection [
-            a rami:SubmodelElementCollection ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "clockingSpeed" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "Max. taktfrequenz des Prozessors [GHz]"@de ;
-                    rami:description "Max. clocking speed of the processor [GHz]"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "1.4" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "architecture" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "Prozessorarchitektur [BIT]"@de ;
-                    rami:description "Prozessorarchitektur [BIT]"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/processorarchitecture> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "64" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "socket" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "Prozessorsockel"@de ;
-                    rami:description "processor socket"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "cpu" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "Zentrale Prozessoreinheit"@de ;
-                    rami:description "central processing unit"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/cpu> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "ARM Cortex-A53 CPU" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "ram" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "Arbeitsspeicher [GB]"@de ;
-                    rami:description "Random Access Memory [GB]"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "2" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "power-in" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "Power-In"@de ;
-                    rami:description "Power-In"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "5/2.5 DC" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "audio-output" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "Audioausgang"@de ;
-                    rami:description "audio-output"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "built-in-speaker" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "os" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "Betriebssystem"@de ;
-                    rami:description "oparating system"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "Raspberian OS (UNIX based)" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "usb-ports" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "Universeller serieller BUS"@de ;
-                    rami:description "universal serial BUS"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "4*USB2" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "gpio" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "GPIO"@de ;
-                    rami:description "gpio"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "40" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "weight" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "31" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "heigth" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "17" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "length" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "85" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "width" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "56" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "wifi-connection" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "kabellose Verbindungsmöglichkeiten"@de ;
-                    rami:description "wireless connectivity"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi-connection> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "Dual-band 802.11ac wireless LAN (2.4GHz and 5GHz ) and Bluetooth 4.2" ;
-                ] ;
-            ] ;
-            rami:value [
-                a rami:SubmodelElement ;
-                rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
-                    a rami:Property ;
-                    rami:idShort "ethernet" ;
-                    rami:category "CONSTANT"^^xsd:string ;
-                    rami:description "kabelgebundene Netzwerkanbindung"@de ;
-                    rami:description "wired network-connectivity"@en ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernetn> ;
-                    ] ;
-                    sh:nodeKind rami:Instance ;
-                    rami:value "Gigabit Ethernet over USB 2.0 (max 300 Mbps). Power-over-Ethernet support (with separate PoE HAT). Improved PXE network and USB mass-storage booting." ;
-                ] ;
-            ] ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "clockingSpeed"^^xsd:string ;
+            rami:idShort "clockingSpeed" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "Max. taktfrequenz des Prozessors [GHz]"@de ;
+            rdfs:comment "Max. clocking speed of the processor [GHz]"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "1.4" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "processorArchitecute"^^xsd:string ;
+            rami:idShort "architecture" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "Prozessorarchitektur [BIT]"@de ;
+            rdfs:comment "Prozessorarchitektur [BIT]"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/processorarchitecture> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "64" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "processorSocket"^^xsd:string ;
+            rami:idShort "socket" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "Prozessorsockel"@de ;
+            rdfs:comment "processor socket"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "CPU"^^xsd:string ;
+            rami:idShort "cpu" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "Zentrale Prozessoreinheit"@de ;
+            rdfs:comment "central processing unit"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/cpu> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "ARM Cortex-A53 CPU" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "RAM"^^xsd:string ;
+            rami:idShort "ram" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "Arbeitsspeicher [GB]"@de ;
+            rdfs:comment "Random Access Memory [GB]"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "2" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "power-in"^^xsd:string ;
+            rami:idShort "power-in" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "Power-In"@de ;
+            rdfs:comment "Power-In"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "5/2.5 DC" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "audio-output"^^xsd:string ;
+            rami:idShort "audio-output" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "Audioausgang"@de ;
+            rdfs:comment "audio-output"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "built-in-speaker" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "OS"^^xsd:string ;
+            rami:idShort "os" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "Betriebssystem"@de ;
+            rdfs:comment "oparating system"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "Raspberian OS (UNIX based)" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "USB"^^xsd:string ;
+            rami:idShort "usb-ports" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "Universeller serieller BUS"@de ;
+            rdfs:comment "universal serial BUS"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "4*USB2" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "GPIO"^^xsd:string ;
+            rami:idShort "gpio" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "GPIO"@de ;
+            rdfs:comment "gpio"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "40" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "weight"^^xsd:string ;
+            rdfs:comment "weight of the Raspberry Pi 3b+"@en ;
+            rdfs:comment "Gewicht des Raspberry Pi 3b+"@de ;
+            rami:idShort "weight" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "31" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "heigth"^^xsd:string ;
+            rdfs:comment "heigth of the Raspberry Pi 3b+"@en ;
+            rdfs:comment "Höhe des Raspberry Pi 3b+"@de ;
+            rami:idShort "heigth" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "17" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "length"^^xsd:string ;
+            rdfs:comment "length of the Raspberry Pi 3b+"@en ;
+            rdfs:comment "Länge des Raspberry Pi 3b+"@de ;
+            rdfs:label "length" ;
+            rami:idShort "length" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "85" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "width"^^xsd:string ;
+            rdfs:comment "width of the Raspberry Pi 3b+"@en ;
+            rdfs:comment "Breite des Raspberry Pi 3b+"@de ;
+            rami:idShort "width" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "56" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "Wi-Fi"^^xsd:string ;
+            rami:idShort "wifi-connection" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "kabellose Verbindungsmöglichkeiten"@de ;
+            rdfs:comment "wireless connectivity"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi-connection> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "Dual-band 802.11ac wireless LAN (2.4GHz and 5GHz ) and Bluetooth 4.2" ;
+        ] ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rami:hasProperty [ #TODO: ADD THIS NECESSARY ATTRIBUTE !
+            a rami:Property ;
+            rdfs:label "ethernet"^^xsd:string ;
+            rami:idShort "ethernet" ;
+            rami:category "CONSTANT"^^xsd:string ;
+            rdfs:comment "kabelgebundene Netzwerkanbindung"@de ;
+            rdfs:comment "wired network-connectivity"@en ;
+            # rdf:semanticID [
+            #     a rdf:semanticID ;
+            #     # see comments above and add hasLocal + hasIDType if necessary
+            #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernetn> ;
+            # ] ;
+            sh:nodeKind rami:Instance ;
+            rami:value "Gigabit Ethernet over USB 2.0 (max 300 Mbps). Power-over-Ethernet support (with separate PoE HAT). Improved PXE network and USB mass-storage booting." ;
         ] ;
     ] ;
     .
@@ -725,11 +747,11 @@ _:assetIdentification
                 rami:hasProperty [ #TODO: see above
                     a rami:Property ;
                     rami:idShort "Manufacturer" ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer> ;
-                    ] ;
+                    # rdf:semanticID [
+                    #     a rdf:semanticID ;
+                    #     # see comments above and add hasLocal + hasIDType if necessary
+                    #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer> ;
+                    # ] ;
                     sh:nodeKind rami:Instance ;
                     rami:value "Raspberry Pi Foundation" ;
                 ] ;
@@ -739,12 +761,12 @@ _:assetIdentification
                 rami:hasProperty [ #TODO: see above
                     a rami:Property ;
                     rami:idShort "Brand" ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasIdType sh:IRDI ;
-                        rami:hasKey <0173-1#02-AAO742#002> ;
-                    ] ;
+                    # rdf:semanticID [
+                    #     a rdf:semanticID ;
+                    #     # see comments above and add hasLocal + hasIDType if necessary
+                    #     rami:hasIdType sh:IRDI ;
+                    #     rami:hasKey <0173-1#02-AAO742#002> ;
+                    # ] ;
                     sh:nodeKind rami:Instance ;
                     rami:value "Raspberry Pi" ;
                 ] ;
@@ -754,11 +776,11 @@ _:assetIdentification
                 rami:hasProperty [ #TODO: see above
                     a rami:Property ;
                     rami:idShort "ProductRoot" ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root> ;
-                    ] ;
+                    # rdf:semanticID [
+                    #     a rdf:semanticID ;
+                    #     # see comments above and add hasLocal + hasIDType if necessary
+                    #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root> ;
+                    # ] ;
                     sh:nodeKind rami:Instance ;
                     rami:value "sinlge-board-micro-computer (EN)" ;
                 ] ;
@@ -768,11 +790,11 @@ _:assetIdentification
                 rami:hasProperty [ #TODO: see above
                     a rami:Property ;
                     rami:idShort "ProductFamily" ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family> ;
-                    ] ;
+                    # rdf:semanticID [
+                    #     a rdf:semanticID ;
+                    #     # see comments above and add hasLocal + hasIDType if necessary
+                    #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family> ;
+                    # ] ;
                     sh:nodeKind rami:Instance ;
                     rami:value "micro-computer (single-board) (EN) Mikrocomputer/Einplatinencomputer (DE)" ;
                 ] ;
@@ -782,11 +804,11 @@ _:assetIdentification
                 rami:hasProperty [ #TODO: see above
                     a rami:Property ;
                     rami:idShort "ProductType" ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type> ;
-                    ] ;
+                    # rdf:semanticID [
+                    #     a rdf:semanticID ;
+                    #     # see comments above and add hasLocal + hasIDType if necessary
+                    #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type> ;
+                    # ] ;
                     sh:nodeKind rami:Instance ;
                     rami:value "computer (EN)  Computer (DE)" ;
                 ] ;
@@ -796,11 +818,11 @@ _:assetIdentification
                 rami:hasProperty [ #TODO: see above
                     a rami:Property ;
                     rami:idShort "ArticleNumber" ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number> ;
-                    ] ;
+                    # rdf:semanticID [
+                    #     a rdf:semanticID ;
+                    #     # see comments above and add hasLocal + hasIDType if necessary
+                    #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number> ;
+                    # ] ;
                     sh:nodeKind rami:Instance ;
                     rami:value "RSBRYPIMDL3BP-1234567898765432123456789" ;
                 ] ;
@@ -810,12 +832,12 @@ _:assetIdentification
                 rami:hasProperty [ #TODO: see above
                     a rami:Property ;
                     rami:idShort "OrderNumber" ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasIdType sh:IRDI ;
-                        rami:hasKey <0173-1#02-AAO736#004> ;
-                    ] ;
+                    # rdf:semanticID [
+                    #     a rdf:semanticID ;
+                    #     # see comments above and add hasLocal + hasIDType if necessary
+                    #     rami:hasIdType sh:IRDI ;
+                    #     rami:hasKey <0173-1#02-AAO736#004> ;
+                    # ] ;
                     sh:nodeKind rami:Instance ;
                     rami:value "0608842005" ;
                 ] ;
@@ -825,11 +847,11 @@ _:assetIdentification
                 rami:hasProperty [ #TODO: see above
                     a rami:Property ;
                     rami:idShort "ProductDescription" ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description> ;
-                    ] ;
+                    # rdf:semanticID [
+                    #     a rdf:semanticID ;
+                    #     # see comments above and add hasLocal + hasIDType if necessary
+                    #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description> ;
+                    # ] ;
                     sh:nodeKind rami:Instance ;
                     rami:value "The most popular sigle-board-microcomputer and latest model from Raspberry (2019/04)" ;
                 ] ;
@@ -839,11 +861,11 @@ _:assetIdentification
                 rami:hasProperty [ #TODO: see above
                     a rami:Property ;
                     rami:idShort "SerialNumber" ;
-                    rdf:semanticID [
-                        a rdf:semanticID ;
-                        # see comments above and add hasLocal + hasIDType if necessary
-                        rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number> ;
-                    ] ;
+                    # rdf:semanticID [
+                    #     a rdf:semanticID ;
+                    #     # see comments above and add hasLocal + hasIDType if necessary
+                    #     rami:hasKey <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number> ;
+                    # ] ;
                     sh:nodeKind rami:Instance ;
                     rami:value "12345678987654321234567898765432123456789" ;
                 ] ;
@@ -851,3 +873,15 @@ _:assetIdentification
         ] ;
     ] ;
     .
+
+# <iais.fraunhofer.de/en/aas/page1/Document>
+#     a rami:ConceptDictionary ;
+#     rami:idShort "Document"^^xsd:string ;
+#     rdf:semanticID [
+#         a rdf:semanticID ;
+#         rami:hasKey 
+#     ]
+#     .
+#####################################################################################
+#### No conceptDescriptions! The description of the property is the rdfs:comment ####
+#####################################################################################
