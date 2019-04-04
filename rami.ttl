@@ -1288,7 +1288,10 @@ rami:Referable rdf:type owl:Class ;
 
 
 ###  https://w3id.org/i40/rami#Reference
-rami:Reference rdf:type owl:Class .
+rami:Reference rdf:type owl:Class ;
+               rdfs:comment """Reference to either a model element of the same or another AAs or to an external entity.
+A reference is an ordered list of keys, each key referencing an element. The complete list of keys may for example be concatenated to a path that then gives unique access to an element or entity."""@en ;
+               rdfs:label "Reference"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#ReferenceElement
@@ -1736,10 +1739,10 @@ foaf:image rdfs:comment "Image of the Asset reused from the FOAF ontology."@en ;
 
 
 rami:Asset skos:altLabel "Object"@en ;
+           skos:definition "Clearly identifiable asset for the Administration Shell"@en ;
            rdfs:comment """An Asset describes meta data of an asset that is represented by an AAS.
 The asset may either represent an asset type or an asset instance.
 The asset has a globally unique identifier plus – if needed – additional domain specific (proprietary) identifiers."""@en ;
-           skos:definition "Clearly identifiable asset for the Administration Shell"@en ;
            skos:altLabel "Entity"@en ;
            skos:prefLabel "Asset"@en ;
            skos:definition "Eindeutig identifizierbarer Gegenstand, der aufgrund seiner Bedeutung in der Informationswelt verwaltet wird"@de ;
@@ -1752,8 +1755,8 @@ rami:assetId owl:deprecated "true"^^xsd:boolean ;
              rdfs:comment "The unique identifier of an asset. Note the difference between the 'asset ID' idenitfier and the URIs for the resources."@en .
 
 
-rami:description skos:prefLabel "has Description"@en ;
-                 rdfs:comment "Description or comments on the element. The description can be provided in several languages."@en .
+rami:description rdfs:comment "Description or comments on the element. The description can be provided in several languages."@en ;
+                 skos:prefLabel "has Description"@en .
 
 
 rami:hasValue rdfs:comment """Points to the current value that can be specified through an instanced submodel (for 
