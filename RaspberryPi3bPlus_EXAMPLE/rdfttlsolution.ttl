@@ -5,8 +5,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
-@prefix iaisex: <https://iais.fraunhofer.de/en/aas/examples/> .
-@prefix iaisdoc: <iais.fraunhofer.de/en/aas/page1/Document/> .
 @prefix iaissub: <https://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/> .
 @prefix aas: <http://www.admin-shell.io/aas/1/0/> .
 @prefix : <http://example.org/> .
@@ -32,8 +30,6 @@ iaisex:raspberry_pi_3b_plus
         a rami:Submodel ;
         rami:hasSubmodelElement _:assetIdentification ;
     ] .
-
-
 
 _:documentation
     a rami:Submodel ;
@@ -499,11 +495,912 @@ _:assetIdentification
             ] ;
         ] ;
     ] .
+
+_:DataSpecificationIEC61360
+    a rami:DataSpecification ;
+    rdf:semanticID [
+        a rdf:semanticID ;
+        rami:hasKey <www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+    ] .
+
 ###############################
 ### CONCEPT-Descriptions:   ###
 
 <iais.fraunhofer.de/en/aas/page1/Document/DocumentId>
-    a rami:ConceptDescription ;
-    rdfs:label "documentID-ConceptDescription"^^xsd:string ;
-    rdfs:comment "concept description of documentID" ;
-    .
+    a rami:ConceptDictionary ;
+    rami:idShort "documentID"^^xsd:string ;
+    rdfs:label "documentID-ConceptDictionary"^^xsd:string ;
+    rdfs:comment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentID'"@en ;
+    rdfs:comment "Das ConceptDictionary enthält die ConceptDescription des Attributs 'DocumentID'"@de ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentId"@en ;
+        rami:shortName "DocumentID"^^xsd:string ;
+        rami:definition "Die Dokument ID stellt eine eindeutige Identifizierung des Dokuments innerhalb einer Domäne sicher. Die Eigenschaft DocumentId ist eine Liste, in der alle Dokument IDs zum Dokument enthalten sind. Ein Document kann mehrere Dokument IDs aus einer Domäne oder auch mehrere IDs aus jeweils verschiedenen Domänen besitzen. Es können bei der Definition von Documen-tId nur Domänen IDs verwendet werden, die in DocumentIdDomain definiert wurden."@en ;
+        rami:isCaseOf xsd:string ;
+    ] ;
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+
+<iais.fraunhofer.de/en/aas/page1/Document/DocumentIdDomain>
+    a rami:ConceptDictionary ;
+    rami:idShort "documentIDDomain"^^xsd:string ;
+    rdfs:label "documentIDDomain-ConceptDictionary"^^xsd:string ;
+    rdfs:comment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentIDDomain'"@en ;
+    rdfs:comment "Das ConceptDictionary enthält die ConceptDescription des Attributs 'DocumentIDDomain'"@de ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Document Id Domain"@en ;
+        rami:shortName "DocumentIDDomain"^^xsd:string ;
+        rami:definition "Angabe einer Liste von Domänen, in denen die DocumentIds des Dokuments eindeutig sind."@en ;
+        rami:isCaseOf xsd:string ;
+    ] ;
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+
+<iais.fraunhofer.de/en/aas/page1/Document/DocumentPartId>
+    a rami:ConceptDictionary ;
+    rami:idShort "documentPartID"^^xsd:string ;
+    rdfs:label "documentPartID-ConceptDictionary"^^xsd:string ;
+    rdfs:comment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentPartID'"@en ;
+    rdfs:comment "Das ConceptDictionary enthält die ConceptDescription des Attributs 'DocumentPartID'"@de ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentId"@en ;
+        rami:shortName "DocumentPartId"^^xsd:string ;
+        rami:definition "Ist das Dokument ein zusammengesetztes Dokument, können mit Hilfe dieser Eigenschaft eindeutige Dokumententeile IDs eingetragen werden, um das Document von den anderen Dokumenten zu unterscheiden."@en ;
+        rami:isCaseOf xsd:string ;
+    ] ;
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+
+<iais.fraunhofer.de/en/aas/page1/Document/DocumentClassification>
+    a rami:ConceptDictionary ;
+    rami:idShort "documentClassification"^^xsd:string ;
+    rdfs:label "documentClassification-ConceptDictionary"^^xsd:string ;
+    rdfs:comment "The ConceptDictionary contains the ConceptDescription of the property 'documentClassification'"@en ;
+    rdfs:comment "Das ConceptDictionary enthält die ConceptDescription des Attributs 'documentClassification'"@de ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:shortName "DocumentClassification"^^xsd:string ;
+        rami:definition "Klassifikation des Dokuments. Es muss eine Klassifikation nach VDI 2770 erfolgen. Zusätzliche Klassifikationen sind möglich."@en ;
+    ] ;
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+
+<iais.fraunhofer.de/en/aas/page1/DocumentVersion>
+    a rami:ConceptDictionary ;
+    rami:idShort "documentVersion"^^xsd:string ;
+    rdfs:label "documentVersion-ConceptDictionary"^^xsd:string ;
+    rdfs:comment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentVersion'"@en ;
+    rdfs:comment "Das ConceptDictionary enthält die ConceptDescription des Attributs 'DocumentVersion'"@de ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Version des Dokuments"@de ;
+        rami:preferredName "Version of the document"@en ;
+        rami:shortName "DocumentVersion"^^xsd:string ;
+        rami:definition "Zu jedem Dokument muss eine Menge von mindestens einer Dokumentenversion existieren. Es können auch mehrere Dokumentenversionen ausgeliefert werden."@en ;
+    ] ;
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+
+<iais.fraunhofer.de/en/aas/page1/Document/DocumentType>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentType"^^xsd:string ;
+    rdfs:label "DocumentType-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentType'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentType"@en ;
+        rami:shortName "DocumentType"^^xsd:string ;
+        rami:definition "Festlegung des Typs des Dokuments im Sinne der DIN EN 82045-1: a) Single (Einzeldokument) b) Aggregate (Sammeldokument)  c) DocumentSet (Dokumentensatz)  d) CompoundDoc (Mischdokument) "@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+
+<iais.fraunhofer.de/en/aas/page1/Document/ReferencedObject>
+    a rami:conceptDictionary ;
+    rami:idShort "ReferencedObject"^^xsd:string ;
+    rdfs:label "ReferencedObject-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'ReferencedObject'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "ReferencedObject"@en ;
+        rami:shortName "ReferencedObject"^^xsd:string ;
+        rami:definition "Liste von IDs für ein Objekt, auf das sich das Dokument bezieht."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/Document/DocumentId/DomainId>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentIdDomainId"^^xsd:string ;
+    rdfs:label "DocumentIdDomainId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentIdDomainId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DomainId"@en ;
+        rami:shortName "DomainId"^^xsd:string ;
+        rami:definition "Kennung oder Kennzeichen einer Domäne, in der eine DocumentId eineindeutig ist. Es können bspw. Namen von Organisationen verwendet werden. Es sollten die Hinweise und Anforderungen zu Identifikationssystemen aus DIN EN 62507-1 (VDE 0040-2-1) beachtet werden."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/Document/DocumentId/IdType>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentIdType"^^xsd:string ;
+    rdfs:label "DocumentIdType-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentIdType'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "IdType"@en ;
+        rami:shortName "IdType"^^xsd:string ;
+        rami:definition "Besitzt ein Dokument mehrere Identifikationsnummern, muss mit Hilfe dieser Eigenschaft die führende ID angegeben werden. Der Wert „Primary“ ist für diese ID zu setzen."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentPartId/Description>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentPartIdDescription"^^xsd:string ;
+    rdfs:label "DocumentPartIdDescription-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentPartIdDescription'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Description"@en ;
+        rami:shortName "Description"^^xsd:string ;
+        rami:definition "Eine Beschreibung zur Dokumententeile ID. Da eine Sprachangabe nicht möglich ist, sollte die Sprache für dieses Metadatum vor der Lieferung abgestimmt werden"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentIdDomain/Party>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentIdDomainParty"^^xsd:string ;
+    rdfs:label "DocumentIdDomainParty-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentIdDomainParty'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Party"@en ;
+        rami:shortName "Party"^^xsd:string ;
+        rami:definition "Verweis auf eine Party, die für diese Domäne verantwortlich ist."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentIdDomain/DocumentDomainId>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentDomainId"^^xsd:string ;
+    rdfs:label "DocumentDomainId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentDomainId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentDomainId"@en ;
+        rami:shortName "DocumentDomainId"^^xsd:string ;
+        rami:definition "Kennung oder Kennzeichen einer Domäne."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentClassId"^^xsd:string ;
+    rdfs:label "DocumentClassId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentClassId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentClassId"@en ;
+        rami:shortName "DocumentClassId"^^xsd:string ;
+        rami:definition "Eindeutige ID der Klasse in einer Klassifikation."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentClassName"^^xsd:string ;
+    rdfs:label "DocumentClassName-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentClassName'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentClassName"@en ;
+        rami:shortName "DocumentClassName"^^xsd:string ;
+        rami:definition "Liste von sprachabhängigen Namen zur ClassId. "@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentClassificationSystem"^^xsd:string ;
+    rdfs:label "DocumentClassificationSystem-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentClassificationSystem'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentClassificationSystem"@en ;
+        rami:shortName "DocumentClassificationSystem"^^xsd:string ;
+        rami:definition "Eindeutige Kennung für ein Klassifikationssystem. Für Klassifikationen nach VDI 2770 muss \"VDI2770:2018\" verwenden werden."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentVersionId>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentVersionId"^^xsd:string ;
+    rdfs:label "DocumentVersionId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentVersionId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "VersionId"@en ;
+        rami:shortName "VersionId"^^xsd:string ;
+        rami:definition "Identifikationsnummer zur Dokumenten-version. Verweist ein Document auf diese Dokumentenversion, muss die Kombination aus DocumentId und DocumentVersionId eindeutig sein."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentVersion/Language>
+    a rami:conceptDictionary ;
+    rami:idShort "Language"^^xsd:string ;
+    rdfs:label "Language-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Language'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Language"@en ;
+        rami:shortName "Language"^^xsd:string ;
+        rami:definition "Eine Liste der im Dokument verwendeten Sprachen."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentVersion/Party>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentVersionParty"^^xsd:string ;
+    rdfs:label "DocumentVersionParty-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentVersionParty'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentVersionParty"@en ;
+        rami:shortName "DocumentVersionParty"^^xsd:string ;
+        rami:definition "Eine Liste von Beteiligten, die im (bisherigen) Lebenszyklus der DocumentVersion aktiv waren. Es muss mindestens eine Party angegeben werden, die die Role „Author“ einnimmt."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentVersion/Description>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentVersionDescription"^^xsd:string ;
+    rdfs:label "DocumentVersionDescription-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentVersionDescription'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentVersionDescription"@en ;
+        rami:shortName "DocumentVersionDescription"^^xsd:string ;
+        rami:definition "Zusammenfassende Beschreibungen zur Dokumentenversion in ggf. unterschiedlichen Sprachen. Es ist möglich, bspw. zu einem deutschen Dokument eine englische Beschreibung (zusätzlich) anzugeben."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentVersion/LifeCycleStatus>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentVersionLifeCycleStatus"^^xsd:string ;
+    rdfs:label "DocumentVersionLifeCycleStatus-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentVersionLifeCycleStatus'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentVersionLifeCycleStatus"@en ;
+        rami:shortName "DocumentVersionLifeCycleStatus"^^xsd:string ;
+        rami:definition "Liste von Statusdefinitionen mit Bezug zum Dokumentenlebenszyklus. inkl. der Angabe der Beteiligten und einem zugehörigen Zeitstempel."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentRelationship>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentRelationship"^^xsd:string ;
+    rdfs:label "DocumentRelationship-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentRelationship'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentRelationship"@en ;
+        rami:shortName "DocumentRelationship"^^xsd:string ;
+        rami:definition "Liste von Beziehungen zu anderen Dokumenten. Es ist möglich, auf einen Doku-ment, ein Dokument in einer spezifischen Dokumentenversion oder auch ein Teildokument zu verweisen."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentVersion/StoredDocumentRepresentation>
+    a rami:conceptDictionary ;
+    rami:idShort "StoredDocumentRepresentation"^^xsd:string ;
+    rdfs:label "StoredDocumentRepresentation-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'StoredDocumentRepresentation'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "StoredDocumentRepresentation"@en ;
+        rami:shortName "StoredDocumentRepresentation"^^xsd:string ;
+        rami:definition "Liste von digitalen Repräsentationen zur DocumentVersion."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentVersionId>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentVersionId"^^xsd:string ;
+    rdfs:label "DocumentVersionId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentVersionId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentVersionId"@en ;
+        rami:shortName "DocumentVersionId"^^xsd:string ;
+        rami:definition "Verschiedene Versionen eines Dokuments müssen eindeutig identifizierbar sein. Die DocumentVersionId stellt eine innerhalb einer Domäne eindeutige Versionsidentifikationsnummer dar."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentVersionId/DomainId>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentVersionDomainId"^^xsd:string ;
+    rdfs:label "DocumentVersionDomainId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentVersionDomainId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentVersionDomainId"@en ;
+        rami:shortName "DocumentVersionDomainId"^^xsd:string ;
+        rami:definition "Eindeutige ID einer Domäne"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/LanguageCode>
+    a rami:conceptDictionary ;
+    rami:idShort "LanguageCode"^^xsd:string ;
+    rdfs:label "LanguageCode-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'LanguageCode'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "LanguageCode"@en ;
+        rami:shortName "LanguageCode"^^xsd:string ;
+        rami:definition "Bezug auf eine Liste von Sprachcodes gemäß ISO 639-1 oder -2."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Party>
+    a rami:conceptDictionary ;
+    rami:idShort "LifeCycleStatusParty"^^xsd:string ;
+    rdfs:label "LifeCycleStatusParty-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'LifeCycleStatusParty'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "LifeCycleStatusParty"@en ;
+        rami:shortName "LifeCycleStatusParty"^^xsd:string ;
+        rami:definition "Liste der Beteiligten. Im Falle einer Freigabe sollte die herausgebende Organisation als Party mit der Rolle „Author“ aufgelistet werden."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/StatusValue>
+    a rami:conceptDictionary ;
+    rami:idShort "Status"^^xsd:string ;
+    rdfs:label "Status-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Status'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "StatusValue"@en ;
+        rami:shortName "StatusValue"^^xsd:string ;
+        rami:definition "Jede Dokumentenversion stellt einen Zeitpunkt im Dokumentenlebenszyklus dar. Dieser Statuswert bezieht sich auf die Meilensteine im Dokumentenlebenszyklus. Für die Anwendung dieser Richtlinie sind die beiden folgenden Status zu verwenden. a) InReview (in Prüfung) b) Released (freigegeben)"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/SetDate>
+    a rami:conceptDictionary ;
+    rami:idShort "Date"^^xsd:string ;
+    rdfs:label "Date-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Date'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "SetDate"@en ;
+        rami:shortName "SetDate"^^xsd:string ;
+        rami:definition "Datum und Uhrzeit, an dem der Status festgelegt wurde. Es muss das Datumsformat „YYYY-MM-dd“ verwendet werden (Y = Jahr, M = Monat, d = Tag, siehe ISO 8601)."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Purpose>
+    a rami:conceptDictionary ;
+    rami:idShort "LifeCycleStatusPurpose"^^xsd:string ;
+    rdfs:label "LifeCycleStatusPurpose-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'LifeCycleStatusPurpose'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "LifeCycleStatusPurpose"@en ;
+        rami:shortName "LifeCycleStatusPurpose"^^xsd:string ;
+        rami:definition "Hier kann ein Zweck zum Meilenstein angegeben werden, z.B. \"zur Weiterleitung an den Kunden\"."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/BasedOnProcedure>
+    a rami:conceptDictionary ;
+    rami:idShort "BasedOnProcedure"^^xsd:string ;
+    rdfs:label "BasedOnProcedure-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'BasedOnProcedure'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "BasedOnProcedure"@en ;
+        rami:shortName "BasedOnProcedure"^^xsd:string ;
+        rami:definition "Textueller Bezug auf ein Verfahren, das der Festlegung dieses Status zugrunde liegt."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Comments>
+    a rami:conceptDictionary ;
+    rami:idShort "LifeCycleStatusComments"^^xsd:string ;
+    rdfs:label "LifeCycleStatusComments-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'LifeCycleStatusComments'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "LifeCycleStatusComments"@en ;
+        rami:shortName "LifeCycleStatusComments"^^xsd:string ;
+        rami:definition "Textuelle Bemerkungen und Anmerkungen zum Status"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/Description>
+    a rami:conceptDictionary ;
+    rami:idShort "Description"^^xsd:string ;
+    rdfs:label "Description-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Description'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Description"@en ;
+        rami:shortName "Description"^^xsd:string ;
+        rami:definition "Zu jeder DocumentVersion müssen Metadaten angegeben werden, die sich auf den Inhalt der Dokumentenversion beziehen. Eine solche Description beinhaltet die Angabe eines Titels, einer Zusammenfassung sowie einer Menge von Schlagworten. Alle Angaben der Description sind sprachabhängig. Bei mehrsprachigen Dokumentenversionen (siehe C1.8) sollten mehrere Descriptions in unterschiedlichen Sprachken-nungen angegeben werden."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/Description/Title>
+    a rami:conceptDictionary ;
+    rami:idShort "Title"^^xsd:string ;
+    rdfs:label "Title-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Title'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Title"@en ;
+        rami:shortName "Title"^^xsd:string ;
+        rami:definition "Sprachabhängiger Titel des Dokuments."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/Description/Summary>
+    a rami:conceptDictionary ;
+    rami:idShort "Summary"^^xsd:string ;
+    rdfs:label "Summary-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Summary'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "Sprachabhängige, aussagekräftige Zusammenfassung des Dokumenteninhalts."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/Description/Keywords>
+    a rami:conceptDictionary ;
+    rami:idShort "Keywords"^^xsd:string ;
+    rdfs:label "Keywords-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Keywords'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Keywords"@en ;
+        rami:shortName "Keywords"^^xsd:string ;
+        rami:definition "Sprachabhängige, durch Komma getrennte Liste von Schlagwörtern."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/Party>
+    a rami:conceptDictionary ;
+    rami:idShort "Party"^^xsd:string ;
+    rdfs:label "Party-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Party'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Party"@en ;
+        rami:shortName "Party"^^xsd:string ;
+        rami:definition "Um Verantwortlichkeiten und Herausgeber der auszutauschenden digitalen Herstellerinformationen kenntlich zu machen, kann mit Hilfe der Informationsstruktur Organization ein Unternehmen oder eine sonstige juristische Person beschrieben werden. Auf die Angabe von Personen oder Adressen sollte verzichtet werden, sofern nicht anders vereinbart."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/Organization/OrganizationId>
+    a rami:conceptDictionary ;
+    rami:idShort "OrganizationId"^^xsd:string ;
+    rdfs:label "OrganizationId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'OrganizationId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "OrganizationId"@en ;
+        rami:shortName "OrganizationId"^^xsd:string ;
+        rami:definition "Eine eindeutige ID für die Organisation."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/Organization/OrganizationName>
+    a rami:conceptDictionary ;
+    rami:idShort "OrganizationName"^^xsd:string ;
+    rdfs:label "OrganizationName-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'OrganizationName'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "OrganizationName"@en ;
+        rami:shortName "OrganizationName"^^xsd:string ;
+        rami:definition "Die gebräuchliche Bezeichnung für die Organisation."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/Organization/OrganizationOfficialName>
+    a rami:conceptDictionary ;
+    rami:idShort "OrganizationOfficialName"^^xsd:string ;
+    rdfs:label "OrganizationOfficialName-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'OrganizationOfficialName'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "OrganizationOfficialName"@en ;
+        rami:shortName "OrganizationOfficialName"^^xsd:string ;
+        rami:definition "Der offizielle Namen der Organisation."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/DigitalFile>
+    a rami:conceptDictionary ;
+    rami:idShort "DigitalFile"^^xsd:string ;
+    rdfs:label "DigitalFile-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DigitalFile'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DigitalFile"@en ;
+        rami:shortName "DigitalFile"^^xsd:string ;
+        rami:definition "Eine Datei, die die DocumentVersion repräsentiert. Neben der obligatorischen PDF/A Datei können weitere Dateien angegeben werden."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DigitalFile/FileId>
+    a rami:conceptDictionary ;
+    rami:idShort "FileId"^^xsd:string ;
+    rdfs:label "FileId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'FileId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "FileId"@en ;
+        rami:shortName "FileId"^^xsd:string ;
+        rami:definition "Eine eindeutige ID für die Datei."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DigitalFile/FileName>
+    a rami:conceptDictionary ;
+    rami:idShort "FileName"^^xsd:string ;
+    rdfs:label "FileName-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'FileName'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "FileName"@en ;
+        rami:shortName "FileName"^^xsd:string ;
+        rami:definition "Der Name der Datei inkl. einer Dateiendung (sofern vorhanden)."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DigitalFile/FileFormat>
+    a rami:conceptDictionary ;
+    rami:idShort "FileFormat"^^xsd:string ;
+    rdfs:label "FileFormat-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'FileFormat'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "FileFormat"@en ;
+        rami:shortName "FileFormat"^^xsd:string ;
+        rami:definition "Angabe eines Media Typs gemäß der Liste der IANA2"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentId>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentRelationshipDocumentId"^^xsd:string ;
+    rdfs:label "DocumentRelationshipDocumentId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentRelationshipDocumentId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentRelationshipDocumentId"@en ;
+        rami:shortName "DocumentRelationshipDocumentId"^^xsd:string ;
+        rami:definition "Identifikationsnummer (DocumentId) eines Documents"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentVersionId>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentRelationshipDocumentVersionId"^^xsd:string ;
+    rdfs:label "DocumentRelationshipDocumentVersionId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentRelationshipDocumentVersionId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentRelationshipDocumentVersionId"@en ;
+        rami:shortName "DocumentRelationshipDocumentVersionId"^^xsd:string ;
+        rami:definition "Zur vereinfachten Referenzierung erfolgt der Verweis auf die Ziel-DocumentVersion mit Hilfe einer DocumentVersionId."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentPartId>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentRelationshipDocumentPartId"^^xsd:string ;
+    rdfs:label "DocumentRelationshipDocumentPartId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentRelationshipDocumentPartId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentRelationshipDocumentPartId"@en ;
+        rami:shortName "DocumentRelationshipDocumentPartId"^^xsd:string ;
+        rami:definition "Identifikationsnummer eines Dokumententei-les."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentRelationship/Type>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentRelationshipType"^^xsd:string ;
+    rdfs:label "DocumentRelationshipType-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentRelationshipType'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentRelationshipType"@en ;
+        rami:shortName "DocumentRelationshipType"^^xsd:string ;
+        rami:definition "Typisierung der Beziehung zwischen den bei-den DocumentVersions. Folgende Bezie-hungsarten können verwendet werden: a) Affecting (hat Auswirkungen auf) b) ReferesTo (bezieht sich auf) c) BasedOn (basiert auf)"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DocumentRelationship/Description>
+    a rami:conceptDictionary ;
+    rami:idShort "DocumentRelationshipDescription"^^xsd:string ;
+    rdfs:label "DocumentRelationshipDescription-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DocumentRelationshipDescription'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DocumentRelationshipDescription"@en ;
+        rami:shortName "DocumentRelationshipDescription"^^xsd:string ;
+        rami:definition "Eine Erläuterung zur Beziehung. Da eine Sprachangabe nicht möglich ist, sollte die Sprache für dieses Metadatum vor der Liefe-rung abgestimmt werden."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<iais.fraunhofer.de/en/aas/page1/DomainId>
+    a rami:conceptDictionary ;
+    rami:idShort "DomainId"^^xsd:string ;
+    rdfs:label "DomainId-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'DomainId'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "DomainId"@en ;
+        rami:shortName "DomainId"^^xsd:string ;
+        rami:definition "Identifikationsnummer einer Domäne."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/dt/Role/Author>
+    a rami:conceptDictionary ;
+    rami:idShort "Author"^^xsd:string ;
+    rdfs:label "Author-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Author'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Author"@en ;
+        rami:shortName "Author"^^xsd:string ;
+        rami:definition "Author"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer>
+    a rami:conceptDictionary ;
+    rami:idShort "Manufacturer"^^xsd:string ;
+    rdfs:label "Manufacturer-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Manufacturer'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "Manufacturer"@en ;
+        rami:shortName "Manufacturer"^^xsd:string ;
+        rami:definition "Hersteller"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi-connection>
+    a rami:conceptDictionary ;
+    rami:idShort "wifi-connection"^^xsd:string ;
+    rdfs:label "wifi-connection-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'wifi-connection'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "wifi"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet>
+    a rami:conceptDictionary ;
+    rami:idShort "ethernet"^^xsd:string ;
+    rdfs:label "ethernet-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'ethernet'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "LAN"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length>
+    a rami:conceptDictionary ;
+    rami:idShort "length"^^xsd:string ;
+    rdfs:label "length-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'length'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "l [mm]"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width>
+    a rami:conceptDictionary ;
+    rami:idShort "width"^^xsd:string ;
+    rdfs:label "width-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'width'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "w [mm]"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth>
+    a rami:conceptDictionary ;
+    rami:idShort "height"^^xsd:string ;
+    rdfs:label "height-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'height'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "h [mm]"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight>
+    a rami:conceptDictionary ;
+    rami:idShort "weigth"^^xsd:string ;
+    rdfs:label "weigth-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'weigth'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "w [g]"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in>
+    a rami:conceptDictionary ;
+    rami:idShort "power-in"^^xsd:string ;
+    rdfs:label "power-in-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'power-in'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "input voltage * input power = W"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os>
+    a rami:conceptDictionary ;
+    rami:idShort "os"^^xsd:string ;
+    rdfs:label "os-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'os'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "OS"@en ;
+        rami:shortName "OS"^^xsd:string ;
+        rami:definition "the low-level software that supports a computer's basic functions, such as scheduling tasks and controlling peripherals. "@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed>
+    a rami:conceptDictionary ;
+    rami:idShort "clockingSpeed"^^xsd:string ;
+    rdfs:label "clockingSpeed-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'clockingSpeed'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "clockingSpeed"@en ;
+        rami:shortName "clockingSpeed"^^xsd:string ;
+        rami:definition "clocking speed of the processor (single-core)"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/processorarchitecture>
+    a rami:conceptDictionary ;
+    rami:idShort "architecture"^^xsd:string ;
+    rdfs:label "architecture-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'architecture'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "architecture"@en ;
+        rami:shortName "architecture"^^xsd:string ;
+        rami:definition "architecure of the processor"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket>
+    a rami:conceptDictionary ;
+    rami:idShort "socket"^^xsd:string ;
+    rdfs:label "socket-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'socket'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "socket"@en ;
+        rami:shortName "socket"^^xsd:string ;
+        rami:definition "socket of the processor"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/cpu>
+    a rami:conceptDictionary ;
+    rami:idShort "cpu"^^xsd:string ;
+    rdfs:label "cpu-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'cpu'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "CPU"@en ;
+        rami:shortName "CPU"^^xsd:string ;
+        rami:definition "central processing unit name"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram>
+    a rami:conceptDictionary ;
+    rami:idShort "ram"^^xsd:string ;
+    rdfs:label "ram-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'ram'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "RAM"@en ;
+        rami:shortName "RAM"^^xsd:string ;
+        rami:definition "Rndom Access Memory size"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output>
+    a rami:conceptDictionary ;
+    rami:idShort "audio-output"^^xsd:string ;
+    rdfs:label "audio-output-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'audio-output'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "AUDIO"@en ;
+        rami:shortName "AUDIO"^^xsd:string ;
+        rami:definition "ADUIO output"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb>
+    a rami:conceptDictionary ;
+    rami:idShort "usb"^^xsd:string ;
+    rdfs:label "usb-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'usb'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "USB"@en ;
+        rami:shortName "USB"^^xsd:string ;
+        rami:definition "universal seriabl bus of version 2 that supports half duplex."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio>
+    a rami:conceptDictionary ;
+    rami:idShort "GPIO"^^xsd:string ;
+    rdfs:label "GPIO-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'GPIO'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "GPIO-Pins"@en ;
+        rami:shortName "GPIO-Pins"^^xsd:string ;
+        rami:definition "GPIO pins are for ..."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer>
+    a rami:conceptDictionary ;
+    rami:idShort "Manufacturer"^^xsd:string ;
+    rdfs:label "Manufacturer-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Manufacturer'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<0173-1#02-AAO742#002>
+    a rami:conceptDictionary ;
+    rami:idShort "Brand"^^xsd:string ;
+    rdfs:label "Brand-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'Brand'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "BRAND"@en ;
+        rami:shortName "BRAND"^^xsd:string ;
+        rami:definition "Part of the naming for the support and the recognition of the brand position of products and services consisting of words, numbers, letters or other characters. Registered brands and trademarks are indicated with the appropriate protective signs (® or TM)"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<0173-1#02-AAE670#003>
+    a rami:conceptDictionary ;
+    rami:idShort "AdditionalLinkAddress"^^xsd:string ;
+    rdfs:label "AdditionalLinkAddress-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'AdditionalLinkAddress'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "site address where you can view information about the product or to communicate"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type>
+    a rami:conceptDictionary ;
+    rami:idShort "ProductType"^^xsd:string ;
+    rdfs:label "ProductType-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'ProductType'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "Name der Produktfamilie oder Variante des Produktes"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family>
+    a rami:conceptDictionary ;
+    rami:idShort "ProductFamily"^^xsd:string ;
+    rdfs:label "ProductFamily-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'ProductFamily'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "2. Ebene einer 3 stufigen herstellerspezifischen Produkthierarchie"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root>
+    a rami:conceptDictionary ;
+    rami:idShort "ProductRoot"^^xsd:string ;
+    rdfs:label "ProductRoot-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'ProductRoot'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "Oberste Ebene einer 3 stufigen herstellerspezifischen Produkthierarchie"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number>
+    a rami:conceptDictionary ;
+    rami:idShort "ArticleNumber"^^xsd:string ;
+    rdfs:label "ArticleNumber-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'ArticleNumber'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "SUP_PROD_NUM"@en ;
+        rami:shortName "SUP_PROD_NUM"^^xsd:string ;
+        rami:definition "unique product order identifier of the supplier"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description>
+    a rami:conceptDictionary ;
+    rami:idShort "ProductDescription"^^xsd:string ;
+    rdfs:label "ProductDescription-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'ProductDescription'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:definition "Beschreibung des Produktes, seiner technischen Eigenschaften und ggf. seiner Anwendung (Langtext)"@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .
+<https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number>
+    a rami:conceptDictionary ;
+    rami:idShort "SerialNumber"^^xsd:string ;
+    rdfs:label "SerialNumber-ConceptDictionary"^^xsd:string ;
+    rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'SerialNumber'"@en ;
+    rami:hasConceptDescription [
+        a rami:conceptDescription ;
+        rami:preferredName "SerialNumber"@en ;
+        rami:shortName "SerialNumber"^^xsd:string ;
+        rami:definition "The SerialNumber Property is a unique production number of the manufacturer of the Device manufacturer. This is often stamped on the outside of the Device and may be used for traceability and warranty purposes."@en ;
+    ] ; 
+    rami:hasDataSpecification _:DataSpecificationIEC61360 .

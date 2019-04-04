@@ -16,9 +16,9 @@
     ] ;
 
     sh:constraint [
-		sh:nodeKind rami:URI ;
-		sh:message "Each reference must be an URI."@en ;
-	] ;
+		  sh:nodeKind rami:URI ;
+		  sh:message "Each reference must be an URI."@en ;
+	  ] ;
 
     sh:property [
         sh:path rami:key ;
