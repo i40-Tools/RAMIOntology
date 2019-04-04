@@ -814,6 +814,12 @@ rami:creationDate rdf:type owl:DatatypeProperty ;
                   skos:prefLabel "has Creator"@en .
 
 
+###  https://w3id.org/i40/rami#definition
+rami:definition rdf:type owl:DatatypeProperty ;
+                rdfs:label "This is the definition that is contained in the conceptDescription."@en ,
+                           "has definition"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#description
 rami:description rdf:type owl:DatatypeProperty .
 
