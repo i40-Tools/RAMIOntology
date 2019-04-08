@@ -8,6 +8,7 @@
 @prefix iaissub: <https://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/> .
 @prefix iaisex: <https://iais.fraunhofer.de/en/aas/rspbry/example/> .
 @prefix aas: <http://www.admin-shell.io/aas/1/0/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix : <http://example.org/> .
 
 iaisex:raspberry_pi_3b_plus
@@ -292,15 +293,15 @@ _:technicalData
         rdfs:comment "Max. taktfrequenz des Prozessors [GHz]"@de ;
         rdfs:comment "Max. clocking speed of the processor [GHz]"@en ;
         rami:idShort "clockingSpeed"^^xsd:string ;
-        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed> "1.4" ;
+        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed> "1.4"^^xsd:float ;
     ] ;
     rami:hasSubmodelElement [
         a rami:SubmodelElement ;
-        rdfs:label "processorArchitecute"^^xsd:string ;
+        rdfs:label "processorArchitecture"^^xsd:string ;
         rdfs:comment "Prozessorarchitektur [BIT]"@de ;
         rdfs:comment "Prozessorarchitektur [BIT]"@en ;
         rami:idShort "architecture"^^xsd:string ;
-        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/architecture> "64" ;
+        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/architecture> "64"^^xsd:int ;
     ] ;
     rami:hasSubmodelElement [
         a rami:SubmodelElement ;
@@ -324,7 +325,7 @@ _:technicalData
         rdfs:comment "Arbeitsspeicher [GB]"@de ;
         rdfs:comment "Random Access Memory [GB]"@en ;
         rami:idShort "ram"^^xsd:string ;
-        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram> "2" ;
+        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram> "2"^^xsd:int ;
     ] ;
     rami:hasSubmodelElement [
         a rami:SubmodelElement ;
@@ -364,7 +365,7 @@ _:technicalData
         rdfs:comment "GPIO"@de ;
         rdfs:comment "gpio"@en ;
         rami:idShort "gpio"^^xsd:string ;
-        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio> "40" ;
+        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio> "40"^^xsd:int ;
     ] ;
     rami:hasSubmodelElement [
         a rami:SubmodelElement ;
@@ -372,7 +373,7 @@ _:technicalData
         rdfs:comment "Gewicht des Raspberry Pi 3b+"@de ;
         rdfs:comment "weight of the Raspberry Pi 3b+"@en ;
         rami:idShort "weight"^^xsd:string ;
-        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight> "31" ;
+        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight> "31"^^xsd:int ;
     ] ;
     rami:hasSubmodelElement [
         a rami:SubmodelElement ;
@@ -380,7 +381,7 @@ _:technicalData
         rdfs:comment "heigth of the Raspberry Pi 3b+"@en ;
         rdfs:comment "Höhe des Raspberry Pi 3b+"@de ;
         rami:idShort "heigth"^^xsd:string ;
-        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth> "17" ;
+        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth> "17"^^xsd:int ;
     ] ;
     rami:hasSubmodelElement [
         a rami:SubmodelElement ;
@@ -388,7 +389,7 @@ _:technicalData
         rdfs:comment "length of the Raspberry Pi 3b+"@en ;
         rdfs:comment "Länge des Raspberry Pi 3b+"@de ;
         rami:idShort "length"^^xsd:string ;
-        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length> "85" ;
+        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length> "85"^^xsd:int ;
     ] ;
     rami:hasSubmodelElement [
         a rami:SubmodelElement ;
@@ -396,7 +397,7 @@ _:technicalData
         rdfs:comment "width of the Raspberry Pi 3b+"@en ;
         rdfs:comment "Breite des Raspberry Pi 3b+"@de ;
         rami:idShort "width"^^xsd:string ;
-        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width> "17" ;
+        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width> "17"^^xsd:int ;
     ] ;
     rami:hasSubmodelElement [
         a rami:SubmodelElement ;
@@ -436,7 +437,7 @@ _:assetIdentification
                 rami:idShort "Brand"^^xsd:string ;
                 rdfs:comment "Die Marke des Produktes"@de ;
                 rdfs:comment "The brand of the product"@en ;
-                <https://iais.fraunhofer.de/en/aas/examples/raspberry> "Raspberry Pi" ; # TODO: check why IRDI instead of URI. Probably the IRDI identifies BOSCH.
+                <https://iais.fraunhofer.de/en/aas/examples/raspberry> "Raspberry Pi" ;
             ] ;
             rami:hasSubmodelElement [
                 a rami:SubmodelElement ;
@@ -490,8 +491,8 @@ _:assetIdentification
                 a rami:SubmodelElement ;
                 rami:idShort "SerialNumber"^^xsd:string ;
                 rdfs:label "has serial number"^^xsd:string ;
-                rdfs:comment ""@en ;
-                rdfs:comment ""@de ;
+                rdfs:comment "This is the serial number of the device."@en ;
+                rdfs:comment "Dies ist die Seriennummer des Gerätes."@de ;
                 <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number> "12345678987654321234567898765432123456789" ;
             ] ;
         ] ;

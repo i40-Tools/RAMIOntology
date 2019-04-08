@@ -13,14 +13,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix : <http://example.org/> .
 
-
 # NOTE rami:hasSubmodel inverse property of rami:parent
 { 
 	?a rami:hasSubmodel ?b . 
 } => {
 	?b rami:parent ?a . 
 } .
-
 
 # TODO implement
 {
@@ -101,7 +99,7 @@
 {
     ?asset :category :powered_device .
 } => {
-    ?asset rdfs:subClassOf :requires_current .
+    ?asset rdfs:subClassOf :electricity-consumer .
 } .
 # if the power-in of a device less than 5V it is a light-powered-device
 
@@ -140,7 +138,7 @@
     ?asset rami:hasSubmodel ?bn_td .
     ?bn_td rami:hasSubmodelElement ?a .
     ?a rdfs:label ?label_value .
-    ?label_value string:contains "uSB" .
+    ?label_value string:containsIgnoringCase "usb" .
 } => {
     ?asset :has :usb-ports .
 } .
@@ -154,4 +152,48 @@
 } => {
     ?asset :is :usb-power-supplier .
     ?asset skos:note "Is a possible power-supplier for devices that can be charged via USB"@en .
+} .
+
+# NOTE detect if asset has a processor
+{
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?sme .
+    ?sme rdfs:label ?label_of_sme .
+    ?label_of_sme string:containsIgnoringCase "processor" .
+} => {
+    ?asset :has :processor .
+    ?asset skos:note "The asset has a processor"@en .
+} .
+
+# NOTE rules/notes for processors
+{
+    ?asset :has :processor .
+    ?asset rami:hasSubmodel ?bn_sm_td .
+    ?bn_sm_td rami:hasSubmodelElement ?sme .
+    ?sme a rami:SubmodelElement .
+    ?sme rdfs:label ?bn_td_sme_label .
+    ?bn_td_sme_label string:containsIgnoringCase "architecture" .
+    #?sme ?predicate_reference_to_value ?architecture_value .
+    ?sme ?predicate_reference_to_value ?architecture_value .
+    ?predicate_reference_to_value string:containsIgnoringCase "architecture"^^xsd:string .
+} => {
+    ?asset :has-x-y-bit-architecture ?architecture_value .
+    # TODO: Is there string concatenation in RDF ?
+    #?asset skos:note "The Operating System should be designed for a "?architecture_value" architecture" .
+} .
+
+# NOTE define which architecture the processor of the asset has
+{
+    ?asset :has-x-y-bit-architecture ?value .
+    ?value string:containsIgnoringCase "32" .
+} => {
+    ?asset skos:note "The Operating System should be designed for a 32-Bit architecture"@en .
+    ?asset :has :thrity-two-bit_processor_architecture .
+} .
+{
+    ?asset :has-x-y-bit-architecture ?value .
+    ?value string:containsIgnoringCase "64" .
+} => {
+    ?asset skos:note "The Operating System should be designed for a 64-Bit architecture"@en .
+    ?asset :has :sixty-four-bit_processor_architecture .
 } .
