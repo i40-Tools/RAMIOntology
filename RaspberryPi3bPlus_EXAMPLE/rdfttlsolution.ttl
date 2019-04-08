@@ -283,7 +283,7 @@ _:technicalData
     rami:idShort "TechnicalData"^^xsd:string ;
     rdf:semanticID [
         rami:id <https://iais.fraunhofer.de/en/aas/examples/raspberry/008> ;
-        rami:idType sh:IRDI ;
+        rami:idType sh:URI ;
         rami:hasLocal "false"^^xsd:boolean ;
     ] ;
     sh:nodeKind rami:Instance ;
@@ -310,6 +310,14 @@ _:technicalData
         rdfs:comment "processor socket"@en ;
         rami:idShort "socket"^^xsd:string ;
         <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket> "Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC" ;
+    ] ;
+    rami:hasSubmodelElement [
+        a rami:SubmodelElement ;
+        rdfs:label "storage"^^xsd:string ;
+        rdfs:comment "The storage of the micro-sd-card"@en ;
+        rdfs:comment "Speicherplatz der Mikro-SD-karte"@de ;
+        rami:idShort "storage"^^xsd:string ;
+        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/storage> "32"^^xsd:int ;
     ] ;
     rami:hasSubmodelElement [
         a rami:SubmodelElement ;

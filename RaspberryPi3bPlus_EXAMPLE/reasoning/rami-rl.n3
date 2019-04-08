@@ -31,12 +31,22 @@
 } .
 
 
-# NOTE define asset as powered devices if it is:
+# NOTE define asset as powered devices if it is and define elements of a computer:
 { 
     ?asset rami:hasSubmodel ?bn_td .
     ?bn_td rami:hasSubmodelElement ?a .
     ?a rdfs:comment ?b .
-    ?b string:contains "GHz" .
+    ?b string:containsIgnoringCase "ghz" .
+} => { 
+    ?asset :category :powered_device .
+    ?asset :has :processor .
+    ?asset :processor ?a .
+} .
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "ampere" .
 } => { 
     ?asset :category :powered_device . 
 } .
@@ -44,7 +54,7 @@
     ?asset rami:hasSubmodel ?bn_td .
     ?bn_td rami:hasSubmodelElement ?a .
     ?a rdfs:comment ?b .
-    ?b string:contains "ghz" .
+    ?b string:containsIgnoringCase "voltage" .
 } => { 
     ?asset :category :powered_device . 
 } .
@@ -52,25 +62,52 @@
     ?asset rami:hasSubmodel ?bn_td .
     ?bn_td rami:hasSubmodelElement ?a .
     ?a rdfs:comment ?b .
-    ?b string:contains "ampere" .
+    ?b string:containsIgnoringCase "disk" .
 } => { 
     ?asset :category :powered_device . 
+    ?asset :has :disk .
+    ?asset :disk ?a .
 } .
 { 
     ?asset rami:hasSubmodel ?bn_td .
     ?bn_td rami:hasSubmodelElement ?a .
     ?a rdfs:comment ?b .
-    ?b string:contains "voltage" .
+    ?b string:containsIgnoringCase "drive" .
 } => { 
     ?asset :category :powered_device . 
+    ?asset :has :disk .
+    ?asset :disk ?a .
 } .
 { 
     ?asset rami:hasSubmodel ?bn_td .
     ?bn_td rami:hasSubmodelElement ?a .
     ?a rdfs:comment ?b .
-    ?b string:contains "memory" .
+    ?b string:containsIgnoringCase "storage" .
 } => { 
     ?asset :category :powered_device . 
+    ?asset :has :disk .
+    ?asset :disk ?a .
+} .
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "memory" .
+} => { 
+    ?asset :category :powered_device .
+    # memory as synonym for ram
+    ?asset :has :ram . 
+    ?asset :ram ?a .
+} .
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "ram" .
+} => { 
+    ?asset :category :powered_device .
+    ?asset :has :ram .
+    ?asset :ram ?a .
 } .
 ######### Old vesion does not refer to asset either to SubmodelElement
 #{ ?a rdfs:comment ?b . ?b string:contains "ghz" . } => { ?a :category :powered_device . } .
@@ -150,8 +187,9 @@
     ?asset log:notEqualTo ?light_powered_device_var .
     ?light_powered_device_var :category :light_powered_device .
 } => {
-    ?asset :is :usb-power-supplier .
-    ?asset skos:note "Is a possible power-supplier for devices that can be charged via USB"@en .
+    ?asset 
+        :is :usb-power-supplier ;
+        skos:note "Is a possible power-supplier for devices that can be charged via USB"@en .
 } .
 
 # NOTE detect if asset has a processor
@@ -161,8 +199,9 @@
     ?sme rdfs:label ?label_of_sme .
     ?label_of_sme string:containsIgnoringCase "processor" .
 } => {
-    ?asset :has :processor .
-    ?asset skos:note "The asset has a processor"@en .
+    ?asset 
+        :has :processor ;
+        skos:note "The asset has a processor"@en .
 } .
 
 # NOTE rules/notes for processors
@@ -194,6 +233,39 @@
     ?asset :has-x-y-bit-architecture ?value .
     ?value string:containsIgnoringCase "64" .
 } => {
-    ?asset skos:note "The Operating System should be designed for a 64-Bit architecture"@en .
-    ?asset :has :sixty-four-bit_processor_architecture .
+    ?asset 
+        skos:note "The Operating System should be designed for a 64-Bit architecture"@en ;
+        :has :sixty-four-bit_processor_architecture .
+} .
+
+# NOTE detect if there is a specification of details in something that is calles "sheet":
+{
+    ?asset rami:hasSubmodel ?bn_dcm .
+    ?bn_dcm rami:hasSubmodel ?sm .
+    ?sm rami:hasSubmodelElementCollection ?smec .
+    ?smce rami:idShort ?identifier_of__documentation_appendix .
+    ?identifier_of__documentation_appendix string:containsIgnoringCase "sheet" .
+} => {
+    ?asset 
+        :has :product_sheet ;
+        skos:note "The specification concerning some details of this asset is in one appendix."@en .
+} .
+
+# NOTE detect if the asset is a computer
+{
+    ?asset :has :processor .
+    ?asset :has :ram .
+    ?asset :has :disk .
+} => {
+    ?asset 
+        :category :computer ;
+        skos:note "This asset is a computer"@en .
+} .
+
+# NOTE detect if it is possible to run a MySQL-database on a computer
+{
+    # TODO: Implement check if the computer has at least 2GB of RAM and 1.2GB of space
+    ?asset :category :computer .
+} => {
+    ?asset skos:note "It is possible for the asset to host the MySQL-DBMS"@en .
 } .
