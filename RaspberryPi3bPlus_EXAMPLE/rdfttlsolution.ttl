@@ -333,7 +333,7 @@ _:technicalData
         rdfs:comment "Arbeitsspeicher [GB]"@de ;
         rdfs:comment "Random Access Memory [GB]"@en ;
         rami:idShort "ram"^^xsd:string ;
-        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram> "2"^^xsd:int ;
+        <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram> "2"^^xsd:integer ;
     ] ;
     rami:hasSubmodelElement [
         a rami:SubmodelElement ;

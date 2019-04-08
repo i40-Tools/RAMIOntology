@@ -40,7 +40,7 @@
 } => { 
     ?asset :category :powered_device .
     ?asset :has :processor .
-    ?asset :processor ?a .
+    # ?asset :processor ?a .
 } .
 { 
     ?asset rami:hasSubmodel ?bn_td .
@@ -266,6 +266,14 @@
 {
     # TODO: Implement check if the computer has at least 2GB of RAM and 1.2GB of space
     ?asset :category :computer .
+    ?asset :ram ?obj .
+    ?obj ?predicate_reference_to_value ?value_ram .
+    ?predicate_reference_to_value string:containsIgnoringCase "ram"^^xsd:string .
+    #### TODO: SPECIFY UNITS in rami-ontology (conceptDescription)
+    ?predicate_reference_to_value string:notContainsRoughly "idshort"^^xsd:string .
+    ?value_ram math:notLessThan "2"^^xsd:integer .
 } => {
-    ?asset skos:note "It is possible for the asset to host the MySQL-DBMS"@en .
+    ?asset :category :possible_mysql_hoster .
+    ?asset skos:note "It is possible for the asset to host the MySQL-DBMS (enough RAM)"@en .
+    ?asset skos:note ?value_ram .
 } .
