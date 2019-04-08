@@ -14,7 +14,7 @@
 @prefix : <http://example.org/> .
 
 
-# rami:hasSubmodel inverse property of rami:parent
+# NOTE rami:hasSubmodel inverse property of rami:parent
 { 
 	?a rami:hasSubmodel ?b . 
 } => {
@@ -22,7 +22,7 @@
 } .
 
 
-#
+# TODO implement
 {
     ?a rami:idShort ?id_short .
     ?b rami:idShort ?id_short2 .
@@ -33,42 +33,125 @@
 } .
 
 
+# NOTE define asset as powered devices if it is:
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:contains "GHz" .
+} => { 
+    ?asset :category :powered_device . 
+} .
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:contains "ghz" .
+} => { 
+    ?asset :category :powered_device . 
+} .
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:contains "ampere" .
+} => { 
+    ?asset :category :powered_device . 
+} .
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:contains "voltage" .
+} => { 
+    ?asset :category :powered_device . 
+} .
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:contains "memory" .
+} => { 
+    ?asset :category :powered_device . 
+} .
+######### Old vesion does not refer to asset either to SubmodelElement
+#{ ?a rdfs:comment ?b . ?b string:contains "ghz" . } => { ?a :category :powered_device . } .
+#{ ?a rdfs:comment ?b . ?b string:contains "ampere" . } => { ?a :category :powered_device . } .
+#{ ?a rdfs:comment ?b . ?b string:contains "voltage" . } => { ?a :category :powered_device . } .
+#{ ?a rdfs:comment ?b . ?b string:contains "memory" . } => { ?a :category :powered_device . } .
 
 
-# define specific devices as powered devices: TODO: refer to the asset, which is the parent of the submodelElement
-{ ?a rdfs:comment ?b . ?b string:contains "GHz" . } => { ?a :category :powered_device . } .
-{ ?a rdfs:comment ?b . ?b string:contains "ghz" . } => { ?a :category :powered_device . } .
-{ ?a rdfs:comment ?b . ?b string:contains "ampere" . } => { ?a :category :powered_device . } .
-{ ?a rdfs:comment ?b . ?b string:contains "voltage" . } => { ?a :category :powered_device . } .
-{ ?a rdfs:comment ?b . ?b string:contains "memory" . } => { ?a :category :powered_device . } .
 
-
-
-# ...
-{
-    ?a a :powered_device .
-    ?a rdfs:label "power-in"^^xsd:string .
-    ?a ?predicate ?b .
-    ?b math:lessThan "5" . # unit needs to be specified in conceptDescription of device
-} => { ?a :category :light_powered_device . } .
+# NOTE light_powered_devices are devices with a voltage not greater than 5V
+#{
+#    ?asset :category :powered_device .
+#    ?asset rami:hasSubmodel ?bn_td .
+#    ?bn_td rami:hasSubmodelElement ?a .
+#    ?a rdfs:label "power-in"^^xsd:string .
+#    #TODO: There are a lot of predicates and not every predicate is a INT. This causes errors
+#    ?a ?predicate ?b .
+#    ?b math:lessThan "5"^^ . # unit needs to be specified in conceptDescription of device
+#} => { 
+#    ?asset :category :light_powered_device . 
+#} .
 
 
 
 # define specifications of powered devices:
-# TODO: this is a subclass expression "A rdfs:subClassOf B ."
-{ ?a a :powered_device . } => { ?a a :requires_current . } .
+{
+    ?asset :category :powered_device .
+} => {
+    ?asset rdfs:subClassOf :requires_current .
+} .
 # if the power-in of a device less than 5V it is a light-powered-device
 
-# rules for light-powered-devices
-{ ?a :category :light_powered_device . } => { ?a skos:note "May be modified without certification."@en . } .
-
-{ ?a :category :light_powered_device . } => { ?a skos:note "Can be charged via USB"@en . } .
-
-
+# NOTE rules/notes for light-powered-devices
 {
-    ?a :category :light_powered_device .
-    ?a ?b ?string .
-    ?string string:equalIgnoringCase "rj45"^^xsd:string .
+    ?asset :category :light_powered_device .
+    ?asset ?predicate ?value_of_td_s .
+    ?value_of_td_s string:equalIgnoringCase "rj45"^^xsd:string .
 } => { 
-	?a skos:note "Could be supplied by PoE if possible"@en . 
+    ?asset skos:note "May be modified without certification."@en . 
+    ?asset skos:note "Can be charged via USB"@en .
+	?asset skos:note "Could be supplied by PoE if possible"@en . 
+} .
+
+# NOTE specify all network-devices as network-device
+{
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?comment .
+    ?comment string:contains "network" .
+} => {
+    ?asset :category :network-device .
+} .
+
+# NOTE rules and notes for network-devices
+{
+    ?asset :category :network-device .
+} => { 
+	?asset skos:note "Needs IP-address and MAC."@en . 
+    # all network-devices are powered-devices:
+    ?asset :category :powered_device .
+} .
+
+# NOTE detect if device hsa usb-ports
+{
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:label ?label_value .
+    ?label_value string:contains "uSB" .
+} => {
+    ?asset :has :usb-ports .
+} .
+
+# NOTE rules/notes for usb-ports
+{
+    ?asset :has :usb-ports .
+    # FIXME
+    ?asset log:notEqualTo ?light_powered_device_var .
+    ?light_powered_device_var :category :light_powered_device .
+} => {
+    ?asset :is :usb-power-supplier .
+    ?asset skos:note "Is a possible power-supplier for devices that can be charged via USB"@en .
 } .
