@@ -6,6 +6,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
 @prefix iaissub: <https://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/> .
+@prefix iaisex: <https://iais.fraunhofer.de/en/aas/rspbry/example/> .
 @prefix aas: <http://www.admin-shell.io/aas/1/0/> .
 @prefix : <http://example.org/> .
 
@@ -280,7 +281,7 @@ _:technicalData
     a rami:Submodel ;
     rami:idShort "TechnicalData"^^xsd:string ;
     rdf:semanticID [
-        rami:id <0173-1#01-AAA444#008> ;
+        rami:id <https://iais.fraunhofer.de/en/aas/examples/raspberry/008> ;
         rami:idType sh:IRDI ;
         rami:hasLocal "false"^^xsd:boolean ;
     ] ;
@@ -435,7 +436,7 @@ _:assetIdentification
                 rami:idShort "Brand"^^xsd:string ;
                 rdfs:comment "Die Marke des Produktes"@de ;
                 rdfs:comment "The brand of the product"@en ;
-                <0173-1#02-AAO742#002> "Raspberry Pi" ; # TODO: check why IRDI instead of URI. Probably the IRDI identifies BOSCH.
+                <https://iais.fraunhofer.de/en/aas/examples/raspberry> "Raspberry Pi" ; # TODO: check why IRDI instead of URI. Probably the IRDI identifies BOSCH.
             ] ;
             rami:hasSubmodelElement [
                 a rami:SubmodelElement ;
@@ -475,7 +476,7 @@ _:assetIdentification
                 rdfs:label "orderNumber"^^xsd:string ;
                 rdfs:comment "Unique number that identifies the order."@en ;
                 rdfs:comment "Einzigartige Nummer, die die Bestellung identifiziert."@de ;
-                <0173-1#02-AAO736#004> "0608842005" ; # FIXME: change identifier: IRDI --> URI
+                <https://iais.fraunhofer.de/en/aas/examples/raspberry/004> "0608842005" ; # FIXME: change identifier: IRDI --> URI
             ] ;
             rami:hasSubmodelElement [
                 a rami:SubmodelElement ;
@@ -1318,7 +1319,7 @@ _:DataSpecificationIEC61360
         rami:definition "legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation"@en ;
     ] ; 
     rami:hasDataSpecification _:DataSpecificationIEC61360 .
-<0173-1#02-AAO742#002>
+<https://iais.fraunhofer.de/en/aas/examples/raspberry>
     a rami:conceptDictionary ;
     rami:idShort "Brand"^^xsd:string ;
     rdfs:label "Brand-ConceptDictionary"^^xsd:string ;
@@ -1330,7 +1331,7 @@ _:DataSpecificationIEC61360
         rami:definition "Part of the naming for the support and the recognition of the brand position of products and services consisting of words, numbers, letters or other characters. Registered brands and trademarks are indicated with the appropriate protective signs (® or TM)"@en ;
     ] ; 
     rami:hasDataSpecification _:DataSpecificationIEC61360 .
-<0173-1#02-AAE670#003>
+<https://iais.fraunhofer.de/en/aas/examples/raspberry/003>
     a rami:conceptDictionary ;
     rami:idShort "AdditionalLinkAddress"^^xsd:string ;
     rdfs:label "AdditionalLinkAddress-ConceptDictionary"^^xsd:string ;
