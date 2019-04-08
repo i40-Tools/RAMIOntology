@@ -1,0 +1,74 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix iaisex: <https://iais.fraunhofer.de/en/aas/examples/> .
+@prefix aas: <http://www.admin-shell.io/aas/1/0/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <http://example.org/> .
+
+
+# rami:hasSubmodel inverse property of rami:parent
+{ 
+	?a rami:hasSubmodel ?b . 
+} => {
+	?b rami:parent ?a . 
+} .
+
+
+#
+{
+    ?a rami:idShort ?id_short .
+    ?b rami:idShort ?id_short2 .
+   # ?id_short string:equalIgnoringCase ?id_short2 .
+    ?id_short log:equalTo ?id_short2 .
+} => { 
+	?a owl:sameAs ?b . 
+} .
+
+
+
+
+# define specific devices as powered devices: TODO: refer to the asset, which is the parent of the submodelElement
+{ ?a rdfs:comment ?b . ?b string:contains "GHz" . } => { ?a :category :powered_device . } .
+{ ?a rdfs:comment ?b . ?b string:contains "ghz" . } => { ?a :category :powered_device . } .
+{ ?a rdfs:comment ?b . ?b string:contains "ampere" . } => { ?a :category :powered_device . } .
+{ ?a rdfs:comment ?b . ?b string:contains "voltage" . } => { ?a :category :powered_device . } .
+{ ?a rdfs:comment ?b . ?b string:contains "memory" . } => { ?a :category :powered_device . } .
+
+
+
+# ...
+{
+    ?a a :powered_device .
+    ?a rdfs:label "power-in"^^xsd:string .
+    ?a ?predicate ?b .
+    ?b math:lessThan "5" . # unit needs to be specified in conceptDescription of device
+} => { ?a :category :light_powered_device . } .
+
+
+
+# define specifications of powered devices:
+# TODO: this is a subclass expression "A rdfs:subClassOf B ."
+{ ?a a :powered_device . } => { ?a a :requires_current . } .
+# if the power-in of a device less than 5V it is a light-powered-device
+
+# rules for light-powered-devices
+{ ?a :category :light_powered_device . } => { ?a skos:note "May be modified without certification."@en . } .
+
+{ ?a :category :light_powered_device . } => { ?a skos:note "Can be charged via USB"@en . } .
+
+
+{
+    ?a :category :light_powered_device .
+    ?a ?b ?string .
+    ?string string:equalIgnoringCase "rj45"^^xsd:string .
+} => { 
+	?a skos:note "Could be supplied by PoE if possible"@en . 
+} .
