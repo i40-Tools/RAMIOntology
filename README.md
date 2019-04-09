@@ -21,10 +21,12 @@ Use the [shacl-playground](http://shacl.org/playground/) to check if your RDF-mo
 ## The Example
 The **`Raspberry Pi 3b+`** was used as an example of an asset that is described in an AAS
 - we created a valid [**`AASX-archive`**](RaspberryPi3bPlus_EXAMPLE/Raspberry_Pi_3b_plus.aasx)
-    - this file is based on a [**`XML-model`**](RaspberryPi3bPlus_EXAMPLE/Raspberry_Pi_3b_plus/aasx/iais_fraunhofer_de_en_aas_examples/iais_fraunhofer_de_en_aas_examples_raspberry_pi_3b_plus.aas.xml)
+    - this AASX-file contains a [**`XML-model`**](RaspberryPi3bPlus_EXAMPLE/Raspberry_Pi_3b_plus/aasx/iais_fraunhofer_de_en_aas_examples/iais_fraunhofer_de_en_aas_examples_raspberry_pi_3b_plus.aas.xml) which contains all conceptDescriptions and information about the asset
 - we created also a [**`RDF-model`**](RaspberryPi3bPlus_EXAMPLE/rdfttlsolution.ttl)
     - based on the [**`modified metamodel`**](http://116.203.149.114/2018-verwaltungsschale-im-detail-annotated-umls.pdf)
     - conform to [**`shapes`**](schema/)
+
+The information content is almost the same. The models match from the raw data, but the asset can still be displayed more clearly with all dependencies by using RDF.
 
 ### Reasoning
 We created a rami-ruleset that contains:
