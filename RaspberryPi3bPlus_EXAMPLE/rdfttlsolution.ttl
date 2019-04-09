@@ -485,7 +485,7 @@ _:assetIdentification
                 rdfs:label "orderNumber"^^xsd:string ;
                 rdfs:comment "Unique number that identifies the order."@en ;
                 rdfs:comment "Einzigartige Nummer, die die Bestellung identifiziert."@de ;
-                <https://iais.fraunhofer.de/en/aas/examples/raspberry/004> "0608842005" ; # FIXME: change identifier: IRDI --> URI
+                <https://iais.fraunhofer.de/en/aas/examples/raspberry/004> "0608842005" ;
             ] ;
             rami:hasSubmodelElement [
                 a rami:SubmodelElement ;
@@ -1193,6 +1193,7 @@ _:DataSpecificationIEC61360
 <https://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight>
     a rami:conceptDictionary ;
     rami:idShort "weigth"^^xsd:string ;
+    ### TODO: We need a unit-property for reasoning to provide valid results
     rdfs:label "weigth-ConceptDictionary"^^xsd:string ;
     rdfs:coment "The ConceptDictionary contains the ConceptDescription of the property 'weigth'"@en ;
     rami:hasConceptDescription [

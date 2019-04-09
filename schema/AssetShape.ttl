@@ -104,7 +104,7 @@
       sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
     ] ;
     sh:property [
-      sh:path rami:hasSubmodel ;
+      sh:path rami:hasSubmodel ; 
       sh:class rami:Submodel ;
       sh:minCount 0 ;
       sh:message "A DataSpecification entity can have a rami:hasSubmodel relation to a rami:Submodel."@en ; 

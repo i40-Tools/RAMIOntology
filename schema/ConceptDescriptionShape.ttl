@@ -57,7 +57,7 @@
       sh:valueDatatype xsd:langString ;
       sh:minCount 0 ;
       sh:severity sh:Violation ;
-      sh:message "Definitions of conceptDescriptioons should be langStrings." ;
+      sh:message "Definitions of conceptDescriptions should be langStrings."@en ;
     ] ;
 
     sh:property [
@@ -66,8 +66,8 @@
       sh:minCount 0 ;
       sh:maxCount 1 ;
       sh:severity sh:Violation ;
-      sh:message "The shortName is part of "
-    ]
+      sh:message "The shortName is part of the conceptDescription."@en ;
+    ] ;
 
     ########################################
     # the semanticID is part of RDF itself #
