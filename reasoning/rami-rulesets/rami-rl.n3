@@ -29,3 +29,11 @@
 } => { 
 	?a owl:sameAs ?b . 
 } .
+
+# NOTE the rami:identifierType specifies the type of the id. rami:idType is a property each ID has
+{
+    ?a rami:identifierType ?b .
+    ?a rami:id ?c .
+} => {
+    ?c rami:idType ?b .
+} .
