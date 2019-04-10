@@ -13,22 +13,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix : <http://example.org/> .
 
-# NOTE rami:hasSubmodel inverse property of rami:parent
-{ 
-	?a rami:hasSubmodel ?b . 
-} => {
-	?b rami:parent ?a . 
-} .
-
-# NOTE trivial
-{
-    ?a rami:idShort ?id_short .
-    ?b rami:idShort ?id_short2 .
-   # ?id_short string:equalIgnoringCase ?id_short2 .
-    ?id_short log:equalTo ?id_short2 .
-} => { 
-	?a owl:sameAs ?b . 
-} .
 
 ########## ANCHOR :powered-devices and elements of computers ##########
 # powered devices are the base for further rules
@@ -307,14 +291,13 @@
 } .
 
 
-########## ANCHOR carribable by human ##########
+########## ANCHOR carriable by human ##########
 # NOTE detect if the asset is to heavy to carry by a human
 ## NOTE for unit gramms
 {
     ?asset rami:hasSubmodel ?_bn_td .
     ?_bn_td rami:hasSubmodelElement ?_sme .
     ?_sme rdfs:comment ?comment_of_sme .
-    
     ?comment_of_sme string:containsIgnoringCase "weight"@en .
     ?_sme ?should_be_the_reference_to_weight_value ?value .
     ?should_be_the_reference_to_weight_value rdf:type rami:conceptDictionary .
@@ -324,6 +307,7 @@
     ?definition_of_concept_description string:notContainsRoughly "kg"@en .
     ?definition_of_concept_description string:notContainsRoughly "t"@en . # FIXME: perhaps to risky
     ?value math:lessThan "70000"^^xsd:int .  # NOTE specified with unit: gramms
+    # FIXME ...
 } => {
     ?asset :category :carriable_by_humans .
 } .
@@ -350,3 +334,5 @@
 } => {
     ?asset skos:note "It is possible for humans to carry this asset."@en .
 } .
+
+########## ANCHOR define rdfs:label if not set ##########
