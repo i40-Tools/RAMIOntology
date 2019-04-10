@@ -1,10 +1,10 @@
 # RAMIOntology
 Repository containing the developing of the RAMI vocabulary.
 
-The Reference Architecture Model Industry 4.0 that was developed by the [**`Platform Industry 4.0`**](https://www.plattform-i40.de/PI40/Navigation/DE/Home/home.html) is a three-dimensional map showing how to approach the issue of Industry 4.0 in a structured manner. RAMI ensures that all participants involved in Industry 4.0 discussions understand each other. The concept of the RAMI is based on data.
+The Reference Architecture Model Industry 4.0 that was developed by the [**`Platform Industry 4.0`**](https://www.plattform-i40.de/PI40/Navigation/DE/Home/home.html) is a three-dimensional map showing how to approach the issue of Industry 4.0 in a structured manner. RAMI ensures that all participants involved in Industry 4.0 discussions understand each other. The concept of the RAMI is based on data and is closely associated with the Industrial Data Space (IDS).
 
 The main question is: *Who provides the data for intepretation?* It is the "digital-twin" of each asset. The official name for this is **Asset-Administration-Shell** (AAS).
-The AAS provides organizations the opportunity to share data and exchange it in "value chains".
+The AAS provides organizations the opportunity to share data and exchange it in "value chains"/"value networks".
 
 ![example](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0v_gGsBH7qGsdDBYS_z-OuqsvYXvjgImxHlZLQZ_Rv6oCtdqjYQ "AAS example")
 
@@ -42,7 +42,6 @@ These rules detect if the asset is for example:
 - ...
 
 We evaluated the rdf-model of the Raspberry Pi 3b+. The output file is called [**`rdfttlsolution_with_reasoning.nt`**](RaspberryPi3bPlus_EXAMPLE/reasoning/rdfttlsolution_with_reasoning.nt) and contains around 334 derived triples.
-
 
 ***
 We used [Linked-Data-Fu](https://linked-data-fu.github.io) for reasoning.
