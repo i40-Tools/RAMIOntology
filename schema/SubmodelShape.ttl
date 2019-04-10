@@ -1,0 +1,100 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+
+# author: Sebastian Bader (sebastian.bader@iais.fraunhofer.de)
+# Resources: 
+#	RAMI Ontology: https://vocol.iais.fraunhofer.de/rami/
+# 	W3C recommendation: https://www.w3.org/TR/shacl/
+#	SHACL syntax checking: http://shacl.org/playground/
+#	SHACL Advanced Features: https://w3c.github.io/data-shapes/shacl-af/
+
+<#SubmodelShape>
+    a sh:NodeShape ;
+    sh:targetClass rami:Submodel ;
+    sh:property [
+      sh:path rami:type ;
+      sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
+	  #sh:message ""@en ;
+    ] ;
+	sh:someOf [ ### someOf in shacl undefined ?!
+		sh:constraint [
+			sh:nodeKind sh:URI ;
+		] ;
+		#sh:constraint [
+		#	sh:nodeKind sh:IRDI ; #IRDI is not compliant to RDF
+		#] ;
+		sh:message "Each AAS object must be either a URI, an IRDI, or both. In case of an RDF serialization, only URIs are allowed."@en ;
+	] ;
+  
+  sh:property [
+    sh:path rami:hasSubmodelElement ; # TODO: Add to RAMI.ttl
+    sh:class rami:SubmodelElement ;
+    sh:minCount 0 ;
+    sh:severity sh:Violation ;
+    sh:message "content of Submodel is stored in rami:SubmodelElement" ;
+  ] ;
+
+	# Submodel inherits from HasSemantics
+	# hasSemantics requirements are fulfilled by RDF itself 
+	
+	# Submodel inherits from Qualifiable
+    sh:property [
+      sh:path rami:qualifier ;
+      sh:minCount 0 ;
+	  sh:constraint [
+		sh:nodeKind sh:URI ; # Contraints are not part of the ontology
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:qualifier must be point to a proper URI."@en ;
+    ] ;
+	# Submodel inherits from Identifiable
+    sh:property [
+      sh:path rami:administration ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+	  sh:class rami:AdministrativeInformation ;
+      sh:severity sh:Violation ;
+      sh:message ""@en ;
+    ] ;
+    sh:property [
+      sh:path rami:id ;
+      sh:minCount 0 ;
+      sh:message "An identifiable entity can have a rami:id."@en ; 
+    ] ;
+	# Submodel inherits from DataSpecification
+    sh:property [
+      sh:path rami:hasDataSpecification ;
+      sh:minCount 0 ;
+      sh:class rami:Reference ;
+	    sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
+      sh:severity sh:Violation ;
+      sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
+    ] ;
+    sh:property [
+      sh:path rami:hasSubmodel ;
+      sh:class rami:Submodel ;
+      sh:minCount 0 ;
+      sh:message "A DataSpecification entity can have a rami:hasSubmodel relation to a rami:Submodel."@en ; 
+    ] ;
+	# Submodel inherits from HasKind
+    sh:property [
+      sh:path rami:hasKind ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+	  sh:someOf [ 
+		sh:constraint [
+			sh:nodeKind sh:Type ;
+		] ;
+		sh:constraint [
+			sh:nodeKind rami:Instance ;
+		] ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
+    ]  .

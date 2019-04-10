@@ -1,0 +1,147 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+
+<#SubmodelElementCollectionShape>
+    # a sh:SubmodelElementCollection  ;
+    # sh:path rami:SubmodelElementCollection ; 
+    # sh:minCount 1 ;
+    a sh:NodeShape ;
+    sh:targetClass rami:SubmodelElementCollection ;
+    
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ; # redundant
+    ] ;
+
+    sh:property [
+        sh:path rami:value ;
+        sh:class rami:SubmodelElement ;
+        sh:minCount 0 ;
+        sh:severity sh:Violation ;
+        sh:message "rami:value needs to be instance of rami:SubModelElement"@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:ordered ;
+        sh:valueDatatype xsd:boolean ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "the attribute ordered is optional and is of type boolean"@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:allowDuplicates ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      #DEFAULT-VALUE ?
+      sh:valueDatatype xsd:boolean ;
+      sh:severity sh:Violation ;
+      #sh:message ""@en ;
+    ] ;
+
+    #########################################
+    # inherits from SubmodelElements        #
+    # SubmodelElements inherits from:       #
+    #   - HasDataSpecification              #
+    #   – Referable                         #
+    #   – Qualifiable                       #
+    #   - HasSemantics                      #
+    #   – hasKind                           #
+    #########################################
+
+    # inherits from hasDataSpecification (abstract)
+    sh:property [
+      sh:path rami:hasDataSpecification ;
+      sh:minCount 0 ;
+	    sh:nodeKind sh:IRDI ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasDataSpecification must point to a proper IRDI."@en ;
+    ] ;
+
+    #inherits from Referable
+    sh:property [
+        sh:path rami:idShort ; 
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ; 
+    ] ;
+
+    sh:property [
+        sh:path rami:category ;
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:description ;
+        sh:valueDatatype xsd:langString ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:parent ;
+        sh:class rami:Referable ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    # inherits from Qualifiable
+    
+    ###########
+    # copied! #
+    ###########
+
+    sh:property [
+      sh:path rami:qualifier ;
+      sh:class rami:Constraint ; # problem: constraint is abstract
+      sh:minCount 0 ;
+      sh:constraint [
+        sh:nodeKind sh:URI ; # Contraints are not part of the ontology
+      ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:qualifier must be point to a proper URI."@en ;
+    ] ;
+
+    # inherits from HasSemantics
+    #########################################################
+    # hasSemantics requirements are fulfilled by RDF itself #
+    #########################################################
+
+    # inherits from Haskind
+
+    ###########
+    # copied! #
+    ###########
+
+     sh:property [
+      sh:path rami:hasKind ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      sh:someOf [ 
+        sh:constraint [
+          sh:nodeKind sh:Type ;
+        ] ;
+        sh:constraint [
+          sh:nodeKind rami:Instance ;
+        ] ;
+      ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type."@en ;
+    ] .

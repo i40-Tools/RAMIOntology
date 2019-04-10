@@ -1,0 +1,56 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix ex: <http://example.org/ns#> .
+
+ex:exampleOperationInvalid
+   rdf:type rami:Operation ;
+   rami:in [rdf:type rami:xyz] ;
+   rami:out [rdf:type rami:xyz] ;
+   rami:semanticId [a rami:xyz];
+   rami:idShort "placeholderIdShort" .
+
+########### VALIDATION REPORT #############
+# [
+# 	a sh:ValidationResult ;
+# 	sh:resultSeverity sh:Violation ;
+# 	sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+# 	sh:sourceShape _:n1236 ;
+# 	sh:focusNode <http://example.org/ns#exampleOperationInvalid> ;
+# 	sh:value _:n1401 ;
+# 	sh:resultPath rami:in ;
+# 	sh:resultMessage "the rami:in attribute of rami:operation is the input parameter and of type rami:OperationVariable."@en ;
+# ] .
+# [
+# 	a sh:ValidationResult ;
+# 	sh:resultSeverity sh:Violation ;
+# 	sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+# 	sh:sourceShape _:n1237 ;
+# 	sh:focusNode <http://example.org/ns#exampleOperationInvalid> ;
+# 	sh:value _:n1402 ;
+# 	sh:resultPath rami:out ;
+# 	sh:resultMessage "the rami:out attribute of rami:Operation is output parameter and of type rami:OperationVariable."@en ;
+# ] .
+# [
+# 	a sh:ValidationResult ;
+# 	sh:resultSeverity sh:Violation ;
+# 	sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+# 	sh:sourceShape _:n1239 ;
+# 	sh:focusNode <http://example.org/ns#exampleOperationInvalid> ;
+# 	sh:value _:n1403 ;
+# 	sh:resultPath rami:semanticId ;
+# 	sh:resultMessage "Each SubmodelElement must have at least one semanticId attribute."@en ;
+# ] .
+# [
+# 	a sh:ValidationResult ;
+# 	sh:resultSeverity sh:Violation ;
+# 	sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+# 	sh:sourceShape _:n1242 ;
+# 	sh:focusNode <http://example.org/ns#exampleOperationInvalid> ;
+# 	sh:resultPath rami:administration ;
+# 	sh:resultMessage "..."@en ;
+# ] .

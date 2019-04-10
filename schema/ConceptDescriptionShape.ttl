@@ -1,0 +1,75 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+
+# author: Sebastian Bader (sebastian.bader@iais.fraunhofer.de)
+# Resources: 
+#	RAMI Ontology: https://vocol.iais.fraunhofer.de/rami/
+# 	W3C recommendation: https://www.w3.org/TR/shacl/
+#	SHACL syntax checking: http://shacl.org/playground/
+#	SHACL Advanced Features: https://w3c.github.io/data-shapes/shacl-af/
+
+<#ConeptDescriptionShape>
+    a sh:NodeShape ;
+    sh:targetClass rami:ConceptDescription ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
+	  #sh:message ""@en ;
+    ] ;
+    sh:constraint [
+      sh:nodeKind rami:IRDI ;
+      sh:message "Each asset object must be an IRDI."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:isCaseOf ;
+      sh:class rami:Reference ;
+      sh:minCount 0 ;
+      sh:severity sh:Violation ;
+      sh:message "rami:isCaseOf is a global refernce to an external definition that this concept is compatible to or was derived from."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:idShort ;
+	    sh:valueDatatype xsd:string ;
+      sh:minCount 0 ; # optional?
+      sh:severity sh:Violation ;
+      sh:message "Each concept description must have at least one short ID with datatype xsd:string."@en ; # message covers not the specification: sh:minCount 0
+    ] ;
+
+    sh:property [
+      sh:path rami:preferredName ;
+      sh:valueDatatype xsd:langString ;
+      sh:minCount 0 ;
+      rdfs:comment "This is the preferred Name of the concept in any language."@en ;
+      sh:severity sh:Violation ;
+      sh:message "The rami:preferredName should be of type xsd:string."@en ;
+    ] ; ### not specified in table, but listed in more than three UMLs (for example: "AAS in detail", p. 65 Figure 33)
+
+    sh:property [
+      sh:path rami:definition ;
+      sh:valueDatatype xsd:langString ;
+      sh:minCount 0 ;
+      sh:severity sh:Violation ;
+      sh:message "Definitions of conceptDescriptions should be langStrings."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:shortName ;
+      sh:valueDatatyp xsd:string ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+      sh:message "The shortName is part of the conceptDescription."@en ;
+    ] ;
+
+    ########################################
+    # the semanticID is part of RDF itself #
+    ########################################
+    .

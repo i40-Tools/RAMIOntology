@@ -20,22 +20,23 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://w3id.org/i40/rami> .
+@base <https://w3id.org/i40/rami#> .
 
 <https://w3id.org/i40/rami#> rdf:type owl:Ontology ;
-                              void:vocabulary foaf: ;
-                              vann:preferredNamespaceUri "https://w3id.org/i40/rami#" ;
-                              void:vocabulary rdf: ;
-                              skos:definition "An Ontology to represents the Reference Architecture Model for Industry 4.0 (RAMI), including the concept of the Administration Shell I4.0 Component."@en ;
-                              void:vocabulary rdfs: ;
-                              owl:versionInfo "0.3" ;
-                              void:vocabulary skos: ,
-                                              dc: ;
-                              skos:prefLabel "rami"@en ;
-                              void:vocabulary xsd: ;
                               vann:preferredNamespacePrefix "rami" ;
-                              void:vocabulary xml: ;
-                              rdfs:isDefinedBy <https://w3id.org/i40/rami#> .
+                              vann:preferredNamespaceUri "https://w3id.org/i40/rami#" ;
+                              void:vocabulary dc: ,
+                                              rdf: ,
+                                              rdfs: ,
+                                              xsd: ,
+                                              skos: ,
+                                              <http://www.w3.org/XML/1998/namespace> ,
+                                              foaf: ;
+                              rdfs:comment "Update implementing the specifiations coming from 'Details of the Asset Administration Shell - Part 1: The exchange of information between partners in the value chain of Industrie 4.0 (Version 1.0)'" ;
+                              rdfs:isDefinedBy <https://w3id.org/i40/rami#> ;
+                              owl:versionInfo 0.4 ;
+                              skos:definition "An Ontology to represents the Reference Architecture Model for Industry 4.0 (RAMI), including the concept of the Administration Shell I4.0 Component."@en ;
+                              skos:prefLabel "rami"@en .
 
 #################################################################
 #    Annotation properties
@@ -115,6 +116,18 @@ dcterms:identifier rdf:type owl:AnnotationProperty ;
                    rdfs:range rdfs:Literal .
 
 
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://rdfs.org/ns/void#vocabulary
+void:vocabulary rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#altLabel
 skos:altLabel rdf:type owl:AnnotationProperty .
 
@@ -154,8 +167,49 @@ foaf:image rdf:type owl:AnnotationProperty ;
            rdfs:domain rami:Asset .
 
 
+###  https://w3id.org/i40/rami#assetId
+rami:assetId rdf:type owl:AnnotationProperty ;
+             rdfs:domain rami:Asset .
+
+
+###  https://w3id.org/i40/rami#description
+rami:description rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf rdfs:comment ;
+                 rdfs:range xsd:string ;
+                 rdfs:domain rami:Asset .
+
+
 ###  https://w3id.org/i40/rami#display
 rami:display rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/i40/rami#idShort
+rami:idShort rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/i40/rami#isCaseOf
+rami:isCaseOf rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/i40/rami#revision
+rami:revision rdf:type owl:AnnotationProperty ;
+              rdfs:comment "Revision of the element. Constraint AASd-005: A revision requires a version. This means, if there is no version there is no revision neither."@en ;
+              rdfs:label "revision"@en ;
+              rdfs:subPropertyOf dcterms:hasVersion .
+
+
+###  https://w3id.org/i40/rami#semanticId
+rami:semanticId rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf rdfs:seeAlso ;
+                rdfs:range rami:ExpressionSemantic ;
+                rdfs:domain rami:Submodel .
+
+
+###  https://w3id.org/i40/rami#version
+rami:version rdf:type owl:AnnotationProperty ;
+             rdfs:comment "Version of the element."@en ;
+             rdfs:label "version"@en ;
+             rdfs:subPropertyOf dcterms:hasVersion .
 
 
 #################################################################
@@ -164,6 +218,24 @@ rami:display rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2001/XMLSchema#date
 xsd:date rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/i40/rami#IRDI
+rami:IRDI rdf:type rdfs:Datatype ;
+          rdfs:comment """IRDI - ISO29002-5, ISO IEC 6523 and ISO IEC 11179-6 [20] as an Identifier scheme for properties and classifications. They are created in a process of consortium-wise specification or international standardisation.
+To this end, users sit down together and feed their ideas into the consortia or standardisation bodies. Properties in ISO, IEC help to safeguard key commercial interests. Repositories like eCl@ss and others make it possible to standardise a relatively large number of Identifiers in an appropriately short time."""@en .
+
+
+###  https://w3id.org/i40/rami#blob
+rami:blob rdf:type rdfs:Datatype ;
+          rdfs:comment "A BLOB is a data element that represents a file that is contained with its source code in the value attribute."@en ;
+          rdfs:label "rami:blob"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#file
+rami:file rdf:type rdfs:Datatype ;
+          rdfs:comment "A File is a data element that represents a file via its path description."@en ;
+          rdfs:label "rami:file"^^xsd:string .
 
 
 #################################################################
@@ -180,6 +252,11 @@ dul:isPartOf rdf:type owl:ObjectProperty ,
              rdfs:label "is Part Of"@en .
 
 
+###  http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasDerivedFrom
+<http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasDerivedFrom> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf owl:topObjectProperty .
+
+
 ###  http://www.w3.org/ns/prov#wasGeneratedBy
 prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
                     rdfs:domain rami:Submodel ;
@@ -193,6 +270,48 @@ om:hasUnit rdf:type owl:ObjectProperty ;
            rdfs:domain om:Measure ;
            rdfs:range om:Unit ;
            rdfs:label "has unit"@en .
+
+
+###  https://w3id.org/i40/rami#accessPermissionRule
+rami:accessPermissionRule rdf:type owl:ObjectProperty ;
+                          rdfs:comment "Access permission rules of the AAS describing the rights assigned to (already authenticated) subjects to access elements of the AAS."@en ;
+                          rdfs:label "accessPermissionRule"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#administration
+rami:administration rdf:type owl:ObjectProperty ;
+                    rdfs:comment """Administrative information of an identifiable element.
+Note: Some of the administrative information like the version number might
+need to be part of the identification."""@en ;
+                    rdfs:label "has administration"@en .
+
+
+###  https://w3id.org/i40/rami#asset
+rami:asset rdf:type owl:ObjectProperty ;
+           rdfs:comment "The asset the AAS is representing."@en ;
+           rdfs:label "asset"@en .
+
+
+###  https://w3id.org/i40/rami#assetIdentificationModel
+rami:assetIdentificationModel rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf rami:hasSubmodel ;
+                              rdfs:comment """A reference to a Submodel that defines the handling of
+additional domain specific (proprietary) Identifiers for
+the asset like e.g. serial number etc."""@en ;
+                              rdfs:label "has Asset Identification Model"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#conceptDescription
+rami:conceptDescription rdf:type owl:ObjectProperty ;
+                        rdfs:comment "An AAS max have one or more concept dictionaries assigned to it. The concept dictionaries typically contain only descriptions for elements that are also used within the AAS (via HasSemantics)."@en ;
+                        rdfs:label "has Concept Description"^^xsd:string ;
+                        skos:altLabel "conceptDictionary"@en .
+
+
+###  https://w3id.org/i40/rami#containedElement
+rami:containedElement rdf:type owl:ObjectProperty ;
+                      rdfs:comment "Referable elements that are contained in the view."@en ;
+                      rdfs:label "containedElement"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#containsAS
@@ -211,12 +330,55 @@ rami:contributes rdf:type owl:ObjectProperty ;
                  skos:prefLabel "has Type Description"@en .
 
 
+###  https://w3id.org/i40/rami#dataElement
+rami:dataElement rdf:type owl:ObjectProperty ;
+                 rdfs:comment """A data element is a submodel element that is not further composed out of other submodel elements.
+A data element is a submodel element that has a value. The type of value differs for different subtypes of data elements."""@en ;
+                 rdfs:label "dataElement"@en .
+
+
+###  https://w3id.org/i40/rami#defaultEnvironmentAttributes
+rami:defaultEnvironmentAttributes rdf:type owl:ObjectProperty ;
+                                  rdfs:comment """Reference to a submodel defining default environment attributes, i.e. attributes that are not describing the asset itself.
+The submodel is of kind=Type.
+At the same type the values of these environment attributes need to be accessible when evaluating the access permission rules. This is realized as a policy information point."""@en ;
+                                  rdfs:label "defaultEnvironmentAttributes"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#defaultPermissions
+rami:defaultPermissions rdf:type owl:ObjectProperty ;
+                        rdfs:comment "Reference to a submodel defining the default permissions for the AAS."@en ;
+                        rdfs:label "defaultPermissions"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#defaultSubjectAttributes
+rami:defaultSubjectAttributes rdf:type owl:ObjectProperty ;
+                              rdfs:comment """Reference to a submodel defining the default subjects attributes for the AAS that can be used to describe access permission rules.
+The submodel is of kind=Type."""@en ;
+                              rdfs:label "defaultSubjectAttributes"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#dependsOn
+rami:dependsOn rdf:type owl:ObjectProperty ;
+               rdfs:comment "A formula may depend on referable or even external global elements - assumed that can be referenced and their value may be evaluated - that are used in the logical expression."@en ;
+               rdfs:label "dependsOn"@en .
+
+
+###  https://w3id.org/i40/rami#derivedFrom
+rami:derivedFrom rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasDerivedFrom> ;
+                 rdfs:domain rami:AdminShell ;
+                 rdfs:range rami:AdminShell ;
+                 rdfs:comment "This relation connects instances of AAS with their respective types. Refer to Asset Kind for further information of instance and type kinds."@en ;
+                 rdfs:label "derived from"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#describes
 rami:describes rdf:type owl:ObjectProperty ;
                rdfs:domain rami:AdminShell ;
                rdfs:range rami:Asset ;
                rdfs:comment "Connect the Asset with the Administration Shell"@en ;
-               rdfs:label "describes"@en .
+               skos:altLabel "describes"@en .
 
 
 ###  https://w3id.org/i40/rami#energyEfficiencyValue
@@ -227,6 +389,24 @@ rami:energyEfficiencyValue rdf:type owl:ObjectProperty ;
                            rdfs:label "energy Efficiency Value"@en .
 
 
+###  https://w3id.org/i40/rami#externalInformationPoint
+rami:externalInformationPoint rdf:type owl:ObjectProperty ;
+                              rdfs:comment "Endpoints to external available information points taking into Endpoint aggr 0..* consideration for access control for the AAS."@en ;
+                              rdfs:label "external InformationPoint"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#first
+rami:first rdf:type owl:ObjectProperty ;
+           rdfs:comment "First element in the relationship taking the role of the subject."@en ;
+           rdfs:label "first"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#hasAccessControlPolicyPoints
+rami:hasAccessControlPolicyPoints rdf:type owl:ObjectProperty ;
+                                  rdfs:comment "Access control policy points of the AAS."@en ;
+                                  rdfs:label "has accessControlPolicyPoints"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#hasComponentManager
 rami:hasComponentManager rdf:type owl:ObjectProperty ;
                          rdfs:domain rami:AdminShell ;
@@ -234,12 +414,27 @@ rami:hasComponentManager rdf:type owl:ObjectProperty ;
                          rdfs:label "has Component Manager"@en .
 
 
+###  https://w3id.org/i40/rami#hasConceptDescription
+rami:hasConceptDescription rdf:type owl:ObjectProperty ;
+                           rdfs:comment """The semantics of a property or other elements that may have a semantic description is defined by a concept description.
+The description of the concept should follow a standardized schema (realized as data specification template)."""@en ;
+                           rdfs:label "has ConceptDescription"@en .
+
+
 ###  https://w3id.org/i40/rami#hasData
 rami:hasData rdf:type owl:ObjectProperty ;
              rdfs:domain rami:AdminShell ;
              rdfs:range rami:Submodel ;
              skos:definition "Connects the AdminShell with the different types of Data for the Object/Entity"@en ;
+             skos:note "compare with hasDataSpecification" ;
              skos:prefLabel "has Data"@en .
+
+
+###  https://w3id.org/i40/rami#hasDataSpecification
+rami:hasDataSpecification rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:comment "Global reference to the data specification template used by the element."@en ;
+                          rdfs:label "has Data Specification"@en .
 
 
 ###  https://w3id.org/i40/rami#hasDatatype
@@ -249,11 +444,70 @@ rami:hasDatatype rdf:type owl:ObjectProperty ;
                  rdfs:label "has Datatype"@en .
 
 
+###  https://w3id.org/i40/rami#hasExternalAccessControl
+rami:hasExternalAccessControl rdf:type owl:ObjectProperty ;
+                              rdfs:comment "Endpoint to an external access control defining a policy administration point to be used by the AAS."@en ;
+                              rdfs:label "has externalAccesControl"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#hasIdType
+rami:hasIdType rdf:type owl:ObjectProperty ;
+               rdfs:comment """Type of the key value.
+In case of idType = idShort local shall be true.
+In case type=GlobalReference idType shall not be IdShort."""@en ;
+               rdfs:label "has idType"@en .
+
+
+###  https://w3id.org/i40/rami#hasKey
+rami:hasKey rdf:type owl:ObjectProperty ;
+            rdfs:comment "Unique reference in its name space."@en ;
+            rdfs:label "has Key"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#hasKind
+rami:hasKind rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain rami:AdminShell ;
+             rdfs:range rami:AssetKind ;
+             rdfs:label "has kind"@en .
+
+
 ###  https://w3id.org/i40/rami#hasManifest
 rami:hasManifest rdf:type owl:ObjectProperty ;
                  rdfs:domain rami:AdminShell ;
                  rdfs:range rami:Manifest ;
                  rdfs:label "has Manifest"@en .
+
+
+###  https://w3id.org/i40/rami#hasPermission
+rami:hasPermission rdf:type owl:ObjectProperty ;
+                   rdfs:comment """Permissions assigned to the object.
+The permissions hold for all subjects as specified in the access permission rule. It can be also the Reference to a property that defines the semantics of the permission."""@en ;
+                   rdfs:label "hasPermission"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#hasPolicyAdministrationPoint
+rami:hasPolicyAdministrationPoint rdf:type owl:ObjectProperty ;
+                                  rdfs:comment "The access control administration policy point of the AAS."@en ;
+                                  rdfs:label "has PolicyAdministrationPoint"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#hasPolicyDecisionPoint
+rami:hasPolicyDecisionPoint rdf:type owl:ObjectProperty ;
+                            rdfs:comment "The access control policy decision point of the AAS."@en ;
+                            rdfs:label "has PolicyDecisionPoint"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#hasPolicyEnforcementPoint
+rami:hasPolicyEnforcementPoint rdf:type owl:ObjectProperty ;
+                               rdfs:comment "The access control policy enforcement point of the AAS."@en ;
+                               rdfs:label "has PolicyEnforcementPoint"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#hasPolicyInformationPoints
+rami:hasPolicyInformationPoints rdf:type owl:ObjectProperty ;
+                                rdfs:comment "The access control policy information points of the AAS."@en ;
+                                rdfs:label "has PolicyInformationPoints"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#hasRAMIHierarchyLevel
@@ -275,37 +529,49 @@ rami:hasReference rdf:type owl:ObjectProperty ;
                   rdfs:label "has Reference"@en .
 
 
-###  https://w3id.org/i40/rami#hasSemanticExpression
-rami:hasSemanticExpression rdf:type owl:ObjectProperty ;
-                           rdfs:domain rami:Submodel ;
-                           rdfs:range rami:ExpressionSemantic ;
-                           rdfs:comment "Points to the Expression Semantic of the Submodels"@en ;
-                           rdfs:label "has Semantic Expression"@en .
+###  https://w3id.org/i40/rami#hasSubjectAttribute
+rami:hasSubjectAttribute rdf:type owl:ObjectProperty ;
+                         rdfs:comment "A data element that further classifies a specific subject."@en ;
+                         rdfs:label "has subjectAttribute"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#hasSubmodel
 rami:hasSubmodel rdf:type owl:ObjectProperty ;
-                 rdfs:domain rami:AdminShell ;
+                 rdfs:domain rami:Asset ;
                  rdfs:range rami:Submodel ;
                  rdfs:comment "Points to the Admin Shell to the Submodels that describe the Admin Shell of a given Asset"@en ;
-                 rdfs:label "has Submodel"@en .
+                 rdfs:label "has Submodel"@en ;
+                 skos:altLabel "assetIdentificationModel"@en .
 
 
 ###  https://w3id.org/i40/rami#hasValue
 rami:hasValue rdf:type owl:ObjectProperty ;
               rdfs:domain rami:Submodel ;
-              rdfs:range rami:Value ;
-              rdfs:comment """Points to the current value that can be specified through an instanced submodel (for 
-instance in station 2) or through the asset."""@en ;
-              rdfs:label "has Value"@en .
+              rdfs:range rami:Value .
 
 
 ###  https://w3id.org/i40/rami#hasView
 rami:hasView rdf:type owl:ObjectProperty ;
-             rdfs:domain rami:Submodel ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( rami:AdminShell
+                                         rami:Submodel
+                                       )
+                         ] ;
              rdfs:range rami:View ;
              rdfs:comment "Points to the differents views associated to the Administration Shell via the Submodels."@en ;
-             rdfs:label "has View"@en .
+             rdfs:label "has View"@en ;
+             skos:prefLabel "view"@en .
+
+
+###  https://w3id.org/i40/rami#hasvalue
+rami:hasvalue rdf:type owl:ObjectProperty ;
+              rdfs:comment "Submodel element contained in the collection."@en ;
+              rdfs:label "has SubmodelElement value"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#in
+rami:in rdf:type owl:ObjectProperty ;
+        rdfs:comment "the rami:in attribute of rami:operation is the input parameter"@en .
 
 
 ###  https://w3id.org/i40/rami#inAccordanceWith
@@ -314,6 +580,16 @@ rami:inAccordanceWith rdf:type owl:ObjectProperty ;
                       rdfs:range sto:Standard ;
                       rdfs:comment "The Submodel is in accordance with a given standard specified in the STO ontology"@en ;
                       rdfs:label "in Accordance With"@en .
+
+
+###  https://w3id.org/i40/rami#internalInformationPoint
+rami:internalInformationPoint rdf:type owl:ObjectProperty ;
+                              rdfs:comment "References to submodels defining information used by security access permission rules."@en ;
+                              rdfs:label "internal InformationPoint"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#isCaseOf
+rami:isCaseOf rdf:type owl:ObjectProperty .
 
 
 ###  https://w3id.org/i40/rami#isConnectedTo
@@ -330,11 +606,160 @@ rami:isDescribedWith rdf:type owl:ObjectProperty ;
                      rdfs:range sto:Standard .
 
 
+###  https://w3id.org/i40/rami#kindOfPermission
+rami:kindOfPermission rdf:type owl:ObjectProperty ;
+                      rdfs:comment """Description of the kind of permission. Possible kind of permission also include the denial of the permission.
+Values:
+􏰀 allow
+􏰀 deny
+􏰀 not applicable
+􏰀 undefined"""@en ;
+                      rdfs:label "kind of permission"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#localAccessControl
+rami:localAccessControl rdf:type owl:ObjectProperty ;
+                        rdfs:comment """The policy decision point of access control as realized by the AAS itself.
+
+Either there is an external policy administration point endpoint defined or the AAS has its own access control."""@en ;
+                        rdfs:label "local AccessControl"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#mimeType
+rami:mimeType rdf:type owl:ObjectProperty ;
+              rdfs:comment """Mime type of the content of the BLOB.
+The mime type states which file extension the file has.
+Valid values are e.g. “application/json”, “application/xls”, ”image/jpg”
+The allowed values are defined as in RFC2046.
+
+or
+
+Mime type of the content of the File."""@en ;
+              rdfs:label "mimeType"^^xsd:string ;
+              rdfs:seeAlso "http://uri4uri.net/vocab.html/#MimetypeDatatype"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#object
+rami:object rdf:type owl:ObjectProperty ;
+            rdfs:comment "Element to which permission shall be assigned."@en ;
+            rdfs:label "has object"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#objectAttribute
+rami:objectAttribute rdf:type owl:ObjectProperty ;
+                     rdfs:comment "A data element that further classifies an object."@en ;
+                     rdfs:label "objectAttribute"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#out
+rami:out rdf:type owl:ObjectProperty ;
+         rdfs:comment "out is the output paramter of the Operation"@en ;
+         rdfs:label "out"@en .
+
+
+###  https://w3id.org/i40/rami#parent
+rami:parent rdf:type owl:ObjectProperty ;
+            rdfs:comment """Reference to the next referable parent element of the element. Constraint AASd-004: Add parent in case of non-identifiable elements.
+Note: This element is used to ease navigation in the model and thus it enables more performant"""@en ;
+            rdfs:label "parent"@en .
+
+
+###  https://w3id.org/i40/rami#permissionsPerObject
+rami:permissionsPerObject rdf:type owl:ObjectProperty ;
+                          rdfs:comment "Set of object-permission pairs that define the permissions per object within the access permission rule."@en ;
+                          rdfs:label "permissionsPerObject"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#preferredName
+rami:preferredName rdf:type owl:ObjectProperty ;
+                   rdfs:comment "This is the preferredName of a ConceptDescription object"@en ;
+                   rdfs:label "preferredName"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#qualifierType
+rami:qualifierType rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/i40/rami#qualifierValue
+rami:qualifierValue rdf:type owl:ObjectProperty ;
+                    rdfs:comment """The qualifier value is the value of the qualifier.
+Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."""@en .
+
+
+###  https://w3id.org/i40/rami#second
+rami:second rdf:type owl:ObjectProperty ;
+            rdfs:comment "Second element in the relationship taking the role of the object."@en ;
+            rdfs:label "second"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#security
+rami:security rdf:type owl:ObjectProperty ;
+              rdfs:range rami:Security ;
+              rdfs:comment "Definition of the security relevant aspects of the AAS."@en ;
+              rdfs:label "security"@en ;
+              skos:prefLabel "has security"@en .
+
+
+###  https://w3id.org/i40/rami#selectableEnvironmentAttributes
+rami:selectableEnvironmentAttributes rdf:type owl:ObjectProperty ;
+                                     rdfs:comment """Reference to a submodel defining which environment attributes can be accessed via the permission rules defined for the AAS, i.e. attributes that are not describing the asset itself.
+Default: reference to the submodel referenced via
+defaultEnvironmentAttributes"""@en ;
+                                     rdfs:label "selectableEnvironmentAttributes"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#selectablePermissions
+rami:selectablePermissions rdf:type owl:ObjectProperty ;
+                           rdfs:comment """Reference to a submodel defining which permissions can be assigned to the subjects.
+Default: reference to the submodel referenced via
+defaultPermissions"""@en ;
+                           rdfs:label "selectablePermissions"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#selectableSubjectAttributes
+rami:selectableSubjectAttributes rdf:type owl:ObjectProperty ;
+                                 rdfs:comment """Reference to a submodel defining the authenticated subjects that are configured for the AAS. They are selectable by the access permission rules to assign permissions to the subjects.
+Default: reference to the submodel referenced via defaultSubjectAttributes."""@en ;
+                                 rdfs:label "selectableSubjectAttributes"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#submodelElement
+rami:submodelElement rdf:type owl:ObjectProperty ;
+                     rdfs:range rami:SubmodelElement ;
+                     rdfs:comment """A submodel consists of zero or more
+submodel elements."""@en ;
+                     rdfs:label "has Submodel Element"@en .
+
+
+###  https://w3id.org/i40/rami#targetObjectAttributes
+rami:targetObjectAttributes rdf:type owl:ObjectProperty ;
+                            rdfs:comment "Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en ;
+                            rdfs:label "targetObjectAttributes"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#targetSubjectAttributes
+rami:targetSubjectAttributes rdf:type owl:ObjectProperty ;
+                             rdfs:comment "Target subject attributes that need to be fulfilled by the accessing subject to get the permissions defined by this rule."@en ;
+                             rdfs:label "targetSubjetAtrtibutes"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#trustAnchor
+rami:trustAnchor rdf:type owl:ObjectProperty ;
+                 rdfs:comment "Trust anchor of AAS, typically certificates."@en ;
+                 rdfs:label "trustAnchor"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#usesStandard
 rami:usesStandard rdf:type owl:ObjectProperty ;
                   rdfs:range sto:Standard ;
                   rdfs:comment "Points to the standards describing the functions attached to the asset via the administration shell"@en ;
                   rdfs:label "uses Standard"@en .
+
+
+###  https://w3id.org/i40/rami#value
+rami:value rdf:type owl:ObjectProperty ;
+           rdfs:comment "The key value, for example an IRDI if the idType=IRDI."@en ;
+           rdfs:label "keyValue"^^xsd:string .
 
 
 #################################################################
@@ -369,6 +794,18 @@ om:hasNumericalValue rdf:type owl:DatatypeProperty .
 foaf:image rdf:type owl:DatatypeProperty .
 
 
+###  https://w3id.org/i40/rami#allowDuplicates
+rami:allowDuplicates rdf:type owl:DatatypeProperty ;
+                     rdfs:comment """If allowDuplicates=true then it is allowed that the collection contains the same element several times.
+Default = false"""@en ;
+                     skos:altLabel "allow duplicates"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#assetId
+rami:assetId rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf dcterms:identifier .
+
+
 ###  https://w3id.org/i40/rami#creationDate
 rami:creationDate rdf:type owl:DatatypeProperty ;
                   rdfs:domain rami:Submodel ;
@@ -377,12 +814,14 @@ rami:creationDate rdf:type owl:DatatypeProperty ;
                   skos:prefLabel "has Creator"@en .
 
 
+###  https://w3id.org/i40/rami#definition
+rami:definition rdf:type owl:DatatypeProperty ;
+                rdfs:label "This is the definition that is contained in the conceptDescription."@en ,
+                           "has definition"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#description
-rami:description rdf:type owl:DatatypeProperty ;
-                 rdfs:domain rami:Asset ;
-                 rdfs:range xsd:string ;
-                 skos:definition "Description of the Object/Entity"@en ;
-                 skos:prefLabel "has Description"@en .
+rami:description rdf:type owl:DatatypeProperty .
 
 
 ###  https://w3id.org/i40/rami#hasAdminShellId
@@ -391,6 +830,7 @@ rami:hasAdminShellId rdf:type owl:DatatypeProperty ;
                      rdf:type owl:FunctionalProperty ;
                      rdfs:domain rami:AdminShell ;
                      rdfs:range xsd:string ;
+                     owl:deprecated "true"^^xsd:boolean ;
                      skos:definition "Unique Identification of the Administration Shell"@en ;
                      skos:prefLabel "has AdminShell Id"@en .
 
@@ -402,7 +842,8 @@ rami:hasAssetId rdf:type owl:DatatypeProperty ;
                 rdfs:domain rami:Asset ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Unique identification for the Asset."@en ;
-                rdfs:label "has Asset Id"@en .
+                rdfs:label "has Asset Id"@en ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/i40/rami#hasEnergyValue
@@ -419,7 +860,31 @@ rami:hasI40ComponentId rdf:type owl:DatatypeProperty ;
                        rdfs:domain rami:I4.0Component ;
                        rdfs:range xsd:string ;
                        rdfs:comment "Unique Identification of the Industry 4.0 component."@en ;
-                       rdfs:label "has I40 Component Id"@en .
+                       rdfs:label "has I40 Component Id"@en ;
+                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://w3id.org/i40/rami#hasLocal
+rami:hasLocal rdf:type owl:DatatypeProperty ;
+              rdfs:comment "Denotes if the key references a model element of the same AAS (=true) or not (=false). In case of local = false the key may reference a model element of another AAS or an entity outside any AAS that has a global unique id."@en ;
+              rdfs:label "has local"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#hasValue
+rami:hasValue rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  https://w3id.org/i40/rami#id
+rami:id rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf dcterms:identifier ;
+        rdfs:comment "A globally unique identifier which is NOT a URI."@en ;
+        rdfs:label "identification"@en .
+
+
+###  https://w3id.org/i40/rami#idShort
+rami:idShort rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf dcterms:identifier .
 
 
 ###  https://w3id.org/i40/rami#inventoryNumber
@@ -429,6 +894,11 @@ rami:inventoryNumber rdf:type owl:DatatypeProperty ,
                      rdfs:range xsd:string ;
                      skos:definition "Inventory number of the Entity/Object according to the identification nomenclature"@en ;
                      skos:prefLabel "Inventory Number"@en .
+
+
+###  https://w3id.org/i40/rami#isCaseOf
+rami:isCaseOf rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf dcterms:identifier .
 
 
 ###  https://w3id.org/i40/rami#isDescribedWith
@@ -441,6 +911,13 @@ rami:logs rdf:type owl:DatatypeProperty ;
           skos:prefLabel "logs"@en .
 
 
+###  https://w3id.org/i40/rami#ordered
+rami:ordered rdf:type owl:DatatypeProperty ;
+             rdfs:comment """If ordered=false then the elements in the property collection are not ordered. If ordered=true then the elements in the collection are ordered.
+Default = false"""@en ;
+             rdfs:label "ordered"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#publishedURL
 rami:publishedURL rdf:type owl:DatatypeProperty .
 
@@ -450,7 +927,7 @@ rami:receivedAtTime rdf:type owl:DatatypeProperty ;
                     rdfs:domain rami:AdminShell ;
                     rdfs:range xsd:dateTime ;
                     skos:definition "received Time of an Asset"@en ;
-                    skos:prefLabel "received At Time"@en .
+                    skos:prefLabel "received At Time"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#recordedTime
@@ -458,14 +935,19 @@ rami:recordedTime rdf:type owl:DatatypeProperty ;
                   rdfs:domain rami:Machine ;
                   rdfs:range xsd:dateTime ;
                   rdfs:comment "Recorded Time for a Machine"@en ;
-                  skos:prefLabel "recorded Time"@en .
+                  skos:prefLabel "recorded Time"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#releaseDate
 rami:releaseDate rdf:type owl:DatatypeProperty ;
                  rdfs:range xsd:date ;
                  skos:definition "Release Date of the Standard"@en ;
-                 skos:prefLabel "Release Date"@en .
+                 skos:prefLabel "Release Date"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#semanticId
+rami:semanticId rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf dcterms:identifier .
 
 
 ###  https://w3id.org/i40/rami#subModelID
@@ -475,7 +957,8 @@ rami:subModelID rdf:type owl:DatatypeProperty ;
                 rdfs:domain rami:Submodel ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Unique Identification for a Submodel"@en ;
-                rdfs:label "sub Model Id"@en .
+                rdfs:label "sub Model Id"^^xsd:string ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 #################################################################
@@ -507,6 +990,24 @@ om:Unit rdf:type owl:Class .
 foaf:Image rdf:type owl:Class .
 
 
+###  https://w3id.org/i40/rami#AccessControl
+rami:AccessControl rdf:type owl:Class ;
+                   rdfs:comment "Access Control defines the local access control policy administration point. Access Control has the major task to define the access permission rules."@en ;
+                   rdfs:label "Access Control"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#AccessControlPolicyPoints
+rami:AccessControlPolicyPoints rdf:type owl:Class ;
+                               rdfs:comment "Container for access control policy points."@en ;
+                               rdfs:label "Access ControlPolicy Points"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#AccessPermissionRule
+rami:AccessPermissionRule rdf:type owl:Class ;
+                          rdfs:comment "Table that defines access permissions per authenticated subject for a set of objects (referable elements)."@en ;
+                          rdfs:label "Access Permission Rule"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#AdminShell
 rami:AdminShell rdf:type owl:Class ;
                 dc:source "This definition comprises material from RAMI4.0."@en ;
@@ -514,11 +1015,36 @@ rami:AdminShell rdf:type owl:Class ;
                 skos:altLabel "Administration Shell"@en ,
                               "Asset Administration Shell"@en ;
                 skos:definition "Describes the Administration Shell for Assets, Products, Components, e.g. Machines"@en ;
-                skos:prefLabel "Verwaltungsschale"@de .
+                skos:prefLabel "Verwaltungsschale"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#AdministrativeInformation
+rami:AdministrativeInformation rdf:type owl:Class ;
+                               rdfs:comment """Every Identifiable may have administrative information. Administrative information includes for example
+ Information about the version of the element
+ Information about who created or who made the last change to the element
+ Information about the languages available in case the element contains text, for translating purposed also themmaster or default language may be defined
+In the first version of the AAS metamodel only version information as defined by IEC 61360 is defined. In later versions additional attributes may be added."""@en ;
+                               rdfs:label "Administrative Information"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#Asset
 rami:Asset rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/rami#AssetKind
+rami:AssetKind rdf:type owl:Class ;
+               rdfs:subClassOf rami:Dimension ;
+               rdfs:comment """The RAMI4.0 model features one, generalized life-cycle axis, which was derived from IEC 62890. The basic idea is to distinguish for all assets within Industrie 4.0 between possible types and instance. This makes it possible to apply the type/instance distinction for all elements such as material type/material instance, product type/product instance, machine type/ machine instance and more. Business related information will be handled on the 'Business' layer of the
+RAMI4.0 model, as well, covering also order details and workflows, again with types/ instances."""@en ;
+               rdfs:label "Asset Kind"@en .
+
+
+###  https://w3id.org/i40/rami#Blob
+rami:Blob rdf:type owl:Class ;
+          rdfs:comment "A BLOB is a data element that represents a file that is contained with its source code in the value attribute."@en ;
+          rdfs:label "BlobDataElement"@en ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://w3id.org/i40/rami#ComponentManager
@@ -526,8 +1052,28 @@ rami:ComponentManager rdf:type owl:Class ;
                       rdfs:label "Component Manager"@en .
 
 
+###  https://w3id.org/i40/rami#ConceptDescription
+rami:ConceptDescription rdf:type owl:Class ;
+                        dc:description "\"The AAS itself can also define its own dictionary that contains semantic definitions of its submodel elements. These semantic definitions are called concept descriptions (ConceptDescription). It is optional whether an AAS defines its own concept dictionary (ConceptDictionary) or not.\""@en .
+
+
 ###  https://w3id.org/i40/rami#CumulativeEnergyConsumption
 rami:CumulativeEnergyConsumption rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/rami#DataElement
+rami:DataElement rdf:type owl:Class ;
+                 rdfs:comment """<<Abstract>>
+A data element is a submodel element that is not further composed out of other submodel elements.
+A data element is a submodel element that has a value. The type of value differs for different subtypes of data elements."""@en ;
+                 rdfs:label "DataElement"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#DataSpecification
+rami:DataSpecification rdf:type owl:Class ;
+                       rdfs:comment "Element that can have data specification templates. A template defines the additional attributes an element may or shall have."@en ;
+                       rdfs:label "DataSpecification"@en ;
+                       skos:note "abstract"@en .
 
 
 ###  https://w3id.org/i40/rami#Dimension
@@ -555,6 +1101,26 @@ Valid values are: Requirement (for requests that are to be confirmed or rejected
                         rdfs:isDefinedBy "https://www.zvei.org/fileadmin/user_upload/Presse_und_Medien/Publikationen/2017/April/Asset_Administration_Shell/ZVEI_WP_Verwaltungschale_Englisch_Download_03.04.17.pdf" ;
                         rdfs:label "Ausprägungsaussage"@de ,
                                    "Expression Semantic"@en .
+
+
+###  https://w3id.org/i40/rami#File
+rami:File rdf:type owl:Class ;
+          rdfs:comment "A File is a data element that represents a file via its path description."@en ;
+          rdfs:label "FileDataElement"@en ;
+          owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://w3id.org/i40/rami#Formula
+rami:Formula rdf:type owl:Class ;
+             dc:description "A formula is used to describe constraints by a logical expression."@en ;
+             rdfs:label "Formula"@en .
+
+
+###  https://w3id.org/i40/rami#HasDataSpecification
+rami:HasDataSpecification rdf:type owl:Class ;
+                          rdfs:comment "Element that can have data specification templates. A template defines the additional attributes an element may or shall have."@en ;
+                          rdfs:label "Has Data Specification"@en ;
+                          skos:prefLabel "Data Specification"@en .
 
 
 ###  https://w3id.org/i40/rami#HierarchyLevelDimension
@@ -603,6 +1169,20 @@ rami:ITLayerDimension rdf:type owl:Class ;
                       rdfs:label "RAMI IT Layer Dimension"@en .
 
 
+###  https://w3id.org/i40/rami#Identifiable
+rami:Identifiable rdf:type owl:Class ;
+                  rdfs:comment "An element that has a globally unique identifier."@en ;
+                  rdfs:label "Identifiable"@en ;
+                  owl:deprecated "true"@en ;
+                  skos:note "abstract"@en .
+
+
+###  https://w3id.org/i40/rami#Key
+rami:Key rdf:type owl:Class ;
+         rdfs:comment "A key is a reference to an element by its id."@en ;
+         rdfs:label "Key"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#LifeCycleDimension
 rami:LifeCycleDimension rdf:type owl:Class ;
                         owl:equivalentClass [ rdf:type owl:Class ;
@@ -636,18 +1216,106 @@ rami:Manifest rdf:type owl:Class ;
               rdfs:label "Manifest"@en .
 
 
+###  https://w3id.org/i40/rami#ObjectAttributes
+rami:ObjectAttributes rdf:type owl:Class ;
+                      rdfs:comment "A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel."@en ;
+                      rdfs:label "Object Attributes"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#Operation
+rami:Operation rdf:type owl:Class ;
+               rdfs:comment "An operation is a submodel element with input and output variables."@en ;
+               rdfs:label "Operation"@en .
+
+
+###  https://w3id.org/i40/rami#OperationVariable
+rami:OperationVariable rdf:type owl:Class ;
+                       dc:description "An operation variable is a submodel element that is used as input or output variable of an operation."@en ;
+                       rdfs:label "Operation variable"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#Order
 rami:Order rdf:type owl:Class ;
            skos:definition "Each order for manufacturing runs through a life cycle and its specifics necessarily have an impact on the production facility during performance of the order"@en ;
            skos:prefLabel "Order"@en .
 
 
+###  https://w3id.org/i40/rami#Permission
+rami:Permission rdf:type owl:Class ;
+                rdfs:comment "Description of a single permission."@en ;
+                rdfs:label "Permission"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#PermissionPerObject
+rami:PermissionPerObject rdf:type owl:Class ;
+                         rdfs:comment "Table that defines access permissions for a specified object. The object is any referable element in the AAS. Additionally object attributes can be defined that further specify the kind of object the permissions apply to."@en ;
+                         rdfs:label "Permission Per Object"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#Platform
 rami:Platform rdf:type owl:Class .
 
 
+###  https://w3id.org/i40/rami#PolicyAdministrationPoint
+rami:PolicyAdministrationPoint rdf:type owl:Class ;
+                               rdfs:comment "Definition of a security administration point (PDP)."@en ;
+                               rdfs:label "PolicyAdministrationPoint"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#PolicyInformationPoints
+rami:PolicyInformationPoints rdf:type owl:Class ;
+                             rdfs:comment """Defines the security policy information points (PIP).
+Serves as the retrieval source of attributes, or the data required for policy evaluation to provide the information needed by the policy decision point to make the decisions."""@en ;
+                             rdfs:label "Policy Information Points"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#Property
+rami:Property rdf:type owl:Class ;
+              rdfs:comment "A property is a data element that has a single value."@en ;
+              rdfs:label "Property"@en .
+
+
+###  https://w3id.org/i40/rami#PropertyValueType
+rami:PropertyValueType rdf:type owl:Class ;
+                       dc:description """The qualifier value is the value of the qualifier.
+Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."""@en .
+
+
+###  https://w3id.org/i40/rami#Qualifier
+rami:Qualifier rdf:type owl:Class ;
+               dc:description "A qualifier is a type-value pair that makes additional statements w.r.t. the value of the element."@en ;
+               rdfs:label "Qualifier"@en .
+
+
+###  https://w3id.org/i40/rami#Referable
+rami:Referable rdf:type owl:Class ;
+               rdfs:comment "An element that is referable by its idShort. This id is not globally unique. This id is unique within the name space of the element."@en ;
+               rdfs:label "Referable"@en .
+
+
 ###  https://w3id.org/i40/rami#Reference
-rami:Reference rdf:type owl:Class .
+rami:Reference rdf:type owl:Class ;
+               rdfs:comment """Reference to either a model element of the same or another AAs or to an external entity.
+A reference is an ordered list of keys, each key referencing an element. The complete list of keys may for example be concatenated to a path that then gives unique access to an element or entity."""@en ;
+               rdfs:label "Reference"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#ReferenceElement
+rami:ReferenceElement rdf:type owl:Class ;
+                      dc:description "A reference element is a data element that defines a reference to another element within the same or another AAS or a reference to an external object or entity."@en ;
+                      rdfs:label "Reference Element"^^xsd:string .
+
+
+###  https://w3id.org/i40/rami#RelationshipElement
+rami:RelationshipElement rdf:type owl:Class ;
+                         dc:description "A relationship element is used to define a relationship between two referable elements."@en ;
+                         rdfs:label "RelationshipElement"@en .
+
+
+###  https://w3id.org/i40/rami#Security
+rami:Security rdf:type owl:Class ;
+              rdfs:comment "Container for security relevant information of the AAS."@en ;
+              rdfs:label "Security"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#SensorMeasurement
@@ -666,10 +1334,32 @@ rami:Structure rdf:type owl:Class ;
                rdfs:subClassOf rami:Submodel .
 
 
+###  https://w3id.org/i40/rami#SubjectAttributes
+rami:SubjectAttributes rdf:type owl:Class ;
+                       rdfs:comment "A sert of data elements that further classifies a specific subject."@en ;
+                       rdfs:label "Subject attributes"^^xsd:string .
+
+
 ###  https://w3id.org/i40/rami#Submodel
 rami:Submodel rdf:type owl:Class ;
-              rdfs:comment "Describe the different types of Data related to the I4.0 Asset"@en ;
+              rdfs:comment """A Submodel defines a specific aspect of the asset represented by the AAS.
+A submodel is used to structure the virtual representation and technical functionality of an Administration Shell into distinguishable parts. Each submodel refers to a well-defined domain or subject matter.
+Submodels can become standardized and thus become submodels types. Submodels can have different life-cycles."""@en ,
+                           "Describe the different types of Data related to the I4.0 Asset"@en ;
               rdfs:label "Submodel"@en .
+
+
+###  https://w3id.org/i40/rami#SubmodelElement
+rami:SubmodelElement rdf:type owl:Class ;
+                     rdfs:comment "A submodel element is an element suitable for the description and differentiation of assets."@en ;
+                     rdfs:label "Submodel Element"^^xsd:string ;
+                     skos:note "abstract"@en .
+
+
+###  https://w3id.org/i40/rami#SubmodelElementCollection
+rami:SubmodelElementCollection rdf:type owl:Class ;
+                               rdfs:comment "A submodel element collection is a set or list of submodel elements."@en ;
+                               rdfs:label "SubmodelElementCollection"@en .
 
 
 ###  https://w3id.org/i40/rami#TransportInterface
@@ -681,7 +1371,8 @@ rami:TransportInterface rdf:type owl:Class ;
 rami:Value rdf:type owl:Class ;
            rdfs:comment """Current value that can be specified through an instanced submodel (for 
 instance in station 2) or through the asset, for example."""@en ;
-           rdfs:label "Value"@en .
+           rdfs:label "Value"@en ;
+           skos:note "maybe 'containedElement'?"@en .
 
 
 ###  https://w3id.org/i40/rami#View
@@ -768,11 +1459,46 @@ rami:Asset2 rdf:type owl:NamedIndividual ,
             rdfs:label "Asset 2"@en .
 
 
+###  https://w3id.org/i40/rami#AssetInstanceProductionPhase
+rami:AssetInstanceProductionPhase rdf:type owl:NamedIndividual ,
+                                           rami:LifeCycleDimension ;
+                                  rdfs:comment "The production phase of asset instances. Asset instances are created/ produced, based on the asset type information. Specific information about production, logistics, qualification and test are associated with the asset instances."@en ;
+                                  rdfs:label "Production"@en ;
+                                  skos:altLabel "Asset Instance Production Phase"@en .
+
+
+###  https://w3id.org/i40/rami#AssetInstanceUsageMaintenancePhase
+rami:AssetInstanceUsageMaintenancePhase rdf:type owl:NamedIndividual ,
+                                                 rami:LifeCycleDimension ;
+                                        rdfs:comment """The asset instance usage and maintenance phase. Usage phase by the purchaser of the asset instances. Usage data is associated with the asset instance and might be shared with other value chain partners, such as the manufacturer of the asset instance. Also included: maintenance, re-design, optimization and decommissioning of the asset instance. The full life-cycle history is
+associated with the asset and might be archived/ shared for
+documentation."""@en ;
+                                        rdfs:label "Usage/Maintenance"@en ;
+                                        skos:altLabel "Asset Instance Usage/Maintenance Phase"@en .
+
+
 ###  https://w3id.org/i40/rami#AssetMotorControl
 rami:AssetMotorControl rdf:type owl:NamedIndividual ,
                                 rami:Asset ;
                        rami:hasAssetId "1501325"^^xsd:string ;
                        rdfs:label "Motor control"@en .
+
+
+###  https://w3id.org/i40/rami#AssetTypeDevelopmentPhase
+rami:AssetTypeDevelopmentPhase rdf:type owl:NamedIndividual ,
+                                        rami:LifeCycleDimension ;
+                               rdfs:comment """The development phase of asset types. Valid from the ideation/ conceptualization to first prototypes/ test. The 'type' of an asset is defined, and distinguishing properties and functionalities are defined and implemented. All (internal) design artefacts are created, such as CAD data, schematics, embedded
+software, and associated with the asset type."""@en ;
+                               rdfs:label "Development"@en ;
+                               skos:altLabel "Asset Type Development Phase"@en .
+
+
+###  https://w3id.org/i40/rami#AssetTypeUsageMaintenancePhase
+rami:AssetTypeUsageMaintenancePhase rdf:type owl:NamedIndividual ,
+                                             rami:LifeCycleDimension ;
+                                    rdfs:comment "The usage and maintenance phase of asset types. Ramping up production capacity. The 'external' information associated to the asset is created, such as technical data sheets, marketing information. The selling process starts."@en ;
+                                    rdfs:label "Usage/Maintenance"@en ;
+                                    skos:altLabel "Asset Type Usage/Maintenance Phase"@en .
 
 
 ###  https://w3id.org/i40/rami#BrakingResistanceMs
@@ -834,12 +1560,12 @@ rami:ControlDevice rdf:type owl:NamedIndividual ,
 rami:EnergyEfficiency1 rdf:type owl:NamedIndividual ,
                                 rami:EnergyEfficiency ;
                        rami:energyEfficiencyValue rami:MeasureEnergyEfficiency1 ;
-                       rami:hasSemanticExpression rami:Measurement ;
                        rami:hasView rami:Performance ;
                        rami:subModelID "AAB012"^^xsd:string ;
                        rdfs:label "Energy Efficiency 1 Submodel"@en ;
                        skos:definition "Integrated electrical consumption over time."@en ;
-                       skos:prefLabel "Electrical consumption cumulative energy"@en .
+                       skos:prefLabel "Electrical consumption cumulative energy"@en ;
+                       rami:semanticId rami:Measurement .
 
 
 ###  https://w3id.org/i40/rami#EnergyEfficiency2
@@ -899,7 +1625,10 @@ rami:Information rdf:type owl:NamedIndividual .
 
 ###  https://w3id.org/i40/rami#Instance
 rami:Instance rdf:type owl:NamedIndividual ,
-                       rami:LifeCycleDimension .
+                       rami:AssetKind ;
+              rdfs:comment "The RAMI4.0 model [3] features one, generalized life-cycle axis, which was derived from IEC 62890. The basic idea is to distinguish for all assets within Industrie 4.0 between possible types and instance. This makes it possible to apply the type/instance distinction for all elements such as material type/material instance, product type/product instance, machine type/ machine instance and more. Business related information will be handled on the 'Business' layer of the RAMI4.0 model, as well, covering also order details and workflows, again with types/ instances."@en ;
+              rdfs:label "Instance"@en ;
+              skos:altLabel "Asset Instance"@en .
 
 
 ###  https://w3id.org/i40/rami#Integration
@@ -982,8 +1711,12 @@ rami:TechnicalData1 rdf:type owl:NamedIndividual ;
 
 ###  https://w3id.org/i40/rami#Type
 rami:Type rdf:type owl:NamedIndividual ,
-                   rami:LifeCycleDimension ;
-          rdfs:label "Type"@en .
+                   rami:AssetKind ;
+          rdfs:comment """The RAMI4.0 model features one, generalized life-cycle axis, which was derived from IEC 62890. The basic idea is to distinguish for all assets within Industrie 4.0 between possible types and instance. This makes it possible to apply the
+type/instance distinction for all elements such as material type/material instance, product type/product instance, machine type/ machine instance and more. Business related information will be handled on the 'Business' layer of the
+RAMI4.0 model, as well, covering also order details and workflows, again with types/ instances."""@en ;
+          rdfs:label "Type"@en ;
+          skos:altLabel "Asset Type"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#WorkCenter
@@ -1013,15 +1746,50 @@ foaf:image rdfs:comment "Image of the Asset reused from the FOAF ontology."@en ;
 
 rami:Asset skos:altLabel "Object"@en ;
            skos:definition "Clearly identifiable asset for the Administration Shell"@en ;
+           rdfs:comment """An Asset describes meta data of an asset that is represented by an AAS.
+The asset may either represent an asset type or an asset instance.
+The asset has a globally unique identifier plus – if needed – additional domain specific (proprietary) identifiers."""@en ;
            skos:altLabel "Entity"@en ;
            skos:prefLabel "Asset"@en ;
            skos:definition "Eindeutig identifizierbarer Gegenstand, der aufgrund seiner Bedeutung in der Informationswelt verwaltet wird"@de ;
-           skos:note "Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en ;
-           skos:altLabel "Entität"@de .
+           skos:altLabel "Entität"@de ;
+           skos:note "Objects may be known in the form of a type or of an instance. An object in the planning phase is known as a type"@en .
+
+
+rami:assetId owl:deprecated "true"^^xsd:boolean ;
+             rdfs:label "id"@en ;
+             rdfs:comment "The unique identifier of an asset. Note the difference between the 'asset ID' idenitfier and the URIs for the resources."@en .
+
+
+rami:description rdfs:comment "Description or comments on the element. The description can be provided in several languages."@en ;
+                 skos:prefLabel "has Description"@en .
+
+
+rami:hasValue rdfs:comment """Points to the current value that can be specified through an instanced submodel (for 
+instance in station 2) or through the asset."""@en ;
+              rdfs:label "has Value"^^xsd:string .
+
+
+rami:idShort rdfs:label "idShort"@en ;
+             owl:deprecated "true"^^xsd:boolean .
+
+
+rami:isCaseOf owl:deprecated "false"^^xsd:boolean ;
+              rdfs:comment "Global reference to an external definition the concept is compatible to or was derived from."@en ;
+              rdfs:label "isCaseOf"@en .
 
 
 rami:isDescribedWith skos:definition "Points to the Standard used to describe a given object"@en ;
-                     skos:prefLabel "Is Described With"@en .
+                     skos:prefLabel "Is Described With"@en ;
+                     owl:deprecated "true"^^xsd:boolean ;
+                     rdfs:seeAlso rami:asset .
+
+
+rami:semanticId rdfs:comment "The semantic id might refer to an external information source, which explains the formulation of the submodel (for example an PDF if a standard)"@en ;
+                rdfs:label "semanticId"@en ;
+                rdfs:comment "Points to the Expression Semantic of the Submodels"@en ;
+                skos:altLabel "has Semantic Expression"@en ;
+                skos:prefLabel "has semantic ID"@en .
 
 
 #################################################################
@@ -1036,4 +1804,4 @@ rami:isDescribedWith skos:definition "Points to the Standard used to describe a 
 ] .
 
 
-###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

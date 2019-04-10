@@ -1,0 +1,34 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+<#PermissionShape>
+    a sh:NodeShape ;
+    sh:targetClass rami:Permission ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rami:hasPermission ;
+        sh:class rami:Property ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ; # MANDATORY !
+        #TODO: Impelment constraints AASd-010 and AASd-11
+		sh:severity sh:Violation ;
+        sh:message "Exactly one Property needs to assign torami:hasPermission property."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:kindOfPermission ;
+        sh:class rami:PermissioNKind ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ; # MANDATORY !
+        sh:severity sh:Violation ;
+        sh:message "Exactly one case of PermissionKind needs to assign to rami:kindOfPermission property."@en ;
+    ] .

@@ -1,0 +1,55 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+
+# author: Sebastian Bader (sebastian.bader@iais.fraunhofer.de)
+# Resources: 
+#	RAMI Ontology: https://vocol.iais.fraunhofer.de/rami/
+# 	W3C recommendation: https://www.w3.org/TR/shacl/
+#	SHACL syntax checking: http://shacl.org/playground/
+#	SHACL Advanced Features: https://w3c.github.io/data-shapes/shacl-af/
+
+<#AdministrativeInformationShape>
+    a sh:NodeShape ;
+    sh:targetClass rami:AdministrativeInformation ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
+	  #sh:message ""@en ;
+    ] ;
+    sh:property [
+      sh:path dcterms:hasVersion ;
+	  sh:valueDatatype xsd:string ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+      sh:message "Each submodel element must have at max one version attribute with datatype xsd:string."@en ;
+    ] ;
+    sh:property [
+      sh:path dcterms:hasRevision ;
+      sh:valueDatatype xsd:string ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      ###################
+      # sh:constraint [
+      #   ######## How to model, that version-property is required?
+      # ] ;
+      ###################
+      sh:message "Each submodel element must have at max one revision attribute with datatype xsd:string."@en ;
+    ] ;
+
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  # sh:someOf [ 
+		# sh:constraint [
+		# 	sh:nodeKind sh:IRI ;
+		# ] ;
+    ########################################
+    # the semanticID is part of RDF itself #
+    ########################################
+    .
