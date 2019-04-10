@@ -5,9 +5,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
+@prefix u4u: <http://uri4uri.net/vocab.html/#> .
 
 <#BlobShape>
-
 
 a sh:NodeShape ;
     sh:targetClass rami:Blob ;
@@ -15,6 +15,11 @@ a sh:NodeShape ;
       sh:path rdf:type ;
       sh:minCount 1 ;
     ] ;
+
+    # sh:constraint [
+	# 	sh:nodeKind rami:IRDI ;
+	# 	sh:message "Each asset object must be an IRDI."@en ;
+	# ] ;
 
     sh:property [
         sh:path rami:value ;
@@ -26,7 +31,8 @@ a sh:NodeShape ;
 
     sh:property [
         sh:path rami:mimeType ;
-        sh:class rami:mimeType ;
+        sh:class u4u:MimetypeDatatype ;
+        #TODO: RegEx-implemetation "[a-z]+/[a-z]+"
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
@@ -43,3 +49,117 @@ a sh:NodeShape ;
         sh:severity sh:Violation ;
         sh:message "rami:dataElement must be point to a proper URI."@en ;
     ] ;
+    ##################################
+    # inherits from DataElement (and DataElement inherits from SubmodelElement 
+    # (SubmodelElements inherits from:
+    # HasDataSpecification; Referable; Qualifiable; HasSemantics; HasKind))
+    ##################################
+
+    # DataSpecification:
+    sh:property [
+      sh:path rami:hasDataSpecification ;
+      sh:class rami:Reference ;
+      sh:minCount 0 ;
+	  sh:nodeKind sh:URI ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:hasSubmodel ;
+      sh:class rami:Submodel ;
+      sh:minCount 0 ;
+      sh:message "A DataSpecification entity can have a rami:hasSubmodel relation to a rami:Submodel."@en ; 
+    ] ;
+
+    # Identifiable:
+    sh:property [
+      sh:path rami:administration ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      sh:class rami:AdministrativeInformation ;
+      sh:severity sh:Violation ;
+      sh:message ""@en ;
+    ] ;
+
+    #Identifiable inherits from Referable
+    sh:property [
+        sh:path rami:idShort ; 
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ; # WHY NOT MANDATORY (sh:minCount 1) ?
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "The idShort-property from Referable needs to be xsd:string."@en ; 
+    ] ;
+
+    sh:property [
+        sh:path rami:category ;
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "rami:category is a property that is inherited from Referable and needs to be of type xsd:string."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:description ;
+        sh:valueDatatype xsd:langString ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:parent ;
+        sh:class rami:Referable ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+
+    # Qualifiable:
+    sh:constraint [
+		sh:nodeKind sh:URI ;
+		sh:message "Each rami object must be a URI."@en ;
+	] ;
+
+    sh:property [
+      sh:path rami:qualifier ;
+      sh:minCount 0 ;
+	  sh:constraint [
+		sh:nodeKind sh:URI ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:qualifier must be point to a proper URI."@en ;
+    ] ;
+
+    # HasSemantics:
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  # sh:someOf [ 
+		# sh:constraint [
+		# 	sh:nodeKind sh:IRI ;
+		# ] ;
+    ########################################
+    # the semanticID is part of RDF itself #
+    ########################################
+
+    # HasKind:
+    sh:property [
+      sh:path rami:hasKind ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+	  sh:someOf [ 
+		sh:constraint [
+			sh:nodeKind sh:Type ;
+		] ;
+		sh:constraint [
+			sh:nodeKind rami:Instance ;
+		] ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
+    ] .

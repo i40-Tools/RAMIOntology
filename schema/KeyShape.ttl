@@ -7,9 +7,7 @@
 @prefix rami: <https://w3id.org/i40/rami#> .
 
 <#KeyShape>
-
-
-a sh:NodeShape ;
+    a sh:NodeShape ;
     sh:targetClass rami:Key ;
     sh:property [
       sh:path rdf:type ;
@@ -18,7 +16,7 @@ a sh:NodeShape ;
 
     sh:property [
         sh:path rami:type ;
-        sh:class rami:KeyElements ;
+        sh:class rami:KeyElements ; #enum not specified ?!
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;

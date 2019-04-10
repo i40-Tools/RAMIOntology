@@ -1,0 +1,84 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+<#AccessPermissionRuleShape>
+    a sh:NodeShape ;
+    sh:targetClass rami:AccessPermissionRule ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rami:targetSubjectAttributes ;
+        sh:class rami:SubjectAttributes ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "AccessPermissionRule requires at least one SubjectAttribute."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:permissionsPerObject ;
+        sh:class rami:PermissionsPerObject ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "AccessPermissionRule requires at least one instance of PermissionsPerObject."@en ;
+    ] ;
+
+    # inherits from Referable:
+    sh:property [
+        sh:path rami:idShort ; 
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ; 
+    ] ;
+
+    sh:property [
+        sh:path rami:category ;
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:description ;
+        sh:valueDatatype xsd:langString ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:parent ;
+        sh:class rami:Referable ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    # inherits from Qualifiable:
+    sh:constraint [
+		sh:nodeKind sh:URI ;
+		sh:message "Each rami object must be a URI."@en ;
+	] ;
+
+    sh:property [
+      sh:path rami:qualifier ;
+      sh:minCount 0 ;
+	  sh:constraint [
+		sh:nodeKind sh:URI ;
+	  ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:qualifier must be point to a proper URI."@en ;
+    ] .

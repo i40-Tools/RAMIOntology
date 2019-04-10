@@ -1,0 +1,38 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+<#PolicyAdministrationPoint>
+    a sh:NodeShape ;
+    sh:targetClass rami:PolicyAdministrationPoint ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ; # redundant 
+    ] ;
+
+    sh:property [
+        sh:path rami:localAccessControl ;
+        sh:class rami:AccessControl ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ; # optional
+        #TODO: Implement constraint AASd-009
+        sh:severity sh:Violation ;
+        sh:message "localAccessControl-property is optional but needs to be instance of AccessControl."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:hasExternalAccessControl ;
+        sh:class rami:Endpoint ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ; # optional
+        sh:constraint [
+            sh:nodeKind rami:Reference ;
+        ] ;
+        sh:severity sh:Violation ;
+        sh:message "the externalAccessControl property is optional but needs to be instace of rami:Endpoint"@en ;
+    ] .
+

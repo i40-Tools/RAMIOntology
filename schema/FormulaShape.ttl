@@ -7,21 +7,22 @@
 @prefix rami: <https://w3id.org/i40/rami#> .
 
 <#FormulaShape>
-    a sh:FormulaShape  ;
-    sh:path rami:Formula ; 
-    sh:datatype xsd:string ; 
-    sh:minCount 1 ;
+    a sh:NodeShape ;
+    sh:targetClass rami:Formula ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ;
+    ] ;
 
     sh:property [
         sh:path rami:dependsOn ;
         sh:class rami:Reference ;
         sh:minCount 0 ;
         sh:severity sh:Violation ;
-        #sh:message ""@en ;
+        sh:message "rami:dependsOn needs to be instance of class rami:Reference."@en ;
     ] ;
     #########################################################
     # inherits from Constraint (not defined in the pdf?!?!  #
-    # TODO: Implement!                                      #
     #########################################################
 
     .

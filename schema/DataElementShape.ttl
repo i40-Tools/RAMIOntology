@@ -6,6 +6,9 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
 
+###############
+# abstract ?! #
+###############
 
 <#DataElementShape>
     a sh:NodeShape ;
@@ -27,13 +30,15 @@
       sh:severity sh:Violation ;
       sh:message "Each submodel element must have at least one short ID with datatype xsd:string."@en ;
     ] ;
-    sh:property [
-      sh:path rami:semanticId ;
-	    sh:nodeKind sh:IRI ;
-      sh:minCount 1 ;
-      sh:severity sh:Violation ;
-      sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
-    ] 
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  # sh:someOf [ 
+		# sh:constraint [
+		# 	sh:nodeKind sh:IRI ;
+		# ] ;
+    ########################################
+    # the semanticID is part of RDF itself #
+    ########################################
 	# SubmodelElement inherits from HasSemantics
 	# hasSemantics requirements are fulfilled by RDF itself 
 	
@@ -48,14 +53,50 @@
       sh:message "rami:qualifier must be point to a proper URI."@en ;
     ] ;
 	# SubmodelElement inherits from Referable
+    # sh:property [
+    #   sh:path rami:administration ;
+    #   sh:minCount 0 ;
+    #   sh:maxCount 1 ;
+	  #   sh:class rami:AdministrativeInformation ;
+    #   sh:severity sh:Violation ;
+    #   sh:message "rami:administration has to be of type rami:AdministrativeInformation."@en ;
+    # ] ;
     sh:property [
-      sh:path rami:administration ;
-      sh:minCount 0 ;
-      sh:maxCount 1 ;
-	    sh:class rami:AdministrativeInformation ;
-      sh:severity sh:Violation ;
-      sh:message ""@en ;
+        sh:path rami:idShort ;
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ; 
     ] ;
+
+    sh:property [
+        sh:path rami:category ;
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:description ;
+        sh:valueDatatype xsd:langString ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:parent ;
+        sh:class rami:Referable ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
 	# Submodel inherits from DataSpecification
     sh:property [
       sh:path rami:hasDataSpecification ;

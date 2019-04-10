@@ -12,8 +12,13 @@
     sh:targetClass rami:Reference ;
     sh:property [
       sh:path rdf:type ;
-      sh:minCount 1 ; 
+      sh:minCount 1 ; # redundant
     ] ;
+
+    sh:constraint [
+		  sh:nodeKind rami:URI ;
+		  sh:message "Each reference must be an URI."@en ;
+	  ] ;
 
     sh:property [
         sh:path rami:key ;
@@ -21,4 +26,4 @@
         sh:minCount 0 ;
         sh:severity sh:violation ;
         sh:message "a valid key property is necessary"@en ;
-    ] ;
+    ] .

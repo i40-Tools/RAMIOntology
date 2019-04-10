@@ -9,8 +9,8 @@
 
 <#RamiPropertyShape>
     a sh:PropertyShape  ;
-    sh:path rami:property ; 
-    sh:datatype xsd:string ; 
+    sh:path rami:property ;
+    sh:datatype xsd:string ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
 
@@ -27,14 +27,15 @@
         sh:class rami:Reference ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "refers to the global unique identifier"@en 
+        sh:severity sh:Violation ;
+        sh:message "rami:valueID refers to the global unique identifier and needs to be instance of rami:Reference."@en 
     ] ;
 
-    #################################
-
+    ##################################
     # inherits from DataElement (and DataElement inherits from SubmodelElement 
     # (SubmodelElements inherits from:
     # HasDataSpecification; Referable; Qualifiable; HasSemantics; HasKind))
+    ##################################
 
     # DataSpecification:
     sh:property [
@@ -54,19 +55,47 @@
 
     # Referable:
     sh:property [
-      sh:path rami:administration ;
-      sh:minCount 0 ;
-      sh:maxCount 1 ;
-      sh:class rami:AdministrativeInformation ;
-      sh:severity sh:Violation ;
-      sh:message ""@en ;
+        sh:path rami:idShort ; 
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ; 
     ] ;
+
+    sh:property [
+        sh:path rami:category ;
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:description ;
+        sh:valueDatatype xsd:langString ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:parent ;
+        sh:class rami:Referable ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
 
     # Qualifiable:
     sh:constraint [
 		sh:nodeKind sh:IRI ;
 		sh:message "Each rami object must be a URI."@en ;
-	] ;
+	  ] ;
 
     sh:property [
       sh:path rami:qualifier ;
@@ -79,28 +108,31 @@
     ] ;
 
     # HasSemantics:
-    sh:property [
-        sh:path rami:semanticId ;
-        sh:nodeKind sh:URI ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:severity sh:Violation ;
-        sh:message "Every submodel element needs exactly one semantic definition (semanticId in HasSemantics)"@en ;
-    ] ;
+    # sh:property [
+    #     sh:path rami:semanticId ;
+    #     sh:nodeKind sh:URI ;
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
+    #     sh:severity sh:Violation ;
+    #     sh:message "Every submodel element needs exactly one semantic definition (semanticId in HasSemantics)"@en ;
+    # ] ;
+    #########################################
+    # semanticID is specified by RDF itself #
+    #########################################
 
     # HasKind:
     sh:property [
       sh:path rami:hasKind ;
       sh:minCount 0 ;
       sh:maxCount 1 ;
-	  sh:someOf [ 
-		sh:constraint [
-			sh:nodeKind sh:Type ;
-		] ;
-		sh:constraint [
-			sh:nodeKind rami:Instance ;
-		] ;
-	  ] ;
+      sh:someOf [ 
+        sh:constraint [
+          sh:nodeKind sh:Type ;
+        ] ;
+        sh:constraint [
+          sh:nodeKind rami:Instance ;
+        ] ;
+      ] ;
       sh:severity sh:Violation ;
       sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
     ] .

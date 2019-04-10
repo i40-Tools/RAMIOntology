@@ -1,0 +1,338 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix iaisex: <https://iais.fraunhofer.de/en/aas/examples/> .
+@prefix aas: <http://www.admin-shell.io/aas/1/0/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <http://example.org/> .
+
+
+########## ANCHOR :powered-devices and elements of computers ##########
+# powered devices are the base for further rules
+# GLOBAL NOTE define asset as powered devices if it is and defines elements of a computer:
+# NOTE GHz a indicator for processors. If an asset has a processor it is a powered-device
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "ghz" .
+} => { 
+    ?asset :category :powered_device .
+    ?asset :has :processor .
+} .
+# NOTE ampere as a indicator that the asset is a powered-device
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "ampere" .
+} => { 
+    ?asset :category :powered_device . 
+} .
+# NOTE volatage as a indicator that the asset is a powered-device
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "voltage" .
+} => { 
+    ?asset :category :powered_device . 
+} .
+# NOTE 
+# a disk requires current => powered-device
+# a disk is also part of a computer and necessary for this ruleset to recognize this asset as a computer
+# TODO: the :disk could be submodelelement of the td (which is a Submodel) but it is probably very risky to define this SME as :disk
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "disk" .
+} => { 
+    ?asset :category :powered_device . 
+    ?asset :has :disk .
+    ?asset :disk ?a .
+} .
+# NOTE drive as another keyword instead of :disk (==> see NOTE-comment above)
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "drive" .
+} => { 
+    ?asset :category :powered_device . 
+    ?asset :has :disk .
+    ?asset :disk ?a .
+} .
+# NOTE storage as another keyword instead of :disk (==> see NOTE-comment above)
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "storage" .
+} => { 
+    ?asset :category :powered_device . 
+    ?asset :has :disk .
+    ?asset :disk ?a .
+} .
+# NOTE
+# memory as synonym for ram
+# the memory is also part of a computer and necessary for this ruleset to recognize this asset as a computer
+# TODO: the SME is specified below as the RAM, but propably it is just the amount of memory
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "memory" .
+} => { 
+    ?asset :category :powered_device .
+    ?asset :has :ram . 
+    ?asset :ram ?a .
+} .
+# NOTE see comment above for "memory"
+{ 
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?b .
+    ?b string:containsIgnoringCase "ram" .
+} => { 
+    ?asset :category :powered_device .
+    ?asset :has :ram .
+    ?asset :ram ?a .
+} .
+######### Old vesion does not refer to asset either to SubmodelElement
+#{ ?a rdfs:comment ?b . ?b string:contains "ghz" . } => { ?a :category :powered_device . } .
+#{ ?a rdfs:comment ?b . ?b string:contains "ampere" . } => { ?a :category :powered_device . } .
+#{ ?a rdfs:comment ?b . ?b string:contains "voltage" . } => { ?a :category :powered_device . } .
+#{ ?a rdfs:comment ?b . ?b string:contains "memory" . } => { ?a :category :powered_device . } .
+
+
+
+########## ANCHOR powered / light-powered-devices ##########
+# NOTE define specifications of powered devices:
+{
+    ?asset :category :powered_device .
+} => {
+    ?asset rdfs:subClassOf :electricity-consumer .
+} .
+
+# NOTE light_powered_devices are devices with a voltage not greater than 5V
+#{
+#    ?asset :category :powered_device .
+#    ?asset rami:hasSubmodel ?bn_td .
+#    ?bn_td rami:hasSubmodelElement ?a .
+#    ?a rdfs:label "power-in"^^xsd:string .
+#    #TODO: There are a lot of predicates and not every predicate is a INT. This causes errors
+#    ?a ?predicate ?b .
+#    ?b math:lessThan "5"^^ . # unit needs to be specified in conceptDescription of device
+#} => { 
+#    ?asset :category :light_powered_device . 
+#} .
+
+# NOTE rules/notes for light-powered-devices
+{
+    ?asset :category :light_powered_device .
+    ?asset ?predicate ?value_of_td_s .
+    ?value_of_td_s string:equalIgnoringCase "rj45"^^xsd:string .
+} => { 
+    ?asset skos:note "May be modified without certification."@en . 
+    ?asset skos:note "Can be charged via USB"@en .
+	?asset skos:note "Could be supplied by PoE if possible"@en . 
+} .
+
+########## ANCHOR Network-devices ##########
+# NOTE specify all network-devices as network-device
+{
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:comment ?comment .
+    ?comment string:contains "network" .
+} => {
+    ?asset :category :network-device .
+} .
+
+# NOTE rules and notes for network-devices
+{
+    ?asset :category :network-device .
+} => { 
+	?asset skos:note "Needs IP-address and MAC."@en . 
+    # all network-devices are powered-devices:
+    ?asset :category :powered_device .
+} .
+
+########## ANCHOR USB-port-rules ##########
+# NOTE detect if device has usb-ports
+{
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?a .
+    ?a rdfs:label ?label_value .
+    ?label_value string:containsIgnoringCase "usb" .
+} => {
+    ?asset :has :usb-ports .
+} .
+
+# NOTE rules/notes for usb-ports
+{
+    ?asset :has :usb-ports .
+    # FIXME
+    ?asset log:notEqualTo ?light_powered_device_var .
+    ?light_powered_device_var :category :light_powered_device .
+} => {
+    ?asset 
+        :is :usb-power-supplier ;
+        skos:note "Is a possible power-supplier for devices that can be charged via USB"@en .
+} .
+
+# NOTE
+# detect if asset has a processor
+# the rule that identifies the asset as a computer requires this rule as complied
+{
+    ?asset rami:hasSubmodel ?bn_td .
+    ?bn_td rami:hasSubmodelElement ?sme .
+    ?sme rdfs:label ?label_of_sme .
+    ?label_of_sme string:containsIgnoringCase "processor" .
+} => {
+    ?asset 
+        :has :processor ;
+        skos:note "The asset has a processor"@en .
+} .
+
+########## ANCHOR processor-architecture ##########
+# requires that the asset has a processor (see rule above)
+# NOTE rules/notes for processors
+{
+    ?asset :has :processor .
+    ?asset rami:hasSubmodel ?bn_sm_td .
+    ?bn_sm_td rami:hasSubmodelElement ?sme .
+    ?sme a rami:SubmodelElement .
+    ?sme rdfs:label ?bn_td_sme_label .
+    ?bn_td_sme_label string:containsIgnoringCase "architecture" .
+    #?sme ?predicate_reference_to_value ?architecture_value .
+    ?sme ?predicate_reference_to_value ?architecture_value .
+    ?predicate_reference_to_value string:containsIgnoringCase "architecture"^^xsd:string .
+} => {
+    ?asset :has-x-y-bit-architecture ?architecture_value .
+    # TODO: Is there string concatenation in RDF ?
+    #?asset skos:note "The Operating System should be designed for a "?architecture_value" architecture" .
+} .
+
+# NOTE define which architecture the processor of the asset has
+{
+    ?asset :has-x-y-bit-architecture ?value .
+    ?value string:containsIgnoringCase "32" .
+} => {
+    ?asset skos:note "The Operating System should be designed for a 32-Bit architecture"@en .
+    ?asset :has :thrity-two-bit_processor_architecture .
+} .
+{
+    ?asset :has-x-y-bit-architecture ?value .
+    ?value string:containsIgnoringCase "64" .
+} => {
+    ?asset 
+        skos:note "The Operating System should be designed for a 64-Bit architecture"@en ;
+        :has :sixty-four-bit_processor_architecture .
+} .
+
+########## ANCHOR Sheets ##########
+# product-Sheets are documents and they are always stored in SubmodelElementsCollection
+# NOTE detect if there is a specification of details in something that is calles "sheet":
+{
+    ?asset rami:hasSubmodel ?bn_dcm .
+    ?bn_dcm rami:hasSubmodel ?sm .
+    ?sm rami:hasSubmodelElementCollection ?smec .
+    ?smce rami:idShort ?identifier_of__documentation_appendix .
+    ?identifier_of__documentation_appendix string:containsIgnoringCase "sheet" .
+} => {
+    ?asset 
+        :has :product_sheet ;
+        skos:note "The specification concerning some details of this asset is in one appendix."@en .
+} .
+
+########## ANCHOR Computer-detection ##########
+# requires recognition that asset :has :processor, :ram and :disk
+# NOTE detect if the asset is a computer
+{
+    ?asset :has :processor .
+    ?asset :has :ram .
+    ?asset :has :disk .
+} => {
+    ?asset 
+        :category :computer ;
+        skos:note "This asset is a computer"@en .
+} .
+
+########## ANCHOR MySQL-Hoster ##########
+# requires recognition of the asset as a :computer (see in :category)
+# NOTE detect if it is possible to run a MySQL-database on a computer
+{
+    # TODO: Implement check if the computer has at least 2GB of RAM and 1.2GB of space
+    ?asset :category :computer .
+    ?asset :ram ?obj .
+    ?obj ?predicate_reference_to_value ?value_ram .
+    ?predicate_reference_to_value string:containsIgnoringCase "ram"^^xsd:string .
+    #### TODO: SPECIFY UNITS in rami-ontology (conceptDescription)
+    ?predicate_reference_to_value string:notContainsRoughly "idshort"^^xsd:string .
+    ?value_ram math:notLessThan "2"^^xsd:integer .
+} => {
+    ?asset :category :possible_mysql_hoster .
+} .
+
+# NOTE rules for possible_mysql_hoster:
+{
+    ?asset :category :possible_mysql_hoster .
+} => {
+    ?asset skos:note "It is possible for the asset to host the MySQL-DBMS (enough RAM)"@en .
+} .
+
+
+########## ANCHOR carriable by human ##########
+# NOTE detect if the asset is to heavy to carry by a human
+## NOTE for unit gramms
+{
+    ?asset rami:hasSubmodel ?_bn_td .
+    ?_bn_td rami:hasSubmodelElement ?_sme .
+    ?_sme rdfs:comment ?comment_of_sme .
+    ?comment_of_sme string:containsIgnoringCase "weight"@en .
+    ?_sme ?should_be_the_reference_to_weight_value ?value .
+    ?should_be_the_reference_to_weight_value rdf:type rami:conceptDictionary .
+    ?should_be_the_reference_to_weight_value rami:hasConceptDescription ?concept_description .
+    ?concept_description rami:definition ?definition_of_concept_description .
+    ?definition_of_concept_description string:containsIgnoringCase "g"@en .
+    ?definition_of_concept_description string:notContainsRoughly "kg"@en .
+    ?definition_of_concept_description string:notContainsRoughly "t"@en . # FIXME: perhaps to risky
+    ?value math:lessThan "70000"^^xsd:int .  # NOTE specified with unit: gramms
+    # FIXME ...
+} => {
+    ?asset :category :carriable_by_humans .
+} .
+## NOTE for unit kilogramms
+{
+    ?asset rami:hasSubmodel ?_bn_td .
+    ?_bn_td rami:hasSubmodelElement ?_sme .
+    ?_sme rdfs:comment ?comment_of_sme .
+    
+    ?comment_of_sme string:containsIgnoringCase "weight"@en .
+    ?_sme ?should_be_the_reference_to_weight_value ?value .
+    ?should_be_the_reference_to_weight_value rdf:type rami:conceptDictionary .
+    ?should_be_the_reference_to_weight_value rami:hasConceptDescription ?concept_description .
+    ?concept_description rami:definition ?definition_of_concept_description .
+    ?definition_of_concept_description string:containsIgnoringCase "kg"@en .
+    ?definition_of_concept_description string:notContainsRoughly "t"@en . # FIXME: perhaps to risky
+    ?value math:lessThan "70"^^xsd:int .  # NOTE specified with unit: gramms
+} => {
+    ?asset :category :carriable_by_humans .
+} .
+# NOTE rules for :carriable_by_humans:
+{
+    ?asset :category :carriable_by_humans .
+} => {
+    ?asset skos:note "It is possible for humans to carry this asset."@en .
+} .
+
+########## ANCHOR define rdfs:label if not set ##########

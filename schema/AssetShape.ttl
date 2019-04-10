@@ -37,7 +37,7 @@
       sh:path rami:assetIdentificationModel ;
       sh:minCount 0 ;
       sh:maxCount 1 ;
-	  sh:class rami:Submodel ;
+	    sh:class rami:Submodel ;
       sh:severity sh:Violation ;
       sh:message "An Asset can have at maximum one Submodel as an Asset Identification Model."@en ;
     ] ;
@@ -52,19 +52,59 @@
     ] ;
     sh:property [
       sh:path rami:id ;
+      sh:class rami:Identifier ;
       sh:minCount 0 ;
       sh:message "An identifiable entity can have a rami:id."@en ; 
     ] ;
+  
+  # Identifable inherits from Referable
+  sh:property [
+        sh:path rami:idShort ; 
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ; 
+    ] ;
+
+    sh:property [
+        sh:path rami:category ;
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:description ;
+        sh:valueDatatype xsd:langString ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "The description property needs to be of type xsd:langString."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:parent ;
+        sh:class rami:Referable ; # see "AAS in detail", p. 124
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
 	# Asset inherits from DataSpecification
     sh:property [
       sh:path rami:hasDataSpecification ;
       sh:minCount 0 ;
+      sh:class rami:Reference ; # see "AAS in detail", p. 124
 	  sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
       sh:severity sh:Violation ;
       sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
     ] ;
     sh:property [
-      sh:path rami:hasSubmodel ;
+      sh:path rami:hasSubmodel ; 
       sh:class rami:Submodel ;
       sh:minCount 0 ;
       sh:message "A DataSpecification entity can have a rami:hasSubmodel relation to a rami:Submodel."@en ; 

@@ -6,6 +6,9 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
 
+#############
+# abstract? #
+#############
 
 # author: Sebastian Bader (sebastian.bader@iais.fraunhofer.de)
 # Resources: 
@@ -29,13 +32,13 @@
       sh:severity sh:Violation ;
       sh:message "Each submodel element must have at least one short ID with datatype xsd:string."@en ;
     ] ;
-    sh:property [
-      sh:path rami:semanticId ;
-	  sh:nodeKind sh:IRI ;
-      sh:minCount 1 ;
-      sh:severity sh:Violation ;
-      sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
-    ] 
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  # sh:nodeKind sh:IRI ;
+    #   sh:maxCount 1 ;
+    #   sh:severity sh:Violation ;
+    #   sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
+    # ] ;
 	# SubmodelElement inherits from HasSemantics
 	# hasSemantics requirements are fulfilled by RDF itself 
 	
@@ -49,20 +52,51 @@
       sh:severity sh:Violation ;
       sh:message "rami:qualifier must be point to a proper URI."@en ;
     ] ;
-	# SubmodelElement inherits from Referable
+    
+    # identifiable inherits from Referable
     sh:property [
-      sh:path rami:administration ;
-      sh:minCount 0 ;
-      sh:maxCount 1 ;
-	  sh:class rami:AdministrativeInformation ;
-      sh:severity sh:Violation ;
-      sh:message ""@en ;
+        sh:path rami:idShort ; 
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ; 
     ] ;
+
+    sh:property [
+        sh:path rami:category ;
+        sh:valueDatatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:description ;
+        sh:valueDatatype xsd:langString ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:parent ;
+        sh:class rami:Referable ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:violation ;
+        sh:message "..."@en ;
+    ] ;
+
+
 	# Submodel inherits from DataSpecification
     sh:property [
       sh:path rami:hasDataSpecification ;
       sh:minCount 0 ;
-	  sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
+	    sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
+      sh:class rami:Reference ;
       sh:severity sh:Violation ;
       sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
     ] ;
