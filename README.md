@@ -8,21 +8,21 @@ The ontology itself is contained in [rami.ttl](rami.ttl). You can find a visuali
 
 
 ## Mapping
-The [rml_mapping] folder contains a template of (RML)[https://rml.io/] TripleMaps for Asset Administration Shell documents in XML. A mapping from JSON to RDF is not yet included. 
+The [mapping](rml_mapping) folder contains a template of [RML](https://rml.io/) TripleMaps for Asset Administration Shell documents in XML. A mapping from JSON to RDF is not yet included. 
 In addition, an example mapping file for a Raspberry Pi demo AAS [AssetAdministrationShell_examples] in various serializations is supplied.
 
 
 ## Schema Validation
-The (schema files)[schema] are encoded as [SHACL](https://www.w3.org/TR/shacl/) shapes. 
+The [schema files](schema) are encoded as [SHACL](https://www.w3.org/TR/shacl/) shapes. 
 
 
 ## Reasoning
-The derivation of new facts (see [reasoning]) can be implemented using N3 rules as specified by [Linked Data-Fu](https://linked-data-fu.github.io/).
+The derivation of new facts (see [reasoning](reasoning)) can be implemented using N3 rules as specified by [Linked Data-Fu](https://linked-data-fu.github.io/).
 
 
 ## HowTo Use
 Although the ontology and all the other supplied files can be displayed by any text editor, [Protege](http://protege.stanford.edu/) is the tool of choice. As previously mentioned,
-[WebVOwl](http://www.visualdataweb.de/webvowl/ is a great service to create visualizations. 
+[WebVOwl](http://www.visualdataweb.de/webvowl/) is a great service to create visualizations. 
 
 In order to execute the mapping, clone and build the [RML Mapper](https://github.com/RMLio/rmlmapper-java). 
 
