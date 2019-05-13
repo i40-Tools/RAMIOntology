@@ -1,0 +1,45 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+<#KeyShape>
+    a sh:NodeShape ;
+    sh:targetClass rami:Key ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rami:type ;
+        sh:class rami:KeyElements ; #enum not specified ?!
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "..."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:local ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:valueDatatype xsd:boolean ;
+    ] ; 
+
+    sh:property [
+        sh:path rami:value ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:valueDatatype xsd:string ;
+    ] ;
+
+    sh:property [
+        sh:path rami:idType ;
+        sh:class rami:KeyType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .

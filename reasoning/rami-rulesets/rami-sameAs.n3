@@ -1,0 +1,62 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix iaisex: <https://iais.fraunhofer.de/en/aas/examples/> .
+@prefix aas: <http://www.admin-shell.io/aas/1/0/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix http: <http://www.w3.org/2011/http#> . 
+@prefix httpm: <http://www.w3.org/2011/http-methods#> . 
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix : <http://example.org/> .
+
+
+# GET the ontology as background knowledge
+{
+	[] 	http:mthd httpm:GET ;
+		http:requestURI <http://i40.semantic-interoperability.org/rami/Documentation/ontology.ttl> .
+}
+
+
+
+# NOTE rami:hasSubmodel inverse property of rami:parent
+{ 
+	?a rami:hasSubmodel ?b . 
+	?a rdf:type rami:Referable .
+	?b rdf:type rami:Referable .
+} => {
+	?b rami:parent ?a . 
+} .
+
+# NOTE only in the same context
+{
+    ?a rdfs:label ?id_short .
+    ?b rdfs:label ?id_short2 .
+   # ?id_short string:equalIgnoringCase ?id_short2 .
+    ?id_short log:equalTo ?id_short2 .
+} => { 
+	?a owl:sameAs ?b . 
+} .
+
+
+# sameAs entailment
+# copied from http://linked-data-fu.github.io/
+# credits: http://www.w3.org/TR/rdf11-mt/ and http://harth.org/andreas/foaf#ah
+# eq-sym 
+{ ?x owl:sameAs ?y . } => { ?y owl:sameAs ?x . } .
+# eq-trans 
+{ ?x owl:sameAs ?y . ?y owl:sameAs ?z . } => { ?x owl:sameAs ?z . } .
+# eq-rep-s 
+{ ?s owl:sameAs ?s0 . ?s ?p ?o . } => { ?s0 ?p ?o . } .
+# eq-rep-p 
+{ ?p owl:sameAs ?p0 . ?s ?p ?o . } => { ?s ?p0 ?o . } .
+# eq-rep-o 
+{ ?o owl:sameAs ?o0 . ?s ?p ?o . } => { ?s ?p ?o0 . } .

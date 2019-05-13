@@ -1,0 +1,967 @@
+@prefix tm: <http://ex.com/triplesMap/>.
+@prefix ls: <http://ex.com/logicalSource/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+	
+	
+_:AssetShellMap1 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='assetAdministrationShell'][identification/@idType = 'URI']"
+	] ;
+	
+	# URI mapping of the asset
+	rr:subjectMap 	[
+						rml:reference "identification" ;
+						rr:class rami:AdminShell
+					] ;
+
+							
+	# the name of the Asset is encoded by the idShort
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:label ] ;
+								rr:objectMap 	[	
+													rml:reference "idShort" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												] 
+							] ;
+							
+	# a description can be supplied
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:comment ] ;
+								rr:objectMap 	[	
+													rml:reference "description/langString" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+							
+	# an asset shell can have an asset
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 
+													rr:constant rami:hasAsset ;
+													rr:termType rr:URI 
+												] ;
+								rr:objectMap 	[ rml:reference "assetRef/keys/key" ]
+							] ;
+							
+	# submodels for the asset
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:hasSubmodel ] ;
+								rr:objectMap 	[ 	
+													rml:reference "submodelRefs/submodelRef/keys/key" ;
+													rr:termType rr:URI 
+												]
+							] ;
+
+	.
+	
+	
+_:AssetShellMap1 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='assetAdministrationShell']"
+	] ;
+	
+	# URI mapping of the asset
+	rr:subjectMap 	[
+						rr:template "http://example.org/{identification[@idType!='URI']}" ;
+						rr:class rami:AssetShell
+					] ;
+
+							
+	# the name of the Asset is encoded by the idShort
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:label ] ;
+								rr:objectMap 	[	
+													rml:reference "idShort" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												] 
+							] ;
+							
+	# a description can be supplied
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:comment ] ;
+								rr:objectMap 	[	
+													rml:reference "description/langString" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+							
+	# the ID
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:id ] ;
+								rr:objectMap 	[	
+													rml:reference "identification" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+							
+	# an asset shell can have an asset
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 
+													rr:constant rami:hasAsset ;
+													rr:termType rr:URI 
+												] ;
+								rr:objectMap 	[ rml:reference "assetRef/keys/key" ]
+							] ;
+							
+	# submodels for the asset
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:hasSubmodel ] ;
+								rr:objectMap 	[ 	
+													rml:reference "submodelRefs/submodelRef/keys/key" ;
+													rr:termType rr:URI 
+												]
+							] ;
+							
+	# derived from another AAS
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:derivedFrom ] ;
+								rr:objectMap 	[ 	
+													rml:reference "derivedFrom/keys/key" ;
+													rr:termType rr:URI 
+												]
+							] ;
+							
+	# derived from another AAS
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:derivedFrom ] ;
+								rr:objectMap 	[ 	
+													rml:reference "derivedFrom/keys/key" ;
+													#rr:termType rr:URI 
+												]
+							] ;
+
+	.
+	
+	
+	
+	
+
+
+_:AssetMap a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='asset']"
+	] ;
+	
+	# URI mapping of the asset
+	rr:subjectMap 	[ 
+						rml:reference "identification" ;
+						rr:class rami:Asset
+					] ;
+
+							
+	# the name of the Asset is encoded by the idShort
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:label ] ;
+								rr:objectMap 	[	
+													rml:reference "idShort" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												] 
+							] ;
+							
+	# a description can be supplied
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:comment ] ;
+								rr:objectMap 	[	
+													rml:reference "description/langString" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+							
+	# an asset can be of kind instance or type
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:hasKind ] ;
+								rr:objectMap 	[ rr:template "https://w3id.org/i40/rami#{kind}" ]
+							] ;
+							
+	# submodels for the asset
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:hasSubmodel ] ;
+								rr:objectMap 	[ 
+													rml:reference "assetIdentificationModelRef/keys/key" ;
+													rr:termType rr:URI 
+												]
+							] 
+	.
+
+
+
+# SubmodelMap
+_:SubModelMap a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='submodel']"
+	] ;
+	
+	# URI mapping of the SubModel
+	rr:subjectMap 	[
+						rml:reference "identification" ;
+						rr:class rami:Submodel
+					] ;
+
+							
+	# the name of the SubModel is encoded by the idShort
+	rr:predicateObjectMap 	[	
+								rr:predicate rdfs:label ;
+								rr:objectMap 	[	
+													rml:reference "idShort" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												] 
+							] ;
+							
+	# a description can be supplied
+	rr:predicateObjectMap 	[	
+								rr:predicate rdfs:comment ;
+								rr:objectMap 	[	
+													rml:reference "description/langString" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+							
+	# an asset can be of kind instance or type
+	rr:predicateObjectMap 	[	
+								rr:predicate  rami:hasKind  ;
+								rr:objectMap 	[ rr:template "https://w3id.org/i40/rami#{kind}" ]
+							] ;
+							
+	# SubmodelElementCollection for the submodel
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:submodelElementCollection ] ;
+								rr:objectMap 	[ 	
+													rml:reference "submodelElements/submodelElement/submodelElementCollection/semanticId/keys/key[@idType='URI']" ;
+													rr:termType rr:URI 
+												]
+							] ;
+							
+	# SubmodelElementCollection for the submodel
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:submodelElementCollection ] ;
+								rr:objectMap 	[ 	
+													rr:template "http://example.org/{submodelElements/submodelElement/submodelElementCollection[semanticId/keys/key/@idType != 'URI']/idShort}" ;
+													rr:termType rr:URI 
+												]
+							] ;
+
+	.
+
+
+
+
+# SubmodelElementCollectionMap
+_:SubmodelElementCollectionMap1 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='submodelElementCollection']"
+	] ;
+	
+	# URI mapping of the SubModel
+	rr:subjectMap 	[
+						rml:reference "semanticId/keys/key[@idType='URI']" ;
+						rr:class rami:SubmodelElementCollection
+					] ;
+
+							
+	# the name of the SubModel is encoded by the idShort
+	rr:predicateObjectMap 	[	
+								rr:predicate rdfs:label ;
+								rr:objectMap 	[	
+													rml:reference "idShort" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												] 
+							] ;
+							
+	# a description can be supplied
+	rr:predicateObjectMap 	[	
+								rr:predicate rdfs:comment ;
+								rr:objectMap 	[	
+													rml:reference "description/langString" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+	.
+
+# SubmodelElementCollectionMap
+_:SubmodelElementCollectionMap2 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='submodelElementCollection'][semanticId/keys/key/@idType != 'URI']"
+	] ;
+	
+	# URI mapping of the SubModel
+	rr:subjectMap 	[
+						rr:template "http://example.org/{idShort}" ;
+						rr:class rami:SubmodelElementCollection
+					] ;
+
+							
+	# the name of the SubModel is encoded by the idShort
+	rr:predicateObjectMap 	[	
+								rr:predicate rdfs:label ;
+								rr:objectMap 	[	
+													rml:reference "idShort" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												] 
+							] ;
+							
+	# a description can be supplied
+	rr:predicateObjectMap 	[	
+								rr:predicate rdfs:comment ;
+								rr:objectMap 	[	
+													rml:reference "description/langString" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+							
+	# a description can be supplied
+	rr:predicateObjectMap 	[	
+								rr:predicate rami:id ;
+								rr:objectMap 	[	
+													rml:reference "semanticId/keys/key" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+	.
+	
+	
+
+# PropertyMap for predicates at property position
+_:PropertyMap1 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='property']"
+	] ;	
+	
+	# URI mapping of the SubModel or SubModelElementColletction, not the property itself
+	rr:subjectMap 	[
+						rml:reference "ancestor::submodel[not(submodelElements/submodelElement/submodelElementCollection)]/identification" ;
+						#rr:class rami:Submodel
+					] ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rml:reference "semanticId/keys/key[@idType='URI']" ;
+													rr:termType rr:URI 
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							] ;
+	
+	rr:predicateObjectMap 	[	
+							rr:predicateMap [ 							
+												rr:template "http://example.org/{semanticId/keys/key[@idType='IRDI']}" ;
+												rr:termType rr:URI 
+											] ;
+							rr:objectMap	[ 	
+												rml:reference "value" ;
+											] 
+												
+							] 
+	.
+	
+
+# PropertyMap for predicates at property position
+_:PropertyMap2 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='property']"
+	] ;	
+	
+	# URI mapping of the SubModel, not the property
+	rr:subjectMap 	[
+						rml:reference "ancestor::submodelElementCollection/semanticId/keys/key" ; 
+						#rr:class rami:SubmodelElementCollection
+					] ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rml:reference "semanticId/keys/key[@idType='URI']" ;
+													rr:termType rr:URI 
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							] ;
+	
+	rr:predicateObjectMap 	[	
+							rr:predicateMap [ 							
+												rr:template "http://example.org/{semanticId/keys/key[@idType='IRDI']}" ;
+											] ;
+							rr:objectMap	[ 	
+												rml:reference "value" ;
+											] 
+												
+							] 
+	.
+
+
+							
+							
+# PropertyMap for predicates at file position
+_:PropertyMap3 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='file']"
+	] ;	
+	
+	# URI mapping of the SubModel, not the property
+	rr:subjectMap 	[
+						rml:reference "../../../submodel/identification" ;
+						#rr:template "http://IEC61360.org/localFile#" ;
+						#rr:class rami:Submodel
+					] ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rml:reference "semanticId/keys/key[@idType='URI']" ; 
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							]  ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rr:template "http://example.org/{semanticId/keys/key[@idType='IRDI']}" ;
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							] 
+	.
+	
+							
+							
+# PropertyMap for predicates at file position
+_:PropertyMap4 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='file']"
+	] ;	
+	
+	# URI mapping of the SubModel, not the property
+	rr:subjectMap 	[
+						rml:reference "ancestor::submodelElementCollection/semanticId/keys/key[@idType='URI']" ;
+						#rr:class rami:SubmodelElementCollection
+					] ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rml:reference "semanticId/keys/key[@idType='URI']" ; 
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							]  ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rr:template "http://example.org/{semanticId/keys/key[@idType='IRDI']}" ;
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							] 
+	.	
+
+
+							
+# PropertyMap for predicates at blob position
+_:PropertyMap5 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='blob']"
+	] ;	
+	
+	# URI mapping of the SubModel, not the property
+	rr:subjectMap 	[
+						rml:reference "ancestor::submodel[not(submodelElements/submodelElement/submodelElementCollection)]/identification" ;
+						#rr:template "http://IEC61360.org/localFile#" ;
+						#rr:class rami:Submodel
+					] ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rml:reference "semanticId/keys/key[@idType='URI']" ; 
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							]  ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rr:template "http://example.org/{semanticId/keys/key[@idType='IRDI']}" ;
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							] 
+	.
+								
+							
+# PropertyMap for predicates at file position
+_:PropertyMap6 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='blob']"
+	] ;	
+	
+	# URI mapping of the SubModel, not the property
+	rr:subjectMap 	[
+						rml:reference "ancestor::submodelElementCollection/semanticId/keys/key[@idType='URI']" ;
+						#rr:class rami:SubmodelElementCollection
+					] ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rml:reference "semanticId/keys/key[@idType='URI']" ; 
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							]  ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rr:template "http://example.org/{semanticId/keys/key[@idType='IRDI']}" ;
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							] 
+	.
+
+	
+# PropertyMap for predicates at property position
+_:PropertyMap7 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='property']"
+	] ;	
+	
+	# URI mapping of the SubmodelElementCollection, not the property directly
+	rr:subjectMap 	[
+						rr:template "http://example.org/{ancestor::submodelElementCollection/semanticId/keys/key[@idType='IRDI']}" ;
+						#rr:class rami:SubmodelElementCollection
+					] ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rml:reference "semanticId/keys/key[@idType='URI']" ;
+													rr:termType rr:URI 
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							] ;
+	
+	rr:predicateObjectMap 	[	
+							rr:predicateMap [ 							
+												rr:template "http://example.org/{semanticId/keys/key[@idType='IRDI']}" ;
+											] ;
+							rr:objectMap	[ 	
+												rml:reference "value" ;
+											] 
+												
+							] 
+	.
+
+	
+# PropertyMap for files at property position
+_:PropertyMap8 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='file']"
+	] ;	
+	
+	# URI mapping of the SubmodelElementCollection, not the property directly
+	rr:subjectMap 	[
+						rr:template "http://example.org/{ancestor::submodelElementCollection/semanticId/keys/key[@idType='IRDI']}" ;
+						#rr:class rami:SubmodelElementCollection
+					] ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rml:reference "semanticId/keys/key[@idType='URI']" ;
+													rr:termType rr:URI 
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							] ;
+	
+	rr:predicateObjectMap 	[	
+							rr:predicateMap [ 							
+												rr:template "http://example.org/{semanticId/keys/key[@idType='IRDI']}" ;
+											] ;
+							rr:objectMap	[ 	
+												rml:reference "value" ;
+											] 
+												
+							] 
+	.
+
+	
+# PropertyMap for blobs at property position
+_:PropertyMap9 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='blob']"
+	] ;	
+	
+	# URI mapping of the SubmodelElementCollection, not the property directly
+	rr:subjectMap 	[
+						rr:template "http://example.org/{ancestor::submodelElementCollection/semanticId/keys/key[@idType='IRDI']}" ;
+						#rr:class rami:SubmodelElementCollection
+					] ;
+	# SubmodelElements with aas:property
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 	
+													rml:reference "semanticId/keys/key[@idType='URI']" ;
+													rr:termType rr:URI 
+												] ;
+								rr:objectMap	[ 	
+													rml:reference "value" ;
+												] 
+													
+							] ;
+	
+	rr:predicateObjectMap 	[	
+							rr:predicateMap [ 							
+												rr:template "http://example.org/{semanticId/keys/key[@idType='IRDI']}" ;
+											] ;
+							rr:objectMap	[ 	
+												rml:reference "value" ;
+											] 
+												
+							] 
+	.
+
+
+
+
+
+
+
+
+
+
+
+
+# PropertyMap for properties at subject position
+_:PropertyMapA a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='property']"
+	] ;	
+	
+	# URI mapping of the SubModel, not the property
+	rr:subjectMap 	[
+						rml:reference "semanticId/keys/key[@idType='URI']" ;
+						rr:class rami:Property
+					] ;
+					
+	# rdfs:label
+	rr:predicateObjectMap 	[	
+								rr:predicate rdfs:label ;
+								rr:objectMap	[ rml:reference "idShort" ] 						
+							] ;
+					
+	# rdfs:comment
+	rr:predicateObjectMap 	[	
+								rr:predicate rdfs:comment ;
+								rr:objectMap	[ rml:reference "description/langString" ] 						
+							] ;
+	.
+	
+		
+# PropertyMap for properties at subject position
+_:PropertyMapB a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='property']"
+	] ;	
+	rr:subjectMap 	[
+						rr:template "http://example.org/{semanticId/keys/key[@idType != 'URI']}" ;
+						rr:class rami:Property
+					] ;
+					
+	# rdfs:label
+	rr:predicateObjectMap 	[	
+								rr:predicate rdfs:label ;
+								rr:objectMap	[ rml:reference "idShort" ] 						
+							] ;
+					
+	# rdfs:comment
+	rr:predicateObjectMap 	[	
+								rr:predicate rdfs:comment ;
+								rr:objectMap	[ rml:reference "description/langString" ] 						
+							] ;
+					
+	# rami:id
+	rr:predicateObjectMap 	[	
+								rr:predicate rami:id ;
+								rr:objectMap	[ rml:reference "semanticId/keys/key" ] 						
+							] ;
+	.
+							
+
+
+
+
+
+
+
+
+
+	
+
+# ConceptDescription
+_:ConceptDescriptionMap1 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='conceptDescription']"
+	] ;
+	
+	# URI mapping of the conceptDescription
+	rr:subjectMap 	[
+						rml:reference "identification" ;
+						rr:class rami:ConceptDescription
+					] ;
+
+							
+	# the name of the Asset is encoded by the idShort
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:label ] ;
+								rr:objectMap 	[	
+													rml:reference "idShort" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												] 
+							] ;
+							
+	# a description can be supplied
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:comment ] ;
+								rr:objectMap 	[	
+													rml:reference "description/langString" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+							
+	# a ConceptDescription can have a DataSpecification
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 
+													rr:constant rami:hasDataSpecification ;
+													rr:termType rr:URI 
+												] ;
+								rr:objectMap 	[ rml:reference "embeddedDataSpecification/hasDataSpecification/keys/key[@idType='URI']" ;
+													rr:termType rr:URI	
+												]
+							] ;
+							
+	# IEC61360 DataSpecification, reference only
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:hasDataSpecificationIEC61360 ] ;
+								rr:objectMap 	[ 	
+													rr:template "http://IEC61360.org/localFile#{embeddedDataSpecification/dataSpecificationContent/dataSpecificationIEC61360/shortName}" ;
+													#rr:termType rr:BlankNode 
+												]
+							] ;
+
+	.
+	
+
+# ConceptDescription
+_:ConceptDescriptionMap2 a rr:TriplesMap ;
+
+	# XML source file with xPath iterator
+	rml:logicalSource [
+		rml:source "<path/to/aasx>" ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "//*[local-name()='conceptDescription']"
+	] ;
+	
+	# URI mapping of the conceptDescription
+	rr:subjectMap 	[
+						rr:template "http://example.org/{identification[@idType='IRDI']}" ;
+						rr:class rami:ConceptDescription
+					] ;
+
+							
+	# the name of the Asset is encoded by the idShort
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:label ] ;
+								rr:objectMap 	[	
+													rml:reference "idShort" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												] 
+							] ;
+							
+	# the name of the Asset is encoded by the 
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:label ] ;
+								rr:objectMap 	[	
+													rml:reference "dataSpecificationContent/dataSpecificationIEC61360/preferredName/langString" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												] 
+							] ;
+							
+	# the name of the Asset is encoded by the 
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:label ] ;
+								rr:objectMap 	[	
+													rml:reference "dataSpecificationContent/dataSpecificationIEC61360/shortName" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												] 
+							] ;
+							
+	# a description can be supplied
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:comment ] ;
+								rr:objectMap 	[	
+													rml:reference "description/langString" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+							
+	# a description can be supplied
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rdfs:comment ] ;
+								rr:objectMap 	[	
+													rml:reference "dataSpecificationContent/dataSpecificationIEC61360/definition/langString" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+							
+	# a
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:id ] ;
+								rr:objectMap 	[	
+													rml:reference "identification" ;
+													rr:termType rr:Literal ;
+													rr:datatype xsd:string 
+												]
+							] ;
+							
+	# a ConceptDescription can have a DataSpecification
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ 
+													rr:constant rami:hasDataSpecification ;
+													rr:termType rr:URI 
+												] ;
+								rr:objectMap 	[ rml:reference "embeddedDataSpecification/hasDataSpecification/keys/key[@idType='URI']" ;
+													rr:termType rr:URI	
+												]
+							] ;
+							
+	# IEC61360 DataSpecification, reference only
+	rr:predicateObjectMap 	[	
+								rr:predicateMap [ rr:constant rami:hasDataSpecificationIEC61360 ] ;
+								rr:objectMap 	[ 	
+													rr:template "http://IEC61360.org/localFile#{embeddedDataSpecification/dataSpecificationContent/dataSpecificationIEC61360/shortName}" ;
+													#rr:termType rr:BlankNode 
+												]
+							] ;
+
+	.
+	

@@ -1,0 +1,34 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+
+<#PolicyInformationPointsShape>
+    a sh:NodeShape ;
+    sh:targetClass rami:PolicyInformationPoints ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ; # redundsnt
+    ] ;
+
+    sh:property [
+        sh:path rami:externalInformationPoint ;
+        sh:class rami:Endpoint ;
+        sh:minCount 0 ;
+        sh:severity sh:Violation ;
+        sh:message "External Information points have to instance of rami:Endpoint."@en ;
+    ] ;
+
+    sh:property [
+        sh:path rami:internalInformationPoint ;
+        sh:class rami:Submodel ;
+        sh:constraint [
+            sh:nodeKind rami:Reference ;
+        ] ;
+        sh:minCount 0 ;
+        sh:severity sh:Violation ;
+        sh:message "rami:internalInformationPoint needs to be instance of rami:Submodel."@en ;
+    ] ;

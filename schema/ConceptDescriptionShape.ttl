@@ -22,21 +22,54 @@
       sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
 	  #sh:message ""@en ;
     ] ;
-	sh:constraint [
-		sh:nodeKind rami:IRDI ;
-		sh:message "Each asset object must be an IRDI."@en ;
-	] ;
+    sh:constraint [
+      sh:nodeKind rami:IRDI ;
+      sh:message "Each asset object must be an IRDI."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:isCaseOf ;
+      sh:class rami:Reference ;
+      sh:minCount 0 ;
+      sh:severity sh:Violation ;
+      sh:message "rami:isCaseOf is a global refernce to an external definition that this concept is compatible to or was derived from."@en ;
+    ] ;
+
     sh:property [
       sh:path rami:idShort ;
-	  sh:valueDatatype xsd:string ;
+	    sh:valueDatatype xsd:string ;
       sh:minCount 0 ; # optional?
       sh:severity sh:Violation ;
-      sh:message "Each concept description must have at least one short ID with datatype xsd:string."@en ;
+      sh:message "Each concept description must have at least one short ID with datatype xsd:string."@en ; # message covers not the specification: sh:minCount 0
     ] ;
+
     sh:property [
-      sh:path rami:semanticId ;
-	  sh:nodeKind sh:IRI ;
-      sh:minCount 0 ; # optional?
+      sh:path rami:preferredName ;
+      sh:valueDatatype xsd:langString ;
+      sh:minCount 0 ;
+      rdfs:comment "This is the preferred Name of the concept in any language."@en ;
       sh:severity sh:Violation ;
-      sh:message "Each submodel must have at least one semanticId attribute."@en ;
-    ] .
+      sh:message "The rami:preferredName should be of type xsd:string."@en ;
+    ] ; ### not specified in table, but listed in more than three UMLs (for example: "AAS in detail", p. 65 Figure 33)
+
+    sh:property [
+      sh:path rami:definition ;
+      sh:valueDatatype xsd:langString ;
+      sh:minCount 0 ;
+      sh:severity sh:Violation ;
+      sh:message "Definitions of conceptDescriptions should be langStrings."@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:shortName ;
+      sh:valueDatatyp xsd:string ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+      sh:message "The shortName is part of the conceptDescription."@en ;
+    ] ;
+
+    ########################################
+    # the semanticID is part of RDF itself #
+    ########################################
+    .

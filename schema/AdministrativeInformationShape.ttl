@@ -31,9 +31,25 @@
       sh:message "Each submodel element must have at max one version attribute with datatype xsd:string."@en ;
     ] ;
     sh:property [
-      sh:path rami:semanticId ;
-	  sh:nodeKind sh:IRI ;
-      sh:minCount 1 ;
-      sh:severity sh:Violation ;
-      sh:message "Each submodel must have at least one semanticId attribute."@en ;
-    ] .
+      sh:path dcterms:hasRevision ;
+      sh:valueDatatype xsd:string ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      ###################
+      # sh:constraint [
+      #   ######## How to model, that version-property is required?
+      # ] ;
+      ###################
+      sh:message "Each submodel element must have at max one revision attribute with datatype xsd:string."@en ;
+    ] ;
+
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  # sh:someOf [ 
+		# sh:constraint [
+		# 	sh:nodeKind sh:IRI ;
+		# ] ;
+    ########################################
+    # the semanticID is part of RDF itself #
+    ########################################
+    .

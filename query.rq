@@ -1,9 +1,0 @@
-PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
-PREFIX : <https://w3id.org/i40/rami#>
-SELECT ?id ?recordedTime ?receivedTime ?lat{
-  ?machine a :Machine ;
-  :hasSensorId ?id ;
-  :recordedTime ?recordedTime ;
-  :receivedTime ?receivedTime ;
-  geo:lat ?lat .
-}
