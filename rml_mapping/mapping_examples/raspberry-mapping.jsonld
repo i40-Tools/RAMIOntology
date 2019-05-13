@@ -1,0 +1,1155 @@
+[ {
+  "@id" : "http://example.org/0173-1%2302-AAE670%23003",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "AdditionalLinkAddress"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#id" : [ {
+    "@value" : "0173-1#02-AAE670#003"
+  } ]
+}, {
+  "@id" : "http://example.org/0173-1%2302-AAO736%23004",
+  "@type" : [ "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "OrderNumber"
+  } ],
+  "https://w3id.org/i40/rami#id" : [ {
+    "@value" : "0173-1#02-AAO736#004"
+  } ]
+}, {
+  "@id" : "http://example.org/0173-1%2302-AAO742%23002",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Brand"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#BRAND"
+  } ],
+  "https://w3id.org/i40/rami#id" : [ {
+    "@value" : "0173-1#02-AAO742#002"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/devices/rspbry/755003377",
+  "@type" : [ "https://w3id.org/i40/rami#Asset" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "single board computer for education, microservices and all other imaginable purposes"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "RaspberryPiModel3B+"
+  } ],
+  "https://w3id.org/i40/rami#hasKind" : [ {
+    "@id" : "https://w3id.org/i40/rami#Instance"
+  } ],
+  "https://w3id.org/i40/rami#hasSubmodel" : [ {
+    "@id" : "http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberry_pi_3b_plus",
+  "@type" : [ "https://w3id.org/i40/rami#AdminShell" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "RaspberryPiModel3B+"
+  } ],
+  "https://w3id.org/i40/rami#hasAsset" : [ {
+    "@value" : "http://iais.fraunhofer.de/en/aas/devices/rspbry/755003377"
+  } ],
+  "https://w3id.org/i40/rami#hasSubmodel" : [ {
+    "@id" : "http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification"
+  }, {
+    "@id" : "http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/documentation"
+  }, {
+    "@id" : "http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/technical_data"
+  } ],
+  "https://w3id.org/i40/rami#id" : [ {
+    "@value" : "http://iais.fraunhofer.de/en/aas/examples/raspberry_pi_3b_plus"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "ArticleNumber"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#SUP_PROD_NUM"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Audioausgang"
+  }, {
+    "@value" : "audio-output"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "audio-output"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#AUDIO"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Max. clocking speed of the processor [GHz]"
+  }, {
+    "@value" : "Max. taktfrequenz des Prozessors [GHz]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "clockingSpeed"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#clockingSpeed"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/cpu",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Zentrale Prozessoreinheit"
+  }, {
+    "@value" : "central processing unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "cpu"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#CPU"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "kabelgebundene Netzwerkanbindung"
+  }, {
+    "@value" : "wired network-connectivity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "ethernet"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "GPIO"
+  }, {
+    "@value" : "gpio"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "GPIO"
+  }, {
+    "@value" : "gpio"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#GPIO-Pins"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "height"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "length"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Manufacturer"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#Manufacturer"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "BS"
+  }, {
+    "@value" : "OS"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "os"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#OS"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Power-In"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "power-in"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/processorarchitecture",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Prozessorarchitektur [BIT]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "architecture"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#architecture"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "ProductDescription"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "ProductFamily"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "ProductRoot"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "ProductType"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Arbeitsspeicher [GB]"
+  }, {
+    "@value" : "Random Access Memory [GB]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "ram"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#RAM"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "SerialNumber"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#SerialNumber"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Prozessorsockel"
+  }, {
+    "@value" : "processor socket"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "socket"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#socket"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Universeller serieller BUS :)"
+  }, {
+    "@value" : "universal serial BUS"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "usb"
+  }, {
+    "@value" : "usb-ports"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#USB"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "weight"
+  }, {
+    "@value" : "weigth"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "width"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi-connection",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "kabellose Verbindungsmöglichkeiten"
+  }, {
+    "@value" : "wireless connectivity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "wifi-connection"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/dt/Role/Author",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Wert aus der Aufzählung \"Role\" (einer Party)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Author"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#Author"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Description",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Description"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#Description"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Description/Keywords",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Keywords"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#Keywords"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Description/Summary",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Summary"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Description/Title",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Title"
+  }, {
+    "@value" : "title"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#Title"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DigitalFile/FileFormat",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "FileFormat"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#FileFormat"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DigitalFile/FileId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "FileId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#FileId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DigitalFile/FileName",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "FileName"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#FileName"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Document",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#SubmodelElementCollection" ],
+  "http://iais.fraunhofer.de/en/aas/page1/Description/Title" : [ {
+    "@value" : "Official magazine of the Raspberry Pi Organization (April 2018) (EN)"
+  }, {
+    "@value" : "Product sheet for the Raspberry Pi 3b+ (EN)"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId" : [ {
+    "@value" : "3 608 870 A47"
+  }, {
+    "@value" : "3 6wqi wq w7"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId" : [ {
+    "@value" : "03-02"
+  }, {
+    "@value" : "33-04"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName" : [ {
+    "@value" : "Product sheet (EN)"
+  }, {
+    "@value" : "Review and full Guide to get started (EN)"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem" : [ {
+    "@value" : "VDI2770:2018"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentVersionId" : [ {
+    "@value" : "EN | 2018-04-01"
+  }, {
+    "@value" : "EN | 2018-09-25"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Language" : [ {
+    "@value" : "en-EN"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/SetDate" : [ {
+    "@value" : "2018-04-01"
+  }, {
+    "@value" : "2018-09-25"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationName" : [ {
+    "@value" : "Raspberry Foundation"
+  }, {
+    "@value" : "Raspberry Maganzine"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationOfficialName" : [ {
+    "@value" : "Raspberry Pi Foundation"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/DigitalFile" : [ {
+    "@value" : "/aasx/documents/product_sheet.pdf"
+  }, {
+    "@value" : "/aasx/documents/review_and_guide.pdf"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Document"
+  }, {
+    "@value" : "ProductSheet"
+  }, {
+    "@value" : "Review and Guide"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#Document"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Document/DocumentClassification",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentClassification"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentClassification"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId/DomainId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentIdDomainId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DomainId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId/IdType",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentIdType"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#IdType"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Document/DocumentIdDomain",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentIdDomain"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentIdDomain"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Document/DocumentPartId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentPartId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentPartId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Document/DocumentType",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentType"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentType"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Document/ReferencedObject",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "ReferencedObject"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#ReferencedObject"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentClassId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentClassId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentClassName"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentClassName"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentClassificationSystem"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentClassificationSystem"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentIdDomain/DocumentDomainId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentDomainId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentDomainId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentIdDomain/Party",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentIdDomainParty"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#Party"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentPartId/Description",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentPartIdDescription"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#Description"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/Description",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentRelationshipDescription"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentRelationshipDescription"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentRelationshipDocumentId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentRelationshipDocumentId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentPartId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentRelationshipDocumentPartId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentRelationshipDocumentPartId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentVersionId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentRelationshipDocumentVersionId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentRelationshipDocumentVersionId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/Type",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentRelationshipType"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentRelationshipType"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentVersion",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#SubmodelElementCollection" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentVersion"
+  }, {
+    "@value" : "EN"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentVersion"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Description",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentVersionDescription"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentVersionDescription"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentRelationship",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentRelationship"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentRelationship"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentVersionId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentVersionId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#VersionId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Language",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Language"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#Language"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/LifeCycleStatus",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentVersionLifeCycleStatus"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentVersionLifeCycleStatus"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Party",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentVersionParty"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentVersionParty"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/StoredDocumentRepresentation",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "StoredDocumentRepresentation"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#StoredDocumentRepresentation"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentVersionId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentVersionId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentVersionId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DocumentVersionId/DomainId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DocumentVersionDomainId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DocumentVersionDomainId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/DomainId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DomainId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DomainId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/LanguageCode",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "LanguageCode"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#LanguageCode"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/BasedOnProcedure",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "BasedOnProcedure"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#BasedOnProcedure"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Comments",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "LifeCycleStatusComments"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#LifeCycleStatusComments"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Party",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "LifeCycleStatusParty"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#LifeCycleStatusParty"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Purpose",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "LifeCycleStatusPurpose"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#LifeCycleStatusPurpose"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/SetDate",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Date"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#SetDate"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/StatusValue",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Status"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#StatusValue"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationId",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "OrganizationId"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#OrganizationId"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationName",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "OrganizationName"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#OrganizationName"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationOfficialName",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription", "https://w3id.org/i40/rami#Property" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "OrganizationOfficialName"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#OrganizationOfficialName"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/Party",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Party"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#Party"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/DigitalFile",
+  "@type" : [ "https://w3id.org/i40/rami#ConceptDescription" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DigitalFile"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecification" : [ {
+    "@id" : "http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"
+  } ],
+  "https://w3id.org/i40/rami#hasDataSpecificationIEC61360" : [ {
+    "@id" : "http://IEC61360.org/localFile#DigitalFile"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification",
+  "@type" : [ "https://w3id.org/i40/rami#Submodel" ],
+  "http://example.org/0173-1#02-AAO736#004" : [ {
+    "@value" : "0608842005"
+  } ],
+  "http://example.org/0173-1#02-AAO742#002" : [ {
+    "@value" : "Raspberry Pi"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number" : [ {
+    "@value" : "RSBRYPIMDL3BP-1234567898765432123456789"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer" : [ {
+    "@value" : "Raspberry Pi Foundation"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description" : [ {
+    "@value" : "The most popular sigle-board-microcomputer and latest model from Raspberry (2019/04)."
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family" : [ {
+    "@value" : "micro-computer (single-board) (EN) Mikrocomputer/Einplatinencomputer (DE)"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root" : [ {
+    "@value" : "sinlge-board-micro-computer (EN)"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type" : [ {
+    "@value" : "computer (EN)  Computer (DE)"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number" : [ {
+    "@value" : "12345678987654321234567898765432123456789"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "AssetIdentification"
+  } ],
+  "https://w3id.org/i40/rami#hasKind" : [ {
+    "@id" : "https://w3id.org/i40/rami#Instance"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/documentation",
+  "@type" : [ "https://w3id.org/i40/rami#Submodel" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Documentation"
+  } ],
+  "https://w3id.org/i40/rami#hasKind" : [ {
+    "@id" : "https://w3id.org/i40/rami#Instance"
+  } ],
+  "https://w3id.org/i40/rami#submodelElementCollection" : [ {
+    "@id" : "http://iais.fraunhofer.de/en/aas/page1/Document"
+  } ]
+}, {
+  "@id" : "http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/technical_data",
+  "@type" : [ "https://w3id.org/i40/rami#Submodel" ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output" : [ {
+    "@value" : "built-in-speaker"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed" : [ {
+    "@value" : "1.4"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/cpu" : [ {
+    "@value" : "ARM Cortex-A53 CPU"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet" : [ {
+    "@value" : "Gigabit Ethernet over USB 2.0 (max 300 Mbps). Power-over-Ethernet support (with separate PoE HAT). Improved PXE network and USB mass-storage booting."
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio" : [ {
+    "@value" : "40"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth" : [ {
+    "@value" : "17"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length" : [ {
+    "@value" : "85"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os" : [ {
+    "@value" : "Raspberian OS (UNIX based)"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in" : [ {
+    "@value" : "5/2.5 DC"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/processorarchitecture" : [ {
+    "@value" : "64"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram" : [ {
+    "@value" : "2"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket" : [ {
+    "@value" : "Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb" : [ {
+    "@value" : "4*USB2"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight" : [ {
+    "@value" : "31"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width" : [ {
+    "@value" : "56"
+  } ],
+  "http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi-connection" : [ {
+    "@value" : "Dual-band 802.11ac wireless LAN (2.4GHz and 5GHz ) and Bluetooth 4.2"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Einplatinencomputer"
+  }, {
+    "@value" : "single board computer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "TechnicalData"
+  } ],
+  "https://w3id.org/i40/rami#hasKind" : [ {
+    "@id" : "https://w3id.org/i40/rami#Instance"
+  } ]
+} ]

@@ -1,0 +1,520 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ls: <http://ex.com/logicalSource/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tm: <http://ex.com/triplesMap/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/0173-1%2302-AAE670%23003> a rami:ConceptDescription ;
+  rdfs:label "AdditionalLinkAddress" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:id "0173-1%2302-AAE670%23003" .
+
+<http://example.org/0173-1%2302-AAO736%23004> a rami:Property ;
+  rdfs:label "OrderNumber" ;
+  rami:id "0173-1%2302-AAO736%23004" .
+
+<http://example.org/0173-1%2302-AAO742%23002> a rami:ConceptDescription, rami:Property ;
+  rdfs:label "Brand" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#BRAND> ;
+  rami:id "0173-1%2302-AAO742%23002" .
+
+<http://iais.fraunhofer.de/en/aas/devices/rspbry/755003377> a rami:Asset ;
+  rdfs:comment "single board computer for education, microservices and all other imaginable purposes" ;
+  rdfs:label "RaspberryPiModel3B+" ;
+  rami:hasKind rami:Instance ;
+  rami:hasSubmodel <http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberry_pi_3b_plus> a rami:AdminShell ;
+  rdfs:label "RaspberryPiModel3B+" ;
+  rami:kind rami:Instance ;
+  rami:asset <http://iais.fraunhofer.de/en/aas/devices/rspbry/755003377> ;
+  rami:hasSubmodel <http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification>,
+    <http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/documentation>, <http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/technical_data> ;
+  rami:id "http://iais.fraunhofer.de/en/aas/examples/raspberry_pi_3b_plus" .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:label "ArticleNumber" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#SUP_PROD_NUM> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:comment "Audioausgang", "audio-output" ;
+  rdfs:label "audio-output" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#AUDIO> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:comment "Max. clocking speed of the processor [GHz]", "Max. taktfrequenz des Prozessors [GHz]" ;
+  rdfs:label "clockingSpeed" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#clockingSpeed> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/cpu> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:comment "Zentrale Prozessoreinheit", "central processing unit" ;
+  rdfs:label "cpu" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#CPU> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:comment "kabelgebundene Netzwerkanbindung", "wired network-connectivity" ;
+  rdfs:label "ethernet" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:comment "GPIO", "gpio" ;
+  rdfs:label "GPIO", "gpio" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#GPIO-Pins> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth> a
+    rami:ConceptDescription, rami:Property ;
+  rdfs:label "height" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length> a
+    rami:ConceptDescription, rami:Property ;
+  rdfs:label "length" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:label "Manufacturer" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#Manufacturer> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:comment "BS", "OS" ;
+  rdfs:label "os" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#OS> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:comment "Power-In" ;
+  rdfs:label "power-in" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/processorarchitecture>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:comment "Prozessorarchitektur [BIT]" ;
+  rdfs:label "architecture" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#architecture> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:label "ProductDescription" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:label "ProductFamily" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:label "ProductRoot" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:label "ProductType" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:comment "Arbeitsspeicher [GB]", "Random Access Memory [GB]" ;
+  rdfs:label "ram" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#RAM> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:label "SerialNumber" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#SerialNumber> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket> a
+    rami:ConceptDescription, rami:Property ;
+  rdfs:comment "Prozessorsockel", "processor socket" ;
+  rdfs:label "socket" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#socket> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:comment "Universeller serieller BUS :)", "universal serial BUS" ;
+  rdfs:label "usb", "usb-ports" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#USB> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight> a
+    rami:ConceptDescription, rami:Property ;
+  rdfs:label "weight", "weigth" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width> a
+    rami:ConceptDescription, rami:Property ;
+  rdfs:label "width" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi-connection>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:comment "kabellose Verbindungsmoeglichkeiten", "wireless connectivity" ;
+  rdfs:label "wifi-connection" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/dt/Role/Author>
+  a rami:ConceptDescription ;
+  rdfs:comment "Wert aus der Aufzaehlung \"Role\" (einer Party)" ;
+  rdfs:label "Author" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#Author> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Description> a rami:ConceptDescription ;
+  rdfs:label "Description" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#Description> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Description/Keywords> a rami:ConceptDescription ;
+  rdfs:label "Keywords" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#Keywords> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Description/Summary> a rami:ConceptDescription ;
+  rdfs:label "Summary" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Description/Title> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:label "Title", "title" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#Title> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DigitalFile/FileFormat> a rami:ConceptDescription ;
+  rdfs:label "FileFormat" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#FileFormat> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DigitalFile/FileId> a rami:ConceptDescription ;
+  rdfs:label "FileId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#FileId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DigitalFile/FileName> a rami:ConceptDescription ;
+  rdfs:label "FileName" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#FileName> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Document> a rami:ConceptDescription, rami:SubmodelElementCollection ;
+  <http://iais.fraunhofer.de/en/aas/page1/Description/Title> "Official magazine of the Raspberry Pi Organization (April 2018) (EN)",
+    "Product sheet for the Raspberry Pi 3b+ (EN)" ;
+  <http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId> "3 608 870 A47", "3 6wqi wq w7" ;
+  <http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId> "03-02", "33-04" ;
+  <http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName> "Product sheet (EN)",
+    "Review and full Guide to get started (EN)" ;
+  <http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem>
+    "VDI2770:2018" ;
+  <http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentVersionId> "EN | 2018-04-01",
+    "EN | 2018-09-25" ;
+  <http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Language> "en-EN" ;
+  <http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/SetDate> "2018-04-01", "2018-09-25" ;
+  <http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationName> "Raspberry Foundation",
+    "Raspberry Maganzine" ;
+  <http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationOfficialName> "Raspberry Pi Foundation" ;
+  <http://iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/DigitalFile>
+    "/aasx/documents/product_sheet.pdf", "/aasx/documents/review_and_guide.pdf" ;
+  rdfs:label "Document", "ProductSheet", "Review and Guide" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#Document> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Document/DocumentClassification> a rami:ConceptDescription ;
+  rdfs:label "DocumentClassification" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentClassification> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:label "DocumentId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId/DomainId> a rami:ConceptDescription ;
+  rdfs:label "DocumentIdDomainId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DomainId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId/IdType> a rami:ConceptDescription ;
+  rdfs:label "DocumentIdType" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#IdType> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Document/DocumentIdDomain> a rami:ConceptDescription ;
+  rdfs:label "DocumentIdDomain" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentIdDomain> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Document/DocumentPartId> a rami:ConceptDescription ;
+  rdfs:label "DocumentPartId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentPartId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Document/DocumentType> a rami:ConceptDescription ;
+  rdfs:label "DocumentType" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentType> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Document/ReferencedObject> a rami:ConceptDescription ;
+  rdfs:label "ReferencedObject" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#ReferencedObject> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:label "DocumentClassId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentClassId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:label "DocumentClassName" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentClassName> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem>
+  a rami:ConceptDescription, rami:Property ;
+  rdfs:label "DocumentClassificationSystem" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentClassificationSystem> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentIdDomain/DocumentDomainId> a rami:ConceptDescription ;
+  rdfs:label "DocumentDomainId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentDomainId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentIdDomain/Party> a rami:ConceptDescription ;
+  rdfs:label "DocumentIdDomainParty" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#Party> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentPartId/Description> a rami:ConceptDescription ;
+  rdfs:label "DocumentPartIdDescription" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#Description> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/Description> a rami:ConceptDescription ;
+  rdfs:label "DocumentRelationshipDescription" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentRelationshipDescription> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentId> a rami:ConceptDescription ;
+  rdfs:label "DocumentRelationshipDocumentId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentRelationshipDocumentId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentPartId> a rami:ConceptDescription ;
+  rdfs:label "DocumentRelationshipDocumentPartId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentRelationshipDocumentPartId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentVersionId> a
+    rami:ConceptDescription ;
+  rdfs:label "DocumentRelationshipDocumentVersionId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentRelationshipDocumentVersionId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/Type> a rami:ConceptDescription ;
+  rdfs:label "DocumentRelationshipType" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentRelationshipType> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentVersion> a rami:ConceptDescription,
+    rami:SubmodelElementCollection ;
+  rdfs:label "DocumentVersion", "EN" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentVersion> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Description> a rami:ConceptDescription ;
+  rdfs:label "DocumentVersionDescription" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentVersionDescription> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentRelationship> a rami:ConceptDescription ;
+  rdfs:label "DocumentRelationship" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentRelationship> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentVersionId> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:label "DocumentVersionId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#VersionId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Language> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:label "Language" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#Language> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/LifeCycleStatus> a rami:ConceptDescription ;
+  rdfs:label "DocumentVersionLifeCycleStatus" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentVersionLifeCycleStatus> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Party> a rami:ConceptDescription ;
+  rdfs:label "DocumentVersionParty" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentVersionParty> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/StoredDocumentRepresentation>
+  a rami:ConceptDescription ;
+  rdfs:label "StoredDocumentRepresentation" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#StoredDocumentRepresentation> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentVersionId> a rami:ConceptDescription ;
+  rdfs:label "DocumentVersionId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentVersionId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DocumentVersionId/DomainId> a rami:ConceptDescription ;
+  rdfs:label "DocumentVersionDomainId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DocumentVersionDomainId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/DomainId> a rami:ConceptDescription ;
+  rdfs:label "DomainId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DomainId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/LanguageCode> a rami:ConceptDescription ;
+  rdfs:label "LanguageCode" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#LanguageCode> .
+
+<http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/BasedOnProcedure> a rami:ConceptDescription ;
+  rdfs:label "BasedOnProcedure" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#BasedOnProcedure> .
+
+<http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Comments> a rami:ConceptDescription ;
+  rdfs:label "LifeCycleStatusComments" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#LifeCycleStatusComments> .
+
+<http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Party> a rami:ConceptDescription ;
+  rdfs:label "LifeCycleStatusParty" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#LifeCycleStatusParty> .
+
+<http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Purpose> a rami:ConceptDescription ;
+  rdfs:label "LifeCycleStatusPurpose" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#LifeCycleStatusPurpose> .
+
+<http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/SetDate> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:label "Date" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#SetDate> .
+
+<http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/StatusValue> a rami:ConceptDescription ;
+  rdfs:label "Status" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#StatusValue> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationId> a rami:ConceptDescription ;
+  rdfs:label "OrganizationId" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#OrganizationId> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationName> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:label "OrganizationName" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#OrganizationName> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationOfficialName> a rami:ConceptDescription,
+    rami:Property ;
+  rdfs:label "OrganizationOfficialName" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#OrganizationOfficialName> .
+
+<http://iais.fraunhofer.de/en/aas/page1/Party> a rami:ConceptDescription ;
+  rdfs:label "Party" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#Party> .
+
+<http://iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/DigitalFile>
+  a rami:ConceptDescription ;
+  rdfs:label "DigitalFile" ;
+  rami:hasDataSpecification <http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360> ;
+  rami:hasDataSpecificationIEC61360 <http://IEC61360.org/localFile#DigitalFile> .
+
+<http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification> a rami:Submodel ;
+  <http://example.org/0173-1%2302-AAO736%23004> "0608842005" ;
+  <http://example.org/0173-1%2302-AAO742%23002> "Raspberry Pi" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number>
+    "RSBRYPIMDL3BP-1234567898765432123456789" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer>
+    "Raspberry Pi Foundation" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description>
+    "The most popular sigle-board-microcomputer and latest model from Raspberry (2019/04)." ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family>
+    "micro-computer (single-board) (EN) Mikrocomputer/Einplatinencomputer (DE)" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root>
+    "sinlge-board-micro-computer (EN)" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type>
+    "computer (EN)  Computer (DE)" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number>
+    "12345678987654321234567898765432123456789" ;
+  rdfs:label "AssetIdentification" ;
+  rami:hasKind rami:Instance .
+
+<http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/documentation> a rami:Submodel ;
+  rdfs:label "Documentation" ;
+  rami:hasKind rami:Instance ;
+  rami:submodelElementCollection <http://iais.fraunhofer.de/en/aas/page1/Document> .
+
+<http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/technical_data> a rami:Submodel ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output>
+    "built-in-speaker" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed>
+    "1.4" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/cpu> "ARM Cortex-A53 CPU" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet>
+    "Gigabit Ethernet over USB 2.0 (max 300 Mbps). Power-over-Ethernet support (with separate PoE HAT). Improved PXE network and USB mass-storage booting." ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio> "40" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth> "17" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length> "85" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os> "Raspberian OS (UNIX based)" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in>
+    "5/2.5 DC" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/processorarchitecture>
+    "64" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram> "2" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket> "Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb> "4*USB2" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight> "31" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width> "56" ;
+  <http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi-connection>
+    "Dual-band 802.11ac wireless LAN (2.4GHz and 5GHz ) and Bluetooth 4.2" ;
+  rdfs:comment "Einplatinencomputer", "single board computer" ;
+  rdfs:label "TechnicalData" ;
+  rami:hasKind rami:Instance .

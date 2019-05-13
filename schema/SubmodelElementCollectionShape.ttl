@@ -7,6 +7,7 @@
 @prefix rami: <https://w3id.org/i40/rami#> .
 
 
+<<<<<<< HEAD
 <#SubmodelElementCollection>
     a sh:SubmodelElementCollection  ;
     sh:path rami:SubmodelElementCollection ; 
@@ -18,15 +19,53 @@
         sh:minCount 0 ;
         sh:severaty sh:Violation ;
         sh:message "rami:value needs to be instance of rami:SubModelElement"@en^^xsd:string ;
+=======
+<#SubmodelElementCollectionShape>
+    # a sh:SubmodelElementCollection  ;
+    # sh:path rami:SubmodelElementCollection ; 
+    # sh:minCount 1 ;
+    a sh:NodeShape ;
+    sh:targetClass rami:SubmodelElementCollection ;
+    
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ; # redundant
+    ] ;
+
+    sh:property [
+        sh:path rami:value ;
+        sh:class rami:SubmodelElement ;
+        sh:minCount 0 ;
+        sh:severity sh:Violation ;
+        sh:message "rami:value needs to be instance of rami:SubModelElement"@en ;
+>>>>>>> details_of_the_AAS_1.1
     ] ;
 
     sh:property [
         sh:path rami:ordered ;
+<<<<<<< HEAD
         sh:class xsd:boolean ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severaty sh:Violation ;
         sh:message "the attribute ordered is optional and is of type boolean"@en^^xsd:string ;
+=======
+        sh:valueDatatype xsd:boolean ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "the attribute ordered is optional and is of type boolean"@en ;
+    ] ;
+
+    sh:property [
+      sh:path rami:allowDuplicates ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      #DEFAULT-VALUE ?
+      sh:valueDatatype xsd:boolean ;
+      sh:severity sh:Violation ;
+      #sh:message ""@en ;
+>>>>>>> details_of_the_AAS_1.1
     ] ;
 
     #########################################
@@ -43,16 +82,26 @@
     sh:property [
       sh:path rami:hasDataSpecification ;
       sh:minCount 0 ;
+<<<<<<< HEAD
 	  sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
       sh:severity sh:Violation ;
       sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
+=======
+	    sh:nodeKind sh:IRDI ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasDataSpecification must point to a proper IRDI."@en ;
+>>>>>>> details_of_the_AAS_1.1
     ] ;
 
     #inherits from Referable
     sh:property [
         sh:path rami:idShort ; 
+<<<<<<< HEAD
         sh:class xsd:string ; #TODO: check!
         #sh:valueDatatype xsd:string ;
+=======
+        sh:valueDatatype xsd:string ;
+>>>>>>> details_of_the_AAS_1.1
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
@@ -61,8 +110,12 @@
 
     sh:property [
         sh:path rami:category ;
+<<<<<<< HEAD
         sh:class xsd:string ;
         #sh:valueDatatype xsd:string ;
+=======
+        sh:valueDatatype xsd:string ;
+>>>>>>> details_of_the_AAS_1.1
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
@@ -71,8 +124,12 @@
 
     sh:property [
         sh:path rami:description ;
+<<<<<<< HEAD
         sh:class xsd:langString ;
         #sh:valueDatatype xsd:langString ;
+=======
+        sh:valueDatatype xsd:langString ;
+>>>>>>> details_of_the_AAS_1.1
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
@@ -81,7 +138,11 @@
 
     sh:property [
         sh:path rami:parent ;
+<<<<<<< HEAD
         sh:class rami:Referable ; #reference to an abstract class ?? (polymorphism?) #TODO: CHECK THIS
+=======
+        sh:class rami:Referable ;
+>>>>>>> details_of_the_AAS_1.1
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
@@ -96,10 +157,18 @@
 
     sh:property [
       sh:path rami:qualifier ;
+<<<<<<< HEAD
       sh:minCount 0 ;
 	  sh:constraint [
 		sh:nodeKind sh:URI ; # Contraints are not part of the ontology
 	  ] ;
+=======
+      sh:class rami:Constraint ; # problem: constraint is abstract
+      sh:minCount 0 ;
+      sh:constraint [
+        sh:nodeKind sh:URI ; # Contraints are not part of the ontology
+      ] ;
+>>>>>>> details_of_the_AAS_1.1
       sh:severity sh:Violation ;
       sh:message "rami:qualifier must be point to a proper URI."@en ;
     ] ;
@@ -119,6 +188,7 @@
       sh:path rami:hasKind ;
       sh:minCount 0 ;
       sh:maxCount 1 ;
+<<<<<<< HEAD
 	  sh:someOf [ 
 		sh:constraint [
 			sh:nodeKind sh:Type ;
@@ -130,3 +200,16 @@
       sh:severity sh:Violation ;
       sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
     ]  .
+=======
+      sh:someOf [ 
+        sh:constraint [
+          sh:nodeKind sh:Type ;
+        ] ;
+        sh:constraint [
+          sh:nodeKind rami:Instance ;
+        ] ;
+      ] ;
+      sh:severity sh:Violation ;
+      sh:message "rami:hasKind must be either a rami:Instance or a rami:Type."@en ;
+    ] .
+>>>>>>> details_of_the_AAS_1.1

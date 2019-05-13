@@ -8,10 +8,19 @@
 
 
 <#QualifierShape>
+<<<<<<< HEAD
     a sh:QualifierShape  ;
     sh:path rami:Qualifier ; 
     sh:datatype xsd:string ; 
     sh:minCount 1 ;
+=======
+    a sh:NodeShape ;
+    sh:targetClass rami:Qualifier ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ;
+    ] ;
+>>>>>>> details_of_the_AAS_1.1
 
     sh:property [
         sh:path rami:qualifierType ;
@@ -27,6 +36,7 @@
         sh:class rami:PropertyValueType ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
+<<<<<<< HEAD
         #################################
         ##if-based-constraints???########
         # 
@@ -38,6 +48,10 @@
         #        ] ;
         #    ) ;
         #) ; ]; # INVALID SYNTAX
+=======
+        sh:description "if value and valueID are both present, they must be identical."@en ;
+        # missing contstraint: AAS-d006
+>>>>>>> details_of_the_AAS_1.1
         sh:severity sh:Violation ;
         sh:message "value and valueID need to be identical if both are present"@en ;
     ] ;
@@ -51,8 +65,12 @@
         sh:message "qualifierValueId is optional and of type Reference (abstract)" ;
     ] .
 
+<<<<<<< HEAD
     # inherits from Constraint (not defined in the pdf     ?????????)
     # TODO: Implement!
+=======
+    #inherits from Constraint (not defined in the pdf     ?????????)
+>>>>>>> details_of_the_AAS_1.1
 
     #########################################################
     # inherits from HasSemantics                            #

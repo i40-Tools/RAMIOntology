@@ -7,12 +7,28 @@
 @prefix rami: <https://w3id.org/i40/rami#> .
 
 
+<<<<<<< HEAD
 <#ReferenceElementShaoe>
     a sh:PropertyShape  ;
     sh:path rami:property ; 
     sh:datatype xsd:string ; 
     sh:minCount 0 ;
     sh:maxCount 1 ;
+=======
+<#ReferenceElementShape>
+    # a sh:PropertyShape  ;
+    # sh:path rami:property ; 
+    # sh:datatype xsd:string ; 
+    # sh:minCount 0 ;
+    # sh:maxCount 1 ;
+    a sh:NodeShape ;
+    sh:targetClass rami:ReferenceElement ;
+    sh:property [
+      sh:path rdf:type ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+    ] ;
+>>>>>>> details_of_the_AAS_1.1
 
     sh:property [
         sh:path rami:value ;
@@ -25,6 +41,7 @@
 
     # ReferenceElement inherits from DataElement
 
+<<<<<<< HEAD
     #################################
     # inherits from DataElement:    #
     # inherits from SubmodelElement #
@@ -34,10 +51,22 @@
     sh:property [
       sh:path rami:idShort ;
 	    sh:valueDatatype xsd:string ;
+=======
+    ########################################################
+    # inherits from DataElement:                           #
+    # inherits from SubmodelElement                        #
+    # copied all lines below from PropertyShape.ttl        #
+    ########################################################
+
+    sh:property [
+      sh:path rami:idShort ;
+      sh:valueDatatype xsd:string ;
+>>>>>>> details_of_the_AAS_1.1
       sh:minCount 1 ;
       sh:severity sh:Violation ;
       sh:message "Each submodel element must have at least one short ID with datatype xsd:string."@en ;
     ] ;
+<<<<<<< HEAD
     sh:property [
       sh:path rami:semanticId ;
 	    sh:nodeKind sh:IRI ;
@@ -45,6 +74,16 @@
       sh:severity sh:Violation ;
       sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
     ] 
+=======
+    # sh:property [
+    #   sh:path rami:semanticId ;
+	  #   sh:nodeKind sh:IRI ;
+    #   sh:minCount 1 ;
+    #   sh:severity sh:Violation ;
+    #   sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
+    # ]
+    #### specified by RDF itself 
+>>>>>>> details_of_the_AAS_1.1
 	# SubmodelElement inherits from HasSemantics
 	# hasSemantics requirements are fulfilled by RDF itself 
 	
