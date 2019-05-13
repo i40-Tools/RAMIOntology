@@ -9,7 +9,7 @@ The ontology itself is contained in [rami.ttl](rami.ttl). You can find a visuali
 
 ## Mapping
 The [mapping](rml_mapping) folder contains a template of [RML](https://rml.io/) TripleMaps for Asset Administration Shell documents in XML. A mapping from JSON to RDF is not yet included. 
-In addition, an example mapping file for a Raspberry Pi demo AAS [AssetAdministrationShell_examples] in various serializations is supplied.
+In addition, an example mapping file for a Raspberry Pi demo AAS (see [examples](AssetAdministrationShell_examples)) in various serializations is supplied.
 
 
 ## Schema Validation
