@@ -33,7 +33,11 @@
                               skos:prefLabel "rami"@en ;
                               void:vocabulary xsd: ;
                               vann:preferredNamespacePrefix "rami" ;
-                              rdfs:isDefinedBy <https://w3id.org/i40/rami#> .
+                              rdfs:isDefinedBy <https://w3id.org/i40/rami#> ;
+                              dcterms:creator <https://www.linkedin.com/in/irl%C3%A1n-g-51766139/>;
+                              dcterms:contributor <https://www.linkedin.com/in/sebastianrbader/> ;
+.
+                              
 
 #################################################################
 #    Annotation properties
@@ -106,12 +110,12 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.wurvoc.org/vocabularies/om-1.8/hasNumericalValue
-om:hasNumericalValue rdf:type owl:AnnotationProperty ;
+om:hasNumericalValue rdf:type owl:DatatypeProperty ;
                      rdfs:domain om:Measure .
 
 
 ###  https://w3id.org/i40/rami#assetId
-rami:assetId rdf:type owl:AnnotationProperty ;
+rami:assetId rdf:type owl:DatatypeProperty ;
              rdfs:domain rami:Asset .
 
 
