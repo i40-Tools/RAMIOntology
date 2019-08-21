@@ -71,7 +71,7 @@ _:AssetShellMap1 a rr:TriplesMap ;
 	.
 	
 	
-_:AssetShellMap1 a rr:TriplesMap ;
+_:AssetShellMap2 a rr:TriplesMap ;
 
 	# XML source file with xPath iterator
 	rml:logicalSource [
