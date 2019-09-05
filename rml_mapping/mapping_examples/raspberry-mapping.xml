@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:ns0="https://w3id.org/i40/rami#"
+         xmlns:ns1="http://iais.fraunhofer.de/en/aas/page1/Description/"
+         xmlns:ns2="http://iais.fraunhofer.de/en/aas/page1/Document/"
+         xmlns:ns3="http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/"
+         xmlns:ns4="http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/"
+         xmlns:ns5="http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/"
+         xmlns:ns6="http://iais.fraunhofer.de/en/aas/page1/Organization/"
+         xmlns:ns7="http://iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/"
+         xmlns:ns8="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/"
+         xmlns:ns9="http://example.org/0173-1#02-AAO736#"
+         xmlns:ns10="http://example.org/0173-1#02-AAO742#">
+  <rdf:Description rdf:about="http://example.org/0173-1%2302-AAE670%23003">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#ConceptDescription"/>
+    <rdfs:label>AdditionalLinkAddress</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:id>0173-1#02-AAE670#003</ns0:id>
+  </rdf:Description>
+  <ns0:Property rdf:about="http://example.org/0173-1%2302-AAO736%23004">
+    <rdfs:label>OrderNumber</rdfs:label>
+    <ns0:id>0173-1#02-AAO736#004</ns0:id>
+  </ns0:Property>
+  <ns0:ConceptDescription rdf:about="http://example.org/0173-1%2302-AAO742%23002">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>Brand</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#BRAND"/>
+    <ns0:id>0173-1#02-AAO742#002</ns0:id>
+  </ns0:ConceptDescription>
+  <ns0:Asset rdf:about="http://iais.fraunhofer.de/en/aas/devices/rspbry/755003377">
+    <rdfs:comment>single board computer for education, microservices and all other imaginable purposes</rdfs:comment>
+    <rdfs:label>RaspberryPiModel3B+</rdfs:label>
+    <ns0:hasKind rdf:resource="https://w3id.org/i40/rami#Instance"/>
+    <ns0:hasSubmodel rdf:resource="http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification"/>
+  </ns0:Asset>
+  <ns0:AssetShell rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberry_pi_3b_plus">
+    <rdfs:label>RaspberryPiModel3B+</rdfs:label>
+    <ns0:hasAsset>http://iais.fraunhofer.de/en/aas/devices/rspbry/755003377</ns0:hasAsset>
+    <ns0:hasSubmodel rdf:resource="http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification"/>
+    <ns0:hasSubmodel>
+      <ns0:Submodel rdf:about="http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/documentation">
+        <rdfs:label>Documentation</rdfs:label>
+        <ns0:hasKind rdf:resource="https://w3id.org/i40/rami#Instance"/>
+        <ns0:submodelElementCollection>
+          <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Document">
+            <rdf:type rdf:resource="https://w3id.org/i40/rami#SubmodelElementCollection"/>
+            <ns1:Title>Official magazine of the Raspberry Pi Organization (April 2018) (EN)</ns1:Title>
+            <ns1:Title>Product sheet for the Raspberry Pi 3b+ (EN)</ns1:Title>
+            <ns2:DocumentId>3 608 870 A47</ns2:DocumentId>
+            <ns2:DocumentId>3 6wqi wq w7</ns2:DocumentId>
+            <ns3:ClassId>03-02</ns3:ClassId>
+            <ns3:ClassId>33-04</ns3:ClassId>
+            <ns3:ClassName>Product sheet (EN)</ns3:ClassName>
+            <ns3:ClassName>Review and full Guide to get started (EN)</ns3:ClassName>
+            <ns3:ClassificationSystem>VDI2770:2018</ns3:ClassificationSystem>
+            <ns4:DocumentVersionId>EN | 2018-04-01</ns4:DocumentVersionId>
+            <ns4:DocumentVersionId>EN | 2018-09-25</ns4:DocumentVersionId>
+            <ns4:Language>en-EN</ns4:Language>
+            <ns5:SetDate>2018-04-01</ns5:SetDate>
+            <ns5:SetDate>2018-09-25</ns5:SetDate>
+            <ns6:OrganizationName>Raspberry Foundation</ns6:OrganizationName>
+            <ns6:OrganizationName>Raspberry Maganzine</ns6:OrganizationName>
+            <ns6:OrganizationOfficialName>Raspberry Pi Foundation</ns6:OrganizationOfficialName>
+            <ns7:DigitalFile>/aasx/documents/product_sheet.pdf</ns7:DigitalFile>
+            <ns7:DigitalFile>/aasx/documents/review_and_guide.pdf</ns7:DigitalFile>
+            <rdfs:label>Document</rdfs:label>
+            <rdfs:label>ProductSheet</rdfs:label>
+            <rdfs:label>Review and Guide</rdfs:label>
+            <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+            <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#Document"/>
+          </ns0:ConceptDescription>
+        </ns0:submodelElementCollection>
+      </ns0:Submodel>
+    </ns0:hasSubmodel>
+    <ns0:hasSubmodel>
+      <ns0:Submodel rdf:about="http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/technical_data">
+        <ns8:audio-output>built-in-speaker</ns8:audio-output>
+        <ns8:clockingSpeed>1.4</ns8:clockingSpeed>
+        <ns8:cpu>ARM Cortex-A53 CPU</ns8:cpu>
+        <ns8:ethernet>Gigabit Ethernet over USB 2.0 (max 300 Mbps). Power-over-Ethernet support (with separate PoE HAT). Improved PXE network and USB mass-storage booting.</ns8:ethernet>
+        <ns8:gpio>40</ns8:gpio>
+        <ns8:heigth>17</ns8:heigth>
+        <ns8:length>85</ns8:length>
+        <ns8:os>Raspberian OS (UNIX based)</ns8:os>
+        <ns8:power-in>5/2.5 DC</ns8:power-in>
+        <ns8:processorarchitecture>64</ns8:processorarchitecture>
+        <ns8:ram>2</ns8:ram>
+        <ns8:socket>Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC</ns8:socket>
+        <ns8:usb>4*USB2</ns8:usb>
+        <ns8:weight>31</ns8:weight>
+        <ns8:width>56</ns8:width>
+        <ns8:wifi-connection>Dual-band 802.11ac wireless LAN (2.4GHz and 5GHz ) and Bluetooth 4.2</ns8:wifi-connection>
+        <rdfs:comment>Einplatinencomputer</rdfs:comment>
+        <rdfs:comment>single board computer</rdfs:comment>
+        <rdfs:label>TechnicalData</rdfs:label>
+        <ns0:hasKind rdf:resource="https://w3id.org/i40/rami#Instance"/>
+      </ns0:Submodel>
+    </ns0:hasSubmodel>
+    <ns0:id>http://iais.fraunhofer.de/en/aas/examples/raspberry_pi_3b_plus</ns0:id>
+  </ns0:AssetShell>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/article-number">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>ArticleNumber</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#SUP_PROD_NUM"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/audio-output">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>Audioausgang</rdfs:comment>
+    <rdfs:comment>audio-output</rdfs:comment>
+    <rdfs:label>audio-output</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#AUDIO"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/clockingSpeed">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>Max. clocking speed of the processor [GHz]</rdfs:comment>
+    <rdfs:comment>Max. taktfrequenz des Prozessors [GHz]</rdfs:comment>
+    <rdfs:label>clockingSpeed</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#clockingSpeed"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/cpu">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>Zentrale Prozessoreinheit</rdfs:comment>
+    <rdfs:comment>central processing unit</rdfs:comment>
+    <rdfs:label>cpu</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#CPU"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ethernet">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>kabelgebundene Netzwerkanbindung</rdfs:comment>
+    <rdfs:comment>wired network-connectivity</rdfs:comment>
+    <rdfs:label>ethernet</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/gpio">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>GPIO</rdfs:comment>
+    <rdfs:comment>gpio</rdfs:comment>
+    <rdfs:label>GPIO</rdfs:label>
+    <rdfs:label>gpio</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#GPIO-Pins"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/heigth">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>height</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/length">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>length</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/manufacturer">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>Manufacturer</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#Manufacturer"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/os">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>BS</rdfs:comment>
+    <rdfs:comment>OS</rdfs:comment>
+    <rdfs:label>os</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#OS"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/power-in">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>Power-In</rdfs:comment>
+    <rdfs:label>power-in</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/processorarchitecture">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>Prozessorarchitektur [BIT]</rdfs:comment>
+    <rdfs:label>architecture</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#architecture"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-description">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>ProductDescription</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-family">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>ProductFamily</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-root">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>ProductRoot</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/product-type">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>ProductType</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/ram">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>Arbeitsspeicher [GB]</rdfs:comment>
+    <rdfs:comment>Random Access Memory [GB]</rdfs:comment>
+    <rdfs:label>ram</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#RAM"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/serial-number">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>SerialNumber</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#SerialNumber"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/socket">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>Prozessorsockel</rdfs:comment>
+    <rdfs:comment>processor socket</rdfs:comment>
+    <rdfs:label>socket</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#socket"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/usb">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>Universeller serieller BUS :)</rdfs:comment>
+    <rdfs:comment>universal serial BUS</rdfs:comment>
+    <rdfs:label>usb</rdfs:label>
+    <rdfs:label>usb-ports</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#USB"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/weight">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>weight</rdfs:label>
+    <rdfs:label>weigth</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/width">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>width</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/cd/wifi-connection">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:comment>kabellose Verbindungsmöglichkeiten</rdfs:comment>
+    <rdfs:comment>wireless connectivity</rdfs:comment>
+    <rdfs:label>wifi-connection</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/examples/raspberrypimodelthreebplus/page1/draft/apr19/dt/Role/Author">
+    <rdfs:comment>Wert aus der Aufzählung &quot;Role&quot; (einer Party)</rdfs:comment>
+    <rdfs:label>Author</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#Author"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Description">
+    <rdfs:label>Description</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#Description"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Description/Keywords">
+    <rdfs:label>Keywords</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#Keywords"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Description/Summary">
+    <rdfs:label>Summary</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Description/Title">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>Title</rdfs:label>
+    <rdfs:label>title</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#Title"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DigitalFile/FileFormat">
+    <rdfs:label>FileFormat</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#FileFormat"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DigitalFile/FileId">
+    <rdfs:label>FileId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#FileId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DigitalFile/FileName">
+    <rdfs:label>FileName</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#FileName"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Document/DocumentClassification">
+    <rdfs:label>DocumentClassification</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentClassification"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>DocumentId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId/DomainId">
+    <rdfs:label>DocumentIdDomainId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DomainId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Document/DocumentId/IdType">
+    <rdfs:label>DocumentIdType</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#IdType"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Document/DocumentIdDomain">
+    <rdfs:label>DocumentIdDomain</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentIdDomain"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Document/DocumentPartId">
+    <rdfs:label>DocumentPartId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentPartId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Document/DocumentType">
+    <rdfs:label>DocumentType</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentType"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Document/ReferencedObject">
+    <rdfs:label>ReferencedObject</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#ReferencedObject"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassId">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>DocumentClassId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentClassId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassName">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>DocumentClassName</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentClassName"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentClassification/ClassificationSystem">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>DocumentClassificationSystem</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentClassificationSystem"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentIdDomain/DocumentDomainId">
+    <rdfs:label>DocumentDomainId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentDomainId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentIdDomain/Party">
+    <rdfs:label>DocumentIdDomainParty</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#Party"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentPartId/Description">
+    <rdfs:label>DocumentPartIdDescription</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#Description"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/Description">
+    <rdfs:label>DocumentRelationshipDescription</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentRelationshipDescription"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentId">
+    <rdfs:label>DocumentRelationshipDocumentId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentRelationshipDocumentId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentPartId">
+    <rdfs:label>DocumentRelationshipDocumentPartId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentRelationshipDocumentPartId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/DocumentVersionId">
+    <rdfs:label>DocumentRelationshipDocumentVersionId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentRelationshipDocumentVersionId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentRelationship/Type">
+    <rdfs:label>DocumentRelationshipType</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentRelationshipType"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentVersion">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#SubmodelElementCollection"/>
+    <rdfs:label>DocumentVersion</rdfs:label>
+    <rdfs:label>EN</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentVersion"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Description">
+    <rdfs:label>DocumentVersionDescription</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentVersionDescription"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentRelationship">
+    <rdfs:label>DocumentRelationship</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentRelationship"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/DocumentVersionId">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>DocumentVersionId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#VersionId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Language">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>Language</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#Language"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/LifeCycleStatus">
+    <rdfs:label>DocumentVersionLifeCycleStatus</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentVersionLifeCycleStatus"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/Party">
+    <rdfs:label>DocumentVersionParty</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentVersionParty"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentVersion/StoredDocumentRepresentation">
+    <rdfs:label>StoredDocumentRepresentation</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#StoredDocumentRepresentation"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentVersionId">
+    <rdfs:label>DocumentVersionId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentVersionId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DocumentVersionId/DomainId">
+    <rdfs:label>DocumentVersionDomainId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DocumentVersionDomainId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/DomainId">
+    <rdfs:label>DomainId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DomainId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/LanguageCode">
+    <rdfs:label>LanguageCode</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#LanguageCode"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/BasedOnProcedure">
+    <rdfs:label>BasedOnProcedure</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#BasedOnProcedure"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Comments">
+    <rdfs:label>LifeCycleStatusComments</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#LifeCycleStatusComments"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Party">
+    <rdfs:label>LifeCycleStatusParty</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#LifeCycleStatusParty"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/Purpose">
+    <rdfs:label>LifeCycleStatusPurpose</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#LifeCycleStatusPurpose"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/SetDate">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>Date</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#SetDate"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/LifeCycleStatus/StatusValue">
+    <rdfs:label>Status</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#StatusValue"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationId">
+    <rdfs:label>OrganizationId</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#OrganizationId"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationName">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>OrganizationName</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#OrganizationName"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Organization/OrganizationOfficialName">
+    <rdf:type rdf:resource="https://w3id.org/i40/rami#Property"/>
+    <rdfs:label>OrganizationOfficialName</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#OrganizationOfficialName"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/Party">
+    <rdfs:label>Party</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#Party"/>
+  </ns0:ConceptDescription>
+  <ns0:ConceptDescription rdf:about="http://iais.fraunhofer.de/en/aas/page1/StoredDocumentRepresentation/DigitalFile">
+    <rdfs:label>DigitalFile</rdfs:label>
+    <ns0:hasDataSpecification rdf:resource="http://www.admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360"/>
+    <ns0:hasDataSpecificationIEC61360 rdf:resource="http://IEC61360.org/localFile#DigitalFile"/>
+  </ns0:ConceptDescription>
+  <ns0:Submodel rdf:about="http://iais.fraunhofer.de/en/aas/rspbry/instance/1/1/asset_identification">
+    <ns9:004>0608842005</ns9:004>
+    <ns10:002>Raspberry Pi</ns10:002>
+    <ns8:article-number>RSBRYPIMDL3BP-1234567898765432123456789</ns8:article-number>
+    <ns8:manufacturer>Raspberry Pi Foundation</ns8:manufacturer>
+    <ns8:product-description>The most popular sigle-board-microcomputer and latest model from Raspberry (2019/04).</ns8:product-description>
+    <ns8:product-family>micro-computer (single-board) (EN) Mikrocomputer/Einplatinencomputer (DE)</ns8:product-family>
+    <ns8:product-root>sinlge-board-micro-computer (EN)</ns8:product-root>
+    <ns8:product-type>computer (EN)  Computer (DE)</ns8:product-type>
+    <ns8:serial-number>12345678987654321234567898765432123456789</ns8:serial-number>
+    <rdfs:label>AssetIdentification</rdfs:label>
+    <ns0:hasKind rdf:resource="https://w3id.org/i40/rami#Instance"/>
+  </ns0:Submodel>
+</rdf:RDF>
