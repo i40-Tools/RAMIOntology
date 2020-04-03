@@ -1,41 +1,39 @@
-@prefix : <https://w3id.org/i40/rami#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix om: <http://www.wurvoc.org/vocabularies/om-1.8/> .
-@prefix DUL: <http://www.loa-cnr.it/ontologies/DUL.owl#> .
-@prefix dul: <http://www.loa-cnr.it/ontologies/DUL.owl#> .
-@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
-@prefix sto: <https://w3id.org/i40/sto#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix foaf: <http://xmlns.com/foaf/spec/> .
-@prefix obda: <https://w3id.org/obda/vocabulary#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rami: <https://w3id.org/i40/rami#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dul: <http://www.loa-cnr.it/ontologies/DUL.owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://w3id.org/i40/rami#> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix om: <http://www.wurvoc.org/vocabularies/om-1.8/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix sto: <https://w3id.org/i40/sto#> .
+@prefix aas: <https://www.admin-shell.io/aas/1/1/rdf#> .
+@base <https://www.admin-shell.io/aas/1/1/rdf> .
 
-<https://w3id.org/i40/rami#> rdf:type owl:Ontology ;
-                              rdfs:comment "Update implementing the specifiations coming from 'Details of the Asset Administration Shell - Part 1: The exchange of information between partners in the value chain of Industrie 4.0 (Version 1.0)'" ;
-                              vann:preferredNamespaceUri "https://w3id.org/i40/rami#" ;
-                              owl:versionInfo 0.4 ;
-                              skos:definition "An Ontology to represents the Reference Architecture Model for Industry 4.0 (RAMI), including the concept of the Administration Shell I4.0 Component."@en ;
-                              void:vocabulary rdfs: ,
-                                              skos: ,
-                                              dc: ;
-                              skos:prefLabel "rami"@en ;
-                              void:vocabulary xsd: ;
-                              vann:preferredNamespacePrefix "rami" ;
-                              rdfs:isDefinedBy <https://w3id.org/i40/rami#> ;
-                              dcterms:creator <https://www.linkedin.com/in/irl%C3%A1n-g-51766139/>;
-                              dcterms:contributor <https://www.linkedin.com/in/sebastianrbader/> ;
+aas: rdf:type owl:Ontology ;
+        rdfs:comment "Update implementing the specifiations coming from 'Details of the Asset Administration Shell - Part 1: The exchange of information between partners in the value chain of Industrie 4.0 (Version 1.0)'" ;
+        vann:preferredNamespaceUri "https://www.admin-shell.io/aas/1/1/rdf#" ;
+        owl:versionInfo 0.5 ;
+        skos:definition "An Ontology to represents the Reference Architecture Model for Industry 4.0 (RAMI), including the concept of the Administration Shell I4.0 Component."@en ;
+        void:vocabulary rdfs: ,
+                      skos: ,
+                      dce: ;
+        skos:prefLabel "aas"@en ;
+        void:vocabulary xsd: ;
+        vann:preferredNamespacePrefix "aas" ;
+        rdfs:isDefinedBy <https://www.admin-shell.io/aas/1/1/rdf#> ;
+        dcterms:creator <https://www.linkedin.com/in/irl%C3%A1n-g-51766139/> ;
+        dcterms:creator <https://www.linkedin.com/in/sebastianrbader/> ;
 .
                               
 
@@ -44,31 +42,31 @@
 #################################################################
 
 ###  http://purl.org/dc/elements/1.1/date
-dc:date rdf:type owl:AnnotationProperty .
+dce:date rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/description
-dc:description rdf:type owl:AnnotationProperty .
+dce:description rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/format
-dc:format rdf:type owl:AnnotationProperty .
+dce:format rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/identifier
-dc:identifier rdf:type owl:AnnotationProperty .
+dce:identifier rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/language
-dc:language rdf:type owl:AnnotationProperty .
+dce:language rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/relation
-dc:relation rdf:type owl:AnnotationProperty .
+dce:relation rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/source
-dc:source rdf:type owl:AnnotationProperty .
+dce:source rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/description
@@ -77,7 +75,7 @@ dcterms:description rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/identifier
 dcterms:identifier rdf:type owl:AnnotationProperty ;
-                   rdfs:subPropertyOf dc:identifier ;
+                   rdfs:subPropertyOf dce:identifier ;
                    rdfs:range rdfs:Literal .
 
 
@@ -622,7 +620,7 @@ rami:AccessControlPolicyPoints rdf:type owl:Class ;
 rami:AdminShell rdf:type owl:Class ;
                 rdfs:subClassOf rami:HasDataSpecification ,
                                 rami:Identifiable ;
-                dc:source "This definition comprises material from RAMI4.0."@en ;
+                dce:source "This definition comprises material from RAMI4.0."@en ;
                 rdfs:label "Admin Shell"@en ;
                 skos:altLabel "Administration Shell"@en ,
                               "Asset Administration Shell"@en ;
@@ -667,7 +665,7 @@ rami:Blob rdf:type owl:Class ;
 rami:ConceptDescription rdf:type owl:Class ;
                         rdfs:subClassOf rami:HasDataSpecification ,
                                         rami:Identifiable ;
-                        dc:description "\"The AAS itself can also define its own dictionary that contains semantic definitions of its submodel elements. These semantic definitions are called concept descriptions (ConceptDescription). It is optional whether an AAS defines its own concept dictionary (ConceptDictionary) or not.\""@en .
+                        dce:description "\"The AAS itself can also define its own dictionary that contains semantic definitions of its submodel elements. These semantic definitions are called concept descriptions (ConceptDescription). It is optional whether an AAS defines its own concept dictionary (ConceptDictionary) or not.\""@en .
 
 
 ###  https://w3id.org/i40/rami#ConceptDictionary
@@ -705,7 +703,7 @@ rami:File rdf:type owl:Class ;
 
 ###  https://w3id.org/i40/rami#Formula
 rami:Formula rdf:type owl:Class ;
-             dc:description "A formula is used to describe constraints by a logical expression."@en ;
+             dce:description "A formula is used to describe constraints by a logical expression."@en ;
              rdfs:label "Formula"@en .
 
 
@@ -752,7 +750,7 @@ rami:Operation rdf:type owl:Class ;
 ###  https://w3id.org/i40/rami#OperationVariable
 rami:OperationVariable rdf:type owl:Class ;
                        rdfs:subClassOf rami:SubmodelElement ;
-                       dc:description "An operation variable is a submodel element that is used as input or output variable of an operation."@en ;
+                       dce:description "An operation variable is a submodel element that is used as input or output variable of an operation."@en ;
                        rdfs:label "Operation Variable"^^xsd:string .
 
 
@@ -772,13 +770,13 @@ rami:Property rdf:type owl:Class ;
 
 ###  https://w3id.org/i40/rami#PropertyValueType
 rami:PropertyValueType rdf:type owl:Class ;
-                       dc:description """The qualifier value is the value of the qualifier.
+                       dce:description """The qualifier value is the value of the qualifier.
 Constraint AASd-006: if both, the value and the valueId are present then the value needs to be identical to the short name of the referenced coded value in qualifierValueId."""@en .
 
 
 ###  https://w3id.org/i40/rami#Qualifier
 rami:Qualifier rdf:type owl:Class ;
-               dc:description "A qualifier is a type-value pair that makes additional statements w.r.t. the value of the element."@en ;
+               dce:description "A qualifier is a type-value pair that makes additional statements w.r.t. the value of the element."@en ;
                rdfs:label "Qualifier"@en .
 
 
@@ -798,14 +796,14 @@ A reference is an ordered list of keys, each key referencing an element. The com
 
 ###  https://w3id.org/i40/rami#ReferenceElement
 rami:ReferenceElement rdf:type owl:Class ;
-                      dc:description "A reference element is a data element that defines a reference to another element within the same or another AAS or a reference to an external object or entity."@en ;
+                      dce:description "A reference element is a data element that defines a reference to another element within the same or another AAS or a reference to an external object or entity."@en ;
                       rdfs:label "Reference Element"^^xsd:string .
 
 
 ###  https://w3id.org/i40/rami#RelationshipElement
 rami:RelationshipElement rdf:type owl:Class ;
                          rdfs:subClassOf rami:SubmodelElement ;
-                         dc:description "A relationship element is used to define a relationship between two referable elements."@en ;
+                         dce:description "A relationship element is used to define a relationship between two referable elements."@en ;
                          rdfs:label "RelationshipElement"@en .
 
 
