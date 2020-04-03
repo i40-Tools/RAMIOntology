@@ -163,6 +163,15 @@ dul:isPartOf rdf:type owl:ObjectProperty ,
                                                                 rdfs:subPropertyOf owl:topObjectProperty .
 
 
+###  https://admin-shell.io/aas/1/1/rdf#annotation
+aas:annotation rdf:type owl:ObjectProperty ;
+                    rdfs:comment "Annotations that hold for the relationships between the two elements."@en ;
+                    rdfs:label "has annotation"@en ;
+                    rdfs:domain aas:AnnotatedRelationshipElement ;
+                    #rdfs:range aas:AdministrativeInformation ;
+.
+
+
 ###  https://admin-shell.io/aas/1/1/rdf#administration
 aas:administration rdf:type owl:ObjectProperty ;
                     rdfs:comment "Administrative information of an identifiable element."@en ;
@@ -176,7 +185,7 @@ aas:administration rdf:type owl:ObjectProperty ;
 ###  https://admin-shell.io/aas/1/1/rdf#asset
 aas:asset rdf:type owl:ObjectProperty ;
            rdfs:domain aas:AssetAdministrationShell;
-           rdfs:range aas:Asset ;
+           #rdfs:range aas:Asset ;
            rdfs:comment "The asset the AAS is representing."@en ;
            rdfs:label "asset"@en .
 
@@ -217,8 +226,11 @@ aas:conceptDictionary rdf:type owl:ObjectProperty ;
 
 ###  https://admin-shell.io/aas/1/1/rdf#containedElement
 aas:containedElement rdf:type owl:ObjectProperty ;
-                      rdfs:comment "Referable elements that are contained in the view."@en ;
-                      rdfs:label "containedElement"^^xsd:string .
+                    rdfs:comment "Referable elements that are contained in the view."@en ;
+                    rdfs:label "contains element"^^xsd:string ;
+                    rdfs:domain aas:View ;
+                    #rdfs:range aas:Referable ;
+.
 
 
 ###  https://admin-shell.io/aas/1/1/rdf#content
@@ -288,15 +300,6 @@ aas:describes rdf:type owl:ObjectProperty ;
                rdfs:label "describes"@en .
 
 
-###  https://admin-shell.io/aas/1/1/rdf#element # TODO View is not yet sufficiently specified
-aas:element a owl:ObjectProperty ;
-    rdfs:label "has element" ;
-    rdfs:comment ""@en ;
-    rdfs:domain aas:View ;
-    #rdfs:range aas:Referable ;
-.
-
-
 ###  https://admin-shell.io/aas/1/1/rdf#embeddedDataSpecification
 aas:embeddedDataSpecification a owl:ObjectProperty ;
     rdfs:label "has embedded data specification" ;
@@ -346,7 +349,8 @@ aas:inAccordanceWith rdf:type owl:ObjectProperty ;
 ###  https://admin-shell.io/aas/1/1/rdf#isCaseOf
 aas:isCaseOf rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf dcterms:identifier ;
-            rdfs:comment ""@en ;
+            rdfs:comment "Global reference to an external definition the concept is compatible to or was derived from."@en ;
+            skos:note "Compare to is-case-of relationship in ISO 13584-32 & IEC EN 61360."@en ;
             rdfs:label "is case of"^^xsd:string ;
             rdfs:domain aas:ConceptDescription ;
             #rdfs:range aas:Reference ;
@@ -691,9 +695,115 @@ aas:version rdf:type owl:DatatypeProperty ;
              rdfs:label "version"@en .
 
 
+###  https://admin-shell.io/aas/1/1/rdf#preferedName
+aas:preferedName rdf:type owl:DatatypeProperty ;
+            rdfs:label "has prefered name" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+            rdfs:range xsd:langString ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#
+aas: rdf:type owl:DatatypeProperty ;
+            rdfs:label "" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+            rdfs:range xsd:langString ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#shortName
+aas:shortName rdf:type owl:DatatypeProperty ;
+            rdfs:label "has short name" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+            rdfs:range xsd:langString ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#unit
+aas:unit rdf:type owl:DatatypeProperty ;
+            rdfs:label "has unit" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+            rdfs:range xsd:string ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#unitId
+aas:unitId rdf:type owl:ObjectProperty ;
+            rdfs:label "has unit id" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+            rdfs:range aas:Reference ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#sourceOfDefinition
+aas:sourceOfDefinition rdf:type owl:DatatypeProperty ;
+            rdfs:label "has source of definition" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+            rdfs:range xsd:string ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#symbol
+aas:symbol rdf:type owl:DatatypeProperty ;
+            rdfs:label "has symbol" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+            rdfs:range xsd:string ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#datatype
+aas:datatype rdf:type owl:ObjectProperty ;
+            rdfs:label "has datatype" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#definition
+aas:definition rdf:type owl:DatatypeProperty ;
+            rdfs:label "has definition" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+            rdfs:range xsd:langString ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#valueFormat
+aas:valueFormat rdf:type owl:DatatypeProperty ;
+            rdfs:label "has value format" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+            rdfs:range xsd:string ;
+.
+
+###  https://admin-shell.io/aas/1/1/rdf#valueId
+aas:valueId rdf:type owl:ObjectProperty ;
+            rdfs:label "has value id" ;
+            rdfs:comment ""@en ;
+            rdfs:domain aas:DataSpecificationIEC61360 ;
+.
+
+
+
 #################################################################
 #    Classes
 #################################################################
+
+
+###  https://admin-shell.io/aas/1/1/rdf#AnnotatedRelationshipElement
+aas:AnnotatedRelationshipElement rdf:type owl:Class ;
+        rdfs:subClassOf aas:RelationshipElement ;
+       rdfs:comment "An annotated relationship element is an relationship element that can be annotated with additional data elements."@en ;
+       rdfs:label "Relationship Element"^^xsd:string ;
+       .
+
 
 ###  https://admin-shell.io/aas/1/1/rdf#AccessControlPolicyPoints
 aas:AccessControlPolicyPoints rdf:type owl:Class ;
@@ -774,11 +884,36 @@ aas:Blob rdf:type owl:Class ;
           rdfs:label "Blob Data Element"@en .
 
 
+###  https://admin-shell.io/aas/1/1/rdf#Capability
+aas:Capability rdf:type owl:Class ;
+        rdfs:subClassOf aas:SubmodelElement ;
+        rdfs:comment "A capability is the implementation-independent description of the potential of an asset to achieve a certain effect in the physical or virtual world."@en ;
+        rdfs:label "Capability" ;
+        .
+
+
 ###  https://admin-shell.io/aas/1/1/rdf#ConceptDescription
 aas:ConceptDescription rdf:type owl:Class ;
                         rdfs:subClassOf aas:HasDataSpecification ,
                                         aas:Identifiable ;
-                        dc:description "\"The AAS itself can also define its own dictionary that contains semantic definitions of its submodel elements. These semantic definitions are called concept descriptions (ConceptDescription). It is optional whether an AAS defines its own concept dictionary (ConceptDictionary) or not.\""@en .
+                      owl:disjointWith aas:AdministrativeInformation ;
+                      owl:disjointWith aas:Asset ;
+                      owl:disjointWith aas:AssetAdministrationShell ;
+                      owl:disjointWith aas:Formula ;
+                      owl:disjointWith aas:Qualifier ;
+                      owl:disjointWith aas:Submodel ;
+                      owl:disjointWith aas:SubmodelElement ;
+                      owl:disjointWith aas:View ;
+                        rdfs:comment "\"The AAS itself can also define its own dictionary that contains semantic definitions of its submodel elements. These semantic definitions are called concept descriptions (ConceptDescription). It is optional whether an AAS defines its own concept dictionary (ConceptDictionary) or not.\""@en ;
+                        rdfs:comment "The semantics of a property or other elements that may have a semantic description is defined by a concept description. The description of the concept should follow a standardized schema (realized as data specification template)."@en ;
+.
+
+###  https://admin-shell.io/aas/1/1/rdf#ConceptDictionary
+aas:ConceptDictionary rdf:type owl:Class ;
+                        rdfs:subClassOf aas:Referable ;
+                        rdfs:label "Concept Dictionary" ;
+                        rdfs:comment "A dictionary contains elements that can be reused. The concept dictionary contains concept descriptions. Typically a concept description dictionary of an AAS contains only concept descriptions of elements used within submodels of the AAS."@en ;
+                        .
 
 
 ###  https://admin-shell.io/aas/1/1/rdf#Constraint 
@@ -834,9 +969,42 @@ aas:DataElement rdf:type owl:Class ;
 
 ###  https://admin-shell.io/aas/1/1/rdf#DataSpecification
 aas:DataSpecification rdf:type owl:Class ;
-                       rdfs:comment "Element that can have data specification templates. A template defines the additional attributes an element may or shall have."@en ;
-                       rdfs:label "DataSpecification"@en ;
-                       skos:note "abstract"@en .
+                rdfs:subClassOf aas:Identifiable ;
+                dash:abstract true ;
+                owl:disjointWith aas:AdministrativeInformation ;
+                owl:disjointWith aas:Asset ;
+                owl:disjointWith aas:AssetAdministrationShell ;
+                owl:disjointWith aas:ConceptDescription ;
+                owl:disjointWith aas:Submodel ;
+                owl:disjointWith aas:SubmodelElement ;
+                owl:disjointWith aas:View ;
+                rdfs:comment "Element that can have data specification templates. A template defines the additional attributes an element may or shall have."@en ;
+                rdfs:label "DataSpecification"@en ;
+                skos:note "abstract"@en .
+
+
+###  https://admin-shell.io/aas/1/1/rdf#DataSpecificationContent
+aas:DataSpecificationContent rdf:type owl:Class ;
+                owl:disjointWith aas:Constraint ;
+                owl:disjointWith aas:HasDataSpecification ;
+                owl:disjointWith aas:Identifier ;
+                owl:disjointWith aas:Key ;
+                owl:disjointWith aas:KeyElements ;
+                owl:disjointWith aas:Kind ;
+                owl:disjointWith aas:Qualifiable ;
+                owl:disjointWith aas:Reference ;
+                rdfs:label "Data Specification Content" ;
+                rdfs:comment ""@en ;
+                dash:abstract true ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#DataSpecificationIEC61360
+aas:DataSpecificationIEC61360 rdf:type owl:Class ;#
+                rdfs:subClassOf aas:DataSpecificationContent ;
+                rdfs:label "Data Specification IEC 61360" ;
+                rdfs:comment ""@en ;
+.
 
 
 ###  https://admin-shell.io/aas/1/1/rdf#Dimension
@@ -921,8 +1089,45 @@ aas:Key rdf:type owl:Class ;
 ###  https://admin-shell.io/aas/1/1/rdf#KeyElements
 aas:KeyElements rdf:type owl:Class ;
         rdfs:label "Key Elements" ;
-        rdfs:comment ""@en ;
-        .
+        rdfs:comment "Enumeration of different key value types within a key. Contains KeyElements, ReferableElements, and IdentifiableElements."@en ;
+        owl:oneOf (
+          aas:GLOBAL_REFERENCE_KEY_ELEMENT
+          aas:FRAGMENT_REFERENCE_REFERABLE_ELEMENT
+          aas:ANNOTATED_RELATIONSHIP_ELEMENT_REFERABLE_ELEMENT
+          aas:ACCESS_PERMISSION_RULE_REFERABLE_ELEMENT
+          aas:BLOB_REFERABLE_ELEMENT
+          aas:CAPABILITY_REFERABLE_ELEMENT
+          aas:CONCEPT_DICTIONARY_REFERABLE_ELEMENT
+          aas:DATA_ELEMENT_REFERABLE_ELEMENT
+          aas:FILE_REFERABLE_ELEMENT
+          #aas:EVENT_REFERABLE_ELEMENT # Note: Event is abstract
+          aas:MULTI_LANGUAGE_PROPERTY_REFERABLE_ELEMENT
+          aas:OPERATION_REFERABLE_ELEMENT
+          aas:PROPERTY_REFERABLE_ELEMENT
+          aas:REFERENCE_ELEMENT_REFERABLE_ELEMENT
+          aas:RELATIONSHIPT_ELEMENT_REFERABLE_ELEMENT
+          #aas:SUBMODEL_ELEMENT_REFERABLE_ELEMENT # Note: Submodel Element is abstract, i.e. if a key uses “SubmodelElement” the reference may be a Property, a SubmodelElementCollection, an Operation etc
+          aas:SUBMODEL_ELEMENT_COLLECTION_REFERABLE_ELEMENT
+          aas:VIEW_REFERABLE_ELEMENT
+          aas:ASSET_IDENTIFIABLE_ELEMENT
+          aas:ASSET_ADMINISTRATION_SHELL_IDENTIFIABLE_ELEMENT
+          aas:CONCEPT_DESCRIPTION_IDENTIFIABLE_ELEMENT
+          aas:SUBMODEL_IDENTIFIABLE_ELEMENT
+        ) ;
+.
+
+###  https://admin-shell.io/aas/1/1/rdf#KeyType
+aas:KeyType rdf:type owl:Class ;
+        rdfs:label "Key Elements" ;
+        rdfs:comment "Enumeration of different key value types within a key. Contains IdentifierType and LocalKeyType."@en ;
+        owl:oneOf (
+            aas:IRDI_IDENTIFIER_TYPE
+            aas:URI_IDENTIFIER_TYPE
+            aas:CUSTOM_IDENTIFIER_TYPE
+            aas:IDSHORT_LOCAL_KEY_TYPE
+            aas:FRAGMENT_ID_LOCAL_KEY_TYPE
+        ) ;
+.
 
 
 ###  https://admin-shell.io/aas/1/1/rdf#Kind
@@ -955,14 +1160,25 @@ aas:ObjectAttributes rdf:type owl:Class ;
 aas:Operation rdf:type owl:Class ;
                rdfs:subClassOf aas:SubmodelElement ;
                rdfs:comment "An operation is a submodel element with input and output variables."@en ;
-               rdfs:label "Operation"@en .
+               rdfs:label "Operation"@en ;
+              owl:disjointWith aas:DataElement ;
+              owl:disjointWith aas:Event ;
+              owl:disjointWith aas:OperationVariable ;
+              owl:disjointWith aas:RelationshipElement ;
+              owl:disjointWith aas:SubmodelElementCollection ;
+              .
 
 
 ###  https://admin-shell.io/aas/1/1/rdf#OperationVariable
 aas:OperationVariable rdf:type owl:Class ;
-                       rdfs:subClassOf aas:SubmodelElement ;
-                       dc:description "An operation variable is a submodel element that is used as input or output variable of an operation."@en ;
-                       rdfs:label "Operation Variable"^^xsd:string .
+           dc:description "An operation variable is a submodel element that is used as input or output variable of an operation."@en ;
+           rdfs:label "Operation Variable"^^xsd:string ;
+          owl:disjointWith aas:DataElement ;
+          owl:disjointWith aas:Event ;
+          owl:disjointWith aas:Operation ;
+          owl:disjointWith aas:RelationshipElement ;
+          owl:disjointWith aas:SubmodelElementCollection ;
+           .
 
 
 ###  https://admin-shell.io/aas/1/1/rdf#Order
@@ -1020,47 +1236,22 @@ aas:Referable rdf:type owl:Class ;
 
 ###  https://admin-shell.io/aas/1/1/rdf#Reference
 aas:Reference rdf:type owl:Class ;
-               rdfs:comment """Reference to either a model element of the same or another AAs or to an external entity.
-A reference is an ordered list of keys, each key referencing an element. The complete list of keys may for example be concatenated to a path that then gives unique access to an element or entity."""@en ;
+               rdfs:comment "Reference to either a model element of the same or another AAs or to an external entity. A reference is an ordered list of keys, each key referencing an element. The complete list of keys may for example be concatenated to a path that then gives unique access to an element or entity."@en ;
                rdfs:label "Reference"^^xsd:string ;
                .
 
-
-###  https://admin-shell.io/aas/1/1/rdf#ReferenceElement
-aas:ReferenceElement rdf:type owl:Class ;
-                    rdfs:subClassOf aas:DataElement ;
-                      dc:description "A reference element is a data element that defines a reference to another element within the same or another AAS or a reference to an external object or entity."@en ;
-                      rdfs:label "Reference Element"^^xsd:string ;
-  owl:oneOf (
-      aas:ANNOTATED_RELATIONSHIP_ELEMENT_REFERABLE_ELEMENT
-      aas:ACCESS_PERMISSION_RULE_REFERABLE_ELEMENT
-      aas:BLOB_REFERABLE_ELEMENT
-      aas:CAPABILITY_REFERABLE_ELEMENT
-      aas:CONCEPT_DICTIONARY_REFERABLE_ELEMENT
-      aas:DATA_ELEMENT_REFERABLE_ELEMENT
-      aas:FILE_REFERABLE_ELEMENT
-      #aas:EVENT_REFERABLE_ELEMENT # Note: Event is abstract
-      aas:MULTI_LANGUAGE_PROPERTY_REFERABLE_ELEMENT
-      aas:OPERATION_REFERABLE_ELEMENT
-      #aas:OperationVariable_REFERABLE_ELEMENT #sba: not in the UML (any more?)
-      aas:PROPERTY_REFERABLE_ELEMENT
-      aas:REFERENCE_ELEMENT_REFERABLE_ELEMENT
-      aas:RELATIONSHIPT_ELEMENT_REFERABLE_ELEMENT
-      #aas:SUBMODEL_ELEMENT_REFERABLE_ELEMENT # Note: Event is abstract
-      aas:SUBMODEL_ELEMENT_COLLECTION_REFERABLE_ELEMENT
-      aas:VIEW_REFERABLE_ELEMENT
-    ) ;
-.
-
-aas:ReferenceElement_REFERABLE_ELEMENT
-  a aas:ReferableElements ;
-.
 
 ###  https://admin-shell.io/aas/1/1/rdf#RelationshipElement
 aas:RelationshipElement rdf:type owl:Class ;
                          rdfs:subClassOf aas:SubmodelElement ;
                          dc:description "A relationship element is used to define a relationship between two referable elements."@en ;
-                         rdfs:label "RelationshipElement"@en .
+                         rdfs:label "RelationshipElement"@en ;
+  owl:disjointWith aas:DataElement ;
+  owl:disjointWith aas:Event ;
+  owl:disjointWith aas:Operation ;
+  owl:disjointWith aas:OperationVariable ;
+  owl:disjointWith aas:SubmodelElementCollection ;
+  .
 
 
 ###  https://admin-shell.io/aas/1/1/rdf#Security
@@ -1135,8 +1326,18 @@ aas:Value rdf:type owl:Class ; # TODO delete?
 ###  https://admin-shell.io/aas/1/1/rdf#View
 aas:View rdf:type owl:Class ;
           rdfs:subClassOf aas:HasDataSpecification ,
-                          aas:Referable ;
+                          aas:Referable ,
+                          aas:HasSemantics ;
+          owl:disjointWith aas:AdministrativeInformation ;
+          owl:disjointWith aas:Asset ;
+          owl:disjointWith aas:AssetAdministrationShell ;
+          owl:disjointWith aas:ConceptDescription ;
+          owl:disjointWith aas:Formula ;
+          owl:disjointWith aas:Qualifier ;
+          owl:disjointWith aas:Submodel ;
+          owl:disjointWith aas:SubmodelElement ;
           rdfs:comment "Different views associated to the Administration Shell via the Submodels"@en ;
+          rdfs:comment "A view is a collection of referable elements w.r.t. to a specific viewpoint of one or more stakeholders."@en ;
           rdfs:isDefinedBy "https://www.plattform-i40.de/I40/Redaktion/DE/Downloads/Publikation/hm-2018-trilaterale-coop.html"@de ;
           rdfs:label "Sicht"@de ,
                      "View"@en .
@@ -1158,8 +1359,6 @@ RAMI4.0 model, as well, covering also order details and workflows, again with ty
           skos:altLabel "Asset Instance"^^xsd:string ;
           owl:differentFrom aas:INSTANCE ;
 .
-
-
 ###  https://admin-shell.io/aas/1/1/rdf#ASSET_TYPE
 aas:ASSET_TYPE rdf:type owl:NamedIndividual ,
                    aas:AssetKind ;
@@ -1170,8 +1369,6 @@ RAMI4.0 model, as well, covering also order details and workflows, again with ty
           skos:altLabel "Asset Type"^^xsd:string ;
           owl:differentFrom aas:TYPE ;
 .
-
-
 ###  https://admin-shell.io/aas/1/1/rdf#INSTANCE
 aas:INSTANCE rdf:type owl:NamedIndividual ,
                    aas:Kind ;
@@ -1180,8 +1377,6 @@ aas:INSTANCE rdf:type owl:NamedIndividual ,
           owl:differentFrom aas:ASSET_INSTANCE ;
           owl:differentFrom aas:TYPE ;
 .
-
-
 ###  https://admin-shell.io/aas/1/1/rdf#TYPE
 aas:TYPE rdf:type owl:NamedIndividual ,
                    aas:Kind ;
@@ -1192,135 +1387,178 @@ aas:TYPE rdf:type owl:NamedIndividual ,
 
 
 
-###  https://admin-shell.io/aas/1/1/rdf#ACCESS_PERMISSION_RULE_REFERABLE_ELEMENT
-aas:ACCESS_PERMISSION_RULE_REFERABLE_ELEMENT a aas:ReferableElements ;
+###  https://admin-shell.io/aas/1/1/rdf#GLOBAL_REFERENCE_KEY_ELEMENT
+aas:GLOBAL_REFERENCE_KEY_ELEMENT a aas:KeyElements ;
+            rdfs:label "Gobal Reference"@en ;
+            rdfs:comment "reference to an element not belonging to an asset administration shell"@en ;
+.
+###  https://admin-shell.io/aas/1/1/rdf#FRAGMENT_REFERENCE_REFERABLE_ELEMENT
+aas:FRAGMENT_REFERENCE_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Access Permission Rule"@en ;
             rdfs:comment ""@en ;
 .
 
+###  https://admin-shell.io/aas/1/1/rdf#ACCESS_PERMISSION_RULE_REFERABLE_ELEMENT
+aas:ACCESS_PERMISSION_RULE_REFERABLE_ELEMENT a aas:KeyElements ;
+            rdfs:label "Access Permission Rule"@en ;
+            rdfs:comment ""@en ;
+.
 ###  https://admin-shell.io/aas/1/1/rdf#ANNOTATED_RELATIONSHIP_ELEMENT_REFERABLE_ELEMENT
-aas:ANNOTATED_RELATIONSHIP_ELEMENT_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:ANNOTATED_RELATIONSHIP_ELEMENT_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Annotated relationship element"@en ;
             rdfs:comment ""@en ;
 .
-
-#aas:AssetAdministrationShell_REFERABLE_ELEMENT a aas:ReferableElements .
-#aas:Asset_REFERABLE_ELEMENT a aas:ReferableElements .
-
+#aas:AssetAdministrationShell_REFERABLE_ELEMENT a aas:KeyElements .
+#aas:Asset_REFERABLE_ELEMENT a aas:KeyElements .
 ###  https://admin-shell.io/aas/1/1/rdf#BLOB_REFERABLE_ELEMENT
-aas:BLOB_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:BLOB_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Blob"@en ;
             rdfs:comment ""@en ;
 .
-
 ###  https://admin-shell.io/aas/1/1/rdf#CAPABILITY_REFERABLE_ELEMENT
-aas:CAPABILITY_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:CAPABILITY_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Capability"@en ;
             rdfs:comment ""@en ;
 .
-
-#aas:ConceptDescription_REFERABLE_ELEMENT a aas:ReferableElements .
-
+#aas:ConceptDescription_REFERABLE_ELEMENT a aas:KeyElements .
 ###  https://admin-shell.io/aas/1/1/rdf#CONCEPT_DICTIONARY_REFERABLE_ELEMENT
-aas:CONCEPT_DICTIONARY_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:CONCEPT_DICTIONARY_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Concept Dictionary"@en ;
             rdfs:comment ""@en ;
 .
-
 ###  https://admin-shell.io/aas/1/1/rdf#DATA_ELEMENT_REFERABLE_ELEMENT
-aas:DATA_ELEMENT_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:DATA_ELEMENT_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Data Element"@en ;
             rdfs:comment ""@en ;
             skos:note "Data Element is abstract, i.e. if a key uses “DataElement” the reference may be a Property, a File etc."@en ;
 .
-
 ###  https://admin-shell.io/aas/1/1/rdf#EVENT_REFERABLE_ELEMENT
-aas:EVENT_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:EVENT_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Event"@en ;
             rdfs:comment ""@en ;
             skos:note "Event is abstract"@en ;
 .
-
-#aas:GlobalReference_REFERABLE_ELEMENT a aas:ReferableElements .
-
+#aas:GlobalReference_REFERABLE_ELEMENT a aas:KeyElements .
 ###  https://admin-shell.io/aas/1/1/rdf#
-aas:MULTI_LANGUAGE_PROPERTY_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:MULTI_LANGUAGE_PROPERTY_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Multi-language Property"@en ;
             rdfs:comment "Property with a value that can be provided in multiple languages."@en ;
 .
-
 ###  https://admin-shell.io/aas/1/1/rdf#OPERATION_REFERABLE_ELEMENT
-aas:OPERATION_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:OPERATION_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Operation"@en ;
             rdfs:comment ""@en ;
 .
-
-#aas:OperationVariable_REFERABLE_ELEMENT a aas:ReferableElements .
-
+#aas:OperationVariable_REFERABLE_ELEMENT a aas:KeyElements .
 ###  https://admin-shell.io/aas/1/1/rdf#PROPERTY_REFERABLE_ELEMENT
-aas:PROPERTY_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:PROPERTY_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Property"@en ;
             rdfs:comment ""@en ;
 .
-
 ###  https://admin-shell.io/aas/1/1/rdf#REFERENCE_ELEMENT_REFERABLE_ELEMENT
-aas:REFERENCE_ELEMENT_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:REFERENCE_ELEMENT_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Reference Element"@en ;
             rdfs:comment ""@en ;
 .
-
 ###  https://admin-shell.io/aas/1/1/rdf#RELATIONSHIPT_ELEMENT_REFERABLE_ELEMENT
-aas:RELATIONSHIPT_ELEMENT_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:RELATIONSHIPT_ELEMENT_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Relationship Element"@en ;
             rdfs:comment ""@en ;
 .
-
 ###  https://admin-shell.io/aas/1/1/rdf#SUBMODEL_ELEMENT_REFERABLE_ELEMENT
-aas:SUBMODEL_ELEMENT_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:SUBMODEL_ELEMENT_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "SubmodelElement"@en ;
             rdfs:comment ""@en ;
             skos:note "Submodel Element is abstract, i.e. if a key uses “SubmodelElement” the reference may be a Property, a SubmodelElementCollection, an Operation etc."@en ;
 .
-
 ###  https://admin-shell.io/aas/1/1/rdf#SUBMODEL_ELEMENT_COLLECTION_REFERABLE_ELEMENT
-aas:SUBMODEL_ELEMENT_COLLECTION_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:SUBMODEL_ELEMENT_COLLECTION_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "Submodel Element Collection"@en ;
             rdfs:comment "Collection of Submodel Elements"@en ;
 .
-
-#aas:SubmodelElementsKindCheck a sh:ReferableElements .
-
+#aas:SubmodelElementsKindCheck a sh:KeyElements .
 ###  https://admin-shell.io/aas/1/1/rdf#VIEW_REFERABLE_ELEMENT
-aas:VIEW_REFERABLE_ELEMENT a aas:ReferableElements ;
+aas:VIEW_REFERABLE_ELEMENT a aas:KeyElements ;
             rdfs:label "View"@en ;
             rdfs:comment ""@en ;
 .
 
+###  https://admin-shell.io/aas/1/1/rdf#ASSET_IDENTIFIABLE_ELEMENT
+aas:ASSET_IDENTIFIABLE_ELEMENT a aas:KeyElements ;
+            rdfs:label "Asset"@en ;
+            rdfs:comment ""@en ;
+.
+###  https://admin-shell.io/aas/1/1/rdf#ASSET_ADMINISTRATION_SHELL_IDENTIFIABLE_ELEMENT
+aas:ASSET_ADMINISTRATION_SHELL_IDENTIFIABLE_ELEMENT a aas:KeyElements ;
+            rdfs:label "Asset Administration Shell"@en ;
+            rdfs:comment ""@en ;
+.
+###  https://admin-shell.io/aas/1/1/rdf#CONCEPT_DESCRIPTION_IDENTIFIABLE_ELEMENT
+aas:CONCEPT_DESCRIPTION_IDENTIFIABLE_ELEMENT a aas:KeyElements ;
+            rdfs:label "Concept Description"@en ;
+            rdfs:comment ""@en ;
+.
+###  https://admin-shell.io/aas/1/1/rdf#SUBMODEL_IDENTIFIABLE_ELEMENT
+aas:SUBMODEL_IDENTIFIABLE_ELEMENT a aas:KeyElements ;
+            rdfs:label "Submodel"@en ;
+            rdfs:comment ""@en ;
+.
 
-###  https://admin-shell.io/aas/1/1/rdf#IRDI
-aas:IRDI a aas:IdentifierType ;
+
+###  https://admin-shell.io/aas/1/1/rdf#IRDI_IDENTIFIER_TYPE
+aas:IRDI_IDENTIFIER_TYPE a aas:KeyType ;
             rdfs:label "IRDI"@en ;
             rdfs:comment "IRDI according to ISO29002-5 as an Identifier scheme for properties and classifications."@en ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty aas:value ; # TODO: verify aas:value property
-    ] ;
-    .
-
-
-###  https://admin-shell.io/aas/1/1/rdf#URI
-aas:URI a aas:IdentifierType ;
+            rdfs:subClassOf [
+            a owl:Restriction ;
+                owl:allValuesFrom xsd:string ;
+                owl:onProperty aas:value ; # TODO: verify aas:value property
+            ] ;
+.
+###  https://admin-shell.io/aas/1/1/rdf#URI_IDENTIFIER_TYPE
+aas:URI_IDENTIFIER_TYPE a aas:KeyType ;
             rdfs:label "URI"@en ;
             rdfs:comment "URI"@en ;
 .
-
-
-###  https://admin-shell.io/aas/1/1/rdf#CUSTOM
-aas:CUSTOM rdf:Type aas:IdentifierType ;
+###  https://admin-shell.io/aas/1/1/rdf#CUSTOM_IDENTIFIER_TYPE
+aas:CUSTOM_IDENTIFIER_TYPE rdf:Type aas:KeyType ;
             rdfs:label "Custom"@en ;
             rdfs:comment "Custom identifiers like GUIDs (globally unique Identifiers)"@en ;
 .
+###  https://admin-shell.io/aas/1/1/rdf#IDSHORT_LOCAL_KEY_TYPE
+aas:IDSHORT_LOCAL_KEY_TYPE a aas:KeyType ;
+            rdfs:label "IdShort"@en ;
+            rdfs:comment "idShort of a referable element"@en ;
+.
+###  https://admin-shell.io/aas/1/1/rdf#FRAGMENT_ID_LOCAL_KEY_TYPE
+aas:FRAGMENT_ID_LOCAL_KEY_TYPE rdf:Type aas:KeyType ;
+            rdfs:label "FragementId"@en ;
+            rdfs:comment "Identifier of a fragment within a file"@en ;
+.
+
+
+
+###  https://admin-shell.io/aas/1/1/rdf#ALLOW
+aas:ALLOW rdf:type aas:PermissionKind ;
+        rdfs:label "allow" ;
+        rdfs:comment "Allow the permission given to the subject."@en ;
+.
+###  https://admin-shell.io/aas/1/1/rdf#DENY
+aas:DENY rdf:type aas:PermissionKind ;
+        rdfs:label "deny" ;
+        rdfs:comment "Explicitly deny the permission given to the subject."@en ;
+.
+###  https://admin-shell.io/aas/1/1/rdf#NOT_APPLICABLE
+aas:NOT_APPLICABLE rdf:type aas:PermissionKind ;
+        rdfs:label "not applicable" ;
+        rdfs:comment "The permission is not applicable to the subject."@en ;
+.
+###  https://admin-shell.io/aas/1/1/rdf#UNDEFINED
+aas:UNDEFINED rdf:type aas:PermissionKind ;
+        rdfs:label "undefined" ;
+        rdfs:comment "It is undefined whether the permission is allowed, not applicable or denied to the subject."@en ;
+.
+
 
 
 
@@ -1332,6 +1570,358 @@ om:hasNumericalValue rdfs:label "has numerical value"@en .
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
+
+
+
+
+
+
+
+
+###  https://admin-shell.io/aas/1/1/rdf#AccessControlPolicyPoints
+aas:AccessControlPolicyPoints rdf:type owl:Class ;
+        rdfs:comment "Container for access control policy points."@en ;
+        rdfs:label "Access Control Policy Points" ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#PolicyAdministrationPoint
+aas:PolicyAdministrationPoint rdf:type owl:Class ;
+        rdfs:comment "Definition of a security administration point (PDP)."@en ;
+        rdfs:label "Policy Administration Point" ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#PolicyInformationPoints
+aas:PolicyInformationPoints rdf:type owl:Class ;
+        rdfs:comment "Defines the security policy information points (PIP). Serves as the retrieval source of attributes, or the data required for policy evaluation to provide the information needed by the policy decision point to make the decisions."@en ;
+        rdfs:label "Policy Information Points" ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#AccessControl
+aas:AccessControl rdf:type owl:Class ;
+        rdfs:comment "Access Control defines the local access control policy administration point. Access Control has the major task to define the access permission rules."@en ;
+        rdfs:label "Access Control" ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#AccessPermissionRule
+aas:AccessPermissionRule rdf:type owl:Class ;
+        rdfs:subClassOf aas:Referable ;
+        rdfs:subClassOf aas:Qualifiable ;
+        rdfs:comment "Table that defines access permissions per authenticated subject for a set of objects (referable elements)."@en ;
+        rdfs:label "Access Permission Rule" ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#PermissionPerObject
+aas:PermissionPerObject rdf:type owl:Class ;
+        rdfs:comment "Table that defines access permissions for a specified object. The object is any referable element in the AAS. Additionally object attributes can be defined that further specify the kind of object the permissions apply to."@en ;
+        rdfs:label "Permission Per Object" ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#ObjectAttributes
+aas:ObjectAttributes rdf:type owl:Class ;
+        rdfs:comment "A set of data elements that describe object attributes. These attributes need to refer to a data element within an existing submodel."@en ;
+        rdfs:label "Object Attributes" ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#Permission
+aas:Permission rdf:type owl:Class ;
+        rdfs:comment "Description of a single permission."@en ;
+        rdfs:label "Permission" ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#SubjectAttributes 
+aas:SubjectAttributes  rdf:type owl:Class ;
+        rdfs:comment "A set of data elements that further classifies a specific subject."@en ;
+        rdfs:label "Subject Attributes" ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#PermissionKind
+aas:PermissionKind rdf:type owl:Class ;
+        rdfs:comment "Enumeration of the kind of permissions that is given to the assignment of a permission to a subject."@en ;
+        rdfs:label "Permission Kind" ;
+        owl:oneOf (
+            aas:ALLOW
+            aas:DENY
+            aas:NOT_APPLICABLE
+            aas:UNDEFINED
+        ) ;
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###  https://admin-shell.io/aas/1/1/rdf#accessControlPolicyPoints
+aas:accessControlPolicyPoints rdf:type owl:ObjectProperty ;
+        rdfs:comment "Access control policy points of the AAS."@en ;
+        rdfs:label "has access control policy points" ;
+        rdfs:domain aas:Security ;
+        rdfs:range aas:PolicyAdministrationPoint ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#trustAnchor
+aas:trustAnchor rdf:type owl:ObjectProperty ;
+        rdfs:comment "Trust anchor of AAS, typically certificates."@en ;
+        rdfs:label "has trust anchor" ;
+        rdfs:domain aas:Security ;
+        rdfs:range aas:Certificate ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#policyAdministrationPoint
+aas:policyAdministrationPoint rdf:type owl:ObjectProperty ;
+        rdfs:comment "The access control administration policy point of the AAS."@en ;
+        rdfs:label "has policy administration point" ;
+        rdfs:domain aas:AccessControlPolicyPoints ;
+        rdfs:range aas:PolicyAdministrationPoint ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#policyDecisionPoint
+aas:policyDecisionPoint rdf:type owl:ObjectProperty ;
+        rdfs:comment "The access control policy decision point of the AAS."@en ;
+        rdfs:label "has policy decision point" ;
+        rdfs:domain aas:AccessControlPolicyPoints ;
+        rdfs:range aas:PolicyDecisionPoint ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#policyEnforcementPoint
+aas:policyEnforcementPoint rdf:type owl:ObjectProperty ;
+        rdfs:comment "The access control policy enforcement point of the AAS."@en ;
+        rdfs:label "has policy enforcement point" ;
+        rdfs:domain aas:AccessControlPolicyPoints ;
+        rdfs:range aas:PolicyEnforcementPoint ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#policyInformationPoints
+aas:policyInformationPoints rdf:type owl:ObjectProperty ;
+        rdfs:comment "The access control policy information points of the AAS."@en ;
+        rdfs:label "has policy information points" ;
+        rdfs:domain aas:AccessControlPolicyPoints ;
+        rdfs:range aas:PolicyInformationPoints ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#localAccessControl
+aas:localAccessControl rdf:type owl:ObjectProperty ;
+        rdfs:comment "The policy administration point of access control as realized by the AAS itself."@en ;
+        skos:note "Constraint AASd-009: Either there is an external policy administration point endpoint defined or the AAS has its own access control."@en ;
+        rdfs:label "has local access control" ;
+        rdfs:domain aas:PolicyAdministrationPoint ;
+        rdfs:range aas:AccessControl ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#externalAccessControl
+aas:externalAccessControl rdf:type owl:ObjectProperty ;
+        rdfs:comment "Endpoint to an external access control defining a policy administration point to be used by the AAS."@en ;
+        rdfs:label "has external access control" ;
+        rdfs:domain aas:PolicyAdministrationPoint ;
+        rdfs:range aas:Endpoint ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#externalInformationPoint
+aas:externalInformationPoint rdf:type owl:ObjectProperty ;
+        rdfs:comment "Endpoints to external available information points taking into consideration for access control for the AAS."@en ;
+        rdfs:label "has external information point" ;
+        rdfs:domain aas:PolicyInformationPoints ;
+        rdfs:range aas:Endpoint ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#internalInformationPoint
+aas:internalInformationPoint rdf:type owl:ObjectProperty ;
+        rdfs:comment "References to submodels defining information used by security access permission rules."@en ;
+        rdfs:label "has internal information point" ;
+        rdfs:domain aas:PolicyInformationPoints ;
+        rdfs:range aas:Submodel ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#accessPermissionRule
+aas:accessPermissionRule rdf:type owl:ObjectProperty ;
+        rdfs:comment "Access permission rules of the AAS describing the rights assigned to (already authenticated) subjects to access elements of the AAS."@en ;
+        rdfs:label "has access permission rule" ;
+        rdfs:domain aas:AccessControl ;
+        rdfs:range aas:AccessPermissionRule ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#selectableSubjectAttributes
+aas:selectableSubjectAttributes rdf:type owl:ObjectProperty ;
+        rdfs:comment "Reference to a submodel defining the authenticated subjects that are configured for the AAS. They are selectable by the access permission rules to assign permissions to the subjects."@en ;
+        rdfs:label "has selectable subject attributes" ;
+        skos:note "Default: reference to the submodel referenced via defaultSubjectAttributes."@en ;
+        rdfs:domain aas:AccessControl ;
+        rdfs:range aas:Submodel ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#defaultSubjectAttributes
+aas:defaultSubjectAttributes rdf:type owl:ObjectProperty ;
+        rdfs:comment "Reference to a submodel defining the default subjects attributes for the AAS that can be used to describe access permission rules."@en ;
+        rdfs:label "has default subject attributes" ;
+        skos:note "The submodel is of kind=Type."@en ;
+        rdfs:domain aas:AccessControl ;
+        rdfs:range aas:Submodel ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#selectablePermissions
+aas:selectablePermissions rdf:type owl:ObjectProperty ;
+        rdfs:comment "Reference to a submodel defining which permissions can be assigned to the subjects."@en ;
+        rdfs:label "has selectable permissions" ;
+        skos:note "Default: reference to the submodel referenced via defaultPermissions"@en ;
+        rdfs:domain aas:AccessControl ;
+        rdfs:range aas:Submodel ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#defaultPermissions
+aas:defaultPermissions rdf:type owl:ObjectProperty ;
+        rdfs:comment "Reference to a submodel defining the default permissions for the AAS."@en ;
+        rdfs:label "has default permissions" ;
+        rdfs:domain aas:AccessControl ;
+        rdfs:range aas:Submodel ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#selectableEnvironmentAttributes
+aas:selectableEnvironmentAttributes rdf:type owl:ObjectProperty ;
+        rdfs:comment "Reference to a submodel defining which environment attributes can be accessed via the permission rules."@en ;
+        rdfs:label "has selectable environment attributes" ;
+        rdfs:domain aas:AccessControl ;
+        rdfs:range aas:Submodel ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#defaultEnvironmentAttributes
+aas:defaultEnvironmentAttributes rdf:type owl:ObjectProperty ;
+        rdfs:comment "Reference to a submodel defining default environment attributes, i.e. attributes that are not describing the asset itself. The submodel is of kind=Type. At the same type the values of these environment attributes need to be accessible when evaluating the access permission rules. This is realized as a policy information point."@en ;
+        rdfs:label "has default environment attributes" ;
+        rdfs:domain aas:AccessControl ;
+        rdfs:range aas:Submodel ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#targetSubjectAttributes
+aas:targetSubjectAttributes rdf:type owl:ObjectProperty ;
+        rdfs:comment "Target subject attributes that need to be fulfilled by the accessing subject to get the permissions defined by this rule."@en ;
+        rdfs:label "has target subject attributes" ;
+        rdfs:domain aas:AccessPermissionRule ;
+        rdfs:range aas:SubjectAttributes ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#permissionsPerObject
+aas:permissionsPerObject rdf:type owl:ObjectProperty ;
+        rdfs:comment "Set of object-permission pairs that define the permissions per object within the access permission rule."@en ;
+        rdfs:label "has permissions per object" ;
+        rdfs:domain aas:AccessPermissionRule ;
+        rdfs:range aas:PermissionsPerObject ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#object
+aas:object rdf:type owl:ObjectProperty ;
+        rdfs:comment "Element to which permission shall be assigned."@en ;
+        rdfs:label "has object" ;
+        rdfs:domain aas:PermissionPerObject ;
+        rdfs:range aas:Referable ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#targetObjectAttributes
+aas:targetObjectAttributes rdf:type owl:ObjectProperty ;
+        rdfs:comment "Target object attributes that need to be fulfilled so that the access permissions apply to the accessing subject."@en ;
+        rdfs:label "has target object attributes" ;
+        rdfs:domain aas:PermissionPerObject ;
+        rdfs:range aas:ObjectAttributes ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#permission
+aas:permission rdf:type owl:ObjectProperty ;
+        rdfs:comment "Permissions assigned to the object. The permissions hold for all subjects as specified in the access permission rule."@en ;
+        rdfs:label "has permission" ;
+        rdfs:domain aas:PermissionPerObject ;
+        rdfs:range aas:Permission ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#objectAttribute
+aas:objectAttribute rdf:type owl:ObjectProperty ;
+        rdfs:comment "A data elements that further classifies an object."@en ;
+        rdfs:label "has object attribute" ;
+        rdfs:domain aas:ObjectAttributes ;
+        rdfs:range aas:DataElement ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#permission
+aas:permission rdf:type owl:ObjectProperty ;
+        rdfs:comment "Reference to a property that defines the semantics of the permission."@en ;
+        skos:note "Constraint AASd-010: The property has the category CONSTANT."@en ;
+        skos:note "Constraint AASd-011: The permission property shall be part of the submodel that is referenced within the selectablePermissions attribute of AccessControl."@en ;
+        rdfs:label "has permission" ;
+        rdfs:domain aas:Permission ;
+        rdfs:range aas:Property ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#kindOfPermission
+aas:kindOfPermission rdf:type owl:ObjectProperty ;
+        rdfs:comment "Description of the kind of permission. Possible kind of permission also include the denial of the permission."@en ;
+        rdfs:label "has kind of permission" ;
+        rdfs:domain aas:Permission ;
+        rdfs:range aas:PermissionKind ;
+.
+
+
+###  https://admin-shell.io/aas/1/1/rdf#subjectAttribute
+aas:subjectAttribute rdf:type owl:ObjectProperty ;
+        rdfs:comment "A data element that further classifies a specific subject. "@en ;
+        skos:note "Constraint AASd-025: The data element shall be part of the submodel that is referenced within the selectableSubjectAttributes attribute of AccessControl."@en ;
+        rdfs:label "has subject attribute" ;
+        rdfs:domain aas:SubjectAttributes ;
+        rdfs:range aas:DataElement ;
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
