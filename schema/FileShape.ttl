@@ -5,7 +5,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
+<<<<<<< HEAD
+=======
 @prefix u4u: <https://uri4uri.net/vocab#> .
+>>>>>>> details_of_the_AAS_1.1
 
 <#FileShape>
 
@@ -16,6 +19,11 @@
       sh:minCount 1 ;
     ] ;
 
+<<<<<<< HEAD
+    sh:property [
+        sh:path rami:mimeType ;
+        sh:class rami:mimeType ;
+=======
     # sh:constraint [
 	# 	sh:nodeKind rami:IRDI ;
 	# 	sh:message "Each asset object must be an IRDI."@en ;
@@ -25,10 +33,14 @@
         sh:path rami:mimeType ;
         sh:class u4u:MimetypeDatatype ;
         #TODO: implement RegEx "[a-z]+/[a-z]+"
+>>>>>>> details_of_the_AAS_1.1
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
         sh:message "Each File must refer to the mime-type, that is the content of the file"@en
+<<<<<<< HEAD
+    ] ;
+=======
     ] ;
     ##################################
     # inherits from DataElement (and DataElement inherits from SubmodelElement 
@@ -132,3 +144,4 @@
       sh:severity sh:Violation ;
       sh:message "rami:hasKind must be either a rami:Instance or a rami:Type ."@en ;
     ] .
+>>>>>>> details_of_the_AAS_1.1

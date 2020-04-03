@@ -55,6 +55,15 @@
 
     # Referable:
     sh:property [
+      sh:path rami:administration ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+      sh:class rami:AdministrativeInformation ;
+      sh:severity sh:Violation ;
+      sh:message ""@en ;
+    ] ;
+
+    sh:property [
         sh:path rami:idShort ; 
         sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
@@ -89,13 +98,13 @@
         sh:severity sh:violation ;
         sh:message "..."@en ;
     ] ;
-
-
+	
+	
     # Qualifiable:
     sh:constraint [
 		sh:nodeKind sh:IRI ;
 		sh:message "Each rami object must be a URI."@en ;
-	  ] ;
+	] ;
 
     sh:property [
       sh:path rami:qualifier ;

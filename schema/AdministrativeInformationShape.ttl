@@ -36,13 +36,28 @@
       sh:minCount 0 ;
       sh:maxCount 1 ;
       ###################
+<<<<<<< HEAD
+      sh:constraint [
+        ######## How to model, that version-property is required?
+      ] ;
+=======
       # sh:constraint [
       #   ######## How to model, that version-property is required?
       # ] ;
+>>>>>>> details_of_the_AAS_1.1
       ###################
       sh:message "Each submodel element must have at max one revision attribute with datatype xsd:string."@en ;
     ] ;
 
+<<<<<<< HEAD
+    sh:property [
+      sh:path rami:semanticId ;
+	  sh:nodeKind sh:IRI ;
+      sh:minCount 1 ;
+      sh:severity sh:Violation ;
+      sh:message "Each submodel must have at least one semanticId attribute."@en ;
+    ] .
+=======
     # sh:property [
     #   sh:path rami:semanticId ;
 	  # sh:someOf [ 
@@ -53,3 +68,4 @@
     # the semanticID is part of RDF itself #
     ########################################
     .
+>>>>>>> details_of_the_AAS_1.1

@@ -4,7 +4,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix aas: <https://admin-shell.io/aas/2/0/> .
 
 
 # author: Sebastian Bader (sebastian.bader@iais.fraunhofer.de)
@@ -16,7 +16,7 @@
 
 <#AasShape>
     a sh:NodeShape ;
-    sh:targetClass rami:AdminShell ;
+    sh:targetClass aas:AssetAdministrationShell ;
     sh:property [
       sh:path rdf:type ;
       sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
@@ -27,50 +27,50 @@
 		sh:message "Each AAS object must be a URI."@en ;
 	] ;
     sh:property [
-      sh:path rami:derivedFrom ;
-      sh:class rami:AdminShell ;
+      sh:path aas:derivedFrom ;
+      sh:class aas:AssetAdministrationShell ;
       sh:minCount 0 ;
       sh:maxCount 1 ;
       sh:severity sh:Violation ;
       sh:message "Each AAS must be derived from either exactly 1 or none other AAS."@en ;
     ] ;
     sh:property [
-      sh:path rami:security ;
-      sh:class rami:Security ;
+      sh:path aas:security ;
+      sh:class aas:Security ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:severity sh:Violation ;
       sh:message "Each AAS must be related to exactly one Security element through the security relation."@en ;
     ] ;
     sh:property [
-      sh:path rami:asset ;
-      sh:class rami:Asset ;
+      sh:path aas:asset ;
+      sh:class aas:Asset ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:severity sh:Violation ;
       sh:message "Each AAS must be related to exactly one Asset through the asset relation."@en ;
     ] ;
     # sh:property [
-    #   sh:path rami:hasSubmodel ;
-    #   sh:class rami:Submodel ;
+    #   sh:path aas:hasSubmodel ;
+    #   sh:class aas:Submodel ;
     #   sh:minCount 0 ;
     #   #sh:message ""@en ;
     # ] ; #otherwise the property is redundant, because it inherits also from DataSpecification
     sh:property [
-      sh:path rami:conceptDescription ;
-      sh:class rami:ConceptDescription ;
+      sh:path aas:conceptDescription ;
+      sh:class aas:ConceptDescription ;
       sh:minCount 0 ;
       #sh:message ""@en ;
     ] ;
     sh:property [
-      sh:path rami:hasView ;
-      sh:class rami:View ;
+      sh:path aas:hasView ;
+      sh:class aas:View ;
       sh:minCount 0 ; #Perhaps sh:minCount has to be 1 (see "AAS in detail", p. 65 Figure 33)
       #sh:message ""@en ;
     ] ;
     sh:property [
-      sh:path rami:hasKind ;
-      sh:class rami:AssetKind ;
+      sh:path aas:hasKind ;
+      sh:class aas:AssetKind ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:severity sh:Violation ;
@@ -82,21 +82,21 @@
 	] ;
 	# AAS inherits from Identifiable
     sh:property [
-      sh:path rami:administration ;
+      sh:path aas:administration ;
       sh:minCount 0 ;
       sh:maxCount 1 ;
-	  sh:class rami:AdministrativeInformation ;
+	  sh:class aas:AdministrativeInformation ;
       sh:severity sh:Violation ;
       sh:message ""@en ;
     ] ;
     sh:property [
-      sh:path rami:id ;
+      sh:path aas:id ;
       sh:minCount 0 ;
-      sh:message "An identifiable entity can have a rami:id."@en ; 
+      sh:message "An identifiable entity can have a aas:id."@en ; 
     ] ;
   # Identifiable inherits from Referable
   sh:property [
-        sh:path rami:idShort ; 
+        sh:path aas:idShort ; 
         sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -105,7 +105,7 @@
     ] ;
 
     sh:property [
-        sh:path rami:category ;
+        sh:path aas:category ;
         sh:valueDatatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -114,7 +114,7 @@
     ] ;
 
     sh:property [
-        sh:path rami:description ;
+        sh:path aas:description ;
         sh:valueDatatype xsd:langString ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -123,8 +123,8 @@
     ] ;
 
     sh:property [
-        sh:path rami:parent ;
-        sh:class rami:Referable ;
+        sh:path aas:parent ;
+        sh:class aas:Referable ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:violation ;
@@ -134,16 +134,16 @@
 
 	# AAS inherits from DataSpecification
     sh:property [
-      sh:path rami:hasDataSpecification ;
-      sh:class rami:Reference ;
+      sh:path aas:hasDataSpecification ;
+      sh:class aas:Reference ;
       sh:minCount 0 ;
 	    sh:nodeKind sh:IRI ; # class Reference is not part of the ontology
       sh:severity sh:Violation ;
-      sh:message "rami:hasDataSpecification must point to a proper URI."@en ;
+      sh:message "aas:hasDataSpecification must point to a proper URI."@en ;
     ] ;
     sh:property [
-      sh:path rami:hasSubmodel ;
-      sh:class rami:Submodel ;
+      sh:path aas:hasSubmodel ;
+      sh:class aas:Submodel ;
       sh:minCount 0 ;
-      sh:message "A DataSpecification entity can have a rami:hasSubmodel relation to a rami:Submodel."@en ; 
+      sh:message "A DataSpecification entity can have a aas:hasSubmodel relation to a aas:Submodel."@en ; 
     ] .

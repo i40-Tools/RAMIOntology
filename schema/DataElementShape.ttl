@@ -6,9 +6,12 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rami: <https://w3id.org/i40/rami#> .
 
+<<<<<<< HEAD
+=======
 ###############
 # abstract ?! #
 ###############
+>>>>>>> details_of_the_AAS_1.1
 
 <#DataElementShape>
     a sh:NodeShape ;
@@ -30,6 +33,15 @@
       sh:severity sh:Violation ;
       sh:message "Each submodel element must have at least one short ID with datatype xsd:string."@en ;
     ] ;
+<<<<<<< HEAD
+    sh:property [
+      sh:path rami:semanticId ;
+	    sh:nodeKind sh:IRI ;
+      sh:minCount 1 ;
+      sh:severity sh:Violation ;
+      sh:message "Each SubmodelElement must have at least one semanticId attribute."@en ;
+    ] 
+=======
     # sh:property [
     #   sh:path rami:semanticId ;
 	  # sh:someOf [ 
@@ -39,6 +51,7 @@
     ########################################
     # the semanticID is part of RDF itself #
     ########################################
+>>>>>>> details_of_the_AAS_1.1
 	# SubmodelElement inherits from HasSemantics
 	# hasSemantics requirements are fulfilled by RDF itself 
 	
@@ -53,6 +66,16 @@
       sh:message "rami:qualifier must be point to a proper URI."@en ;
     ] ;
 	# SubmodelElement inherits from Referable
+<<<<<<< HEAD
+    sh:property [
+      sh:path rami:administration ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+	    sh:class rami:AdministrativeInformation ;
+      sh:severity sh:Violation ;
+      sh:message ""@en ;
+    ] ;
+=======
     # sh:property [
     #   sh:path rami:administration ;
     #   sh:minCount 0 ;
@@ -97,6 +120,7 @@
         sh:message "..."@en ;
     ] ;
 
+>>>>>>> details_of_the_AAS_1.1
 	# Submodel inherits from DataSpecification
     sh:property [
       sh:path rami:hasDataSpecification ;
