@@ -4,7 +4,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix rami: <https://w3id.org/i40/rami#> .
+@prefix aas: <https://asset-shell.io/AAS/2/0/> .
 
 
 # author: Sebastian Bader (sebastian.bader@iais.fraunhofer.de)
@@ -16,7 +16,7 @@
 
 <#AssetShape>
     a sh:NodeShape ;
-    sh:targetClass rami:Asset ;
+    sh:targetClass aas:Asset ;
     sh:property [
       sh:path rdf:type ;
       sh:minCount 1 ; # this statement is redundant as each instance of type ids:Rule has at least one class relation (type).
