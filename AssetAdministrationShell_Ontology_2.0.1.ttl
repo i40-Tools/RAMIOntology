@@ -1161,10 +1161,10 @@ aas:PermissionKind rdf:type owl:Class ;
     rdfs:comment "Enumeration of the kind of permissions that is given to the assignment of a permission to a subject."@en ;
     rdfs:label "Permission Kind"^^xsd:string ;
     owl:oneOf (
-        http://admin-shell.io/aas/2/0/PermissionKind/ALLOW
-        http://admin-shell.io/aas/2/0/PermissionKind/DENY
-        http://admin-shell.io/aas/2/0/PermissionKind/NOT_APPLICABLE
-        http://admin-shell.io/aas/2/0/PermissionKind/UNDEFINED
+        <http://admin-shell.io/aas/2/0/PermissionKind/ALLOW>
+        <http://admin-shell.io/aas/2/0/PermissionKind/DENY>
+        <http://admin-shell.io/aas/2/0/PermissionKind/NOT_APPLICABLE>
+        <http://admin-shell.io/aas/2/0/PermissionKind/UNDEFINED>
     ) ;
 .
 
