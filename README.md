@@ -3,7 +3,7 @@ Repository containing the developing of the RAMI vocabulary. This semantically e
 on the Plattform Industrie 4.0 specification [Details of the Asset Administration Shell - Part 1](https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/2018-verwaltungsschale-im-detail.html).
 This repository provides an RDF version of the specification, 
 
-The ontology itself is contained in [rami.ttl](rami.ttl). You can find a visualization of the latest version can be created using the 
+The ontology itself is contained in [AAS-Ontology_2.0.ttl](AAS-Ontology_2.0.ttl). You can find a visualization of the latest version can be created using the 
 [WebVOwl API](http://www.visualdataweb.de/webvowl/\#iri=https://raw.githubusercontent.com/i40-Tools/RAMIOntology/master/rami.ttl).
 
 
